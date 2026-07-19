@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "mdl-a-lange-sohne-1815",
+    "brandId": "br-a-lange-sohne",
+    "name": "1815",
+    "collection": "1815",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tudor-1926",
+    "brandId": "br-tudor",
+    "name": "1926",
+    "collection": "1926",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-girard-perregaux-1966",
+    "brandId": "br-girard-perregaux",
+    "name": "1966",
+    "collection": "1966",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-nomos-ahoi",
+    "brandId": "br-nomos",
+    "name": "Ahoi",
+    "collection": "Ahoi",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-chopard-alpine-eagle",
+    "brandId": "br-chopard",
+    "name": "Alpine Eagle",
+    "collection": "Alpine Eagle",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-piaget-altiplano",
+    "brandId": "br-piaget",
+    "name": "Altiplano",
+    "collection": "Altiplano",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-omega-aqua-terra",
+    "brandId": "br-omega",
+    "name": "Aqua Terra",
+    "collection": "Aqua Terra",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-aquanaut",
+    "brandId": "br-patek-philippe",
+    "name": "Aquanaut",
+    "collection": "Aquanaut",
+    "complication": "Sports",
+    "caseShape": "Rounded Octagon",
+    "launchYear": 1997
+  },
+  {
+    "id": "mdl-tag-heuer-aquaracer",
+    "brandId": "br-tag-heuer",
+    "name": "Aquaracer",
+    "collection": "Aquaracer",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-oris-aquis",
+    "brandId": "br-oris",
+    "name": "Aquis",
+    "collection": "Aquis",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tag-heuer-autavia",
+    "brandId": "br-tag-heuer",
+    "name": "Autavia",
+    "collection": "Autavia",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-ballon-bleu",
+    "brandId": "br-cartier",
+    "name": "Ballon Bleu",
+    "collection": "Ballon Bleu",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-blancpain-bathyscaphe",
+    "brandId": "br-blancpain",
+    "name": "Bathyscaphe",
+    "collection": "Bathyscaphe",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-hublot-big-bang",
+    "brandId": "br-hublot",
+    "name": "Big Bang",
+    "collection": "Big Bang",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-hublot-big-bang-unico",
+    "brandId": "br-hublot",
+    "name": "Big Bang Unico",
+    "collection": "Big Bang Unico",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-oris-big-crown",
+    "brandId": "br-oris",
+    "name": "Big Crown",
+    "collection": "Big Crown",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-big-pilot-43",
+    "brandId": "br-iwc",
+    "name": "Big Pilot 43",
+    "collection": "Pilot",
+    "complication": "Time Only",
+    "caseShape": "Round",
+    "launchYear": 2021
+  },
+  {
+    "id": "mdl-tudor-black-bay",
+    "brandId": "br-tudor",
+    "name": "Black Bay",
+    "collection": "Black Bay",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tudor-black-bay-58",
+    "brandId": "br-tudor",
+    "name": "Black Bay 58",
+    "collection": "Black Bay",
+    "complication": "Diver",
+    "caseShape": "Round",
+    "launchYear": 2018
+  },
+  {
+    "id": "mdl-tudor-black-bay-fifty-eight",
+    "brandId": "br-tudor",
+    "name": "Black Bay Fifty-Eight",
+    "collection": "Black Bay Fifty-Eight",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tudor-black-bay-pro",
+    "brandId": "br-tudor",
+    "name": "Black Bay Pro",
+    "collection": "Black Bay Pro",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-girard-perregaux-bridges",
+    "brandId": "br-girard-perregaux",
+    "name": "Bridges",
+    "collection": "Bridges",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-philippe-calatrava",
+    "brandId": "br-patek-philippe",
+    "name": "Calatrava",
+    "collection": "Calatrava",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tag-heuer-carrera",
+    "brandId": "br-tag-heuer",
+    "name": "Carrera",
+    "collection": "Carrera",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-zenith-chronomaster",
+    "brandId": "br-zenith",
+    "name": "Chronomaster",
+    "collection": "Chronomaster",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-zenith-chronomaster-sport",
+    "brandId": "br-zenith",
+    "name": "Chronomaster Sport",
+    "collection": "Chronomaster Sport",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breitling-chronomat",
+    "brandId": "br-breitling",
+    "name": "Chronomat",
+    "collection": "Chronomat",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-f-p-journe-chronometre-bleu",
+    "brandId": "br-f-p-journe",
+    "name": "Chronometre Bleu",
+    "collection": "Chronometre Bleu",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-hublot-classic-fusion",
+    "brandId": "br-hublot",
+    "name": "Classic Fusion",
+    "collection": "Classic Fusion",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ulysse-nardin-classico",
+    "brandId": "br-ulysse-nardin",
+    "name": "Classico",
+    "collection": "Classico",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breguet-classique",
+    "brandId": "br-breguet",
+    "name": "Classique",
+    "collection": "Classique",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-nomos-club",
+    "brandId": "br-nomos",
+    "name": "Club",
+    "collection": "Club",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-audemars-piguet-code-11-59",
+    "brandId": "br-audemars-piguet",
+    "name": "Code 11.59",
+    "collection": "Code 11.59",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-philippe-complications",
+    "brandId": "br-patek-philippe",
+    "name": "Complications",
+    "collection": "Complications",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-omega-constellation",
+    "brandId": "br-omega",
+    "name": "Constellation",
+    "collection": "Constellation",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-datejust",
+    "brandId": "br-rolex",
+    "name": "Datejust",
+    "collection": "Datejust",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-daytona",
+    "brandId": "br-rolex",
+    "name": "Daytona",
+    "collection": "Daytona",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-zenith-defy",
+    "brandId": "br-zenith",
+    "name": "Defy",
+    "collection": "Defy",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ulysse-nardin-diver",
+    "brandId": "br-ulysse-nardin",
+    "name": "Diver",
+    "collection": "Diver",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-oris-divers-sixty-five",
+    "brandId": "br-oris",
+    "name": "Divers Sixty-Five",
+    "collection": "Divers Sixty-Five",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-drive",
+    "brandId": "br-cartier",
+    "name": "Drive",
+    "collection": "Drive",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-jaeger-lecoultre-duometre",
+    "brandId": "br-jaeger-lecoultre",
+    "name": "Duometre",
+    "collection": "Duometre",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-zenith-el-primero",
+    "brandId": "br-zenith",
+    "name": "El Primero",
+    "collection": "El Primero",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-grand-seiko-elegance",
+    "brandId": "br-grand-seiko",
+    "name": "Elegance",
+    "collection": "Elegance",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-f-p-journe-elegante",
+    "brandId": "br-f-p-journe",
+    "name": "Elegante",
+    "collection": "Elegante",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-h-moser-cie-endeavour",
+    "brandId": "br-h-moser-cie",
+    "name": "Endeavour",
+    "collection": "Endeavour",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-grand-seiko-evolution-9",
+    "brandId": "br-grand-seiko",
+    "name": "Evolution 9",
+    "collection": "Evolution 9",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-explorer",
+    "brandId": "br-rolex",
+    "name": "Explorer",
+    "collection": "Explorer",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-blancpain-fifty-fathoms",
+    "brandId": "br-blancpain",
+    "name": "Fifty Fathoms",
+    "collection": "Fifty Fathoms",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-vacheron-constantin-fiftysix",
+    "brandId": "br-vacheron-constantin",
+    "name": "Fiftysix",
+    "collection": "Fiftysix",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ulysse-nardin-freak",
+    "brandId": "br-ulysse-nardin",
+    "name": "Freak",
+    "collection": "Freak",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-gmt-master-ii",
+    "brandId": "br-rolex",
+    "name": "GMT-Master II",
+    "collection": "Professional",
+    "complication": "Dual Time",
+    "caseShape": "Round",
+    "launchYear": 1955
+  },
+  {
+    "id": "mdl-patek-philippe-gondolo",
+    "brandId": "br-patek-philippe",
+    "name": "Gondolo",
+    "collection": "Gondolo",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-philippe-grand-complications",
+    "brandId": "br-patek-philippe",
+    "name": "Grand Complications",
+    "collection": "Grand Complications",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-seiko-grand-seiko-evolution-9",
+    "brandId": "br-seiko",
+    "name": "Grand Seiko Evolution 9",
+    "collection": "Grand Seiko Evolution 9",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-seiko-grand-seiko-heritage",
+    "brandId": "br-seiko",
+    "name": "Grand Seiko Heritage",
+    "collection": "Grand Seiko Heritage",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-seiko-grand-seiko-sport",
+    "brandId": "br-seiko",
+    "name": "Grand Seiko Sport",
+    "collection": "Grand Seiko Sport",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-chopard-happy-sport",
+    "brandId": "br-chopard",
+    "name": "Happy Sport",
+    "collection": "Happy Sport",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-grand-seiko-heritage",
+    "brandId": "br-grand-seiko",
+    "name": "Heritage",
+    "collection": "Heritage",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-h-moser-cie-heritage",
+    "brandId": "br-h-moser-cie",
+    "name": "Heritage",
+    "collection": "Heritage",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-ingenieur",
+    "brandId": "br-iwc",
+    "name": "Ingenieur",
+    "collection": "Ingenieur",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-parmigiani-fleurier-kalpa",
+    "brandId": "br-parmigiani-fleurier",
+    "name": "Kalpa",
+    "collection": "Kalpa",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-chopard-l-u-c",
+    "brandId": "br-chopard",
+    "name": "L.U.C",
+    "collection": "L.U.C",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-a-lange-sohne-lange-1",
+    "brandId": "br-a-lange-sohne",
+    "name": "Lange 1",
+    "collection": "Lange 1",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-girard-perregaux-laureato",
+    "brandId": "br-girard-perregaux",
+    "name": "Laureato",
+    "collection": "Laureato",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-piaget-limelight-gala",
+    "brandId": "br-piaget",
+    "name": "Limelight Gala",
+    "collection": "Limelight Gala",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-panerai-luminor",
+    "brandId": "br-panerai",
+    "name": "Luminor",
+    "collection": "Luminor",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-panerai-luminor-due",
+    "brandId": "br-panerai",
+    "name": "Luminor Due",
+    "collection": "Luminor Due",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-panerai-luminor-marina",
+    "brandId": "br-panerai",
+    "name": "Luminor Marina",
+    "collection": "Luminor",
+    "complication": "Diver",
+    "caseShape": "Cushion",
+    "launchYear": 1950
+  },
+  {
+    "id": "mdl-breguet-marine",
+    "brandId": "br-breguet",
+    "name": "Marine",
+    "collection": "Marine",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ulysse-nardin-marine",
+    "brandId": "br-ulysse-nardin",
+    "name": "Marine",
+    "collection": "Marine",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breguet-marine-5517",
+    "brandId": "br-breguet",
+    "name": "Marine 5517",
+    "collection": "Marine 5517",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-jlc-master-ultra-thin",
+    "brandId": "br-jaeger-lecoultre",
+    "name": "Master Ultra Thin",
+    "collection": "Master",
+    "complication": "Dress",
+    "caseShape": "Round",
+    "launchYear": 1993
+  },
+  {
+    "id": "mdl-nomos-metro",
+    "brandId": "br-nomos",
+    "name": "Metro",
+    "collection": "Metro",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-chopard-mille-miglia",
+    "brandId": "br-chopard",
+    "name": "Mille Miglia",
+    "collection": "Mille Miglia",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-audemars-piguet-millenary",
+    "brandId": "br-audemars-piguet",
+    "name": "Millenary",
+    "collection": "Millenary",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tag-heuer-monaco",
+    "brandId": "br-tag-heuer",
+    "name": "Monaco",
+    "collection": "Monaco",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-nautilus",
+    "brandId": "br-patek-philippe",
+    "name": "Nautilus",
+    "collection": "Nautilus",
+    "complication": "Sports",
+    "caseShape": "Rounded Octagon",
+    "launchYear": 1976
+  },
+  {
+    "id": "mdl-breitling-navitimer",
+    "brandId": "br-breitling",
+    "name": "Navitimer",
+    "collection": "Navitimer",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-f-p-journe-octa",
+    "brandId": "br-f-p-journe",
+    "name": "Octa",
+    "collection": "Octa",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-a-lange-sohne-odysseus",
+    "brandId": "br-a-lange-sohne",
+    "name": "Odysseus",
+    "collection": "Odysseus",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-vc-overseas",
+    "brandId": "br-vacheron-constantin",
+    "name": "Overseas",
+    "collection": "Overseas",
+    "complication": "Sports",
+    "caseShape": "Round",
+    "launchYear": 1996
+  },
+  {
+    "id": "mdl-glashutte-original-panomatic",
+    "brandId": "br-glashutte-original",
+    "name": "PanoMatic",
+    "collection": "PanoMatic",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-panthere",
+    "brandId": "br-cartier",
+    "name": "Panthere",
+    "collection": "Panthere",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-vc-patrimony",
+    "brandId": "br-vacheron-constantin",
+    "name": "Patrimony",
+    "collection": "Patrimony",
+    "complication": "Dress",
+    "caseShape": "Round",
+    "launchYear": 2004
+  },
+  {
+    "id": "mdl-tudor-pelagos",
+    "brandId": "br-tudor",
+    "name": "Pelagos",
+    "collection": "Pelagos",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-tudor-pelagos-39",
+    "brandId": "br-tudor",
+    "name": "Pelagos 39",
+    "collection": "Pelagos",
+    "complication": "Diver",
+    "caseShape": "Round",
+    "launchYear": 2022
+  },
+  {
+    "id": "mdl-zenith-pilot",
+    "brandId": "br-zenith",
+    "name": "Pilot",
+    "collection": "Pilot",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-pilot-s-watch",
+    "brandId": "br-iwc",
+    "name": "Pilot's Watch",
+    "collection": "Pilot's Watch",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-h-moser-cie-pioneer",
+    "brandId": "br-h-moser-cie",
+    "name": "Pioneer",
+    "collection": "Pioneer",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-jaeger-lecoultre-polaris",
+    "brandId": "br-jaeger-lecoultre",
+    "name": "Polaris",
+    "collection": "Polaris",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-piaget-polo",
+    "brandId": "br-piaget",
+    "name": "Polo",
+    "collection": "Polo",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-portofino",
+    "brandId": "br-iwc",
+    "name": "Portofino",
+    "collection": "Portofino",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-portugieser",
+    "brandId": "br-iwc",
+    "name": "Portugieser",
+    "collection": "Portugieser",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-iwc-portugieser-chrono",
+    "brandId": "br-iwc",
+    "name": "Portugieser Chronograph",
+    "collection": "Portugieser",
+    "complication": "Chronograph",
+    "caseShape": "Round",
+    "launchYear": 1998
+  },
+  {
+    "id": "mdl-breitling-premier",
+    "brandId": "br-breitling",
+    "name": "Premier",
+    "collection": "Premier",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-seiko-presage",
+    "brandId": "br-seiko",
+    "name": "Presage",
+    "collection": "Presage",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-oris-propilot",
+    "brandId": "br-oris",
+    "name": "ProPilot",
+    "collection": "ProPilot",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-seiko-prospex",
+    "brandId": "br-seiko",
+    "name": "Prospex",
+    "collection": "Prospex",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-panerai-radiomir",
+    "brandId": "br-panerai",
+    "name": "Radiomir",
+    "collection": "Radiomir",
+    "complication": "Time Only",
+    "caseShape": "Cushion",
+    "launchYear": 1936
+  },
+  {
+    "id": "mdl-tudor-ranger",
+    "brandId": "br-tudor",
+    "name": "Ranger",
+    "collection": "Ranger",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-jaeger-lecoultre-reverso",
+    "brandId": "br-jaeger-lecoultre",
+    "name": "Reverso",
+    "collection": "Reverso",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-jlc-reverso-tribute",
+    "brandId": "br-jaeger-lecoultre",
+    "name": "Reverso Tribute",
+    "collection": "Reverso",
+    "complication": "Time Only",
+    "caseShape": "Rectangle",
+    "launchYear": 1931
+  },
+  {
+    "id": "mdl-richard-mille-rm-011",
+    "brandId": "br-richard-mille",
+    "name": "RM 011",
+    "collection": "RM 011",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-richard-mille-rm-035",
+    "brandId": "br-richard-mille",
+    "name": "RM 035",
+    "collection": "RM 035",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-richard-mille-rm-055",
+    "brandId": "br-richard-mille",
+    "name": "RM 055",
+    "collection": "RM 055",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-richard-mille-rm-11-03",
+    "brandId": "br-richard-mille",
+    "name": "RM 11-03",
+    "collection": "RM 11-03",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-richard-mille-rm-67",
+    "brandId": "br-richard-mille",
+    "name": "RM 67",
+    "collection": "RM 67",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-ronde",
+    "brandId": "br-cartier",
+    "name": "Ronde",
+    "collection": "Ronde",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ap-royal-oak",
+    "brandId": "br-audemars-piguet",
+    "name": "Royal Oak",
+    "collection": "Royal Oak",
+    "complication": "Sports",
+    "caseShape": "Octagon",
+    "launchYear": 1972
+  },
+  {
+    "id": "mdl-audemars-piguet-royal-oak-concept",
+    "brandId": "br-audemars-piguet",
+    "name": "Royal Oak Concept",
+    "collection": "Royal Oak Concept",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-ap-royal-oak-offshore",
+    "brandId": "br-audemars-piguet",
+    "name": "Royal Oak Offshore",
+    "collection": "Royal Oak Offshore",
+    "complication": "Chronograph",
+    "caseShape": "Octagon",
+    "launchYear": 1993
+  },
+  {
+    "id": "mdl-cartier-santos",
+    "brandId": "br-cartier",
+    "name": "Santos",
+    "collection": "Santos",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-santos-medium",
+    "brandId": "br-cartier",
+    "name": "Santos de Cartier",
+    "collection": "Santos",
+    "complication": "Time and Date",
+    "caseShape": "Square",
+    "launchYear": 1904
+  },
+  {
+    "id": "mdl-a-lange-sohne-saxonia",
+    "brandId": "br-a-lange-sohne",
+    "name": "Saxonia",
+    "collection": "Saxonia",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-sea-dweller",
+    "brandId": "br-rolex",
+    "name": "Sea-Dweller",
+    "collection": "Sea-Dweller",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-omega-seamaster-diver-300m",
+    "brandId": "br-omega",
+    "name": "Seamaster Diver 300M",
+    "collection": "Seamaster",
+    "complication": "Diver",
+    "caseShape": "Round",
+    "launchYear": 1993
+  },
+  {
+    "id": "mdl-omega-seamaster-planet-ocean",
+    "brandId": "br-omega",
+    "name": "Seamaster Planet Ocean",
+    "collection": "Seamaster Planet Ocean",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-glashutte-original-seaq",
+    "brandId": "br-glashutte-original",
+    "name": "SeaQ",
+    "collection": "SeaQ",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-glashutte-original-senator",
+    "brandId": "br-glashutte-original",
+    "name": "Senator",
+    "collection": "Senator",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-glashutte-original-sixties",
+    "brandId": "br-glashutte-original",
+    "name": "Sixties",
+    "collection": "Sixties",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-sky-dweller",
+    "brandId": "br-rolex",
+    "name": "Sky-Dweller",
+    "collection": "Sky-Dweller",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-grand-seiko-snowflake",
+    "brandId": "br-grand-seiko",
+    "name": "Snowflake",
+    "collection": "Snowflake",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-omega-speedmaster",
+    "brandId": "br-omega",
+    "name": "Speedmaster",
+    "collection": "Speedmaster",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-omega-speedmaster-professional",
+    "brandId": "br-omega",
+    "name": "Speedmaster Professional",
+    "collection": "Speedmaster",
+    "complication": "Chronograph",
+    "caseShape": "Round",
+    "launchYear": 1957
+  },
+  {
+    "id": "mdl-hublot-spirit-of-big-bang",
+    "brandId": "br-hublot",
+    "name": "Spirit of Big Bang",
+    "collection": "Spirit of Big Bang",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-grand-seiko-sport",
+    "brandId": "br-grand-seiko",
+    "name": "Sport",
+    "collection": "Sport",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-h-moser-cie-streamliner",
+    "brandId": "br-h-moser-cie",
+    "name": "Streamliner",
+    "collection": "Streamliner",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-submariner",
+    "brandId": "br-rolex",
+    "name": "Submariner",
+    "collection": "Submariner",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-submariner-date",
+    "brandId": "br-rolex",
+    "name": "Submariner Date",
+    "collection": "Professional",
+    "complication": "Diver",
+    "caseShape": "Round",
+    "launchYear": 1953
+  },
+  {
+    "id": "mdl-panerai-submersible",
+    "brandId": "br-panerai",
+    "name": "Submersible",
+    "collection": "Submersible",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breitling-superocean",
+    "brandId": "br-breitling",
+    "name": "Superocean",
+    "collection": "Superocean",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-nomos-tangente",
+    "brandId": "br-nomos",
+    "name": "Tangente",
+    "collection": "Tangente",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-tank",
+    "brandId": "br-cartier",
+    "name": "Tank",
+    "collection": "Tank",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-cartier-tank-louis",
+    "brandId": "br-cartier",
+    "name": "Tank Louis Cartier",
+    "collection": "Tank",
+    "complication": "Time Only",
+    "caseShape": "Rectangle",
+    "launchYear": 1917
+  },
+  {
+    "id": "mdl-parmigiani-fleurier-tonda",
+    "brandId": "br-parmigiani-fleurier",
+    "name": "Tonda",
+    "collection": "Tonda",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-parmigiani-fleurier-toric",
+    "brandId": "br-parmigiani-fleurier",
+    "name": "Toric",
+    "collection": "Toric",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-f-p-journe-tourbillon",
+    "brandId": "br-f-p-journe",
+    "name": "Tourbillon",
+    "collection": "Tourbillon",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breguet-tradition",
+    "brandId": "br-breguet",
+    "name": "Tradition",
+    "collection": "Tradition",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-vacheron-constantin-traditionnelle",
+    "brandId": "br-vacheron-constantin",
+    "name": "Traditionnelle",
+    "collection": "Traditionnelle",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-patek-philippe-twenty-4",
+    "brandId": "br-patek-philippe",
+    "name": "Twenty~4",
+    "collection": "Twenty~4",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-breguet-type-xx",
+    "brandId": "br-breguet",
+    "name": "Type XX",
+    "collection": "Type XX",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-blancpain-villeret",
+    "brandId": "br-blancpain",
+    "name": "Villeret",
+    "collection": "Villeret",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  },
+  {
+    "id": "mdl-rolex-yacht-master",
+    "brandId": "br-rolex",
+    "name": "Yacht-Master",
+    "collection": "Yacht-Master",
+    "complication": null,
+    "caseShape": null,
+    "launchYear": null
+  }
+]

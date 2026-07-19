@@ -1,0 +1,14 @@
+[
+  {
+    "id": "avail-in-stock",
+    "label": "In Stock"
+  },
+  {
+    "id": "avail-on-hold",
+    "label": "On Hold"
+  },
+  {
+    "id": "avail-reserved",
+    "label": "Reserved"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "mov-automatic",
+    "label": "Automatic"
+  },
+  {
+    "id": "mov-manual",
+    "label": "Manual"
+  },
+  {
+    "id": "mov-quartz",
+    "label": "Quartz"
+  },
+  {
+    "id": "mov-spring-drive",
+    "label": "Spring Drive"
+  }
+]

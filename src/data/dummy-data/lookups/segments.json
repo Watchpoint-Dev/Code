@@ -1,0 +1,30 @@
+[
+  {
+    "id": "seg-chronograph",
+    "label": "Chronograph"
+  },
+  {
+    "id": "seg-complications",
+    "label": "Complications"
+  },
+  {
+    "id": "seg-diver",
+    "label": "Diver"
+  },
+  {
+    "id": "seg-dress",
+    "label": "Dress"
+  },
+  {
+    "id": "seg-everyday",
+    "label": "Everyday"
+  },
+  {
+    "id": "seg-sports",
+    "label": "Sports"
+  },
+  {
+    "id": "seg-travel",
+    "label": "Travel"
+  }
+]

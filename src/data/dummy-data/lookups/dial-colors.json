@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dial-black",
+    "label": "Black"
+  },
+  {
+    "id": "dial-blue",
+    "label": "Blue"
+  },
+  {
+    "id": "dial-brown",
+    "label": "Brown"
+  },
+  {
+    "id": "dial-champagne",
+    "label": "Champagne"
+  },
+  {
+    "id": "dial-green",
+    "label": "Green"
+  },
+  {
+    "id": "dial-grey",
+    "label": "Grey"
+  },
+  {
+    "id": "dial-silver",
+    "label": "Silver"
+  },
+  {
+    "id": "dial-skeleton",
+    "label": "Skeleton"
+  },
+  {
+    "id": "dial-slate",
+    "label": "Slate"
+  },
+  {
+    "id": "dial-white",
+    "label": "White"
+  }
+]

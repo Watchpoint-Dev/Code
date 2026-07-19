@@ -1,0 +1,98 @@
+[
+  {
+    "id": "loc-atlanta-usa",
+    "label": "Atlanta, USA"
+  },
+  {
+    "id": "loc-austin-usa",
+    "label": "Austin, USA"
+  },
+  {
+    "id": "loc-berlin-de",
+    "label": "Berlin, DE"
+  },
+  {
+    "id": "loc-boston-usa",
+    "label": "Boston, USA"
+  },
+  {
+    "id": "loc-chicago-usa",
+    "label": "Chicago, USA"
+  },
+  {
+    "id": "loc-dallas-usa",
+    "label": "Dallas, USA"
+  },
+  {
+    "id": "loc-denver-usa",
+    "label": "Denver, USA"
+  },
+  {
+    "id": "loc-dubai-ae",
+    "label": "Dubai, AE"
+  },
+  {
+    "id": "loc-geneva-ch",
+    "label": "Geneva, CH"
+  },
+  {
+    "id": "loc-hong-kong-hk",
+    "label": "Hong Kong, HK"
+  },
+  {
+    "id": "loc-las-vegas-usa",
+    "label": "Las Vegas, USA"
+  },
+  {
+    "id": "loc-london-uk",
+    "label": "London, UK"
+  },
+  {
+    "id": "loc-los-angeles-usa",
+    "label": "Los Angeles, USA"
+  },
+  {
+    "id": "loc-madrid-es",
+    "label": "Madrid, ES"
+  },
+  {
+    "id": "loc-miami-usa",
+    "label": "Miami, USA"
+  },
+  {
+    "id": "loc-naples-it",
+    "label": "Naples, IT"
+  },
+  {
+    "id": "loc-new-york-usa",
+    "label": "New York, USA"
+  },
+  {
+    "id": "loc-paris-fr",
+    "label": "Paris, FR"
+  },
+  {
+    "id": "loc-portland-usa",
+    "label": "Portland, USA"
+  },
+  {
+    "id": "loc-san-francisco-usa",
+    "label": "San Francisco, USA"
+  },
+  {
+    "id": "loc-seattle-usa",
+    "label": "Seattle, USA"
+  },
+  {
+    "id": "loc-tokyo-jp",
+    "label": "Tokyo, JP"
+  },
+  {
+    "id": "loc-toronto-ca",
+    "label": "Toronto, CA"
+  },
+  {
+    "id": "loc-zurich-ch",
+    "label": "Zurich, CH"
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "lastUpdated": "2026-03-11T09:30:00Z",
+  "indices": [
+    {
+      "id": "watch-50",
+      "name": "Watch 50",
+      "value": 184.7,
+      "changePoints": 2.4,
+      "changePct": 1.32,
+      "timeframe": "1D"
+    },
+    {
+      "id": "sports-steel",
+      "name": "Sports Steel",
+      "value": 201.9,
+      "changePoints": -1.1,
+      "changePct": -0.54,
+      "timeframe": "1D"
+    },
+    {
+      "id": "independent-makers",
+      "name": "Independent Makers",
+      "value": 142.3,
+      "changePoints": 3.8,
+      "changePct": 2.74,
+      "timeframe": "1D"
+    },
+    {
+      "id": "vintage-icons",
+      "name": "Vintage Icons",
+      "value": 167.8,
+      "changePoints": 0.9,
+      "changePct": 0.54,
+      "timeframe": "1D"
+    },
+    {
+      "id": "dress-classics",
+      "name": "Dress Classics",
+      "value": 126.1,
+      "changePoints": -0.4,
+      "changePct": -0.32,
+      "timeframe": "1D"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "All News",
+      "slug": "all-news"
+    },
+    {
+      "id": "market-moves",
+      "label": "Market Moves",
+      "slug": "market-moves"
+    },
+    {
+      "id": "brand-updates",
+      "label": "Brand Updates",
+      "slug": "brand-updates"
+    },
+    {
+      "id": "auctions",
+      "label": "Auctions",
+      "slug": "auctions"
+    },
+    {
+      "id": "retail",
+      "label": "Retail",
+      "slug": "retail"
+    },
+    {
+      "id": "analysis",
+      "label": "Analysis",
+      "slug": "analysis"
+    }
+  ],
+  "leadStory": {
+    "id": "lead-001",
+    "category": "Market Moves",
+    "title": "Secondary prices rebound as spring allocations tighten across major retailers",
+    "summary": "Trading desks report stronger bid depth this week, with sports references and independent releases leading intraday gains while overall inventory turnover improves.",
+    "source": "WatchDesk Intelligence",
+    "publishedAt": "2026-03-11T08:15:00Z",
+    "readTimeMinutes": 6
+  },
+  "topStories": [
+    {
+      "id": "story-001",
+      "category": "Brand Updates",
+      "title": "Rolex and Omega waitlists stretch in key U.S. metro stores",
+      "summary": "Authorized dealers in New York, Los Angeles, and Miami report lower near-term allocation visibility through early Q2.",
+      "source": "Retail Wire",
+      "publishedAt": "2026-03-11T07:50:00Z",
+      "readTimeMinutes": 4
+    },
+    {
+      "id": "story-002",
+      "category": "Auctions",
+      "title": "Geneva pre-sale estimates revised higher for neo-vintage chronographs",
+      "summary": "Two houses raised estimate bands after private previews drew higher absentee bidding activity than expected.",
+      "source": "Auction Monitor",
+      "publishedAt": "2026-03-11T06:40:00Z",
+      "readTimeMinutes": 3
+    },
+    {
+      "id": "story-003",
+      "category": "Analysis",
+      "title": "Why steel integrated-bracelet models still dominate liquidity",
+      "summary": "Order-book data shows narrower spreads and faster exits for steel sport watches compared with precious metal counterparts.",
+      "source": "Market Pulse",
+      "publishedAt": "2026-03-10T23:30:00Z",
+      "readTimeMinutes": 5
+    },
+    {
+      "id": "story-004",
+      "category": "Retail",
+      "title": "Concierge channels gain share in high-ticket private transactions",
+      "summary": "Large independent dealers are seeing rising conversion rates from one-to-one client advisory flows.",
+      "source": "Dealer Daily",
+      "publishedAt": "2026-03-10T21:10:00Z",
+      "readTimeMinutes": 4
+    },
+    {
+      "id": "story-005",
+      "category": "Market Moves",
+      "title": "Patek references post mixed session as buyers rotate to lower spread listings",
+      "summary": "Top-end pieces softened while mid-range references captured most of the day’s completed volume.",
+      "source": "Trade Ledger",
+      "publishedAt": "2026-03-10T19:05:00Z",
+      "readTimeMinutes": 4
+    },
+    {
+      "id": "story-006",
+      "category": "Analysis",
+      "title": "Liquidity watch: what March bid-ask compression signals for Q2",
+      "summary": "Narrower spreads can indicate healthier participation, but depth concentration remains uneven across segments.",
+      "source": "Index Brief",
+      "publishedAt": "2026-03-10T16:55:00Z",
+      "readTimeMinutes": 6
+    }
+  ]
+}

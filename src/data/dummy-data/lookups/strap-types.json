@@ -1,0 +1,42 @@
+[
+  {
+    "id": "strap-integrated-bracelet",
+    "label": "Integrated Bracelet"
+  },
+  {
+    "id": "strap-jubilee-bracelet",
+    "label": "Jubilee bracelet"
+  },
+  {
+    "id": "strap-leather",
+    "label": "Leather"
+  },
+  {
+    "id": "strap-leather-strap",
+    "label": "Leather Strap"
+  },
+  {
+    "id": "strap-oyster-bracelet",
+    "label": "Oyster bracelet"
+  },
+  {
+    "id": "strap-rubber",
+    "label": "Rubber"
+  },
+  {
+    "id": "strap-rubber-strap",
+    "label": "Rubber Strap"
+  },
+  {
+    "id": "strap-steel-bracelet",
+    "label": "Steel bracelet"
+  },
+  {
+    "id": "strap-titanium-bracelet",
+    "label": "Titanium bracelet"
+  },
+  {
+    "id": "strap-tropical-strap",
+    "label": "Tropical strap"
+  }
+]
