@@ -1,6 +1,45 @@
 # Watchpoint
 
-Local app workspace.
+Watch data platform — Next.js (App Router) + TypeScript, Clerk auth, Neon (Postgres).
+
+## Getting started (local development)
+
+Requirements: **Node.js 20+** and **npm** (this project standardizes on npm — do
+not use bun/pnpm).
+
+```bash
+npm install            # install dependencies
+cp .env.example .env.local   # then fill in the values (see below)
+npm run dev            # start the dev server on http://localhost:3000
+```
+
+Useful scripts:
+
+```bash
+npm run build       # production build
+npm run typecheck   # TypeScript check
+npm run lint        # ESLint
+```
+
+### Environment variables
+
+Copy `.env.example` to `.env.local` and fill in your own values (never commit
+`.env.local` — it is git-ignored):
+
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` — from the Clerk dashboard (API Keys)
+- `CLERK_SECRET_KEY` — from the Clerk dashboard (API Keys)
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL` = `/sign-in`
+- `NEXT_PUBLIC_CLERK_SIGN_UP_URL` = `/sign-up`
+- `DATABASE_URL` — Neon connection string (pooled)
+
+### Branches & deployment
+
+- `main` → production (auto-deploys to Vercel).
+- `dev` → shared testing branch (Vercel preview). Work on a feature branch, open
+  a pull request into `dev`/`main`, get it reviewed, then merge.
+
+> Note: watch/price data shown in the UI is still **dummy JSON** (`src/data/`).
+> Only auth + user records are real (in Neon). Real data pipeline comes later.
 
 ## Clerk + Neon Authentication
 
