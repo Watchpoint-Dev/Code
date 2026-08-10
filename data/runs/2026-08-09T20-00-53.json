@@ -1,0 +1,39 @@
+{
+ "run": "2026-08-09T20-00-53",
+ "collected_at": "2026-08-09T18:00:53+00:00",
+ "sources": [
+  {
+   "id": "bezel",
+   "name": "Bezel",
+   "type": "marketplace",
+   "price_nature": "asking",
+   "access": "__NEXT_DATA__ pageProps.listings",
+   "robots": "OK — seul '?searchQuery=' est interdit, on passe par le sitemap",
+   "records": 89,
+   "nouveaux": 0,
+   "requetes_http": 42,
+   "periode": [
+    "2022-05-24",
+    "2026-07-22"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 100,
+    "year": 0,
+    "case_material": 100,
+    "movement": 100
+   },
+   "erreur": null,
+   "journal": [
+    "40 pages modele a visiter",
+    "89 annonces extraites"
+   ]
+  }
+ ],
+ "total_records": 89,
+ "total_nouveaux": 0
+}

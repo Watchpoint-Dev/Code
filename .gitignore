@@ -1,0 +1,18 @@
+.venv/
+shared/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# secrets et tokens — jamais commites
+.env
+.token.json
+
+# Volumineux et regenerables : on garde sur le disque, pas dans l'historique.
+data/raw/
+preuves/
+essais/*/samples/
+
+# En revanche data/price_points.jsonl EST versionne : c'est le seul actif
+# irremplacable du labo. Un prix releve le 9 aout ne se recollecte pas — la
+# source aura change. Il pese 1,7 Mo, l'historique le supportera longtemps.

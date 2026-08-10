@@ -1,0 +1,9 @@
+# Environnement du labo data-sourcing (local)
+requests>=2.32
+beautifulsoup4>=4.12
+lxml>=5.2
+pandas>=2.2
+
+# Optionnel — pour les sites qui chargent en JavaScript (a installer si besoin):
+#   pip install playwright && playwright install chromium
+# playwright>=1.45
