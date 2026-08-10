@@ -66,7 +66,7 @@ def collect(cap: int = 600):
             break
         for page in PAGES:
             resp = get(BASE, params={"brand": requete, "current_page": page}, pause=1.2)
-            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text[:300_000]})
+            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text})
             if resp.status_code != 200:
                 journal.append(f"{requete} p{page}: HTTP {resp.status_code}")
                 break
@@ -109,4 +109,8 @@ def collect(cap: int = 600):
             if not annonces:
                 break
 
+    # Un plafond atteint = collecte partielle. Le dire, sinon le chiffre passe
+    # pour un total alors qu'il est un plancher.
+    if len(records) >= cap:
+        journal.append(f"TRONQUE: plafond de {cap} atteint — il reste des donnees a prendre")
     return raw, records[:cap], journal

@@ -94,6 +94,26 @@ def main() -> None:
           f"{taux(sous,'price_date')} % | {taux(sous,'brand')} % | {taux(sous,'reference')} % |")
     A("")
 
+    # Une mediane qui melange USD et HKD ne veut rien dire : on ventile.
+    A("## Montants, par source ET par devise")
+    A("")
+    A("| Source | Devise | Prix | Médiane | Min | Max |")
+    A("|---|---|---:|---:|---:|---:|")
+    couples = collections.Counter((r["source_id"], r.get("price_currency"))
+                                  for r in lignes if r.get("price_amount"))
+    for (src, dev), n in sorted(couples.items(), key=lambda x: (x[0][0], -x[1])):
+        m = sorted(r["price_amount"] for r in lignes
+                   if r["source_id"] == src and r.get("price_currency") == dev
+                   and r.get("price_amount"))
+        if not m:
+            continue
+        A(f"| {src} | {dev or '_manquante_'} | {n} | {m[len(m)//2]:,.0f} | "
+          f"{m[0]:,.0f} | {m[-1]:,.0f} |".replace(",", " "))
+    A("")
+    A("**Ne jamais comparer deux lignes de devises différentes.** Aucune conversion "
+      "n'est appliquée : les montants sont ceux de la source.")
+    A("")
+
     A("## Par nature de prix")
     A("")
     A("| Nature | Prix |")

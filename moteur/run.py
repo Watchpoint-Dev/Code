@@ -67,6 +67,8 @@ def main() -> None:
 
     manifeste = {"run": horodatage, "collected_at": instant, "sources": []}
     nouveaux_total = 0
+    silencieuses: list[str] = []   # sources vivantes qui n'ont rien ramene
+    plantees: list[str] = []       # sources qui ont leve une exception
 
     for module in modules:
         meta = module.SOURCE
@@ -74,8 +76,9 @@ def main() -> None:
         try:
             raw, records, journal = module.collect()
             erreur = None
-        except Exception as exc:  # une source qui casse ne doit pas tuer le run
+        except Exception as exc:  # une source qui casse ne doit pas tuer le run...
             raw, records, journal, erreur = [], [], [], f"{type(exc).__name__}: {exc}"
+            plantees.append(meta["name"])       # ...mais elle doit etre criee a la fin
             print(f"    ECHEC — {erreur}")
 
         for record in records:
@@ -104,6 +107,13 @@ def main() -> None:
         nouveaux_total += len(nouveaux)
 
         dates = sorted(r["price_date"] for r in records if r.get("price_date"))
+        # Une source qu'on sait bloquee (anti-bot) n'est pas une anomalie ;
+        # une source vivante qui ne ramene rien en est une.
+        bloquee = "statut" in meta
+        muette = not records and not bloquee
+        if muette:
+            silencieuses.append(meta["name"])
+
         resume = {
             "id": meta["id"], "name": meta["name"], "type": meta["type"],
             "price_nature": meta["price_nature"], "access": meta["access"],
@@ -113,6 +123,9 @@ def main() -> None:
             "periode": [dates[0], dates[-1]] if dates else None,
             "completude": completeness(records, CLES_COMPLETUDE),
             "erreur": erreur, "journal": journal,
+            "bloquee_connue": bloquee, "silencieuse": muette,
+            # un adaptateur signale son plafond par une ligne de journal "TRONQUE:"
+            "tronque": any(str(l).startswith("TRONQUE") for l in journal),
         }
         manifeste["sources"].append(resume)
 
@@ -149,6 +162,27 @@ def main() -> None:
 
     print(f"\ncumul : {CUMUL.relative_to(DATA.parent)} — {len(deja_vu)} prix au total")
     print(f"manifeste : data/runs/{horodatage}.json")
+
+    # ---- alarme : un run muet ne doit JAMAIS passer pour un succes.
+    # Une source qui casse en silence produit une base partielle qu'on croit
+    # complete — c'est le pire des deux mondes. On sort en erreur pour que
+    # l'appelant (toi, ou un cron) le voie.
+    tronquees = [s["name"] for s in manifeste["sources"] if s.get("tronque")]
+    if tronquees:
+        print(f"\nATTENTION — collecte TRONQUEE (plafond atteint) : {', '.join(tronquees)}")
+        print("  la base est partielle sur ces sources ; augmente le cap si besoin.")
+
+    if silencieuses or plantees:
+        print("\n" + "!" * 78)
+        if plantees:
+            print(f"ECHEC — {len(plantees)} source(s) en erreur : {', '.join(plantees)}")
+        if silencieuses:
+            print(f"ECHEC — {len(silencieuses)} source(s) vivante(s) n'ont RIEN ramene : "
+                  f"{', '.join(silencieuses)}")
+            print("  soit le site a change, soit l'adaptateur est casse. Ne pas se fier")
+            print("  aux chiffres de ce run tant que ce n'est pas elucide.")
+        print("!" * 78)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

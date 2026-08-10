@@ -42,7 +42,7 @@ def collect(cap: int = 400):
     records: list[dict] = []
 
     index = get(SITEMAP, pause=1.0)
-    raw.append({"url": index.url, "status": index.status_code, "payload": index.text[:200_000]})
+    raw.append({"url": index.url, "status": index.status_code, "payload": index.text})
     if index.status_code != 200:
         journal.append(f"sitemap: HTTP {index.status_code}")
         return raw, records, journal
@@ -52,16 +52,34 @@ def collect(cap: int = 400):
         journal.append("aucun sitemap de modeles")
         return raw, records, journal
 
-    pages = get(sous_sitemaps[0], pause=1.2)
-    raw.append({"url": pages.url, "status": pages.status_code, "payload": pages.text[:200_000]})
-    urls_modeles = re.findall(r"<loc>([^<]+/watches/[^<]+)</loc>", pages.text)[:MODELES_MAX]
-    journal.append(f"{len(urls_modeles)} pages modele a visiter")
+    # On lit TOUS les sous-sitemaps, puis on echantillonne A PAS REGULIER sur la
+    # liste complete. Prendre les N premieres URLs du shard 0 donnait 89 annonces
+    # dont 81 Patek : la mediane qui en sortait (131 070 USD) etait un artefact
+    # d'echantillonnage, et elle est partie dans un document partage.
+    journal.append(f"{len(sous_sitemaps)} sous-sitemaps de modeles")
+    toutes: list[str] = []
+    for sitemap in sous_sitemaps:
+        pages = get(sitemap, pause=1.2)
+        raw.append({"url": pages.url, "status": pages.status_code, "payload": pages.text})
+        if pages.status_code != 200:
+            journal.append(f"sous-sitemap {sitemap.rsplit('/', 1)[-1]}: HTTP {pages.status_code}")
+            continue
+        toutes += re.findall(r"<loc>([^<]+/watches/[^<]+)</loc>", pages.text)
+
+    if not toutes:
+        journal.append("aucune page modele trouvee dans les sous-sitemaps")
+        return raw, records, journal
+
+    pas = max(1, len(toutes) // MODELES_MAX)
+    urls_modeles = toutes[::pas][:MODELES_MAX]
+    journal.append(f"{len(toutes)} modeles au catalogue — echantillon regulier "
+                   f"de {len(urls_modeles)} (1 sur {pas})")
 
     for url in urls_modeles:
         if len(records) >= cap:
             break
         resp = get(url, pause=1.2)
-        raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text[:200_000]})
+        raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text})
         if resp.status_code != 200:
             continue
         data = _next_data(resp.text)
@@ -96,4 +114,8 @@ def collect(cap: int = 400):
             ))
 
     journal.append(f"{len(records)} annonces extraites")
+    # Un plafond atteint = collecte partielle. Le dire, sinon le chiffre passe
+    # pour un total alors qu'il est un plancher.
+    if len(records) >= cap:
+        journal.append(f"TRONQUE: plafond de {cap} atteint — il reste des donnees a prendre")
     return raw, records[:cap], journal

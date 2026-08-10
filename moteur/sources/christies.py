@@ -25,7 +25,9 @@ CALENDAR = "https://www.christies.com/api/discoverywebsite/auctioncalendar/aucti
 LOTSEARCH = "https://www.christies.com/api/discoverywebsite/auctionpages/lotsearch"
 
 YEARS = (2026, 2025, 2024)
-MONTHS = (3, 6, 9, 12)
+# Les 12 mois : echantillonner 4 mois ne ramenait que 5 ventes montres sur les 14
+# de 2025, soit ~36 % du "socle historique" — sans que rien ne le signale.
+MONTHS = tuple(range(1, 13))
 PAGES_PAR_VENTE = 2
 TAILLE_PAGE = 84
 
@@ -83,7 +85,7 @@ def _ventes_montres(raw, journal):
         for month in MONTHS:
             params = {"language": "en", "month": month, "year": year, "component": COMPONENT}
             resp = get(CALENDAR, params=params, pause=1.0)
-            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text[:400_000]})
+            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text})
             if resp.status_code != 200:
                 journal.append(f"calendrier {month}/{year}: HTTP {resp.status_code}")
                 continue
@@ -119,7 +121,7 @@ def collect(cap: int = 800):
             params = {"language": "en", "saleid": vente["sale_id"], "salenumber": vente["sale_number"],
                       "page": page, "pagesize": TAILLE_PAGE, "saletype": "Sale", "component": COMPONENT}
             resp = get(LOTSEARCH, params=params, pause=1.2)
-            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text[:400_000]})
+            raw.append({"url": resp.url, "status": resp.status_code, "payload": resp.text})
             if resp.status_code != 200:
                 journal.append(f"lots {vente['sale_number']} p{page}: HTTP {resp.status_code}")
                 break
@@ -148,4 +150,8 @@ def collect(cap: int = 800):
             if len(lots) < TAILLE_PAGE or len(records) >= cap:
                 break
 
+    # Un plafond atteint = collecte partielle. Le dire, sinon le chiffre passe
+    # pour un total alors qu'il est un plancher.
+    if len(records) >= cap:
+        journal.append(f"TRONQUE: plafond de {cap} atteint — il reste des donnees a prendre")
     return raw, records[:cap], journal

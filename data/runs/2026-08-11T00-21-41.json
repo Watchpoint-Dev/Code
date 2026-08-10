@@ -1,0 +1,28 @@
+{
+ "run": "2026-08-11T00-21-41",
+ "collected_at": "2026-08-10T22:21:41+00:00",
+ "sources": [
+  {
+   "id": "liveauctioneers",
+   "name": "LiveAuctioneers",
+   "type": "aggregator",
+   "price_nature": "realised",
+   "access": "window.__data (price guide)",
+   "robots": "OK — robots interdit 'pagenum=', on utilise 'page=' ; /price-guide/ non liste",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 1,
+   "periode": null,
+   "completude": {},
+   "erreur": null,
+   "journal": [
+    "page 1: BLOQUE par l'anti-bot Incapsula (961 octets) — passer par la negociation"
+   ],
+   "bloquee_connue": true,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0
+}
