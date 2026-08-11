@@ -38,6 +38,21 @@ def _cle(record: dict) -> tuple:
             (record.get("title") or "")[:80])
 
 
+def _volumes_du_dernier_run() -> dict[str, int]:
+    """Ce que chaque source a rendu la derniere fois — la reference de comparaison."""
+    runs = sorted((DATA / "runs").glob("*.json")) if (DATA / "runs").exists() else []
+    for chemin in reversed(runs):
+        try:
+            manifeste = json.loads(chemin.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        volumes = {s["id"]: s["records"] for s in manifeste.get("sources", [])
+                   if s.get("records")}
+        if volumes:
+            return volumes
+    return {}
+
+
 def _cles_existantes() -> set[tuple]:
     if not CUMUL.exists():
         return set()
@@ -69,6 +84,8 @@ def main() -> None:
     nouveaux_total = 0
     silencieuses: list[str] = []   # sources vivantes qui n'ont rien ramene
     plantees: list[str] = []       # sources qui ont leve une exception
+    effondrees: list[tuple] = []   # sources dont le volume s'est effondre
+    derniers_volumes = _volumes_du_dernier_run()
 
     for module in modules:
         meta = module.SOURCE
@@ -113,6 +130,14 @@ def main() -> None:
         muette = not records and not bloquee
         if muette:
             silencieuses.append(meta["name"])
+
+        # Rendre 1 prix quand on en rendait 90 n'est pas un succes. L'alarme a zero
+        # laissait passer un adaptateur devenu inutile : Bezel est tombe de 89 a 1
+        # sans un mot, alors que 32 670 annonces restaient accessibles ailleurs.
+        precedent = derniers_volumes.get(meta["id"])
+        if (precedent and precedent >= 20 and len(records) < precedent * 0.3
+                and not bloquee):
+            effondrees.append((meta["name"], precedent, len(records)))
 
         resume = {
             "id": meta["id"], "name": meta["name"], "type": meta["type"],
@@ -172,7 +197,17 @@ def main() -> None:
         print(f"\nATTENTION — collecte TRONQUEE (plafond atteint) : {', '.join(tronquees)}")
         print("  la base est partielle sur ces sources ; augmente le cap si besoin.")
 
-    if silencieuses or plantees:
+    if effondrees:
+        print("\n" + "!" * 78)
+        for nom, avant, apres in effondrees:
+            chute = round(100 * (1 - apres / avant))
+            print(f"EFFONDREMENT — {nom} : {avant} -> {apres} prix ({chute} % de chute)")
+        print("  l'adaptateur rend encore quelque chose, mais bien trop peu :")
+        print("  le site a probablement change de structure. A verifier avant de se")
+        print("  fier a cette collecte.")
+        print("!" * 78)
+
+    if silencieuses or plantees or effondrees:
         print("\n" + "!" * 78)
         if plantees:
             print(f"ECHEC — {len(plantees)} source(s) en erreur : {', '.join(plantees)}")
@@ -182,6 +217,7 @@ def main() -> None:
             print("  soit le site a change, soit l'adaptateur est casse. Ne pas se fier")
             print("  aux chiffres de ce run tant que ce n'est pas elucide.")
         print("!" * 78)
+    if silencieuses or plantees or effondrees:
         sys.exit(1)
 
 

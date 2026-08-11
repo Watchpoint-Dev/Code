@@ -59,6 +59,7 @@ from utils import HEADERS  # noqa: E402
 HISTORIQUE = ICI.parent / "data" / "sonde.json"
 PAUSE = 1.5
 DELAI = 25
+PARALLELE = 8   # domaines sondes en meme temps (jamais deux requetes sur le meme)
 
 # Signatures d'anti-bot. On les DETECTE pour classer la source, jamais pour passer outre.
 ANTIB0T_DUR = {
@@ -105,10 +106,15 @@ def _get(url: str, **kw):
 def controle_robots(base: str) -> dict:
     """Lit robots.txt AVANT tout le reste. C'est la premiere regle de la maison."""
     r = _get(urllib.parse.urljoin(base, "/robots.txt"))
-    if r.status_code != 200:
-        # pas de robots.txt = rien d'interdit, mais on le note
-        return {"robots": "absent", "robots_ok": True, "crawl_delay": None,
+    if r.status_code == 404:
+        # 404 franc = le site n'a pas de robots.txt = rien n'est interdit
+        return {"robots": "absent (404)", "robots_ok": True, "crawl_delay": None,
                 "params_interdits": ""}
+    if r.status_code != 200:
+        # Timeout, 403, 5xx : on ne SAIT PAS ce que le site autorise. Le defaut
+        # prudent est de s'abstenir. Un robots injoignable n'est pas un feu vert.
+        return {"robots": f"illisible (HTTP {r.status_code}) — abstention",
+                "robots_ok": False, "crawl_delay": None, "params_interdits": ""}
 
     texte = r.text
     if len(texte) < 3000 and any(s in texte for sig in ANTIB0T_DUR.values() for s in sig):
@@ -240,7 +246,12 @@ def etat(v: str) -> str:
 
 def verdict(m: dict) -> str:
     if not m["robots_ok"]:
-        return "INTERDIT par robots"
+        # Deux situations tres differentes, a ne jamais confondre dans un document
+        # qui sort du projet : le site nous interdit explicitement, ou bien on n'a
+        # pas pu lire ses regles. Dans les deux cas on s'abstient, mais on ne
+        # raconte pas la meme chose.
+        return ("INTERDIT par robots" if "INTERDIT" in m.get("robots", "")
+                else "robots illisible — abstention")
     if m["http"] == 0:
         return "injoignable"
     if m["endpoint"]:
@@ -260,6 +271,25 @@ def verdict(m: dict) -> str:
 
 
 # ---------------------------------------------------------------------- cibles
+
+def cibles_registre() -> list[tuple[str, str]]:
+    """Les 210 sources recensees, lues dans le registre partage."""
+    import pandas as pd
+    registre = ICI.parent.parent / "output" / "referentiels" / "DataSources.xlsx"
+    if not registre.exists():
+        sys.exit(f"registre introuvable : {registre}")
+    d = pd.read_excel(registre, sheet_name="Toutes les sources")
+    vus, liste = set(), []
+    for _, r in d.iterrows():
+        url = str(r.get("URL") or "").strip()
+        if not url.startswith("http"):
+            continue
+        dom = urllib.parse.urlparse(url).netloc
+        if dom and dom not in vus:
+            vus.add(dom)
+            liste.append((str(r["Source"]).strip(), f"https://{dom}/"))
+    return liste
+
 
 def cibles_connues() -> list[tuple[str, str]]:
     """Les sites qu'on connait, tires du code et du catalogue."""
@@ -325,6 +355,8 @@ def main() -> None:
     if "--url" in sys.argv:
         u = sys.argv[sys.argv.index("--url") + 1]
         cibles = [(urllib.parse.urlparse(u).netloc, u)]
+    elif "--registre" in sys.argv:
+        cibles = cibles_registre()
     else:
         cibles = cibles_connues()
         if args:
@@ -341,8 +373,50 @@ def main() -> None:
 
     print(f"Sonde de {len(cibles)} site(s) — robots.txt d'abord, {PAUSE}s entre requetes\n")
     mesures, regressions, progressions = [], [], []
-    for i, (nom, url) in enumerate(cibles, 1):
-        m = sonde_un(nom, url)
+
+    # Les domaines sont sondes en parallele, mais CHAQUE site garde ses pauses :
+    # la politesse se mesure par hote, pas globalement. Un seul site ne recoit
+    # jamais deux requetes simultanees.
+    resultats = {}
+    if len(cibles) > 12:
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        with ThreadPoolExecutor(max_workers=PARALLELE) as pool:
+            futurs = {pool.submit(sonde_un, n, u): (n, u) for n, u in cibles}
+            faits = 0
+            for f in as_completed(futurs):
+                nom, _ = futurs[f]
+                faits += 1
+                try:
+                    resultats[nom] = f.result()
+                except Exception as e:
+                    resultats[nom] = None
+                if faits % 25 == 0:
+                    print(f"    ... {faits}/{len(cibles)} sondes")
+        ordonne = [(n, resultats.get(n)) for n, _ in cibles]
+    else:
+        ordonne = [(n, sonde_un(n, u)) for n, u in cibles]
+
+    # Seconde passe SEQUENTIELLE sur les injoignables. Un timeout pendant une passe
+    # parallele peut etre de notre fait ; s'il persiste seul, c'est le site qui filtre.
+    # On ne retente PAS un site interdit par robots : son http vaut 0 par choix,
+    # pas par accident. Le relabelliser en "hors ligne" masquerait l'interdiction.
+    a_reprendre = [(n, m) for n, m in ordonne
+                   if m and m.get("http") == 0 and m.get("robots_ok")]
+    if a_reprendre:
+        print(f"\n    seconde passe sur {len(a_reprendre)} site(s) injoignable(s)...")
+        for nom, ancien in a_reprendre:
+            url = ancien["url"]
+            neuf = sonde_un(ancien["source"], url)
+            if neuf["http"] != 0:
+                ordonne[[n for n, _ in ordonne].index(nom)] = (nom, neuf)
+            else:
+                ancien["verdict"] = "filtre ou hors ligne (2 tentatives)"
+        print()
+
+    for i, (nom_src, m) in enumerate(ordonne, 1):
+        if m is None:
+            continue
+        nom = m["source"]
         mesures.append(m)
         avant = ancien.get(nom)
         fleche = ""
@@ -373,6 +447,26 @@ def main() -> None:
         print("!" * 74)
     for nom, avant, apres in progressions:
         print(f"OUVERTURE   {nom} : {avant} -> {apres}")
+
+    if len(mesures) > 12:
+        import pandas as pd
+        cadre = pd.DataFrame(mesures)[[
+            "source", "url", "verdict", "score", "faisabilite", "valeur",
+            "robots", "crawl_delay", "params_interdits", "http", "octets",
+            "antibot", "signal_faible", "mecanismes", "endpoint", "sitemap",
+            "volume_indice", "signal_prix", "signal_date", "annee_min",
+            "erreur_reseau"]].sort_values("score", ascending=False)
+        sortie = (ICI.parent.parent / "output" / "referentiels" /
+                  f"diagnostic_{dt.date.today().isoformat()}.xlsx")
+        with pd.ExcelWriter(sortie, engine="openpyxl") as w:
+            cadre.to_excel(w, sheet_name="Diagnostic", index=False)
+            ws = w.sheets["Diagnostic"]
+            ws.freeze_panes = "A2"
+            for i, c in enumerate(cadre.columns, 1):
+                lg = cadre[c].astype(str).str.len().max()
+                ws.column_dimensions[ws.cell(1, i).column_letter].width = min(
+                    max(len(c), 0 if pd.isna(lg) else int(lg)) + 2, 46)
+        print(f"\nExcel : output/referentiels/{sortie.name}")
 
     print(f"\nmesures enregistrees dans data/{HISTORIQUE.name} "
           f"(relance la sonde pour comparer)")
