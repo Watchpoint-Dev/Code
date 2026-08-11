@@ -227,6 +227,17 @@ def note(m: dict) -> dict:
     return {"faisabilite": f, "valeur": min(100, v), "score": round(f * min(100, v) / 100)}
 
 
+def etat(v: str) -> str:
+    """Reduit un verdict a ce qui compte pour la surveillance : ouvert ou ferme.
+
+    Comparer des scores fait crier au loup a chaque point de variation. Ce qui
+    merite une alerte, c'est qu'une source passe d'accessible a murée.
+    """
+    if v.startswith(("INTERDIT", "BLOQUE", "injoignable", "HTTP")):
+        return "ferme"
+    return "ouvert"
+
+
 def verdict(m: dict) -> str:
     if not m["robots_ok"]:
         return "INTERDIT par robots"
@@ -336,10 +347,11 @@ def main() -> None:
         avant = ancien.get(nom)
         fleche = ""
         if avant:
-            if avant["score"] >= 40 > m["score"]:
+            hier, aujourdhui = etat(avant["verdict"]), etat(m["verdict"])
+            if hier == "ouvert" and aujourdhui == "ferme":
                 regressions.append((nom, avant["verdict"], m["verdict"]))
-                fleche = "  <== REGRESSION"
-            elif m["score"] >= 40 > avant["score"]:
+                fleche = "  <== S'EST FERME"
+            elif hier == "ferme" and aujourdhui == "ouvert":
                 progressions.append((nom, avant["verdict"], m["verdict"]))
                 fleche = "  <== s'est ouvert"
         print(f"{i:>3}. {nom:<26} {m['score']:>3}/100  {m['verdict']}{fleche}")
@@ -357,7 +369,7 @@ def main() -> None:
     if regressions:
         print("\n" + "!" * 74)
         for nom, avant, apres in regressions:
-            print(f"REGRESSION  {nom} : {avant} -> {apres}")
+            print(f"S'EST FERME  {nom} : {avant} -> {apres}")
         print("!" * 74)
     for nom, avant, apres in progressions:
         print(f"OUVERTURE   {nom} : {avant} -> {apres}")
