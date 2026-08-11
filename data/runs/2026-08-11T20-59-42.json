@@ -1,0 +1,28 @@
+{
+ "run": "2026-08-11T20-59-42",
+ "collected_at": "2026-08-11T18:59:42+00:00",
+ "sources": [
+  {
+   "id": "bezel",
+   "name": "Bezel",
+   "type": "marketplace",
+   "price_nature": "asking",
+   "access": "API interne /api/marketplace/listings + jointure catalogue",
+   "robots": "OK — seul '?searchQuery=' est interdit ; /api/ n'est couvert par aucun Disallow",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "erreur": null,
+   "journal": [
+    "EN ATTENTE — collecte suspendue : les CGU de Bezel interdisent le scraping. Voir l'en-tete du module. Aucune requete envoyee."
+   ],
+   "bloquee_connue": true,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0
+}
