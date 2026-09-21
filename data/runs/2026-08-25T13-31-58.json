@@ -1,0 +1,47 @@
+{
+ "run": "2026-08-25T13-31-58",
+ "collected_at": "2026-08-25T11:31:58+00:00",
+ "sources": [
+  {
+   "id": "lyonandturnbull",
+   "name": "Lyon & Turnbull",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "Next.js __NEXT_DATA__, catalogue complet par vente",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 10941,
+   "nouveaux": 10941,
+   "requetes_http": 51,
+   "periode": [
+    "2019-12-04",
+    "2026-06-03"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 12,
+    "reference": 4,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 1082,
+    "REJETER": 9859,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "50 ventes retenues sur 307 passees",
+    "1194 lots invendus conserves en nature 'estimate' — aucune autre source ne les publie"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 10941,
+ "total_nouveaux": 10941
+}

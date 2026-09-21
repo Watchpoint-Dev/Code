@@ -1,0 +1,318 @@
+{
+ "run": "2026-08-28T15-52-02",
+ "collected_at": "2026-08-28T13:52:02+00:00",
+ "sources": [
+  {
+   "id": "fortuna",
+   "name": "Fortuna",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API REST WordPress /wp-json/wp/v2/lots",
+   "robots": "OK — /wp-json/ n'est pas interdit, verifie le 28/08/2026",
+   "records": 2010,
+   "nouveaux": 2010,
+   "requetes_http": 21,
+   "periode": [
+    "2016-10-18",
+    "2026-07-19"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 0,
+    "reference": 50,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 1742,
+    "REJETER": 268,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "categorie 79 : 2020 lots annonces",
+    "141 ventes interrogees pour leur date"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "loupethis",
+   "name": "Loupe This",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON:API publique api.loupethis.com/api/v1/auctions",
+   "robots": "OK — 'Disallow:' vide, rien n'est interdit",
+   "records": 4242,
+   "nouveaux": 4242,
+   "requetes_http": 172,
+   "periode": [
+    "2021-07-08",
+    "2026-09-03"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 98,
+    "reference": 0,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 3920,
+    "REJETER": 322,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "4268 encheres annoncees par l'API",
+    "171 pages lues, 25 lots par page (les crochets JSON:API sont rediriges, `page[size]` est inutilisable)"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "wannabuyawatch",
+   "name": "Wanna Buy A Watch",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — seuls /wp-admin/ et un export d'impression sont interdits",
+   "records": 6441,
+   "nouveaux": 6441,
+   "requetes_http": 126,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 94,
+    "reference": 71,
+    "model": 0,
+    "year": 71,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 5252,
+    "REJETER": 611,
+    "QUARANTAINE": 578
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 6496 annonces",
+    "en vitrine : 6441 fiches retenues",
+    "parties : 6003 annonces",
+    "parties : 0 fiches retenues",
+    "91 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "awco",
+   "name": "Amsterdam Watch Company",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API (awco.nl)",
+   "robots": "OK — wp-json non interdit",
+   "records": 2686,
+   "nouveaux": 2686,
+   "requetes_http": 201,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 82,
+    "reference": 71,
+    "model": 0,
+    "year": 78,
+    "case_material": 53,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2141,
+    "REJETER": 448,
+    "QUARANTAINE": 97
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 2701 annonces",
+    "en vitrine : 2686 fiches retenues",
+    "parties : 17297 annonces",
+    "parties : 0 fiches retenues",
+    "64 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "globalwatchshop",
+   "name": "Global Watch Shop",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — seul ?rest_route= est bloque, /wp-json/ ne l'est pas",
+   "records": 971,
+   "nouveaux": 971,
+   "requetes_http": 52,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 97,
+    "reference": 97,
+    "model": 0,
+    "year": 0,
+    "case_material": 97,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 807,
+    "REJETER": 38,
+    "QUARANTAINE": 126
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 2760 annonces",
+    "en vitrine : 971 fiches retenues",
+    "parties : 2376 annonces",
+    "parties : 0 fiches retenues",
+    "3443 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "chronofinder",
+   "name": "Chronofinder",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — /wp-json/ autorise",
+   "records": 592,
+   "nouveaux": 592,
+   "requetes_http": 11,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 0,
+    "reference": 79,
+    "model": 0,
+    "year": 0,
+    "case_material": 96,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 4,
+    "REJETER": 587,
+    "QUARANTAINE": 1
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 593 annonces",
+    "en vitrine : 592 fiches retenues",
+    "parties : 464 annonces",
+    "parties : 0 fiches retenues",
+    "2 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "bulangandsons",
+   "name": "Bulang and Sons",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json",
+   "robots": "OK — /products.json non interdit",
+   "records": 4007,
+   "nouveaux": 4007,
+   "requetes_http": 17,
+   "periode": [
+    "2026-08-28",
+    "2026-08-28"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 98,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2909,
+    "REJETER": 1098,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "162 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "acollectedman",
+   "name": "A Collected Man",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json",
+   "robots": "OK — /products.json non interdit, Crawl-delay seulement pour Ahrefs",
+   "records": 962,
+   "nouveaux": 962,
+   "requetes_http": 8,
+   "periode": [
+    "2015-09-23",
+    "2026-08-27"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 85,
+    "reference": 100,
+    "model": 0,
+    "year": 1,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 650,
+    "REJETER": 312,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "833 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 21911,
+ "total_nouveaux": 21911
+}

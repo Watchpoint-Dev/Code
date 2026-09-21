@@ -1,0 +1,48 @@
+{
+ "run": "2026-08-28T16-54-35",
+ "collected_at": "2026-08-28T14:54:35+00:00",
+ "sources": [
+  {
+   "id": "fortuna",
+   "name": "Fortuna",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API REST WordPress /wp-json/wp/v2/lots",
+   "robots": "OK — /wp-json/ n'est pas interdit, verifie le 28/08/2026",
+   "records": 2010,
+   "nouveaux": 2010,
+   "requetes_http": 21,
+   "periode": [
+    "2016-10-18",
+    "2026-07-19"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 92,
+    "reference": 52,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 1744,
+    "REJETER": 266,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "228 marques resolues depuis la taxonomie",
+    "categorie 79 : 2020 lots annonces",
+    "141 ventes interrogees pour leur date"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 2010,
+ "total_nouveaux": 2010
+}

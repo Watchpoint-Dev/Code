@@ -1,0 +1,223 @@
+{
+ "run": "2026-08-25T10-47-11",
+ "collected_at": "2026-08-25T08:47:11+00:00",
+ "sources": [
+  {
+   "id": "artcurial",
+   "name": "Artcurial",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON interne /ace (Nuxt runtimeConfig)",
+   "robots": "OK — aucun Disallow sur /ace, robots.txt relu le 11/08/2026",
+   "records": 9000,
+   "nouveaux": 9000,
+   "requetes_http": 88,
+   "periode": [
+    "2009-07-28",
+    "2026-07-13"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 67,
+    "reference": 85,
+    "model": 7,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 5065,
+    "REJETER": 3935,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "l'API annonce 88 ventes et en sert 87 — ecart connu, non bloquant",
+    "87 ventes montres",
+    "vente CH0038: adjudications masquees par la maison, ignoree",
+    "vente IT4446: adjudications masquees par la maison, ignoree",
+    "TRONQUE: plafond de 9000 atteint — il reste des donnees a prendre"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": true
+  },
+  {
+   "id": "analogshift",
+   "name": "Analog:Shift",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (country=US obligatoire)",
+   "robots": "OK — /products.json couvert par aucun Disallow, verifie le 11/08/2026",
+   "records": 8216,
+   "nouveaux": 8216,
+   "requetes_http": 36,
+   "periode": [
+    "2015-03-23",
+    "2026-08-24"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 79,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 6162,
+    "REJETER": 1922,
+    "QUARANTAINE": 132
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 250 produits",
+    "page 2: 250 produits",
+    "page 3: 250 produits",
+    "page 4: 250 produits",
+    "page 5: 250 produits",
+    "page 6: 250 produits",
+    "page 7: 250 produits",
+    "page 8: 250 produits",
+    "page 9: 250 produits",
+    "page 10: 250 produits",
+    "page 11: 250 produits",
+    "page 12: 250 produits",
+    "page 13: 250 produits",
+    "page 14: 250 produits",
+    "page 15: 250 produits",
+    "page 16: 250 produits",
+    "page 17: 250 produits",
+    "page 18: 250 produits",
+    "page 19: 250 produits",
+    "page 20: 250 produits",
+    "page 21: 250 produits",
+    "page 22: 250 produits",
+    "page 23: 250 produits",
+    "page 24: 250 produits",
+    "page 25: 250 produits",
+    "page 26: 250 produits",
+    "page 27: 250 produits",
+    "page 28: 250 produits",
+    "page 29: 250 produits",
+    "page 30: 250 produits",
+    "page 31: 250 produits",
+    "page 32: 250 produits",
+    "page 33: 250 produits",
+    "page 34: 250 produits",
+    "page 35: 250 produits",
+    "page 36: 20 produits",
+    "554 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "berrys",
+   "name": "Berry's Jewellers",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (country=GB obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 5637,
+   "nouveaux": 5637,
+   "requetes_http": 23,
+   "periode": [
+    "2014-06-12",
+    "2026-08-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 99,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2133,
+    "REJETER": 3503,
+    "QUARANTAINE": 1
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 250 produits",
+    "page 2: 250 produits",
+    "page 3: 250 produits",
+    "page 4: 250 produits",
+    "page 5: 250 produits",
+    "page 6: 250 produits",
+    "page 7: 250 produits",
+    "page 8: 250 produits",
+    "page 9: 250 produits",
+    "page 10: 250 produits",
+    "page 11: 250 produits",
+    "page 12: 250 produits",
+    "page 13: 250 produits",
+    "page 14: 250 produits",
+    "page 15: 250 produits",
+    "page 16: 250 produits",
+    "page 17: 250 produits",
+    "page 18: 250 produits",
+    "page 19: 250 produits",
+    "page 20: 250 produits",
+    "page 21: 250 produits",
+    "page 22: 250 produits",
+    "page 23: 137 produits"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "hairspring",
+   "name": "Hairspring",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (country=US obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 318,
+   "nouveaux": 318,
+   "requetes_http": 2,
+   "periode": [
+    "2023-02-21",
+    "2026-08-24"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 1,
+    "model": 0,
+    "year": 2,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2,
+    "REJETER": 316,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 250 produits",
+    "page 2: 68 produits"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 23171,
+ "total_nouveaux": 23171
+}

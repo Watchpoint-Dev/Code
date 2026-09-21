@@ -23,6 +23,7 @@ import collections
 import datetime as dt
 import json
 import pathlib
+import re
 import sys
 import warnings
 
@@ -61,9 +62,22 @@ def cles(nom: str) -> list[str]:
 
 
 def trouve(table: dict, nom: str):
+    """Apparie un nom du registre a une entree, malgre les variantes d'ecriture.
+
+    Le registre dit « Lempertz », la fiche dit « Kunsthaus Lempertz ». Sans
+    tolerance, six analyses detaillees ne remontaient pas du tout.
+    """
     for c in cles(nom):
         if c in table:
             return table[c]
+    # inclusion dans un sens ou dans l'autre, sur des cles assez longues pour
+    # que « Christie's » ne capture pas « Christie's Hong Kong » par hasard
+    for c in cles(nom):
+        if len(c) < 6:
+            continue
+        for k, v in table.items():
+            if len(k) >= 6 and (c.startswith(k) or k.startswith(c)):
+                return v
     return {}
 
 
@@ -97,6 +111,37 @@ def main() -> None:
             d = json.load(f.open(encoding="utf-8"))
         except json.JSONDecodeError:
             continue
+        # Deux schemas de fiche coexistent : le riche (imbrique) de la premiere
+        # campagne et le plat des lots. On ramene le riche au plat pour que
+        # toutes les fiches remontent dans les memes colonnes.
+        if "acces" in d and isinstance(d.get("acces"), dict):
+            a, pr, h = d.get("acces", {}), d.get("prix", {}), d.get("historique", {})
+            vol, ded = d.get("volume", {}), d.get("deduplication", {})
+            ad, comp = d.get("adaptateur", {}), d.get("completude", {})
+            d = {
+                "source": d.get("source"), "verdict": d.get("verdict"),
+                "nature_prix": pr.get("nature"), "mecanisme": a.get("mecanisme"),
+                "endpoint": a.get("endpoint_exact"), "pagination": a.get("pagination"),
+                "volume_estime": vol.get("atteignable_reellement") or vol.get("total_annonce"),
+                # Une date n'est un historique QUE si la source publie un historique.
+                # Chez Bezel, la date la plus ancienne est celle de creation d'une
+                # annonce revisee 11 fois depuis : ce n'est pas un prix de 2021.
+                "historique_prouve": (
+                    h.get("plus_ancienne_prouvee")
+                    if "construire" not in str(h.get("methode", "")).lower() else ""),
+                "historique_note": (
+                    f"pas d'historique natif : {h.get('methode')}. La date la plus "
+                    f"ancienne vue ({h.get('plus_ancienne_prouvee')}) est celle du champ "
+                    f"« {str(h.get('champ_date', ''))[:60]} », pas celle d'un prix."
+                    if "construire" in str(h.get("methode", "")).lower() else ""),
+                "preuve_historique": h.get("preuve_anciennete"),
+                "date_est_une_vente": h.get("date_presente"),
+                "devise": pr.get("devise_native"), "effort": ad.get("effort"),
+                "pieges": ad.get("pieges", []),
+                "recommandation": d.get("recommandation"),
+                "completude": {"n": comp.get("n_echantillon"),
+                               **{k: v for k, v in (comp.get("champs") or {}).items()}},
+            }
         fiches[reduit(d.get("source", f.stem))] = d
 
     base = DATA / "price_points.jsonl"
@@ -139,63 +184,64 @@ def main() -> None:
         # L'ETAT REEL d'un adaptateur prime sur toute recommandation : un
         # adaptateur casse doit apparaitre comme casse, meme si une fiche
         # explique par ailleurs comment le reconstruire.
-        if trouve(branchees, nom):
-            etat = dernier_run.get(trouve(branchees, nom)["id"], {})
-            meta_src = trouve(branchees, nom)
+        exact = next((s for c in cles(nom) for k, s in branchees.items() if k == c), None)
+        if exact:
+            etat = dernier_run.get(exact["id"], {})
+            meta_src = exact
             statut = str(meta_src.get("statut", ""))
             if etat.get("records"):
-                action = "COLLECTE — adaptateur actif"
+                action = "Collecte, adaptateur actif"
             elif statut.startswith("EN ATTENTE"):
                 # adaptateur reecrit et fonctionnel, mais une decision humaine
                 # conditionne son lancement
-                action = "PRÊT — en attente d'arbitrage"
+                action = "Prêt, en attente d'arbitrage"
             elif statut:
-                action = "IRRÉPARABLE — source bloquée"
+                action = "Irréparable, source bloquée"
             else:
-                action = "ADAPTATEUR HS — à réparer"
+                action = "Adaptateur en panne, à réparer"
         elif fi.get("verdict") == "a brancher":
-            action = "À BRANCHER — fiche détaillée"
+            action = "À brancher, analyse détaillée"
         elif fi.get("verdict") == "a creuser":
-            action = "À CREUSER — fiche détaillée"
+            action = "À creuser, analyse détaillée"
         elif fi.get("verdict") in ("ferme", "mort"):
-            action = "NÉGOCIER — fiche détaillée"
+            action = "À négocier, analyse détaillée"
         elif trouve(prouvees, nom):
-            action = "À BRANCHER — prouvée"
+            action = "À brancher, source prouvée"
         elif trouve(negocier, nom):
-            action = f"NÉGOCIER — priorité {trouve(negocier, nom)['priorite']}"
+            action = f"À négocier, priorité {trouve(negocier, nom)['priorite']}"
         elif trouve(ecartees, nom):
-            action = "ABANDONNER"
+            action = "À abandonner"
         elif e.get("verdict") == "SOLIDE":
-            action = "À BRANCHER — extraction validée"
+            action = "À brancher, extraction validée"
         elif str(p.get("verdict", "")).startswith("RICHE"):
-            action = "À CREUSER — données riches"
+            action = "À creuser, données riches"
         elif p.get("verdict", "").startswith("prix en clair"):
-            action = "À CREUSER — parsing HTML"
+            action = "À creuser, parsing HTML"
         elif a and "BLOQUE" in a.get("verdict", ""):
-            action = "NÉGOCIER — anti-bot"
+            action = "À négocier, bloqué par anti-bot"
         elif a and "INTERDIT" in a.get("verdict", ""):
-            action = "NÉGOCIER — robots interdit"
+            action = "À négocier, interdit par robots"
         elif a and "illisible" in a.get("verdict", ""):
-            action = "à revoir — robots illisible"
+            action = "À revoir, robots illisible"
         elif a.get("endpoint"):
             # un endpoint standard qui repond est une piste serieuse, meme si la
             # sonde profonde n'est pas passee : c'est du volume a portee de main
-            action = "À CREUSER — endpoint standard"
+            action = "À creuser, endpoint standard"
         elif not p:
             # ne jamais juger une source qu'on n'a pas ouverte
-            action = "non approfondi"
+            action = "Non approfondi"
         elif p.get("verdict", "").startswith("pas de prix"):
-            action = "peu prometteur — rendu JS"
+            action = "Peu prometteur, rendu en JavaScript"
         else:
-            action = "peu prometteur"
+            action = "Peu prometteur"
 
-        if action.startswith(("COLLECTE", "PRÊT", "À BRANCHER", "ADAPTATEUR HS")):
+        if action.startswith(("Collecte", "Prêt", "À brancher", "Adaptateur")):
             groupe = "BONNE"
-        elif action.startswith("À CREUSER"):
+        elif action.startswith("À creuser"):
             groupe = "À CREUSER"
-        elif action.startswith(("NÉGOCIER", "IRRÉPARABLE")):
+        elif action.startswith(("À négocier", "Irréparable")):
             groupe = "À NÉGOCIER"
-        elif action.startswith(("non approfondi", "à revoir")):
+        elif action.startswith(("Non approfondi", "À revoir")):
             groupe = "NON TESTÉE"
         else:
             groupe = "NON RETENUE"
@@ -240,8 +286,17 @@ def main() -> None:
             "% marque": comp.get("brand"),
             "Part horlogère %": e.get("part_horlogere"),
             # --- ce qu'on en fait
-            "Prix en base": volumes.get((trouve(branchees, nom) or {}).get("id", ""), 0),
+            # Volume attribue UNIQUEMENT sur un nom exact : l'appariement tolerant
+            # faisait heriter « Christie's Hong Kong » des 1 356 prix de Christie's,
+            # et le total affiche passait a 4 701 au lieu de 3 345.
+            "Prix en base": volumes.get(
+                next((s["id"] for c in cles(nom) for k, s in branchees.items() if k == c), ""), 0),
             "Volume atteignable": trouve(prouvees, nom).get("volume", ""),
+            # Les sources prouvees en juillet n'ont pas de fiche au format des lots :
+            # leur historique vit dans le catalogue, avec les echantillons dans preuves/.
+            "Historique (campagne)": trouve(prouvees, nom).get("historique", ""),
+            "Accès (campagne)": trouve(prouvees, nom).get("acces", ""),
+            "Point d'attention (campagne)": trouve(prouvees, nom).get("note", ""),
             "Ce qu'on demande": trouve(negocier, nom).get("demande", ""),
             "Blocage": trouve(negocier, nom).get("blocage", "")
                        or trouve(ecartees, nom).get("raison", ""),
@@ -253,6 +308,7 @@ def main() -> None:
             "FICHE — volume estimé": fi.get("volume_estime", ""),
             "FICHE — pagination": fi.get("pagination", ""),
             "FICHE — historique PROUVÉ": fi.get("historique_prouve", ""),
+            "FICHE — note sur l'historique": fi.get("historique_note", ""),
             "FICHE — preuve historique": fi.get("preuve_historique", ""),
             "FICHE — la date est une vente ?": fi.get("date_est_une_vente", ""),
             "FICHE — n échantillon": fcomp.get("n", ""),
@@ -268,16 +324,14 @@ def main() -> None:
         })
 
     decision = pd.DataFrame(lignes_sortie)
-    rang = {"COLLECTE — adaptateur actif": 0,
-            "PRÊT — en attente d'arbitrage": 0.2,
-            "ADAPTATEUR HS — à réparer": 0.3,
-            "IRRÉPARABLE — source bloquée": 5.4,
-            "À BRANCHER — fiche détaillée": 0.5,
-            "À BRANCHER — prouvée": 1, "À CREUSER — fiche détaillée": 2.5,
-            "NÉGOCIER — fiche détaillée": 5.5,
-            "À BRANCHER — extraction validée": 2, "À CREUSER — données riches": 3,
-            "À CREUSER — parsing HTML": 4, "À CREUSER — endpoint standard": 4.5, "NÉGOCIER — priorité 1": 5,
-            "NÉGOCIER — priorité 2": 6, "NÉGOCIER — priorité 3": 7}
+    rang = {"Collecte, adaptateur actif": 0, "Prêt, en attente d'arbitrage": 0.2,
+            "Adaptateur en panne, à réparer": 0.3, "À brancher, analyse détaillée": 1,
+            "À brancher, source prouvée": 1.1, "À brancher, extraction validée": 1.2,
+            "À creuser, données riches": 3, "À creuser, analyse détaillée": 3.1,
+            "À creuser, parsing HTML": 4, "À creuser, endpoint standard": 4.5,
+            "À négocier, priorité 1": 5, "À négocier, priorité 2": 5.1,
+            "À négocier, priorité 3": 5.2, "Irréparable, source bloquée": 5.4,
+            "À négocier, analyse détaillée": 5.5}
     decision["_r"] = decision["ACTION"].map(lambda x: rang.get(x, 9))
     decision = decision.sort_values(["_r", "Prix sur la page"],
                                     ascending=[True, False]).drop(columns="_r")

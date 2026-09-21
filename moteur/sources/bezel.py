@@ -39,6 +39,9 @@ SOURCE = {
     "price_nature": "asking",
     "access": "API interne /api/marketplace/listings + jointure catalogue",
     "robots": "OK — seul '?searchQuery=' est interdit ; /api/ n'est couvert par aucun Disallow",
+    # Le corpus est garanti horloger (marketplace exclusivement horlogere) : R4 n'a pas
+    # a exiger le mot "montre" dans le titre pour valider une marque ambigue.
+    "corpus_horloger": True,
     "statut": "EN ATTENTE — les CGU interdisent le scraping, arbitrage humain requis",
 }
 
@@ -114,6 +117,11 @@ def collect(cap: int = 2000):
                 source_url=f"{BASE}/listings/{annonce.get('id')}",
                 external_id=str(annonce.get("id")),
                 price_nature="asking",
+                # L'API ne publie que les annonces actives (`active=true` est
+                # obligatoire) : la nature vaut pour toute la source, aucun
+                # statut ne vient la nuancer.
+                price_nature_provenance="constante_source",
+                listing_status="active",
                 price_amount=float(cents) / 100,
                 # L'API n'expose AUCUN champ de devise. USD est une deduction
                 # (marketplace americaine), pas une mesure. A revoir si Bezel
@@ -130,6 +138,7 @@ def collect(cap: int = 2000):
                 # Reference du MODELE : elle identifie un modele, jamais un
                 # exemplaire. Plusieurs annonces partagent la meme.
                 reference=modele.get("referenceNumber"),
+                reference_provenance="champ_dedie" if modele.get("referenceNumber") else None,
                 title=modele.get("displayName"),
                 case_material=modele.get("caseMaterials"),
                 case_size_mm=modele.get("caseSize"),

@@ -1,0 +1,55 @@
+{
+ "run": "2026-08-25T10-06-47",
+ "collected_at": "2026-08-25T08:06:47+00:00",
+ "sources": [
+  {
+   "id": "craft_and_tailored",
+   "name": "Craft & Tailored",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json",
+   "robots": "OK — 'Allow: /' ; les restrictions Shopify visent le checkout, pas le catalogue",
+   "records": 3649,
+   "nouveaux": 3649,
+   "requetes_http": 15,
+   "periode": [
+    "2016-01-04",
+    "2026-08-24"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 60,
+    "case_material": 0,
+    "movement": 0
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 250 produits",
+    "page 2: 250 produits",
+    "page 3: 250 produits",
+    "page 4: 250 produits",
+    "page 5: 250 produits",
+    "page 6: 250 produits",
+    "page 7: 250 produits",
+    "page 8: 250 produits",
+    "page 9: 250 produits",
+    "page 10: 250 produits",
+    "page 11: 250 produits",
+    "page 12: 250 produits",
+    "page 13: 250 produits",
+    "page 14: 250 produits",
+    "page 15: 149 produits"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 3649,
+ "total_nouveaux": 3649
+}

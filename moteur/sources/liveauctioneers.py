@@ -19,10 +19,19 @@ SOURCE = {
     "price_nature": "realised",
     "access": "window.__data (price guide)",
     "robots": "OK — robots interdit 'pagenum=', on utilise 'page=' ; /price-guide/ non liste",
-    # 09/08/2026 : le site repond desormais une page Incapsula/Imperva de 847
-    # octets a la place du HTML. La source marchait le 01/08 (48 lots). Elle
+    # 02/09/2026 — LE BLOCAGE ETAIT LE NOTRE. Le site repondait 847 octets de
+    # challenge Incapsula a notre faux UA Chrome ; il rend 318 Ko a un ClaudeBot
+    # honnete. L'anti-bot visait le navigateur simule, pas nous.
+    #
+    # La source reste pourtant hors d'atteinte, pour une autre raison : son
+    # archive de resultats ne se parcourt que par `/search/?`, que son propre
+    # robots.txt interdit. Le chemin autorise — /c/watches/1246/?status=archive —
+    # rend 13 lots prixes sur 14, sans page suivante. Accessible n'est pas
+    # collectable.
+    #
+    # Ancienne note (09/08/2026) : la source marchait le 01/08 (48 lots). Elle
     # bascule donc sur la liste "a negocier" — on ne contourne pas un anti-bot.
-    "statut": "BLOQUE (anti-bot Incapsula depuis ~08/2026)",
+    "statut": "ACCESSIBLE mais non paginable — voir la note du 02/09/2026",
 }
 
 MARQUEUR_ANTIBOT = "_Incapsula_Resource"
@@ -110,6 +119,9 @@ def collect(cap: int = 400):
                 source_url=item.get("itemUrl") or BASE,
                 external_id=identifiant,
                 price_nature="realised",
+                # L'endpoint ne rend que des lots vendus (`salePrice` present).
+                price_nature_provenance="deduite_statut",
+                listing_status="sold",
                 price_amount=float(item["salePrice"]),
                 price_currency=item.get("currency"),
                 price_date=item.get("saleStartTs"),

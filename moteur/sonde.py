@@ -2,6 +2,7 @@
 
     cd ~/Desktop/WP/labo
     shared/.venv/bin/python moteur/sonde.py                  # toutes les sources connues
+    shared/.venv/bin/python moteur/sonde.py --historique      # rejoue les 200 du dernier passage
     shared/.venv/bin/python moteur/sonde.py christies bezel   # seulement celles-ci
     shared/.venv/bin/python moteur/sonde.py --url https://exemple.com  # un site au hasard
 
@@ -61,6 +62,31 @@ PAUSE = 1.5
 DELAI = 25
 PARALLELE = 8   # domaines sondes en meme temps (jamais deux requetes sur le meme)
 
+# L'UA de la sonde, et pourquoi il differe du HEADERS partage.
+#
+# Le HEADERS du projet annonce "Mozilla/5.0 (compatible; ClaudeBot/1.0; ...)" :
+# il pretend etre un navigateur ET se nomme robot. Mesure du 21/09/2026 sur les
+# 69 sources classees "robots illisible", meme URL, meme minute :
+#
+#     ClaudeBot     -> 403 sur 19 d'entre elles
+#     python-requests par defaut -> 200 sur ces 19
+#
+# Parmi les 19 : Wanna Buy A Watch et Watches of Distinction, dont on a
+# respectivement 6 441 et 507 prix en base. La sonde declarait fermees des
+# sources qui collectent. Meme cause que le ReadTimeout de Christie's du 25/08 :
+# beaucoup de WAF blocklistent maintenant ClaudeBot, et un UA qui se reclame de
+# Mozilla sans en avoir l'empreinte TLS est le pire des deux mondes.
+#
+# On ne ment donc sur rien : l'UA par defaut de la bibliotheque dit exactement
+# ce que nous sommes, un script Python. C'est ce qui passe.
+#
+# Le HEADERS partage n'est PAS touche : les 30 adaptateurs collectent avec lui
+# et une modification globale se mesure avant de se decider.
+UA_SONDE = requests.utils.default_user_agent()
+UA_SECOURS = "curl/8.4.0"
+HEADERS_SONDE = {"User-Agent": UA_SONDE,
+                 "Accept-Language": HEADERS.get("Accept-Language", "en-US,en;q=0.9")}
+
 # Signatures d'anti-bot. On les DETECTE pour classer la source, jamais pour passer outre.
 ANTIB0T_DUR = {
     "Cloudflare": ("cf-browser-verification", "cf_chl_", "challenge-platform",
@@ -89,10 +115,10 @@ MONNAIE = re.compile(
 DATE = re.compile(r"\b(?:19|20)\d{2}-\d{2}-\d{2}\b|\b(?:19|20)\d{2}\b")
 
 
-def _get(url: str, **kw):
+def _get(url: str, ua: str = UA_SONDE, **kw):
     try:
-        r = requests.get(url, headers=HEADERS, timeout=DELAI,
-                         allow_redirects=True, **kw)
+        r = requests.get(url, headers={**HEADERS_SONDE, "User-Agent": ua},
+                         timeout=DELAI, allow_redirects=True, **kw)
         time.sleep(PAUSE)
         return r
     except requests.RequestException as e:
@@ -104,8 +130,22 @@ def _get(url: str, **kw):
 # --------------------------------------------------------------------- robots
 
 def controle_robots(base: str) -> dict:
-    """Lit robots.txt AVANT tout le reste. C'est la premiere regle de la maison."""
-    r = _get(urllib.parse.urljoin(base, "/robots.txt"))
+    """Lit robots.txt AVANT tout le reste. C'est la premiere regle de la maison.
+
+    Un robots illisible fait s'abstenir — et l'abstention empeche la page d'etre
+    regardee du tout, donc la source sort a 0/100 sans avoir ete testee. Un
+    echec de lecture coute donc tres cher, et il ne doit jamais venir de nous :
+    on reessaie avec un second UA avant de conclure.
+    """
+    url = urllib.parse.urljoin(base, "/robots.txt")
+    r = _get(url)
+    if r.status_code not in (200, 404):
+        # Peut venir de NOTRE identite plutot que du site. Mesure du 21/09 :
+        # 19 sources sur 69 repondaient 403 a ClaudeBot et 200 a un UA honnete.
+        r2 = _get(url, ua=UA_SECOURS)
+        if r2.status_code in (200, 404):
+            r = r2
+
     if r.status_code == 404:
         # 404 franc = le site n'a pas de robots.txt = rien n'est interdit
         return {"robots": "absent (404)", "robots_ok": True, "crawl_delay": None,
@@ -113,7 +153,8 @@ def controle_robots(base: str) -> dict:
     if r.status_code != 200:
         # Timeout, 403, 5xx : on ne SAIT PAS ce que le site autorise. Le defaut
         # prudent est de s'abstenir. Un robots injoignable n'est pas un feu vert.
-        return {"robots": f"illisible (HTTP {r.status_code}) — abstention",
+        cause = getattr(r, "erreur", "") or f"HTTP {r.status_code}"
+        return {"robots": f"illisible ({cause}) — abstention",
                 "robots_ok": False, "crawl_delay": None, "params_interdits": ""}
 
     texte = r.text
@@ -156,14 +197,34 @@ def controle_page(base: str) -> dict:
         "erreur_reseau": getattr(r, "erreur", ""),
     }
 
-    detecte = [nom for nom, signatures in ANTIB0T_DUR.items()
-               if any(s.lower() in corps.lower() for s in signatures)]
-    # un 200 avec un corps minuscule est une page de challenge deguisee
-    if not detecte and r.status_code == 200 and 0 < len(corps) < 2000:
-        detecte = ["page suspecte (200 mais < 2 ko)"]
-    if r.status_code in (403, 429):
-        detecte = detecte or [f"HTTP {r.status_code}"]
-    res["antibot"] = " · ".join(detecte)
+    # Une signature d'anti-bot dit quel VENDEUR protege le site. Elle ne dit
+    # PAS que nous sommes bloques : presque tout gros site sert ses pages
+    # derriere Cloudflare ou Akamai, et leurs cookies (__cf_bm, _abck) sont
+    # alors presents dans une reponse parfaitement normale.
+    #
+    # Mesure du 21/09/2026 : Christie's rend 200 avec 133 ko et Bonhams 200 avec
+    # 295 ko, et l'ancienne version les classait toutes deux BLOQUE parce que
+    # _abck / __cf_bm apparaissaient dans le corps. Christie's est la meilleure
+    # source du projet, 12 507 prix en base.
+    #
+    # On separe donc deux choses qui n'ont rien a voir :
+    #   antibot  le vendeur detecte — une note, jamais un verdict
+    #   bloque   la reponse est INUTILISABLE, ce qui se mesure et ne se devine pas
+    res["antibot"] = " · ".join(
+        nom for nom, signatures in ANTIB0T_DUR.items()
+        if any(s.lower() in corps.lower() for s in signatures))
+
+    # Trois cas, et trois seulement, ou l'on est reellement devant un mur.
+    if r.status_code in (401, 403, 429) or r.status_code >= 500:
+        res["bloque"] = f"HTTP {r.status_code}"
+    elif r.status_code == 200 and 0 < len(corps) < 2000:
+        # un 200 avec un corps minuscule est une page de challenge deguisee
+        res["bloque"] = (f"challenge {res['antibot']}" if res["antibot"]
+                         else "page suspecte (200 mais < 2 ko)")
+    elif r.status_code == 0:
+        res["bloque"] = res["erreur_reseau"] or "injoignable"
+    else:
+        res["bloque"] = ""
     # reCAPTCHA seul n'est PAS un blocage : c'est souvent un formulaire de contact.
     # On le note sans le compter comme mur — sinon on classe fermees des sources
     # dont l'endpoint repond parfaitement (cas rencontre sur Hodinkee).
@@ -213,7 +274,9 @@ def note(m: dict) -> dict:
         f += 30
     if m["http"] == 200:
         f += 25
-    if not m["antibot"]:
+    if not m.get("bloque"):
+        # note le MUR, pas la presence d'un CDN : un site derriere Cloudflare
+        # qui nous sert 300 ko de HTML ne nous a rien refuse.
         f += 25
     if m["endpoint"]:
         f += 20
@@ -257,8 +320,10 @@ def verdict(m: dict) -> str:
     if m["endpoint"]:
         # un endpoint qui rend du JSON prouve l'acces, quoi que dise la page d'accueil
         return f"FACILE ({m['endpoint']})"
-    if m["antibot"]:
-        return f"BLOQUE ({m['antibot'].split(' · ')[0]})"
+    # On ne regarde le mur qu'APRES avoir constate que la reponse est inutilisable.
+    # L'ordre inverse condamnait toute source servie derriere un CDN.
+    if m.get("bloque"):
+        return f"BLOQUE ({m['bloque']})"
     if m["http"] != 200:
         return f"HTTP {m['http']}"
     if m["signal_prix"] == 0:
@@ -288,6 +353,24 @@ def cibles_registre() -> list[tuple[str, str]]:
         if dom and dom not in vus:
             vus.add(dom)
             liste.append((str(r["Source"]).strip(), f"https://{dom}/"))
+    return liste
+
+
+def cibles_historique() -> list[tuple[str, str]]:
+    """Exactement les sources du dernier passage, relues dans data/sonde.json.
+
+    Le registre Excel descend en archive a chaque campagne ; l'historique de la
+    sonde, lui, reste. C'est donc lui qui definit le perimetre re-mesurable —
+    et c'est ce qui permet de comparer deux passages terme a terme.
+    """
+    if not HISTORIQUE.exists():
+        sys.exit(f"aucun historique a rejouer : {HISTORIQUE}")
+    vus, liste = set(), []
+    for m in json.loads(HISTORIQUE.read_text())["mesures"]:
+        d = urllib.parse.urlparse(m["url"]).netloc
+        if d and d not in vus:
+            vus.add(d)
+            liste.append((m["source"], m["url"]))
     return liste
 
 
@@ -341,7 +424,8 @@ def sonde_un(nom: str, url: str) -> dict:
         m.update(controle_page(url))
         m.update(controle_endpoints(url, m["robots_ok"]))
     else:
-        m.update({"http": 0, "octets": 0, "antibot": "", "signal_faible": "", "mecanismes": "",
+        m.update({"http": 0, "octets": 0, "antibot": "", "bloque": "",
+                  "signal_faible": "", "mecanismes": "",
                   "signal_prix": 0, "signal_date": 0, "annee_min": None,
                   "erreur_reseau": "", "endpoint": "", "sitemap": "",
                   "volume_indice": ""})
@@ -357,6 +441,8 @@ def main() -> None:
         cibles = [(urllib.parse.urlparse(u).netloc, u)]
     elif "--registre" in sys.argv:
         cibles = cibles_registre()
+    elif "--historique" in sys.argv:
+        cibles = cibles_historique()
     else:
         cibles = cibles_connues()
         if args:
@@ -453,7 +539,7 @@ def main() -> None:
         cadre = pd.DataFrame(mesures)[[
             "source", "url", "verdict", "score", "faisabilite", "valeur",
             "robots", "crawl_delay", "params_interdits", "http", "octets",
-            "antibot", "signal_faible", "mecanismes", "endpoint", "sitemap",
+            "bloque", "antibot", "signal_faible", "mecanismes", "endpoint", "sitemap",
             "volume_indice", "signal_prix", "signal_date", "annee_min",
             "erreur_reseau"]].sort_values("score", ascending=False)
         sortie = (ICI.parent.parent / "output" / "referentiels" /

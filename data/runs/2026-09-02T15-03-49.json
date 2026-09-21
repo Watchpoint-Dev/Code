@@ -1,0 +1,47 @@
+{
+ "run": "2026-09-02T15-03-49",
+ "collected_at": "2026-09-02T13:03:49+00:00",
+ "sources": [
+  {
+   "id": "watchesofdistinction",
+   "name": "Watches of Distinction",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — /wp-json/ non interdit, verifie le 02/09/2026",
+   "records": 507,
+   "nouveaux": 507,
+   "requetes_http": 58,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 100,
+    "reference": 94,
+    "model": 0,
+    "year": 94,
+    "case_material": 98,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 496,
+    "REJETER": 8,
+    "QUARANTAINE": 3
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 2996 annonces",
+    "en vitrine : 507 fiches retenues",
+    "parties : 2751 annonces",
+    "parties : 0 fiches retenues",
+    "4962 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 507,
+ "total_nouveaux": 507
+}

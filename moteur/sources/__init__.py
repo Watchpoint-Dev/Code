@@ -17,7 +17,31 @@ for _path in (str(_COLLECT), str(_LAB / "shared")):
     if _path not in sys.path:
         sys.path.insert(0, _path)
 
-from . import bezel, christies, craft_and_tailored, liveauctioneers, watchrecon  # noqa: E402
+from . import (acollectedman, amsterdamvintage, analogshift, antiquorum,
+               artcurial, awco, berrys,  # noqa: E402
+               bezel, bulangandsons, certifiedwatchstore, christies,
+               chronofinder, cottone, craft_and_tailored,
+               cwsellors, everywatch, fortuna, globalwatchshop, grailzee,
+               hairspring,
+               hodinkee, keystone, knightsbridge, liveauctioneers, loupethis,
+               lyonandturnbull, monacolegend, montredo, morphy, phillips,
+               topper, wannabuyawatch, watchesdotcom,
+               watchesofswitzerland,
+               sworders, watchesofdistinction, watchrecon, watchtrader)
 
-# ordre d'execution : les sources a historique date d'abord
-ALL = [christies, liveauctioneers, craft_and_tailored, bezel, watchrecon]
+# Ordre d'execution : les sources a historique date d'abord — ce sont elles qui
+# donnent la profondeur, et c'est sur elles qu'on veut voir une panne en premier.
+ALL = [everywatch,
+       # Les maisons de ventes, par profondeur datee decroissante. Antiquorum
+       # remonte a 1989 et Phillips a 2015 : ce sont elles qui portent la cote,
+       # et une panne chez elles doit se voir avant tout le reste.
+       antiquorum, artcurial, christies, phillips, monacolegend,
+       lyonandturnbull, morphy, fortuna, loupethis, grailzee, cottone,
+       liveauctioneers,
+       craft_and_tailored, analogshift, montredo, cwsellors, berrys, hairspring,
+       hodinkee, keystone, watchtrader, wannabuyawatch, awco, globalwatchshop,
+       chronofinder, bulangandsons, acollectedman, amsterdamvintage,
+       watchesofdistinction, knightsbridge,
+       sworders,
+       watchesofswitzerland, topper, certifiedwatchstore, watchesdotcom,
+       bezel, watchrecon]

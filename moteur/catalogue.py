@@ -42,12 +42,6 @@ PROUVEES = [
     dict(nom="Amsterdam Vintage Watches", categorie="marchand", nature="demande", volume="2 482",
          historique="date", acces="WooCommerce Store API",
          note="33 % de « prix sur demande » ; archive sans prix"),
-    dict(nom="Patek Philippe", categorie="marque", nature="prix neuf", volume="266 references",
-         historique="hebdomadaire", acces="/en/collection/watch-finder, une requete",
-         note="266/266 avec prix ; mention « suggested retail prices »"),
-    dict(nom="Grand Seiko", categorie="marque", nature="prix neuf", volume="~150 par marche",
-         historique="hebdomadaire", acces="le marche est dans l'URL (/us-en/, /de-de/…)",
-         note="meme reference collectable en 5 devises le meme jour"),
 ]
 
 # --------------------------------------------------------------------------
@@ -88,6 +82,16 @@ A_NEGOCIER = [
          demande="prix realises dates",
          blocage="anti-bot Incapsula installe vers le 08/2026 — marchait le 01/08"),
 
+    dict(priorite=4, nom="Patek Philippe", categorie="marque",
+         demande="acces au tarif catalogue",
+         blocage="CONTROLE DU 11/08 : les 266 fiches produit sont accessibles mais ne "
+                 "portent AUCUN prix en HTTP simple. Le tarif est derriere un bouton "
+                 "« Display the product price ». Une campagne anterieure affirmait "
+                 "l'inverse — c'etait faux, elle avait pris des URL d'images pour des prix."),
+    dict(priorite=4, nom="Grand Seiko", categorie="marque",
+         demande="acces au tarif catalogue",
+         blocage="CONTROLE DU 11/08 : aucun prix sur la page collection ni sur la fiche "
+                 "produit, quel que soit le marche teste."),
     dict(priorite=4, nom="Rolex, Omega, Cartier, TAG Heuer, IWC, Tudor", categorie="marque",
          demande="tarif catalogue", blocage="protection Akamai"),
     dict(priorite=4, nom="Audemars Piguet", categorie="marque",
@@ -117,6 +121,11 @@ ECARTEES = [
 ]
 
 # Note de contexte reprise dans le document genere.
+# Corrige le 11/08/2026 apres controle manuel : le prix neuf n'est PAS
+# recuperable. Ni Patek ni Grand Seiko ne servent de prix en HTTP simple.
+# La conclusion de juillet etait donc juste, et celle d'aout etait fausse.
+NATURES_COUVERTES = 3   # realise, demande, vendu. Manquent : prix neuf et indice
+
 AVERTISSEMENT = (
     "Trois sources sont mortes en trois semaines (LiveAuctioneers, Antiquorum, "
     "WatchBox), dont deux faisaient partie des cinq sources validees en juillet. "

@@ -189,14 +189,17 @@ def verifie(nom: str, url: str, plateforme: str) -> dict:
     res["top_marques"] = [m for m, _ in marques.most_common(4)]
     res["exemple"] = next((f["titre"][:70] for f in fiches if f.get("price_amount")), "")
 
-    # Une boutique de montres, ou un bazar ? On regarde si les marques sont horlogeres.
-    horlogeres = {"rolex", "omega", "patek", "tudor", "cartier", "seiko", "iwc",
-                  "breitling", "longines", "tag heuer", "heuer", "zenith", "oris",
-                  "jaeger", "audemars", "panerai", "hamilton", "tissot", "grand seiko"}
+    # Une boutique de montres, ou un bazar ? Une liste de marques ne suffit pas :
+    # elle rejetait A Collected Man (F.P. Journe, Lange) et Watches.com (G-Shock)
+    # parce qu'ils ne vendent pas les 19 marques de luxe qu'on avait listees.
+    # On teste donc le VOCABULAIRE horloger, present quelle que soit la gamme.
+    MOTS = ("watch", "montre", "automatic", "quartz", "chronograph", "chronographe",
+            "dial", "cadran", "bezel", "lunette", "gmt", "diver", "wristwatch",
+            "caliber", "calibre", "movement", "mouvement", "perpetual", "tourbillon",
+            "seiko", "rolex", "omega", "ref.", "mm ")
     pertinentes = sum(
         1 for f in fiches
-        if any(h in f" {f.get('brand') or ''} {f.get('titre') or ''}".lower()
-               for h in horlogeres))
+        if any(m in f" {f.get('brand') or ''} {f.get('titre') or ''} ".lower() for m in MOTS))
     res["part_horlogere"] = round(100 * pertinentes / n) if n else 0
 
     cle = res["completude"]

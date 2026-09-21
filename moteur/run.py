@@ -16,11 +16,13 @@ prix. La collecte est donc idempotente et peut tourner tous les jours.
 from __future__ import annotations
 
 import datetime as dt
+import gzip
 import json
 import pathlib
 import sys
 
 import sources
+from filtre import filtre
 from schema import FIELDS, completeness
 
 # data/ vit a la racine de l'etabli, a cote du moteur : consultable a la main
@@ -32,10 +34,19 @@ CLES_COMPLETUDE = ["price_amount", "price_currency", "price_date", "brand",
 
 
 def _cle(record: dict) -> tuple:
-    """Identifie un prix de maniere stable entre deux executions."""
-    return (record["source_id"], record.get("external_id"),
-            record.get("price_amount"), record.get("price_date"),
-            (record.get("title") or "")[:80])
+    """Identifie un prix de maniere stable entre deux executions.
+
+    Le titre ne fait PAS partie de l'identite : un vendeur peut le reecrire
+    sans toucher a son prix. Mesure du 27/08/2026 — la meme annonce WatchRecon
+    (cid 7546849, 123 175 $) est entree deux fois parce que 'CHRONO' etait
+    devenu 'CHRONOGRAPH ... FULL'. Il ne sert de repli que pour les sources
+    qui ne fournissent aucun identifiant.
+    """
+    if record.get("external_id"):
+        return (record["source_id"], record["external_id"],
+                record.get("price_amount"), record.get("price_date"))
+    return (record["source_id"], None, record.get("price_amount"),
+            record.get("price_date"), (record.get("title") or "")[:80])
 
 
 def _volumes_du_dernier_run() -> dict[str, int]:
@@ -66,9 +77,44 @@ def _cles_existantes() -> set[tuple]:
     return cles
 
 
+# Les sources qu'on ne rappelle plus, et pourquoi. Elles restent dans le
+# dossier avec leur brut et leurs lignes deja collectees : geler une collecte
+# n'est pas effacer une donnee. Une collecte generale ne doit pas rejouer un
+# refus toutes les nuits.
+# Mesure du 02/09/2026, faite en comparant les deux en-tetes sur la MEME URL :
+# ces trois sites servent la page a un navigateur et la refusent a un robot
+# declare. Leur robots.txt ne nous interdit pourtant rien — c'est le serveur
+# qui tranche, pas la politique publiee. On honore le refus : le contourner
+# demanderait de mentir a nouveau sur qui nous sommes, et c'est precisement ce
+# qu'on a arrete de faire.
+GELEES = {
+    "watchesofdistinction":
+        "403 a ClaudeBot, 200 a Chrome. 496 montres deja en base, conservees.",
+    "wannabuyawatch":
+        "403 a ClaudeBot, 200 a Chrome. 5 812 montres deja en base, conservees.",
+    "watchesofswitzerland":
+        "404 a ClaudeBot, 200 a Chrome sur la MEME URL — un refus deguise en "
+        "page absente. 2 029 prix neufs deja en base, conserves.",
+}
+
+
 def main() -> None:
+    # Sans cela, une collecte de plusieurs heures redirigee vers un fichier
+    # n'ecrit rien avant sa fin : on ne peut pas la suivre, ni voir ou elle
+    # a cale. Mesure du 02/09/2026.
+    try:
+        sys.stdout.reconfigure(line_buffering=True)
+    except AttributeError:
+        pass
     demandees = [a.lower() for a in sys.argv[1:]]
     modules = [m for m in sources.ALL if not demandees or m.SOURCE["id"] in demandees]
+    # Une source gelee ne repart que si on la nomme explicitement.
+    if not demandees:
+        for identifiant, raison in GELEES.items():
+            avant = len(modules)
+            modules = [m for m in modules if m.SOURCE["id"] != identifiant]
+            if len(modules) < avant:
+                print(f"GELEE  {identifiant} — {raison}")
     if not modules:
         sys.exit(f"Sources connues : {', '.join(m.SOURCE['id'] for m in sources.ALL)}")
 
@@ -98,15 +144,31 @@ def main() -> None:
             plantees.append(meta["name"])       # ...mais elle doit etre criee a la fin
             print(f"    ECHEC — {erreur}")
 
+        # Le filtre est appose ici, une fois pour toutes, a l'entree. Il ne
+        # supprime rien : chaque ligne repart avec son verdict, la regle qui l'a
+        # produit et la version du filtre utilisee. Rejouer un filtre corrige sur
+        # tout l'historique ne demande alors aucune requete reseau.
+        tri = filtre()
         for record in records:
             record["collected_at"] = instant
+            type_source = "AUCTION" if record.get("source_type") == "auction" else "MARKETPLACE"
+            verdict = tri.verdict(record.get("title") or "", type_source,
+                                  maker=record.get("brand"),
+                                  corpus_horloger=meta.get("corpus_horloger", False),
+                                  categorie_source=record.get("source_category"))
+            record["filter_verdict"] = verdict["verdict"]
+            record["filter_rule"] = verdict["rule"]
+            record["filter_version"] = verdict["filter_version"]
 
-        # 1. brut, horodate, jamais ecrase
+        # 1. brut, horodate, jamais ecrase. Compresse : une page Shopify pese
+        #    2 Mo, un catalogue en fait cent. Le JSON se comprime d'un facteur 10
+        #    et reste lisible d'une ligne (gzip.open). Conserver le brut ne doit
+        #    pas devenir une raison de ne plus le conserver.
         if raw:
             piste = DATA / "raw" / meta["id"]
             piste.mkdir(parents=True, exist_ok=True)
-            (piste / f"{horodatage}.json").write_text(
-                json.dumps(raw, ensure_ascii=False), encoding="utf-8")
+            with gzip.open(piste / f"{horodatage}.json.gz", "wt", encoding="utf-8") as flux:
+                json.dump(raw, flux, ensure_ascii=False)
 
         # 2. normalise, dernier run
         if records:
@@ -147,6 +209,8 @@ def main() -> None:
             "requetes_http": len(raw),
             "periode": [dates[0], dates[-1]] if dates else None,
             "completude": completeness(records, CLES_COMPLETUDE),
+            "filtre": {v: sum(1 for r in records if r["filter_verdict"] == v)
+                       for v in ("GARDER", "REJETER", "QUARANTAINE")},
             "erreur": erreur, "journal": journal,
             "bloquee_connue": bloquee, "silencieuse": muette,
             # un adaptateur signale son plafond par une ligne de journal "TRONQUE:"

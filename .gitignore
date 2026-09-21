@@ -13,6 +13,31 @@ data/raw/
 preuves/
 essais/*/samples/
 
-# En revanche data/price_points.jsonl EST versionne : c'est le seul actif
-# irremplacable du labo. Un prix releve le 9 aout ne se recollecte pas — la
-# source aura change. Il pese 1,7 Mo, l'historique le supportera longtemps.
+# `data/normalized/` est entierement REGENERABLE depuis `data/raw/` par
+# `moteur/rejoue.py`, et pese 124 Mo au 21/09/2026. Rien a versionner.
+data/normalized/
+
+# Les sauvegardes datees du classeur de filtres. La trace du pourquoi vit dans
+# l'onglet JOURNAL, pas dans une copie du fichier.
+filtres/*.avant-*
+
+# data/price_points.jsonl : DECISION EN ATTENTE, et elle est urgente.
+#
+# Ce fichier est le seul actif irremplacable du labo — un prix releve le 9 aout
+# ne se recollecte pas, la source aura change. Il etait versionne quand il
+# pesait 1,7 Mo (mesure inscrite ici le 11/08/2026).
+#
+# Il pese 121 Mo au 21/09/2026, et GitHub REFUSE tout fichier au-dela de 100 Mo.
+# Il n'est donc plus poussable en l'etat, et le commentaire qui precedait
+# affirmait le contraire depuis six semaines.
+#
+# Trois voies, mesurees :
+#   - compresse, il tombe a 7,5 Mo (6 % de l'original) : versionnable tel quel,
+#     au prix d'un historique opaque au diff. C'est la recommandation.
+#   - Git LFS : garde le diff, ajoute une dependance et un quota.
+#   - hors de git, avec une sauvegarde ailleurs : perd le versionnement de
+#     l'actif, ce qui est precisement ce qu'on voulait eviter.
+#
+# En attendant l'arbitrage, le fichier reste SUIVI mais n'entre pas dans les
+# commits : le depot doit rester poussable.
+data/price_points.jsonl

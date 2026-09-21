@@ -1,0 +1,44 @@
+{
+ "run": "2026-08-27T20-28-23",
+ "collected_at": "2026-08-27T18:28:23+00:00",
+ "sources": [
+  {
+   "id": "watchesofswitzerland",
+   "name": "Watches of Switzerland",
+   "type": "retail",
+   "price_nature": "msrp",
+   "access": "sitemap produit + API OCC v2 (SAP Commerce), une requete par fiche",
+   "robots": "OK — /search et '*q=' interdits et non utilises ; les fiches /p/ sont libres",
+   "records": 2475,
+   "nouveaux": 2475,
+   "requetes_http": 2501,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 100,
+    "reference": 76,
+    "model": 100,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 1226,
+    "REJETER": 1249,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "sitemap : 33106 fiches, 13102 neuves, 20004 pre-detenues",
+    "2500 fiches retenues sur 33106 — selection etalee, la collecte complete demanderait ~9 h"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 2475,
+ "total_nouveaux": 2475
+}
