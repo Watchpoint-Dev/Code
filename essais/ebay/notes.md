@@ -1,94 +1,72 @@
-# eBay — Browse API
+# eBay — API officielle
+
+Fiche écrite le 21/09/2026 depuis les quatre diagnostics du 07/09/2026. Les
+mesures étaient dans `diagnostic_output/` sans qu'aucun document ne les
+rapporte : c'est réparé ici.
 
 ## Identité
-- **Source :** eBay  ·  **URL :** <https://developer.ebay.com>
-- **Type :** marketplace
-- **Statut :** en test — auth à valider en sandbox, production bloquée
-- **Nature du prix :** **demandé** (annonces actives) — voir « Le piège » plus bas
 
-## Accès
-- **API officielle**, pas de scraping. Browse API (`/buy/browse/v1`).
-- Compte développeur + keyset requis : <https://developer.ebay.com/my/keys>
-  - App ID (Client ID), Cert ID (Client Secret). Le Dev ID ne sert pas ici.
-  - Deux jeux séparés : **Sandbox** et **Production**.
-- **Auth : OAuth2 `client_credentials`.** Token applicatif valable ~2h.
-  Pas de consentement utilisateur, pas de redirect URI — c'est ce qui rend
-  cette source simple comparée aux autres API eBay.
-- Le scope s'écrit `https://api.ebay.com/oauth/api_scope` **même en sandbox**
-  (identifiant de permission, pas une adresse à appeler). Piège classique.
-- Header `X-EBAY-C-MARKETPLACE-ID` obligatoire sur chaque appel (`EBAY_US`…).
-- **Rate limit :** quota journalier par keyset, à lire sur le dashboard
-  développeur. À confirmer et à noter ici : `____ appels/jour`.
-- Pas de JavaScript, pas d'anti-bot : c'est une API.
+- **Source :** eBay · **URL :** <https://api.ebay.com>
+- **Type :** marketplace, API officielle (pas de scraping)
+- **Statut :** accès partiel obtenu, **bridé sur ce qui compte**
 
-## État actuel du keyset
-- **Sandbox : actif.** Mais c'est une fausse boutique quasi vide → sert
-  uniquement à valider la plomberie (auth + parsing), pas à juger la data.
-- **Production : DISABLED.** eBay exige la conformité « marketplace account
-  deletion / closure notification » avant d'activer. Deux voies :
-  1. **Exemption** — valable seulement si on ne stocke aucune donnée
-     d'utilisateur eBay. Or un **vendeur est un utilisateur eBay** : si on
-     garde `seller`, on n'est probablement pas exemptable.
-  2. **Endpoint de notification** — une route HTTPS qui répond au challenge
-     eBay (SHA-256 de `challengeCode + verificationToken + endpointURL`).
-     Faisable sur le Vercel existant. **Voie retenue.**
-     Attention : `proxy.ts` protège toutes les routes par défaut → la route
-     doit être déclarée publique côté Clerk, sinon le GET de vérification
-     d'eBay part en redirect vers `/sign-in` et la validation échoue.
+## Accès — mesuré, pas supposé
 
-## Format de la data
-- JSON propre. Deux niveaux :
-  - `item_summary/search` → liste paginée (limit ≤ 200, offset).
-  - `item/{itemId}` → fiche complète, **seul endroit où vivent les
-    `localizedAspects`** (marque, référence, année, mouvement, matériau…).
-- Champs : titre, prix + devise, état, vendeur, localisation, images, aspects.
-- **Historique : aucun.** Browse ne donne que l'instant présent. L'historique
-  se construit par snapshots répétés (même conclusion que pour les marchands,
-  cf. `audit_durabilite.md`).
+| API | HTTP | Ce qu'elle donne |
+|---|---|---|
+| **Browse** (annonces actives) | **200** | prix **demandé**, disponible tout de suite |
+| Taxonomy (métadonnées) | 200 | 46 attributs, `Reference Number` présent |
+| Developer Analytics | 200 | les quotas |
+| **Marketplace Insights** (prix **VENDUS**) | **403** | la donnée qui compte — sur approbation |
+| Feed (téléchargement en masse) | 403 | idem |
 
-### Complétude mesurée (à remplir après le pilote en production)
-| Champ | % rempli |
-|---|---|
-| Brand | |
-| Model | |
-| Reference Number | |
-| Year Manufactured | |
-| Movement | |
-| Case Material | |
+Clés dans `.env` (ignoré par git). `ebay_client.py` porte l'authentification
+OAuth ; les quatre `ebay_diagnostic*.py` sont les passes successives.
 
-C'est **le** chiffre qui décide de la valeur de la source. Un prix sans
-référence identifiable n'entre pas dans le modèle.
+## Les chiffres qui décident
 
-## Le piège (important pour le Plan2)
-Le `Plan2` classe eBay en nature de prix « **vendu** ». C'est inexact pour ce
-qui est accessible aujourd'hui :
+- **Quota : ~5 000 appels/jour** (mesuré : 100 appels consomment 100 unités).
+- **Plafond de 10 000 résultats par requête**, mesuré au lot près : 10 062
+  passe, 10 093 refusé. Toute marque plus grosse doit être découpée par bandes
+  de prix.
+- **Balayage complet du luxe projeté à 1 894 appels**, soit **38 % du quota
+  quotidien** — extrapolé d'un balayage TUDOR réel : 6 599 annonces annoncées,
+  6 732 trouvées, **102 % de couverture en 70 appels**.
+- Stock : **GB 2,5 M** montres, **US 2,9 M**, DE 747 k.
+- Rotation : 43 k nouvelles annonces/24 h, 309 k/7 j, 787 k/30 j.
+- Formats : 2,54 M à prix fixe, 1,21 M avec offre, 58 k aux enchères.
+- Pureté du champ marque, sur les marques de luxe : **90 à 100 %**.
+- Complétude sur le haut de gamme : référence 50 %, marque 92 %, matière 58 %.
+  Elle **baisse** quand le prix monte — 27 champs en moyenne sur le milieu de
+  gamme contre 15,7 sur le très haut de gamme.
 
-| API | Donne | Nature | Accès |
-|---|---|---|---|
-| **Browse** | annonces actives | **demandé** | ouvert, token app |
-| **Marketplace Insights** | ventes conclues 90j | **vendu** | sur approbation |
-| Feed | dumps bulk | demandé | partenaire, gros volume |
+## Ce que ça veut dire pour le projet
 
-- La **Finding API** (`findCompletedItems`), qui donnait historiquement les
-  ventes, a été dépréciée puis retirée → pas de plan B officiel.
-- Donc : Browse nous donne la même nature de prix que les marchands déjà
-  acquis (Amsterdam VW, Hodinkee). **Candidater à Marketplace Insights dès
-  maintenant**, délai long et réponse incertaine.
+**Browse est faisable dès demain, mais donne du prix demandé — la nature dont
+le projet a déjà trop** (49 805 lignes sur 136 377). Un prix affiché seul est
+une opinion, pas une transaction.
+
+La valeur est dans **Marketplace Insights**, et l'obtenir est une **démarche
+administrative, pas du code** : il faut d'abord satisfaire la conformité
+« suppression de compte » (endpoint de notification côté nous), puis candidater.
+
+Browse devient en revanche très intéressant **le jour où le journal
+d'observations existe** : 43 k annonces qui tournent par jour, c'est de la
+matière à « l'annonce a disparu, donc elle s'est vendue ». Aujourd'hui la base
+ne stocke qu'un état, pas un journal — donc ce levier reste hors de portée.
 
 ## Légal
-- Usage encadré par l'**API License Agreement** (à lire, lien en pied du
-  portail développeur). Point critique pour nous : les **restrictions de
-  rétention** des données eBay. À trancher **avant** de figer le schéma DB,
+
+API officielle sous contrat développeur : pas de question de robots.txt. Deux
+points à trancher avant toute collecte à l'échelle, tous deux notés dans
+`notes/CARNET.md` :
+
+- **Que dit la licence sur la durée de RÉTENTION des données ?** Critique,
   puisque le cœur du produit est l'historique de prix.
-- Bandeau du portail : *« Usernames will be replaced with immutable user
-  IDs »* → si on stocke un vendeur, **clé sur l'ID immuable, jamais sur le
-  username**, sinon la table est à reconstruire.
-- Pas de robots.txt à respecter ici : c'est une API officielle, pas du scraping.
+- **Stocke-t-on le vendeur ?** La réponse décide de la voie : exemption ou
+  endpoint de conformité.
 
-## Trouvailles / notes de test
-- (à remplir)
+## Prochain pas
 
-## Échantillons
-- `samples/search_*.json` — sortie brute de `explore.py search`
-- `samples/pilot_summaries.json` — lot d'annonces du pilote
-- `samples/pilot_items.json` — fiches détaillées (avec aspects)
+Candidater à Marketplace Insights. Tant que c'est 403, brancher Browse
+n'ajouterait que du prix demandé à une base qui en déborde.

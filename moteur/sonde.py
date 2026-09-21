@@ -338,12 +338,22 @@ def verdict(m: dict) -> str:
 # ---------------------------------------------------------------------- cibles
 
 def cibles_registre() -> list[tuple[str, str]]:
-    """Les 210 sources recensees, lues dans le registre partage."""
+    """Les 210 sources recensees, lues dans le registre partage.
+
+    Le chemin n'est plus fixe : le classeur porte un nom date et descend en
+    archive a chaque campagne, ce qui cassait cette commande. `--historique`
+    reste preferable pour une re-mesure, puisqu'il rejoue exactement le
+    perimetre du passage precedent.
+    """
     import pandas as pd
-    registre = ICI.parent.parent / "output" / "referentiels" / "DataSources.xlsx"
-    if not registre.exists():
-        sys.exit(f"registre introuvable : {registre}")
-    d = pd.read_excel(registre, sheet_name="Toutes les sources")
+    from utils import registre_sources
+    trouve = registre_sources()
+    if trouve is None:
+        sys.exit("aucun registre de sources trouve — utilise --historique pour "
+                 "rejouer le perimetre du dernier passage")
+    registre, onglet = trouve
+    print(f"registre : {registre.name} (onglet « {onglet} »)")
+    d = pd.read_excel(registre, sheet_name=onglet)
     vus, liste = set(), []
     for _, r in d.iterrows():
         url = str(r.get("URL") or "").strip()

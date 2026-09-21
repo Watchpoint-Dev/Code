@@ -1,0 +1,47 @@
+name,required,data_type,mode,cardinality,allowed_values,sample_values
+Brand,True,STRING,FREE_TEXT,SINGLE,2563,Unbranded; 01TheOne; 1928; 2(X)IST; 32 Degrees
+Department,True,STRING,FREE_TEXT,MULTI,7,Men; Women; Boys; Girls; Teens
+Reference Number,False,STRING,FREE_TEXT,MULTI,0,
+Customised,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+Model,False,STRING,FREE_TEXT,SINGLE,2293,A. Lange & Söhne 1815; A. Lange & Söhne Arkade; A. Lange & Söhne Cabaret; A. Lange & Söhne Datograph; A. Lange & Söhne Lange 1
+Dial Colour,False,STRING,FREE_TEXT,MULTI,27,Aubergine; Beige; Black; Blue; Bronze
+Strap Colour,False,STRING,FREE_TEXT,MULTI,16,Beige; Black; Blue; Brown; Clear
+Case Colour,False,STRING,FREE_TEXT,MULTI,16,Beige; Black; Blue; Brown; Clear
+Movement,False,STRING,FREE_TEXT,SINGLE,3,Mechanical (Automatic); Mechanical (Manual); Quartz
+Features,False,STRING,FREE_TEXT,MULTI,59,12-Hour Dial; 24-Hour Dial; Acrylic Crystal; Alarm; Altimeter
+Strap Material,False,STRING,FREE_TEXT,MULTI,36,Alloy; Aluminium; Aramid Fibre; Bamboo; Brass
+Case Material,False,STRING,FREE_TEXT,MULTI,32,Aluminium; Bamboo; Brass; Bronze; Carbon Fibre
+Style,False,STRING,FREE_TEXT,SINGLE,9,Casual; Classic; Diver; Dress/Formal; Luxury
+Display,False,STRING,FREE_TEXT,SINGLE,3,Analogue; Digital; Analogue & Digital
+Year Manufactured,False,STRING,FREE_TEXT,SINGLE,15,Pre-1920; 1920-1929; 1930-1939; 1940-1949; 1950-1959
+Type,False,STRING,FREE_TEXT,SINGLE,1,Wristwatch
+With Papers,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+With Original Box/Packaging,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+Water Resistance,False,STRING,FREE_TEXT,SINGLE,39,3 m (0.3 ATM); 10 m (1 ATM); 15 m (1.5 ATM); 20 m (2 ATM); 25 m (2.5 ATM)
+Indices,False,STRING,FREE_TEXT,MULTI,12,Arabic Numerals; Arrow Markers; Baton Indexes; Breguet Numerals; Dagger/Dauphine Indexes
+Bezel Colour,False,STRING,FREE_TEXT,MULTI,27,Aubergine; Beige; Black; Blue; Bronze
+Case Size,False,STRING,FREE_TEXT,SINGLE,57,10 mm; 11 mm; 12 mm; 13 mm; 14 mm
+Band/Strap,False,STRING,FREE_TEXT,SINGLE,12,Bangle; Bracelet; Bund Strap; Milanese/Mesh Band; NATO Strap
+Watch Shape,False,STRING,FREE_TEXT,SINGLE,10,Asymmetrical; Cushion; Dodecagon; Hexagon; Octagon
+Vintage,False,STRING,SELECTION_ONLY,SINGLE,2,No; Yes
+Bezel Type,False,STRING,FREE_TEXT,MULTI,20,12-Hour; 24-Hour; Bidirectional Rotating; Compass; Countdown
+Dial Pattern,False,STRING,FREE_TEXT,SINGLE,36,Animal Print; Brick; Bullseye; Camouflage; Celestial
+Country of Origin,False,STRING,SELECTION_ONLY,SINGLE,244,Afghanistan; Albania; Algeria; Andorra; Angola
+Theme,False,STRING,FREE_TEXT,SINGLE,17,Awareness; Buildings & Monuments; Cartoon; Celebrity; Celestial & Horoscope
+Caseback,False,STRING,FREE_TEXT,SINGLE,4,Exhibition; Screwback; Snap; Solid
+Strap Width,False,STRING,FREE_TEXT,SINGLE,40,5 mm; 6 mm; 7 mm; 8 mm; 9 mm
+Lug Width,False,STRING,FREE_TEXT,SINGLE,38,5 mm; 6 mm; 7 mm; 8 mm; 9 mm
+Number of Jewels,False,STRING,FREE_TEXT,SINGLE,62,2 Jewels; 3 Jewels; 4 Jewels; 5 Jewels; 6 Jewels
+With Manual/Booklet,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+Seller Warranty,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+With Service Records,False,STRING,SELECTION_ONLY,SINGLE,2,No; Yes
+Handmade,False,STRING,SELECTION_ONLY,SINGLE,2,Yes; No
+Case Finish,False,STRING,FREE_TEXT,SINGLE,11,Brushed; Chrome; Engraved; Gloss; Gunmetal
+Escapement Type,False,STRING,FREE_TEXT,SINGLE,7,Anchor; Co-Axial; Cylinder; Detent; Duplex
+Case Thickness,False,STRING,FREE_TEXT,SINGLE,16,5 mm; 6 mm; 7 mm; 8 mm; 9 mm
+Max Wrist Size,False,STRING,FREE_TEXT,SINGLE,7,14-15 cm; 15.1-16 cm; 16.1-17 cm; 17.1-18 cm; 18.1-19 cm
+Manufacturer Warranty,False,STRING,SELECTION_ONLY,SINGLE,11,1 Month; 3 Months; 6 Months; 9 Months; 1 Year
+Closure,False,STRING,FREE_TEXT,SINGLE,9,Buckle; Butterfly Clasp; Deployant; Double-Locking Fold-Over Clasp; Fold-Over Push-Button Deployant
+Handedness,False,STRING,SELECTION_ONLY,SINGLE,2,Left; Right
+Unit Quantity,False,STRING,FREE_TEXT,SINGLE,0,
+Unit Type,False,STRING,SELECTION_ONLY,SINGLE,10,10ml; 100ml; 10g; 100g; kg

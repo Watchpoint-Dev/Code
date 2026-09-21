@@ -37,7 +37,9 @@ import sources as paquet_sources  # noqa: E402
 LABO = ICI.parent
 RACINE = LABO.parent
 BASE = LABO / "data" / "price_points.jsonl"
-REGISTRE = RACINE / "output" / "referentiels" / "DataSources.xlsx"
+# Resolu a l'execution : le classeur porte un nom date et descend en archive
+# a chaque campagne. cf. utils.registre_sources().
+REGISTRE = None
 SORTIE = RACINE / "output" / "referentiels"
 
 NATURES = {"realised": "réalisé", "sold": "vendu", "asking": "demandé",
@@ -141,8 +143,10 @@ def main() -> None:
     # --- Registre enrichi
     verdicts = verdicts_aout()
     registre, enrichies = None, 0
-    if REGISTRE.exists():
-        registre = pd.read_excel(REGISTRE, sheet_name="Toutes les sources")
+    from utils import registre_sources
+    trouve = registre_sources()
+    if trouve is not None:
+        registre = pd.read_excel(trouve[0], sheet_name=trouve[1])
         colonnes = ["Exploitable", "Type de prix", "Historique", "Volume atteignable",
                     "Accès", "Blocage", "Action"]
         for c in colonnes:

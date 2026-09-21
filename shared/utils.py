@@ -128,3 +128,51 @@ def save_text(path: pathlib.Path, text: str) -> None:
 def save_json(path: pathlib.Path, data) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  -> sauvegarde {path.name} ({len(data) if hasattr(data,'__len__') else '?'} elements)")
+
+
+# Les onglets sous lesquels un classeur de registre range ses 210 sources. Le
+# nom change d'une campagne a l'autre : 'Toutes les sources' dans DataSources,
+# 'Decision' dans DECISION_SOURCES, 'Sources' dans WatchDataSources_v3.
+ONGLETS_REGISTRE = ("Toutes les sources", "Décision", "Decision", "Registre 210",
+                    "Sources", "Diagnostic 200")
+
+
+def registre_sources() -> tuple[pathlib.Path, str] | None:
+    """(classeur, onglet) du registre des 210 sources, ou qu'il soit rendu.
+
+    Ce fichier porte un nom DATE et descend en `_archive/` a la fin de chaque
+    campagne — c'est la regle du projet. Trois modules le cherchaient pourtant a
+    un chemin fixe, `output/referentiels/DataSources.xlsx`, et `sonde.py
+    --registre` s'arretait net depuis qu'il avait ete archive le 01/08/2026 :
+    une commande documentee dans le README ne marchait plus.
+
+    On rend aussi l'ONGLET, parce que le resoudre separement ne servait a rien :
+    DECISION_SOURCES existe mais ne porte pas 'Toutes les sources', et un
+    resolveur qui rend un classeur illisible ne vaut pas mieux qu'un chemin mort.
+
+    None plutot qu'une exception : l'appelant sait mieux que nous si le registre
+    lui est indispensable.
+    """
+    import openpyxl
+
+    racine = pathlib.Path(__file__).resolve().parent.parent.parent
+    ref = racine / "output" / "referentiels"
+    candidats = [
+        ref / "DataSources.xlsx",
+        *sorted(ref.glob("DECISION_SOURCES*.xlsx"), reverse=True),
+        *sorted(ref.glob("*SOURCES*.xlsx"), reverse=True),
+        *sorted(racine.glob("_archive/*/DataSources.xlsx"), reverse=True),
+    ]
+    for chemin in candidats:
+        if not chemin.exists():
+            continue
+        try:
+            classeur = openpyxl.load_workbook(chemin, read_only=True)
+            presents = set(classeur.sheetnames)
+            classeur.close()
+        except Exception:
+            continue
+        for onglet in ONGLETS_REGISTRE:
+            if onglet in presents:
+                return chemin, onglet
+    return None

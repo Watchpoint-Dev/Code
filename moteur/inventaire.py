@@ -173,7 +173,8 @@ def main() -> None:
     A("---")
     A("")
     A("Le registre complet des 210 sources recensées reste dans")
-    A("`output/referentiels/DataSources.xlsx` — c'est le document de travail partagé")
+    A("`output/referentiels/` — le classeur le plus récent y fait foi ; c'est le")
+    A("document de travail partagé")
     A("avec les associés, avec ses colonnes « assigné à » et « feedback ».")
     A("Ce fichier-ci est la vue technique : ce qui marche, ce qui est prouvé, ce qui est fermé.")
 
