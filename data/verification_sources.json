@@ -1,6 +1,82 @@
 {
- "date": "2026-08-11T14:43:48",
+ "date": "2026-08-11T21:38:00",
  "sources": [
+  {
+   "source": "The Keystone",
+   "url": "https://thekeystone.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 68,
+    "year": 0,
+    "price_amount": 99,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 59,
+    "images": 100
+   },
+   "prix": {
+    "min": 1,
+    "median": 28500,
+    "max": 2600000,
+    "aberrants": 1
+   },
+   "dates": {
+    "plus_ancienne": "2026-05-18",
+    "plus_recente": "2026-08-03"
+   },
+   "marques_distinctes": 23,
+   "top_marques": [
+    "Rolex",
+    "Patek Philippe",
+    "Audemars Piguet",
+    "Cartier"
+   ],
+   "exemple": "Rolex Steel and Pink Gold Oyster Perpetual Watch Ref. 5353 with Rare S",
+   "part_horlogere": 95,
+   "verdict": "SOLIDE"
+  },
+  {
+   "source": "Craft & Tailored",
+   "url": "https://craftandtailored.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 86,
+    "year": 56,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 23,
+    "images": 100
+   },
+   "prix": {
+    "min": 35,
+    "median": 5500,
+    "max": 310000,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-01-09",
+    "plus_recente": "2026-08-07"
+   },
+   "marques_distinctes": 37,
+   "top_marques": [
+    "Rolex",
+    "Omega",
+    "Tudor",
+    "Seiko"
+   ],
+   "exemple": "1960s Lemania \"RAN\" HS9 Mono-Pusher Chronograph (Royal Australian Navy",
+   "part_horlogere": 97,
+   "verdict": "SOLIDE"
+  },
   {
    "source": "Wanna Buy A Watch",
    "url": "https://wannabuyawatch.com/",
@@ -33,7 +109,7 @@
     "Omega"
    ],
    "exemple": "Rolex 14K YG Oyster Perpetual ref 6567 circa 1959 Box &amp; Chronomete",
-   "part_horlogere": 83,
+   "part_horlogere": 68,
    "verdict": "SOLIDE"
   },
   {
@@ -68,116 +144,12 @@
     "Patek Philippe"
    ],
    "exemple": "Rolex Day-Date Dutch Day Disk Ref. 18038 B+P",
-   "part_horlogere": 91,
+   "part_horlogere": 94,
    "verdict": "SOLIDE"
   },
   {
-   "source": "Watches of Knightsbridge",
-   "url": "https://watchesofknightsbridge.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 0,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 100,
-    "reference": 2,
-    "year": 26,
-    "price_amount": 99,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 100
-   },
-   "prix": {
-    "min": 3000,
-    "median": 7500,
-    "max": 63500,
-    "aberrants": 0
-   },
-   "marques_distinctes": 25,
-   "top_marques": [
-    "Rolex",
-    "Cartier",
-    "Patek Philippe",
-    "Audemars Piguet"
-   ],
-   "exemple": "Rolex Explorer &#8220;First Reference&#8221; 6150 Gilt Dial",
-   "part_horlogere": 71,
-   "verdict": "exploitable (reference faible)"
-  },
-  {
-   "source": "DavidSW (davidsw.com)",
-   "url": "https://davidsw.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 2,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 5,
-    "reference": 0,
-    "year": 0,
-    "price_amount": 100,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 98
-   },
-   "prix": {
-    "min": 4375,
-    "median": 15775,
-    "max": 128875,
-    "aberrants": 0
-   },
-   "marques_distinctes": 3,
-   "top_marques": [
-    "Panerai",
-    "Rolex",
-    "Dior"
-   ],
-   "exemple": "Panerai PAM 2070 Submersible QuarantaQuattro Goldtech OroCarbo",
-   "part_horlogere": 96,
-   "verdict": "exploitable (reference faible)"
-  },
-  {
-   "source": "Watchtrader",
-   "url": "https://watchtrader.co.uk/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 0,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 100,
-    "reference": 0,
-    "year": 0,
-    "price_amount": 100,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 100
-   },
-   "prix": {
-    "min": 1050,
-    "median": 7250,
-    "max": 240000,
-    "aberrants": 0
-   },
-   "marques_distinctes": 17,
-   "top_marques": [
-    "Rolex",
-    "Omega",
-    "Breitling",
-    "Tag Heuer"
-   ],
-   "exemple": "Rolex Datejust II 116334 2009",
-   "part_horlogere": 94,
-   "verdict": "exploitable (reference faible)"
-  },
-  {
-   "source": "Grailzee",
-   "url": "https://grailzee.com/",
+   "source": "Watches.com",
+   "url": "https://watches.com/",
    "plateforme": "Shopify products.json",
    "fiches_extraites": 250,
    "devise_boutique": "USD",
@@ -185,154 +157,71 @@
    "completude": {
     "brand": 100,
     "reference": 0,
-    "year": 65,
-    "price_amount": 0,
+    "year": 0,
+    "price_amount": 100,
     "price_currency": 100,
     "price_date": 100,
-    "condition": 100,
+    "condition": 66,
     "images": 100
    },
-   "dates": {
-    "plus_ancienne": "2026-08-10",
-    "plus_recente": "2026-08-10"
-   },
-   "marques_distinctes": 1,
-   "top_marques": [
-    "Grailzee"
-   ],
-   "exemple": "",
-   "part_horlogere": 86,
-   "verdict": "prix incomplets"
-  },
-  {
-   "source": "Amsterdam Vintage Watches",
-   "url": "https://amsterdamvintagewatches.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 0,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 0,
-    "reference": 0,
-    "year": 0,
-    "price_amount": 76,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 75
-   },
    "prix": {
-    "min": 15000,
-    "median": 33650,
-    "max": 425000,
+    "min": 65,
+    "median": 268,
+    "max": 3995,
     "aberrants": 0
    },
-   "marques_distinctes": 0,
-   "top_marques": [],
-   "exemple": "Audemars Piguet Royal Oak Tourbillon 25831ST",
-   "part_horlogere": 98,
-   "verdict": "prix incomplets"
+   "dates": {
+    "plus_ancienne": "2026-06-27",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 23,
+   "top_marques": [
+    "ultimatefieldwatch.com - Bertucci Watches",
+    "G-Shock",
+    "Duxot",
+    "Thomas Earnshaw"
+   ],
+   "exemple": "Nubeo Ulysses Automatic Limited Edition Nova Ignite",
+   "part_horlogere": 87,
+   "verdict": "exploitable (reference faible)"
   },
   {
-   "source": "Global Watch Shop",
-   "url": "https://globalwatchshop.co.uk/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 2,
+   "source": "Hodinkee Shop (Pre-Owned)",
+   "url": "https://shop.hodinkee.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
    "page_pleine": true,
-   "date_absente": true,
    "completude": {
     "brand": 100,
     "reference": 0,
     "year": 0,
-    "price_amount": 83,
+    "price_amount": 100,
     "price_currency": 100,
-    "price_date": 0,
+    "price_date": 100,
     "condition": 0,
-    "images": 100
+    "images": 86
    },
    "prix": {
-    "min": 3000,
-    "median": 16275,
-    "max": 99500,
+    "min": 25,
+    "median": 6600,
+    "max": 114940,
     "aberrants": 0
    },
-   "marques_distinctes": 9,
-   "top_marques": [
-    "Hublot",
-    "Rolex",
-    "Audemars Piguet",
-    "Patek Philippe"
-   ],
-   "exemple": "Rolex Lady-Datejust 31 178243 | Black Baton Dial, Steel &#038; Gold",
-   "part_horlogere": 49,
-   "verdict": "prix incomplets"
-  },
-  {
-   "source": "Watches of Distinction",
-   "url": "https://watchesofdistinction.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 2,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 99,
-    "reference": 100,
-    "year": 0,
-    "price_amount": 66,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 100
+   "dates": {
+    "plus_ancienne": "2024-04-19",
+    "plus_recente": "2024-10-17"
    },
-   "prix": {
-    "min": 2495,
-    "median": 8995,
-    "max": 89995,
-    "aberrants": 0
-   },
-   "marques_distinctes": 10,
+   "marques_distinctes": 31,
    "top_marques": [
     "Rolex",
-    "Omega",
-    "Patek Philippe",
-    "Breitling"
+    "Cartier",
+    "HODINKEE Shop",
+    "OMEGA"
    ],
-   "exemple": "Omega CONSTELLATION PERPETUAL CALENDAR REF 15523000 (2004) BOX AND PAP",
-   "part_horlogere": 95,
-   "verdict": "prix incomplets"
-  },
-  {
-   "source": "Menta Watches",
-   "url": "https://mentawatches.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 80,
-   "unite_mineure": 2,
-   "page_pleine": false,
-   "date_absente": true,
-   "completude": {
-    "brand": 0,
-    "reference": 0,
-    "year": 0,
-    "price_amount": 72,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 100
-   },
-   "prix": {
-    "min": 4750,
-    "median": 37000,
-    "max": 800000,
-    "aberrants": 0
-   },
-   "marques_distinctes": 0,
-   "top_marques": [],
-   "exemple": "Patek Philippe &#8220;Unworn 5167A-012 Singapore Edition&#8221; Aquana",
-   "part_horlogere": 74,
-   "verdict": "prix incomplets"
+   "exemple": "Chronomaster Original Triple Calendar Limited Edition For Hodinkee",
+   "part_horlogere": 51,
+   "verdict": "exploitable (reference faible)"
   },
   {
    "source": "Certified Watch Store",
@@ -369,8 +258,677 @@
     "Guess"
    ],
    "exemple": "Timex Men's Expedition Field Easy Reader Indiglo Classic Watch - T4492",
-   "part_horlogere": 14,
-   "verdict": "hors perimetre (peu de montres)"
+   "part_horlogere": 60,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Watches of Switzerland CPO",
+   "url": "https://watchesofswitzerland.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 4,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 110,
+    "median": 17950,
+    "max": 382800,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-06-24",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 23,
+   "top_marques": [
+    "Rolex CPO",
+    "Timex",
+    "Chanel",
+    "TAG Heuer"
+   ],
+   "exemple": "Datejust 31 | 31mm, Steel, Ref. M178240",
+   "part_horlogere": 96,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Bulang & Sons",
+   "url": "https://bulangandsons.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "EUR",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 11,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 78,
+    "images": 100
+   },
+   "prix": {
+    "min": 19,
+    "median": 4450,
+    "max": 89500,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-04-29",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 22,
+   "top_marques": [
+    "Rolex",
+    "JPM",
+    "guanabana",
+    "Fluco"
+   ],
+   "exemple": "Alligator Flank Black Leather Watch Strap",
+   "part_horlogere": 78,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Analog Shift",
+   "url": "https://analogshift.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 81,
+    "images": 100
+   },
+   "prix": {
+    "min": 5,
+    "median": 7600,
+    "max": 525000,
+    "aberrants": 1
+   },
+   "dates": {
+    "plus_ancienne": "2026-06-15",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 61,
+   "top_marques": [
+    "Patek Philippe",
+    "Omega",
+    "Cartier",
+    "A. Lange & Söhne"
+   ],
+   "exemple": "Hamilton Khaki Field 'L.L. Bean'",
+   "part_horlogere": 33,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Montredo",
+   "url": "https://montredo.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "EUR",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 100,
+    "images": 99
+   },
+   "prix": {
+    "min": 627,
+    "median": 7840,
+    "max": 121726,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-08-11",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 17,
+   "top_marques": [
+    "Cartier",
+    "Sinn",
+    "Panerai",
+    "Nomos Glashutte"
+   ],
+   "exemple": "Rado Centrix Diamonds Black 38mm",
+   "part_horlogere": 100,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Berry's",
+   "url": "https://berrysjewellers.co.uk/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "GBP",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 88,
+    "images": 100
+   },
+   "prix": {
+    "min": 71,
+    "median": 2333,
+    "max": 67000,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-07-15",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 24,
+   "top_marques": [
+    "WOLF 1834",
+    "Longines",
+    "FOPE",
+    "Aminoff London"
+   ],
+   "exemple": "Model 2000 Quartz 30mm Stainless Steel Silver Dial Pink leather Strap ",
+   "part_horlogere": 71,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "CW Sellors",
+   "url": "https://www.cwsellors.co.uk/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "GBP",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 65,
+    "images": 100
+   },
+   "prix": {
+    "min": 24,
+    "median": 292,
+    "max": 40900,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-07-22",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 16,
+   "top_marques": [
+    "Clogau",
+    "Art In Bronze",
+    "Gucci Jewellery",
+    "Franck Muller"
+   ],
+   "exemple": "Sterling Silver Turquoise Marquise Drop Necklace",
+   "part_horlogere": 26,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Hairspring",
+   "url": "https://hairspring.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 1,
+    "year": 1,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 17,
+    "images": 100
+   },
+   "prix": {
+    "min": 25,
+    "median": 90000,
+    "max": 825000,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2024-07-08",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 1,
+   "top_marques": [
+    "Hairspring"
+   ],
+   "exemple": "3940J, First Series, Perpetual Calendar, Yellow Gold",
+   "part_horlogere": 40,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Topper Fine Jewelers",
+   "url": "https://topperjewelers.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 90,
+    "images": 100
+   },
+   "prix": {
+    "min": 240,
+    "median": 2300,
+    "max": 84500,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2026-06-15",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 48,
+   "top_marques": [
+    "Elysium Black Diamond",
+    "Seiko",
+    "Nivada Grenchen",
+    "Doxa"
+   ],
+   "exemple": "Pre-Owned Stowa Flieger Verus 40 w/ Logo & Date Handwound",
+   "part_horlogere": 48,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Everest Horology",
+   "url": "https://everestbands.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 245,
+   "devise_boutique": "USD",
+   "page_pleine": false,
+   "completude": {
+    "brand": 100,
+    "reference": 4,
+    "year": 0,
+    "price_amount": 99,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 86,
+    "images": 98
+   },
+   "prix": {
+    "min": 17,
+    "median": 225,
+    "max": 595,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2019-01-18",
+    "plus_recente": "2026-08-10"
+   },
+   "marques_distinctes": 3,
+   "top_marques": [
+    "Everest Horology Products",
+    "Everest Bands",
+    "Everest Horology Products, LLC"
+   ],
+   "exemple": "Oyster-Style Bracelet for Yacht-Master Reference 16622, 116622, 126622",
+   "part_horlogere": 90,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Watches of Knightsbridge",
+   "url": "https://watchesofknightsbridge.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 0,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 100,
+    "reference": 2,
+    "year": 26,
+    "price_amount": 99,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 3000,
+    "median": 7500,
+    "max": 63500,
+    "aberrants": 0
+   },
+   "marques_distinctes": 25,
+   "top_marques": [
+    "Rolex",
+    "Cartier",
+    "Patek Philippe",
+    "Audemars Piguet"
+   ],
+   "exemple": "Rolex Explorer &#8220;First Reference&#8221; 6150 Gilt Dial",
+   "part_horlogere": 35,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "DavidSW (davidsw.com)",
+   "url": "https://davidsw.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 2,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 5,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 97
+   },
+   "prix": {
+    "min": 4375,
+    "median": 15675,
+    "max": 128875,
+    "aberrants": 0
+   },
+   "marques_distinctes": 3,
+   "top_marques": [
+    "Panerai",
+    "Rolex",
+    "Dior"
+   ],
+   "exemple": "Krista Special Order &#8211; RB",
+   "part_horlogere": 94,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Chronofinder",
+   "url": "https://chronofinder.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 0,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 0,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 1650,
+    "median": 9950,
+    "max": 375000,
+    "aberrants": 0
+   },
+   "marques_distinctes": 0,
+   "top_marques": [],
+   "exemple": "Lady Datejust 26 179173 (Champagne Diamond Dial)",
+   "part_horlogere": 77,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Watchtrader",
+   "url": "https://watchtrader.co.uk/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 0,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 1050,
+    "median": 7950,
+    "max": 240000,
+    "aberrants": 0
+   },
+   "marques_distinctes": 14,
+   "top_marques": [
+    "Rolex",
+    "Omega",
+    "Tudor",
+    "Tag Heuer"
+   ],
+   "exemple": "Tudor Black Bay Chrono 79360N-0024 2026",
+   "part_horlogere": 69,
+   "verdict": "exploitable (reference faible)"
+  },
+  {
+   "source": "Grailzee",
+   "url": "https://grailzee.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "USD",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 64,
+    "price_amount": 0,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 100,
+    "images": 100
+   },
+   "dates": {
+    "plus_ancienne": "2026-08-11",
+    "plus_recente": "2026-08-11"
+   },
+   "marques_distinctes": 1,
+   "top_marques": [
+    "Grailzee"
+   ],
+   "exemple": "",
+   "part_horlogere": 98,
+   "verdict": "prix incomplets"
+  },
+  {
+   "source": "A Collected Man",
+   "url": "https://acollectedman.com/",
+   "plateforme": "Shopify products.json",
+   "fiches_extraites": 250,
+   "devise_boutique": "GBP",
+   "page_pleine": true,
+   "completude": {
+    "brand": 100,
+    "reference": 4,
+    "year": 2,
+    "price_amount": 59,
+    "price_currency": 100,
+    "price_date": 100,
+    "condition": 8,
+    "images": 100
+   },
+   "prix": {
+    "min": 250,
+    "median": 55000,
+    "max": 1050000,
+    "aberrants": 0
+   },
+   "dates": {
+    "plus_ancienne": "2024-11-08",
+    "plus_recente": "2026-08-05"
+   },
+   "marques_distinctes": 51,
+   "top_marques": [
+    "F. P. Journe",
+    "A. Lange & Söhne",
+    "Patek Philippe",
+    "Hermès"
+   ],
+   "exemple": "Invention Piece 2 Execution Speciale | Platinum",
+   "part_horlogere": 26,
+   "verdict": "prix incomplets"
+  },
+  {
+   "source": "Amsterdam Vintage Watches",
+   "url": "https://amsterdamvintagewatches.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 0,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 0,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 77,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 76
+   },
+   "prix": {
+    "min": 15000,
+    "median": 33500,
+    "max": 425000,
+    "aberrants": 0
+   },
+   "marques_distinctes": 0,
+   "top_marques": [],
+   "exemple": "Patek Philippe 591",
+   "part_horlogere": 60,
+   "verdict": "prix incomplets"
+  },
+  {
+   "source": "Global Watch Shop",
+   "url": "https://globalwatchshop.co.uk/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 2,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 100,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 83,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 3000,
+    "median": 16275,
+    "max": 99500,
+    "aberrants": 0
+   },
+   "marques_distinctes": 9,
+   "top_marques": [
+    "Hublot",
+    "Rolex",
+    "Audemars Piguet",
+    "Patek Philippe"
+   ],
+   "exemple": "Rolex Lady-Datejust 31 178243 | Black Baton Dial, Steel &#038; Gold",
+   "part_horlogere": 55,
+   "verdict": "prix incomplets"
+  },
+  {
+   "source": "Watches of Distinction",
+   "url": "https://watchesofdistinction.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 100,
+   "unite_mineure": 2,
+   "page_pleine": true,
+   "date_absente": true,
+   "completude": {
+    "brand": 99,
+    "reference": 100,
+    "year": 0,
+    "price_amount": 66,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 2495,
+    "median": 8995,
+    "max": 89995,
+    "aberrants": 0
+   },
+   "marques_distinctes": 10,
+   "top_marques": [
+    "Rolex",
+    "Omega",
+    "Patek Philippe",
+    "Breitling"
+   ],
+   "exemple": "Omega CONSTELLATION PERPETUAL CALENDAR REF 15523000 (2004) BOX AND PAP",
+   "part_horlogere": 91,
+   "verdict": "prix incomplets"
+  },
+  {
+   "source": "Menta Watches",
+   "url": "https://mentawatches.com/",
+   "plateforme": "WooCommerce Store API",
+   "fiches_extraites": 80,
+   "unite_mineure": 2,
+   "page_pleine": false,
+   "date_absente": true,
+   "completude": {
+    "brand": 0,
+    "reference": 0,
+    "year": 0,
+    "price_amount": 72,
+    "price_currency": 100,
+    "price_date": 0,
+    "condition": 0,
+    "images": 100
+   },
+   "prix": {
+    "min": 4750,
+    "median": 37000,
+    "max": 800000,
+    "aberrants": 0
+   },
+   "marques_distinctes": 0,
+   "top_marques": [],
+   "exemple": "Patek Philippe &#8220;Unworn 5167A-012 Singapore Edition&#8221; Aquana",
+   "part_horlogere": 65,
+   "verdict": "prix incomplets"
   },
   {
    "source": "Morphy Auctions",
@@ -400,36 +958,6 @@
    "top_marques": [],
    "exemple": "September 15 &#8211; 17, 2026 &#8211; Firearms &#038; Militaria",
    "part_horlogere": 0,
-   "verdict": "hors perimetre (peu de montres)"
-  },
-  {
-   "source": "Chronofinder",
-   "url": "https://chronofinder.com/",
-   "plateforme": "WooCommerce Store API",
-   "fiches_extraites": 100,
-   "unite_mineure": 0,
-   "page_pleine": true,
-   "date_absente": true,
-   "completude": {
-    "brand": 0,
-    "reference": 0,
-    "year": 0,
-    "price_amount": 100,
-    "price_currency": 100,
-    "price_date": 0,
-    "condition": 0,
-    "images": 100
-   },
-   "prix": {
-    "min": 1650,
-    "median": 9950,
-    "max": 375000,
-    "aberrants": 0
-   },
-   "marques_distinctes": 0,
-   "top_marques": [],
-   "exemple": "Lady Datejust 26 179173 (Champagne Diamond Dial)",
-   "part_horlogere": 1,
    "verdict": "hors perimetre (peu de montres)"
   },
   {
@@ -481,118 +1009,6 @@
    "page_pleine": false,
    "date_absente": true,
    "verdict": "aucune donnee extraite"
-  },
-  {
-   "source": "CW Sellors",
-   "url": "https://www.cwsellors.co.uk/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 403",
-   "verdict": "aucune donnee extraite"
-  },
-  {
-   "source": "Watches.com",
-   "url": "https://watches.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Hodinkee Shop (Pre-Owned)",
-   "url": "https://shop.hodinkee.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Watches of Switzerland CPO",
-   "url": "https://watchesofswitzerland.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "The Keystone",
-   "url": "https://thekeystone.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Craft & Tailored",
-   "url": "https://craftandtailored.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Bulang & Sons",
-   "url": "https://bulangandsons.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "A Collected Man",
-   "url": "https://acollectedman.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Analog Shift",
-   "url": "https://analogshift.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Everest Horology",
-   "url": "https://everestbands.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Montredo",
-   "url": "https://montredo.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Berry's",
-   "url": "https://berrysjewellers.co.uk/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Hairspring",
-   "url": "https://hairspring.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
-  },
-  {
-   "source": "Topper Fine Jewelers",
-   "url": "https://topperjewelers.com/",
-   "plateforme": "Shopify products.json",
-   "fiches_extraites": 0,
-   "erreur": "HTTP 429",
-   "verdict": "limite par le site (429) — a reessayer plus tard"
   }
  ]
 }

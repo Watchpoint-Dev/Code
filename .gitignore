@@ -41,3 +41,7 @@ filtres/*.avant-*
 # En attendant l'arbitrage, le fichier reste SUIVI mais n'entre pas dans les
 # commits : le depot doit rester poussable.
 data/price_points.jsonl
+
+# Sauvegardes datees de l'actif, prises avant un re-marquage. Elles vivent sur
+# le disque, pas dans l'historique.
+data/price_points.jsonl.avant-*
