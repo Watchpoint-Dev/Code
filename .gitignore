@@ -45,3 +45,6 @@ data/price_points.jsonl
 # Sauvegardes datees de l'actif, prises avant un re-marquage. Elles vivent sur
 # le disque, pas dans l'historique.
 data/price_points.jsonl.avant-*
+
+# Le verrou de collecte : un etat de processus, pas une donnee.
+data/.collecte-en-cours

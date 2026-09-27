@@ -18,6 +18,7 @@ from __future__ import annotations
 import datetime as dt
 import gzip
 import json
+import os
 import pathlib
 import sys
 
@@ -57,6 +58,12 @@ def _volumes_du_dernier_run() -> dict[str, int]:
             manifeste = json.loads(chemin.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             continue
+        # Un manifeste partiel — collecte interrompue — n'est pas une reference :
+        # les sources qu'elle n'a pas atteintes y valent zero, et toutes
+        # paraitraient effondrees au run suivant. Les manifestes d'avant le
+        # 22/09/2026 ne portent pas le drapeau : leur absence vaut « complet ».
+        if manifeste.get("complet") is False:
+            continue
         volumes = {s["id"]: s["records"] for s in manifeste.get("sources", [])
                    if s.get("records")}
         if volumes:
@@ -64,17 +71,65 @@ def _volumes_du_dernier_run() -> dict[str, int]:
     return {}
 
 
-def _cles_existantes() -> set[tuple]:
+def _cles_existantes() -> set[int]:
+    """Les cles deja en base, stockees en EMPREINTES et non en tuples.
+
+    Un tuple (source, id, montant, date) pese quelques centaines d'octets une
+    fois ses chaines comptees ; un entier en pese 28. Sur 165 000 lignes, la
+    difference se voit — et cet ensemble vit en memoire pendant toute la
+    collecte, a cote du brut de la source en cours.
+
+    Le risque d'une empreinte est la collision : deux prix differents rendant le
+    meme entier seraient confondus, et le second jete. A 165 000 cles sur les
+    2^64 valeurs de `hash`, la probabilite est de l'ordre de 10^-9 — sans
+    commune mesure avec le doublon que cet ensemble sert justement a eviter.
+    """
     if not CUMUL.exists():
         return set()
     cles = set()
     with CUMUL.open(encoding="utf-8") as flux:
         for ligne in flux:
             try:
-                cles.add(_cle(json.loads(ligne)))
+                cles.add(hash(_cle(json.loads(ligne))))
             except (json.JSONDecodeError, KeyError):
                 continue
     return cles
+
+
+class _Verrou:
+    """Empeche deux collectes simultanees. C'est ce qui a manque le 21/09/2026.
+
+    Trois `run.py` ont ete lances en parallele ce soir-la, en pensant que des
+    domaines disjoints suffisaient a rendre l'operation sure. La politesse
+    reseau l'etait ; la MEMOIRE ne l'etait pas. Chaque processus garde en RAM le
+    brut de la source en cours — 6 050 pages pour Antiquorum — plus son propre
+    jeu de cles. Le systeme a tue les deux plus gros, et Antiquorum, Phillips,
+    Grailzee et Morphy n'ont rien ramene.
+
+    Le verrou refuse la seconde collecte au lieu de laisser le systeme choisir
+    laquelle tuer. `--force` existe pour le cas ou un verrou survit a un plantage.
+    """
+
+    def __init__(self):
+        self.chemin = DATA / ".collecte-en-cours"
+
+    def __enter__(self):
+        if self.chemin.exists() and "--force" not in sys.argv:
+            detail = self.chemin.read_text(encoding="utf-8").strip()
+            sys.exit(
+                f"une collecte tourne deja ({detail}).\n"
+                "Deux collectes simultanees ont epuise la memoire le 21/09/2026 et "
+                "ont ete tuees toutes les deux.\n"
+                "Attends la fin, ou relance avec --force si ce verrou est orphelin "
+                f"(supprime alors data/{self.chemin.name}).")
+        self.chemin.write_text(
+            f"pid {os.getpid()} depuis {dt.datetime.now().isoformat(timespec='seconds')}",
+            encoding="utf-8")
+        return self
+
+    def __exit__(self, *_):
+        self.chemin.unlink(missing_ok=True)
+        return False
 
 
 # Les sources qu'on ne rappelle plus, et pourquoi. Elles restent dans le
@@ -98,6 +153,22 @@ GELEES = {
 }
 
 
+def _ecrit_manifeste(manifeste: dict, horodatage: str, nouveaux: int,
+                     *, partiel: bool) -> None:
+    """Ecrit le manifeste, en le marquant INCOMPLET tant que la collecte court.
+
+    Le drapeau compte : `_volumes_du_dernier_run()` lit le dernier manifeste
+    pour detecter les effondrements de volume. Un manifeste partiel pris pour
+    une reference ferait crier a l'effondrement sur toutes les sources que la
+    collecte n'avait pas encore atteintes.
+    """
+    manifeste["total_records"] = sum(s["records"] for s in manifeste["sources"])
+    manifeste["total_nouveaux"] = nouveaux
+    manifeste["complet"] = not partiel
+    (DATA / "runs" / f"{horodatage}.json").write_text(
+        json.dumps(manifeste, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main() -> None:
     # Sans cela, une collecte de plusieurs heures redirigee vers un fichier
     # n'ecrit rien avant sa fin : on ne peut pas la suivre, ni voir ou elle
@@ -106,7 +177,9 @@ def main() -> None:
         sys.stdout.reconfigure(line_buffering=True)
     except AttributeError:
         pass
-    demandees = [a.lower() for a in sys.argv[1:]]
+    # Les drapeaux ne sont pas des noms de source : sans ce filtre, `--force`
+    # serait cherche dans sources.ALL et la collecte sortirait a vide.
+    demandees = [a.lower() for a in sys.argv[1:] if not a.startswith("-")]
     modules = [m for m in sources.ALL if not demandees or m.SOURCE["id"] in demandees]
     # Une source gelee ne repart que si on la nomme explicitement.
     if not demandees:
@@ -176,9 +249,9 @@ def main() -> None:
                 json.dumps(records, ensure_ascii=False, indent=1), encoding="utf-8")
 
         # 3. cumul dedoublonne
-        nouveaux = [r for r in records if _cle(r) not in deja_vu]
+        nouveaux = [r for r in records if hash(_cle(r)) not in deja_vu]
         for record in nouveaux:
-            deja_vu.add(_cle(record))
+            deja_vu.add(hash(_cle(record)))
         if nouveaux:
             with CUMUL.open("a", encoding="utf-8") as flux:
                 for record in nouveaux:
@@ -225,10 +298,21 @@ def main() -> None:
             print(f"      · {ligne}")
         print()
 
-    manifeste["total_records"] = sum(s["records"] for s in manifeste["sources"])
-    manifeste["total_nouveaux"] = nouveaux_total
-    (DATA / "runs" / f"{horodatage}.json").write_text(
-        json.dumps(manifeste, ensure_ascii=False, indent=1), encoding="utf-8")
+        # Le manifeste est ecrit APRES CHAQUE SOURCE, pas seulement a la fin.
+        # Le 21/09/2026 deux collectes ont ete tuees en cours : leurs lignes
+        # etaient bien en base — le cumul s'ecrit source par source — mais le
+        # journal de ce qui avait ete collecte, avec ses completudes, ses
+        # plafonds et ses erreurs, n'a jamais ete ecrit. On savait ce qu'on
+        # avait, on ne savait plus comment on l'avait eu.
+        _ecrit_manifeste(manifeste, horodatage, nouveaux_total, partiel=True)
+
+        # Le brut de la source est desormais sur le disque, compresse. Le garder
+        # en memoire pendant que la source suivante accumule le sien est ce qui
+        # a fait tuer le processus : `del` rend la place tout de suite au lieu
+        # d'attendre la reaffectation de la boucle.
+        del raw, records, nouveaux
+
+    _ecrit_manifeste(manifeste, horodatage, nouveaux_total, partiel=False)
 
     # ---- rapport final
     print("=" * 78)
@@ -286,4 +370,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    with _Verrou():
+        main()

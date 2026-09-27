@@ -88,6 +88,7 @@ from __future__ import annotations
 
 import datetime as dt
 import html as _html
+import os
 import re
 
 from filtre import filtre
@@ -564,17 +565,49 @@ def _page(url, raw, journal, etiquette, params=None):
     return resp.text
 
 
+def _annees_demandees() -> tuple | None:
+    """Les annees a parcourir, surchargeables pour collecter par TRANCHES.
+
+        WP_ANTIQUORUM_ANNEES=2010-2019 python moteur/run.py antiquorum
+        WP_ANTIQUORUM_ANNEES=2015,2016 python moteur/run.py antiquorum
+
+    Meme motif que `WP_CHRISTIES_ANNEES`, et pour une raison mesuree : un
+    parcours complet demande ~6 050 requetes et garde tout son brut en memoire
+    jusqu'a la fin — 38 annees d'un bloc ont participe a l'epuisement memoire du
+    21/09/2026. Une tranche borne la memoire ET permet de reprendre ou l'on s'est
+    arrete, puisque le cumul est dedoublonne.
+
+    La tranche 2010-2019 est celle qu'il faut prendre en premier : elle pese la
+    moitie du volume utile et 71 % des lignes referencees (mesure du 21/09/2026).
+    """
+    brut = os.environ.get("WP_ANTIQUORUM_ANNEES", "").strip()
+    if not brut:
+        return None
+    if "-" in brut and "," not in brut:
+        debut, _, fin = brut.partition("-")
+        if debut.strip().isdigit() and fin.strip().isdigit():
+            a, b = int(debut), int(fin)
+            return tuple(range(max(a, b), min(a, b) - 1, -1))
+    return tuple(int(a) for a in brut.split(",") if a.strip().isdigit()) or None
+
+
 def collect(cap: int = 20000, annees=None):
     """Les ventes des annees demandees, de la plus recente a la plus ancienne.
 
-    `annees` sert aux essais (une annee precise) ; par defaut on remonte de
-    l'annee courante a 1989.
+    `annees` sert aux essais (une annee precise) ; sinon on lit
+    WP_ANTIQUORUM_ANNEES ; a defaut on remonte de l'annee courante a 1989.
     """
     raw: list[dict] = []
     journal: list[str] = []
     records: list[dict] = []
     if annees is None:
+        annees = _annees_demandees()
+    if annees is None:
         annees = range(dt.date.today().year, ANNEE_MIN - 1, -1)
+    else:
+        annees = tuple(annees)   # min/max/parcours : jamais sur un generateur
+        journal.append(f"TRANCHE demandee : {min(annees)} -> {max(annees)} "
+                       f"({len(annees)} annees)")
 
     ventes_vues = 0
     sans_price_list = 0
