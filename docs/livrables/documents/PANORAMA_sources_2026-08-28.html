@@ -1,0 +1,702 @@
+<title>Panorama des sources Watchpoint</title>
+<style>
+  :root {
+    --ground:#F2F5F2; --surface:#FFFFFF; --ink:#12171A; --muted:#5C686B;
+    --rule:#DCE3DE; --accent:#0E6B5B; --garde:#0E6B5B; --rejet:#96382C;
+    --quarantaine:#9A7418; --vide:#E3E8E4;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:#0D1012; --surface:#161A1C; --ink:#E6EAE8; --muted:#98A3A6;
+      --rule:#252B2D; --accent:#4EBFA7; --garde:#4EBFA7; --rejet:#D2705E;
+      --quarantaine:#CB9F3E; --vide:#1F2426;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#0D1012; --surface:#161A1C; --ink:#E6EAE8; --muted:#98A3A6;
+    --rule:#252B2D; --accent:#4EBFA7; --garde:#4EBFA7; --rejet:#D2705E;
+    --quarantaine:#CB9F3E; --vide:#1F2426;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page { max-width:1060px; margin:0 auto; padding:clamp(28px,5vw,72px) clamp(18px,4vw,40px) 80px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:28px; margin-bottom:44px; }
+  .eyebrow {
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 14px;
+  }
+  h1 {
+    font-family:var(--serif); font-weight:600; font-size:clamp(34px,5.2vw,54px);
+    line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;
+  }
+  .chapeau { max-width:62ch; color:var(--muted); margin:0; font-size:17px; }
+  section { margin:0 0 56px; }
+  h2 {
+    font-family:var(--serif); font-size:clamp(21px,2.6vw,27px); font-weight:600;
+    margin:0 0 6px; letter-spacing:-.01em;
+  }
+  h2 + p { margin:0 0 20px; color:var(--muted); max-width:66ch; }
+  .tuiles { display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule);
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); margin-bottom:52px; }
+  .tuile { background:var(--surface); padding:20px 22px 22px; }
+  .tuile b { display:block; font-family:var(--mono); font-size:clamp(24px,3.4vw,32px);
+    font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .tuile span { display:block; font-size:14px; margin-top:4px; }
+  .tuile em { display:block; font-style:normal; font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .table-wrap { overflow-x:auto; border:1px solid var(--rule); background:var(--surface); }
+  table { border-collapse:collapse; width:100%; font-size:14.5px; }
+  caption { text-align:left; padding:14px 18px 0; color:var(--muted); font-size:13px; }
+  th, td { padding:11px 14px; text-align:left; border-bottom:1px solid var(--rule); vertical-align:middle; }
+  thead th {
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); font-weight:500; border-bottom:1px solid var(--ink);
+  }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom:none; }
+  tbody th { font-weight:600; }
+  .num { font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .nom { display:block; }
+  .type { display:block; font-size:12px; color:var(--muted); font-weight:400; }
+  .prov { font-size:13px; color:var(--muted); }
+  .bar { width:180px; min-width:140px; }
+  .barre { display:flex; height:9px; width:100%; overflow:hidden; }
+  .seg { display:block; }
+  .seg--garde, .seg--realised { background:var(--garde); }
+  .seg--rejet { background:var(--rejet); }
+  .seg--quarantaine { background:var(--quarantaine); }
+  .seg--accent, .seg--sold { background:var(--accent); }
+  .seg--asking { background:var(--quarantaine); }
+  .seg--estimate { background:var(--muted); }
+  .seg--vide { background:var(--vide); }
+  .pastille {
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 8px; border:1px solid currentColor; white-space:nowrap;
+  }
+  .pastille--realised { color:var(--garde); }
+  .pastille--sold { color:var(--accent); }
+  .pastille--asking { color:var(--quarantaine); }
+  .legende { display:flex; flex-wrap:wrap; gap:18px; margin:14px 0 0;
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+  .legende i { display:inline-block; width:11px; height:11px; margin-right:6px; vertical-align:-1px; font-style:normal; }
+  ul.notes { margin:16px 0 0; padding:0; list-style:none; }
+  ul.notes li { padding:11px 0 11px 18px; border-top:1px solid var(--rule);
+    position:relative; font-size:14.5px; color:var(--muted); }
+  ul.notes li::before { content:""; position:absolute; left:0; top:19px;
+    width:7px; height:1px; background:var(--muted); }
+  ul.notes b { color:var(--ink); }
+  code { font-family:var(--mono); font-size:12.5px; }
+  .grille-2 { display:grid; gap:26px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); }
+  footer { border-top:1px solid var(--rule); padding-top:20px; color:var(--muted); font-size:13px; }
+  footer code { color:var(--ink); }
+</style>
+
+<div class="page">
+<header>
+  <p class="eyebrow">Watchpoint · état des données · 28.08.2026</p>
+  <h1>Ce que nous avons collecté,<br>et ce qui en est exploitable</h1>
+  <p class="chapeau">126 697 prix ramenés de 24 sources, chacun
+  daté, chiffré dans sa devise d'origine et porteur de sa nature. Le filtre a tranché
+  ligne par ligne à l'entrée&nbsp;: rien n'a été supprimé, tout a été marqué.</p>
+</header>
+
+<div class="tuiles">
+  <div class="tuile"><b>126 697</b><span>prix collectés</span><em>24 sources actives</em></div><div class="tuile"><b>104 256</b><span>gardés par le filtre</span><em>82 % du collecté</em></div><div class="tuile"><b>2007 → 2026</b><span>profondeur historique</span><em>date de vente ou de mise en ligne</em></div><div class="tuile"><b>242 Mo</b><span>de brut conservé</span><em>56 collectes rejouables hors ligne</em></div>
+</div>
+
+<section>
+  <h2>Les sources</h2>
+  <p>Chaque source apporte une nature de prix et une profondeur différentes. La barre
+  montre ce que le filtre fait de sa récolte.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th scope="col">Source</th><th scope="col">Prix</th><th scope="col">Nature dominante</th>
+        <th scope="col">Période</th><th scope="col">Réf. constructeur</th>
+        <th scope="col">Filtre</th><th scope="col">Brut</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row"><span class="nom">Hodinkee Shop</span>
+            <span class="type">marchand</span></th>
+          <td class="num">18 945</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2016 → 2024</td>
+          <td class="num">10 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:18742" title="gardé 18 742"></span><span class="seg seg--rejet" style="flex:203" title="rejeté 203"></span></span></td>
+          <td class="num">8.5 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Montredo</span>
+            <span class="type">marchand</span></th>
+          <td class="num">18 306</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">2026 → 2026</td>
+          <td class="num">83 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:17103" title="gardé 17 103"></span><span class="seg seg--rejet" style="flex:1203" title="rejeté 1 203"></span></span></td>
+          <td class="num">6.2 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Christie&#x27;s</span>
+            <span class="type">maison de ventes</span></th>
+          <td class="num">12 507</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2017 → 2026</td>
+          <td class="num">62 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:10680" title="gardé 10 680"></span><span class="seg seg--rejet" style="flex:1827" title="rejeté 1 827"></span></span></td>
+          <td class="num">14.3 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Artcurial</span>
+            <span class="type">maison de ventes</span></th>
+          <td class="num">8 625</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2007 → 2026</td>
+          <td class="num">38 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:5519" title="gardé 5 519"></span><span class="seg seg--rejet" style="flex:3106" title="rejeté 3 106"></span></span></td>
+          <td class="num">7.5 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Analog:Shift</span>
+            <span class="type">marchand</span></th>
+          <td class="num">8 213</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2015 → 2026</td>
+          <td class="num">47 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:7180" title="gardé 7 180"></span><span class="seg seg--rejet" style="flex:1033" title="rejeté 1 033"></span></span></td>
+          <td class="num">17.2 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Wanna Buy A Watch</span>
+            <span class="type">marchand</span></th>
+          <td class="num">6 441</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">— → —</td>
+          <td class="num">71 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:5812" title="gardé 5 812"></span><span class="seg seg--rejet" style="flex:628" title="rejeté 628"></span><span class="seg seg--quarantaine" style="flex:1" title="quarantaine 1"></span></span></td>
+          <td class="num">14.1 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Lyon &amp; Turnbull</span>
+            <span class="type">maison de ventes</span></th>
+          <td class="num">5 763</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2019 → 2026</td>
+          <td class="num">6 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:1048" title="gardé 1 048"></span><span class="seg seg--rejet" style="flex:4715" title="rejeté 4 715"></span></span></td>
+          <td class="num">3.3 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Berry&#x27;s Jewellers</span>
+            <span class="type">marchand</span></th>
+          <td class="num">5 638</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">2014 → 2026</td>
+          <td class="num">98 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2142" title="gardé 2 142"></span><span class="seg seg--rejet" style="flex:3496" title="rejeté 3 496"></span></span></td>
+          <td class="num">4.8 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">The Keystone</span>
+            <span class="type">marchand</span></th>
+          <td class="num">5 020</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2018 → 2026</td>
+          <td class="num">85 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:4945" title="gardé 4 945"></span><span class="seg seg--rejet" style="flex:75" title="rejeté 75"></span></span></td>
+          <td class="num">1.9 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">WatchRecon</span>
+            <span class="type">forums</span></th>
+          <td class="num">4 950</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">2026 → 2026</td>
+          <td class="num">15 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:4352" title="gardé 4 352"></span><span class="seg seg--rejet" style="flex:206" title="rejeté 206"></span><span class="seg seg--quarantaine" style="flex:392" title="quarantaine 392"></span></span></td>
+          <td class="num">73.1 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Loupe This</span>
+            <span class="type">maison de ventes</span></th>
+          <td class="num">4 220</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2021 → 2026</td>
+          <td class="num">77 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:3902" title="gardé 3 902"></span><span class="seg seg--rejet" style="flex:318" title="rejeté 318"></span></span></td>
+          <td class="num">1.0 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Watchtrader</span>
+            <span class="type">marchand</span></th>
+          <td class="num">4 090</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">— → —</td>
+          <td class="num">99 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:4070" title="gardé 4 070"></span><span class="seg seg--rejet" style="flex:11" title="rejeté 11"></span><span class="seg seg--quarantaine" style="flex:9" title="quarantaine 9"></span></span></td>
+          <td class="num">4.0 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Topper Fine Jewelers</span>
+            <span class="type">retail</span></th>
+          <td class="num">3 687</td>
+          <td><span class="pastille pastille--msrp">prix neuf</span></td>
+          <td class="num">2018 → 2026</td>
+          <td class="num">0 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2404" title="gardé 2 404"></span><span class="seg seg--rejet" style="flex:1283" title="rejeté 1 283"></span></span></td>
+          <td class="num">1.7 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Bulang and Sons</span>
+            <span class="type">marchand</span></th>
+          <td class="num">3 683</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2026 → 2026</td>
+          <td class="num">35 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2604" title="gardé 2 604"></span><span class="seg seg--rejet" style="flex:1079" title="rejeté 1 079"></span></span></td>
+          <td class="num">3.4 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Craft &amp; Tailored</span>
+            <span class="type">marchand</span></th>
+          <td class="num">3 646</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2016 → 2026</td>
+          <td class="num">84 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:3294" title="gardé 3 294"></span><span class="seg seg--rejet" style="flex:351" title="rejeté 351"></span><span class="seg seg--quarantaine" style="flex:1" title="quarantaine 1"></span></span></td>
+          <td class="num">38.8 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">CW Sellors</span>
+            <span class="type">marchand</span></th>
+          <td class="num">2 948</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">2017 → 2026</td>
+          <td class="num">5 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2432" title="gardé 2 432"></span><span class="seg seg--rejet" style="flex:516" title="rejeté 516"></span></span></td>
+          <td class="num">1.8 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Amsterdam Watch Company</span>
+            <span class="type">marchand</span></th>
+          <td class="num">2 686</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">— → —</td>
+          <td class="num">71 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2063" title="gardé 2 063"></span><span class="seg seg--rejet" style="flex:543" title="rejeté 543"></span><span class="seg seg--quarantaine" style="flex:80" title="quarantaine 80"></span></span></td>
+          <td class="num">5.9 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Watches of Switzerland</span>
+            <span class="type">retail</span></th>
+          <td class="num">2 475</td>
+          <td><span class="pastille pastille--msrp">prix neuf</span></td>
+          <td class="num">— → —</td>
+          <td class="num">76 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:2029" title="gardé 2 029"></span><span class="seg seg--rejet" style="flex:440" title="rejeté 440"></span><span class="seg seg--quarantaine" style="flex:6" title="quarantaine 6"></span></span></td>
+          <td class="num">1.0 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Fortuna</span>
+            <span class="type">maison de ventes</span></th>
+          <td class="num">2 010</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2016 → 2026</td>
+          <td class="num">50 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:1744" title="gardé 1 744"></span><span class="seg seg--rejet" style="flex:266" title="rejeté 266"></span></span></td>
+          <td class="num">1.2 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Global Watch Shop</span>
+            <span class="type">marchand</span></th>
+          <td class="num">971</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">— → —</td>
+          <td class="num">97 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:804" title="gardé 804"></span><span class="seg seg--rejet" style="flex:85" title="rejeté 85"></span><span class="seg seg--quarantaine" style="flex:82" title="quarantaine 82"></span></span></td>
+          <td class="num">2.8 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">A Collected Man</span>
+            <span class="type">marchand</span></th>
+          <td class="num">962</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2015 → 2026</td>
+          <td class="num">8 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:650" title="gardé 650"></span><span class="seg seg--rejet" style="flex:312" title="rejeté 312"></span></span></td>
+          <td class="num">3.8 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Chronofinder</span>
+            <span class="type">marchand</span></th>
+          <td class="num">592</td>
+          <td><span class="pastille pastille--asking">demandé</span></td>
+          <td class="num">— → —</td>
+          <td class="num">78 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:589" title="gardé 589"></span><span class="seg seg--rejet" style="flex:3" title="rejeté 3"></span></span></td>
+          <td class="num">1.6 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">Hairspring</span>
+            <span class="type">marchand</span></th>
+          <td class="num">318</td>
+          <td><span class="pastille pastille--sold">vendu</span></td>
+          <td class="num">2023 → 2026</td>
+          <td class="num">4 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:147" title="gardé 147"></span><span class="seg seg--rejet" style="flex:157" title="rejeté 157"></span><span class="seg seg--quarantaine" style="flex:14" title="quarantaine 14"></span></span></td>
+          <td class="num">0.2 Mo</td>
+        </tr>
+        <tr>
+          <th scope="row"><span class="nom">EveryWatch</span>
+            <span class="type">agrégateur</span></th>
+          <td class="num">1</td>
+          <td><span class="pastille pastille--realised">réalisé</span></td>
+          <td class="num">2026 → 2026</td>
+          <td class="num">0 %</td>
+          <td class="bar"><span class="barre"><span class="seg seg--garde" style="flex:1" title="gardé 1"></span></span></td>
+          <td class="num">2.9 Mo</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <p class="legende">
+    <span><i style="background:var(--garde)"></i>gardé</span>
+    <span><i style="background:var(--rejet)"></i>rejeté</span>
+    <span><i style="background:var(--quarantaine)"></i>quarantaine</span>
+  </p>
+  <ul class="notes"><li><b>LiveAuctioneers</b> — BLOQUE (anti-bot Incapsula depuis ~08/2026)</li><li><b>Bezel</b> — EN ATTENTE — les CGU interdisent le scraping, arbitrage humain requis</li></ul>
+</section>
+
+<section>
+  <h2>Les natures de prix</h2>
+  <p>C'est la question qui décide de ce qu'on peut afficher. Un prix demandé est une
+  opinion de vendeur&nbsp;; un prix réalisé est une transaction.</p>
+  <div class="table-wrap">
+    <table><thead><tr>
+      <th scope="col">Nature</th><th scope="col">Prix</th><th scope="col"></th><th scope="col">Part</th>
+    </tr></thead><tbody>
+        <tr><th scope="row"><span class="pastille pastille--asking">demandé</span></th>
+          <td class="num">47 141</td>
+          <td class="bar"><span class="barre"><span class="seg seg--asking"
+            style="flex:47141"></span><span class="seg seg--vide"
+            style="flex:79556"></span></span></td>
+          <td class="num">37 %</td></tr>
+        <tr><th scope="row"><span class="pastille pastille--sold">vendu</span></th>
+          <td class="num">40 268</td>
+          <td class="bar"><span class="barre"><span class="seg seg--sold"
+            style="flex:40268"></span><span class="seg seg--vide"
+            style="flex:86429"></span></span></td>
+          <td class="num">32 %</td></tr>
+        <tr><th scope="row"><span class="pastille pastille--realised">réalisé</span></th>
+          <td class="num">32 052</td>
+          <td class="bar"><span class="barre"><span class="seg seg--realised"
+            style="flex:32052"></span><span class="seg seg--vide"
+            style="flex:94645"></span></span></td>
+          <td class="num">25 %</td></tr>
+        <tr><th scope="row"><span class="pastille pastille--msrp">prix neuf</span></th>
+          <td class="num">6 162</td>
+          <td class="bar"><span class="barre"><span class="seg seg--msrp"
+            style="flex:6162"></span><span class="seg seg--vide"
+            style="flex:120535"></span></span></td>
+          <td class="num">5 %</td></tr>
+        <tr><th scope="row"><span class="pastille pastille--estimate">estimation</span></th>
+          <td class="num">1 074</td>
+          <td class="bar"><span class="barre"><span class="seg seg--estimate"
+            style="flex:1074"></span><span class="seg seg--vide"
+            style="flex:125623"></span></span></td>
+          <td class="num">1 %</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="grille-2">
+  <div>
+    <h2>Ce que le filtre écarte</h2>
+    <p>Et pour quelle raison exactement.</p>
+    <div class="table-wrap">
+      <table><thead><tr><th scope="col">Verdict et règle</th><th scope="col">Lignes</th></tr></thead>
+      <tbody><tr><th scope="row"><code>REJETER R0</code></th><td class="num">11 380</td></tr><tr><th scope="row"><code>REJETER R3</code></th><td class="num">7 719</td></tr><tr><th scope="row"><code>REJETER R1</code></th><td class="num">2 582</td></tr><tr><th scope="row"><code>QUARANTAINE R7a</code></th><td class="num">585</td></tr><tr><th scope="row"><code>REJETER R5</code></th><td class="num">119</td></tr><tr><th scope="row"><code>REJETER R3b</code></th><td class="num">37</td></tr><tr><th scope="row"><code>REJETER R4</code></th><td class="num">19</td></tr></tbody></table>
+    </div>
+  </div>
+  <div>
+    <h2>Les devises</h2>
+    <p>Aucune conversion n'est appliquée. Ne jamais comparer deux lignes de devises
+    différentes.</p>
+    <div class="table-wrap">
+      <table><thead><tr><th scope="col">Devise</th><th scope="col">Prix</th></tr></thead>
+      <tbody><tr><th scope="row">USD</th><td class="num">64 010</td></tr><tr><th scope="row">EUR</th><td class="num">33 698</td></tr><tr><th scope="row">GBP</th><td class="num">23 463</td></tr><tr><th scope="row">HKD</th><td class="num">2 778</td></tr><tr><th scope="row">CHF</th><td class="num">2 748</td></tr></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>La référence</h2>
+  <p>Elle n'est pas un critère de filtrage&nbsp;: un prix sans référence reste une
+  observation de marché valide. Elle est le crochet d'identité entre une annonce et une
+  montre — sans elle, on a un prix mais pas de quoi.
+  <b>103 690 prix sur 126 697 portent un identifiant, mais
+  seulement 66 136 portent une vraie référence constructeur.</b>
+  La différence n'est pas cosmétique : un SKU est un numéro d'inventaire de
+  marchand, et une référence lue dans le corps d'une annonce peut être un calibre
+  ou un numéro de boîtier.</p>
+  <div class="table-wrap">
+    <table><thead><tr>
+      <th scope="col">Source</th><th scope="col">Un identifiant</th>
+      <th scope="col">Dont réf. constructeur</th>
+      <th scope="col">Avec marque</th><th scope="col">D'où il vient</th>
+    </tr></thead><tbody>
+        <tr><th scope="row">Hodinkee Shop</th>
+          <td class="num">10 %</td>
+          <td class="num">99 %</td>
+          <td class="prov">jeton_titre 15 805 · extrait_titre 1 837 · sku 1 049 · extrait_description 211</td></tr>
+        <tr><th scope="row">Montredo</th>
+          <td class="num">83 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">extrait_description 15 278 · jeton_titre 2 138 · sku 863 · extrait_titre 27</td></tr>
+        <tr><th scope="row">Christie&#x27;s</th>
+          <td class="num">62 %</td>
+          <td class="num">93 %</td>
+          <td class="prov">extrait_titre 7 761 · extrait_description 58</td></tr>
+        <tr><th scope="row">Artcurial</th>
+          <td class="num">38 %</td>
+          <td class="num">66 %</td>
+          <td class="prov">extrait_titre 2 804 · extrait_description 517</td></tr>
+        <tr><th scope="row">Analog:Shift</th>
+          <td class="num">47 %</td>
+          <td class="num">99 %</td>
+          <td class="prov">extrait_description 3 841 · sku 2 977 · jeton_titre 312 · extrait_titre 35</td></tr>
+        <tr><th scope="row">Wanna Buy A Watch</th>
+          <td class="num">71 %</td>
+          <td class="num">93 %</td>
+          <td class="prov">champ_dedie 4 289 · extrait_titre 303 · jeton_titre 170 · extrait_description 11</td></tr>
+        <tr><th scope="row">Lyon &amp; Turnbull</th>
+          <td class="num">6 %</td>
+          <td class="num">19 %</td>
+          <td class="prov">extrait_titre 365</td></tr>
+        <tr><th scope="row">Berry&#x27;s Jewellers</th>
+          <td class="num">98 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">champ_dedie 5 544 · jeton_titre 23 · sku 20</td></tr>
+        <tr><th scope="row">The Keystone</th>
+          <td class="num">85 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">extrait_titre 3 872 · sku 680 · extrait_description 407 · jeton_titre 61</td></tr>
+        <tr><th scope="row">WatchRecon</th>
+          <td class="num">15 %</td>
+          <td class="num">98 %</td>
+          <td class="prov">jeton_titre 2 846 · extrait_titre 746</td></tr>
+        <tr><th scope="row">Loupe This</th>
+          <td class="num">77 %</td>
+          <td class="num">97 %</td>
+          <td class="prov">extrait_titre 3 262</td></tr>
+        <tr><th scope="row">Watchtrader</th>
+          <td class="num">99 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">champ_dedie 4 085 · extrait_description 2</td></tr>
+        <tr><th scope="row">Topper Fine Jewelers</th>
+          <td class="num">0 %</td>
+          <td class="num">99 %</td>
+          <td class="prov">jeton_titre 2 458 · sku 1 149 · extrait_titre 3</td></tr>
+        <tr><th scope="row">Bulang and Sons</th>
+          <td class="num">35 %</td>
+          <td class="num">97 %</td>
+          <td class="prov">jeton_titre 1 271 · extrait_titre 1 203 · sku 1 081 · extrait_description 121</td></tr>
+        <tr><th scope="row">Craft &amp; Tailored</th>
+          <td class="num">84 %</td>
+          <td class="num">95 %</td>
+          <td class="prov">extrait_titre 3 041 · sku 383 · jeton_titre 184 · extrait_description 30</td></tr>
+        <tr><th scope="row">CW Sellors</th>
+          <td class="num">5 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">sku 2 536 · jeton_titre 256 · extrait_description 153 · extrait_titre 3</td></tr>
+        <tr><th scope="row">Amsterdam Watch Company</th>
+          <td class="num">71 %</td>
+          <td class="num">81 %</td>
+          <td class="prov">champ_dedie 1 220 · extrait_titre 688 · jeton_titre 65 · extrait_description 2</td></tr>
+        <tr><th scope="row">Watches of Switzerland</th>
+          <td class="num">76 %</td>
+          <td class="num">99 %</td>
+          <td class="prov">extrait_titre 1 887</td></tr>
+        <tr><th scope="row">Fortuna</th>
+          <td class="num">50 %</td>
+          <td class="num">92 %</td>
+          <td class="prov">extrait_titre 617 · extrait_description 404 · jeton_titre 20</td></tr>
+        <tr><th scope="row">Global Watch Shop</th>
+          <td class="num">97 %</td>
+          <td class="num">97 %</td>
+          <td class="prov">champ_dedie 943 · jeton_titre 15</td></tr>
+        <tr><th scope="row">A Collected Man</th>
+          <td class="num">8 %</td>
+          <td class="num">84 %</td>
+          <td class="prov">sku 535 · jeton_titre 342 · extrait_titre 44 · extrait_description 41</td></tr>
+        <tr><th scope="row">Chronofinder</th>
+          <td class="num">78 %</td>
+          <td class="num">99 %</td>
+          <td class="prov">champ_dedie 400 · jeton_titre 120 · extrait_description 67</td></tr>
+        <tr><th scope="row">Hairspring</th>
+          <td class="num">4 %</td>
+          <td class="num">50 %</td>
+          <td class="prov">jeton_titre 195 · extrait_description 14</td></tr>
+        <tr><th scope="row">EveryWatch</th>
+          <td class="num">0 %</td>
+          <td class="num">100 %</td>
+          <td class="prov">aucune</td></tr></tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>La profondeur historique</h2>
+  <p>Attention à ce que la date signifie&nbsp;: chez une maison de ventes c'est le jour
+  du marteau, chez un marchand c'est la mise en ligne de l'annonce. La seconde ne date
+  pas une transaction.</p>
+  <div class="table-wrap">
+    <table><thead><tr>
+      <th scope="col">Année</th><th scope="col">Prix</th><th scope="col"></th>
+      <th scope="col">Source principale</th>
+    </tr></thead><tbody>
+        <tr><th scope="row">2026</th>
+          <td class="num">33 251</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:33251"></span><span class="seg seg--vide"
+            style="flex:1"></span></span></td>
+          <td class="prov">Montredo</td></tr>
+        <tr><th scope="row">2025</th>
+          <td class="num">8 021</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:8021"></span><span class="seg seg--vide"
+            style="flex:25230"></span></span></td>
+          <td class="prov">Christie&#x27;s</td></tr>
+        <tr><th scope="row">2024</th>
+          <td class="num">9 523</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:9523"></span><span class="seg seg--vide"
+            style="flex:23728"></span></span></td>
+          <td class="prov">Hodinkee Shop</td></tr>
+        <tr><th scope="row">2023</th>
+          <td class="num">13 275</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:13275"></span><span class="seg seg--vide"
+            style="flex:19976"></span></span></td>
+          <td class="prov">Hodinkee Shop</td></tr>
+        <tr><th scope="row">2022</th>
+          <td class="num">17 341</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:17341"></span><span class="seg seg--vide"
+            style="flex:15910"></span></span></td>
+          <td class="prov">Hodinkee Shop</td></tr>
+        <tr><th scope="row">2021</th>
+          <td class="num">8 404</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:8404"></span><span class="seg seg--vide"
+            style="flex:24847"></span></span></td>
+          <td class="prov">Christie&#x27;s</td></tr>
+        <tr><th scope="row">2020</th>
+          <td class="num">4 610</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:4610"></span><span class="seg seg--vide"
+            style="flex:28641"></span></span></td>
+          <td class="prov">Christie&#x27;s</td></tr>
+        <tr><th scope="row">2019</th>
+          <td class="num">4 550</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:4550"></span><span class="seg seg--vide"
+            style="flex:28701"></span></span></td>
+          <td class="prov">Christie&#x27;s</td></tr>
+        <tr><th scope="row">2018</th>
+          <td class="num">3 679</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:3679"></span><span class="seg seg--vide"
+            style="flex:29572"></span></span></td>
+          <td class="prov">Christie&#x27;s</td></tr>
+        <tr><th scope="row">2017</th>
+          <td class="num">2 730</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:2730"></span><span class="seg seg--vide"
+            style="flex:30521"></span></span></td>
+          <td class="prov">Analog:Shift</td></tr>
+        <tr><th scope="row">2016</th>
+          <td class="num">1 168</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:1168"></span><span class="seg seg--vide"
+            style="flex:32083"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2015</th>
+          <td class="num">354</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:354"></span><span class="seg seg--vide"
+            style="flex:32897"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2014</th>
+          <td class="num">438</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:438"></span><span class="seg seg--vide"
+            style="flex:32813"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2013</th>
+          <td class="num">410</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:410"></span><span class="seg seg--vide"
+            style="flex:32841"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2012</th>
+          <td class="num">457</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:457"></span><span class="seg seg--vide"
+            style="flex:32794"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2011</th>
+          <td class="num">842</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:842"></span><span class="seg seg--vide"
+            style="flex:32409"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2009</th>
+          <td class="num">165</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:165"></span><span class="seg seg--vide"
+            style="flex:33086"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2008</th>
+          <td class="num">135</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:135"></span><span class="seg seg--vide"
+            style="flex:33116"></span></span></td>
+          <td class="prov">Artcurial</td></tr>
+        <tr><th scope="row">2007</th>
+          <td class="num">86</td>
+          <td class="bar"><span class="barre"><span class="seg seg--accent"
+            style="flex:86"></span><span class="seg seg--vide"
+            style="flex:33165"></span></span></td>
+          <td class="prov">Artcurial</td></tr></tbody></table>
+  </div>
+</section>
+
+<section>
+  <h2>Les réserves connues</h2>
+  <p>Ce que chaque source ne peut pas dire, ou dit mal. À lire avant toute analyse qui
+  s'appuie sur elle.</p>
+  <ul class="notes">
+    <li><b>Hodinkee Shop</b> — archive figee : plus aucune fiche publiee apres octobre 2024</li><li><b>Montredo</b> — catalogue reconstruit chaque nuit : identifiants et dates de la source inutilisables</li><li><b>Artcurial</b> — l&#x27;API ne sert que les lots vendus : biais de survie assume</li><li><b>Loupe This</b> — invendus non publies ; estimation absente de l&#x27;API</li><li><b>Watchtrader</b> — site refait en 02/2025 : 18 mois de profondeur, date de mise en ligne</li><li><b>Topper Fine Jewelers</b> — catalogue mixte : ~1 000 fiches de joaillerie, ecartees par le filtre</li><li><b>Bulang and Sons</b> — migration de boutique en 08/2025 : les dates de la source ne datent rien</li><li><b>CW Sellors</b> — TTC et HT melanges dans le meme flux, sans champ distinctif</li><li><b>Amsterdam Watch Company</b> — la taxonomie de marque melange &#x27;Omega Speedmaster&#x27; et &#x27;Other brands&#x27;</li><li><b>Watches of Switzerland</b> — une fiche du sitemap peut etre epuisee ; le prix reste affiche</li><li><b>Fortuna</b> — invendus non publies ; 5 ventes sur 145 ont un bareme de frais degressif</li><li><b>Global Watch Shop</b> — 38 % des fiches sont a prix zero (prix sur demande)</li><li><b>A Collected Man</b> — l&#x27;horlogerie independante n&#x27;a souvent pas de reference constructeur</li><li><b>Hairspring</b> — le champ vendor vaut &#x27;Hairspring&#x27; sur 100 % des fiches ; la marque est retrouvee dans la description, mais pour la moitie seulement</li><li><b>EveryWatch</b> — fenetre glissante de 24 mois ; invendus non publies ; montants pre-convertis en USD par la source</li>
+    <li><b>Christie's publie ses prix frais acheteur inclus</b>, Artcurial et Lyon &amp;
+    Turnbull le marteau nu — environ un quart d'écart. Le champ
+    <code>price_includes_premium</code> porte l'information ligne par ligne&nbsp;;
+    toute comparaison entre maisons qui l'ignore surévalue Christie's.</li>
+    <li><b>Les invendus sont invisibles</b> chez les maisons de ventes qui ne servent que
+    leurs lots vendus&nbsp;: toute moyenne héritera d'un biais de survie.</li>
+    <li><b>La date d'un marchand est celle de la mise en ligne</b>, pas celle de la vente.
+    Une montre publiée en 2016 et vendue en 2019 porte 2016.</li>
+    <li><b>La quarantaine n'est pas un déchet</b>&nbsp;: 585 lignes que
+    le texte seul ne permet pas de trancher, à échantillonner chaque semaine pour mesurer
+    le taux d'erreur réel.</li>
+  </ul>
+</section>
+
+<footer>
+  Document généré le 2026-08-28 par <code>moteur/presentation.py</code>.
+  Aucun chiffre n'y est écrit à la main&nbsp;: il est régénéré à chaque collecte.
+  Détail complet dans <code>notes/PANORAMA.md</code> et <code>notes/ETAT_CHAMPS.md</code>.
+</footer>
+</div>

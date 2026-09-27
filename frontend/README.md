@@ -38,7 +38,7 @@ Copy `.env.example` to `.env.local` and fill in your own values (never commit
 - `dev` → shared testing branch (Vercel preview). Work on a feature branch, open
   a pull request into `dev`/`main`, get it reviewed, then merge.
 
-> Note: watch/price data shown in the UI is still **dummy JSON** (`src/data/`).
+> Note: watch/price data shown in the UI is still **dummy JSON** (`src/fixtures/`). Data access to Postgres goes through `src/lib/db/` (server-only). See `../docs/ARCHITECTURE.md`.
 > Only auth + user records are real (in Neon). Real data pipeline comes later.
 
 ## Clerk + Neon Authentication

@@ -1,0 +1,741 @@
+<title>Le socle de prix de Watchpoint</title>
+<style>
+:root{
+  --papier:#F6F5F2; --encre:#15181D; --gris:#5F6269; --gris-clair:#93969D;
+  --trait:#E0DDD7; --surface:#FFFFFF; --surface-2:#EDEBE6; --creux:#E7E4DE;
+  --acier:#2C4970;      /* acier bleui — l'accent structurel */
+  --laiton:#8A6B33;     /* laiton — la reference, ce qui a de la valeur */
+  --rouille:#8E4429;    /* un defaut */
+  --vert:#3B6A4C;       /* une correction */
+  --enchere:#2C4970; --vendu:#4E7B94; --demande:#A5A8AE;
+  --neuf:#8A6B33; --estime:#C2BCAE;
+  --serif:ui-serif,"Iowan Old Style","Hoefler Text",Georgia,"Palatino Linotype",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papier:#111317; --encre:#E8E6E2; --gris:#9A9DA4; --gris-clair:#6A6D74;
+    --trait:#282B31; --surface:#171A1F; --surface-2:#1F232A; --creux:#23272E;
+    --acier:#7FA3D1; --laiton:#C9A463; --rouille:#D08560; --vert:#7CB08F;
+    --enchere:#7FA3D1; --vendu:#6E9FB8; --demande:#5C6067;
+    --neuf:#C9A463; --estime:#43474E;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#111317; --encre:#E8E6E2; --gris:#9A9DA4; --gris-clair:#6A6D74;
+  --trait:#282B31; --surface:#171A1F; --surface-2:#1F232A; --creux:#23272E;
+  --acier:#7FA3D1; --laiton:#C9A463; --rouille:#D08560; --vert:#7CB08F;
+  --enchere:#7FA3D1; --vendu:#6E9FB8; --demande:#5C6067;
+  --neuf:#C9A463; --estime:#43474E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--sans);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums}
+.page{max-width:1180px;margin:0 auto;
+  padding:clamp(26px,5vw,68px) clamp(16px,4vw,40px) 100px;
+  display:flex;flex-direction:column;gap:clamp(46px,7vw,82px)}
+:focus-visible{outline:2px solid var(--acier);outline-offset:2px}
+
+/* --- entete --- */
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gris)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(31px,5vw,50px);
+  line-height:1.08;letter-spacing:-.02em;margin:14px 0 0;max-width:20ch;
+  text-wrap:balance}
+.chapeau{color:var(--gris);font-size:17.5px;max-width:62ch;margin:18px 0 0}
+
+/* --- l'entonnoir global --- */
+.ruban{margin-top:36px;display:flex;flex-direction:column;gap:11px}
+.ruban-barre{display:flex;height:44px;border-radius:3px;overflow:hidden;
+  border:1px solid var(--trait)}
+.ruban-barre i{display:block}
+.ruban-legende{display:flex;flex-wrap:wrap;gap:6px 26px;font-size:13px;
+  color:var(--gris)}
+.ruban-legende b{color:var(--encre);font-family:var(--mono);font-size:13px;
+  font-weight:600;margin-left:5px}
+.pastille{display:inline-block;width:9px;height:9px;border-radius:2px;
+  margin-right:7px}
+
+/* --- sections --- */
+h2{font-family:var(--serif);font-size:clamp(23px,3vw,30px);font-weight:600;
+  letter-spacing:-.015em;margin:0;display:flex;align-items:baseline;gap:14px;
+  text-wrap:balance}
+h2 .rang{font-family:var(--mono);font-size:12px;color:var(--acier);
+  letter-spacing:.1em;flex:0 0 auto}
+.intro{color:var(--gris);margin:12px 0 30px;max-width:66ch}
+h3{font-family:var(--serif);font-size:18px;font-weight:600;margin:0 0 14px;
+  letter-spacing:-.01em}
+
+/* --- le registre des sources --- */
+.entete-registre,.rangee{display:grid;
+  grid-template-columns:minmax(140px,1.05fr) minmax(240px,2.5fr) 116px;gap:20px}
+.entete-registre{padding:0 0 9px;border-bottom:1px solid var(--encre);
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gris)}
+.entete-registre span:last-child{text-align:right}
+.rangee{padding:13px 0;border-bottom:1px solid var(--trait);align-items:center}
+.rangee:hover{background:var(--surface-2)}
+.nom{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nom b{font-size:14.5px;font-weight:600;letter-spacing:-.005em}
+.nom span{font-size:11.5px;color:var(--gris-clair)}
+.piste{display:flex;flex-direction:column;gap:5px;min-width:0}
+.barre{display:flex;height:16px;background:var(--creux);border-radius:2px;
+  overflow:hidden}
+.barre i,.natures i{display:block;min-width:0}
+.i-rejet{background:var(--creux);box-shadow:inset -1px 0 0 var(--trait)}
+.i-montre{background:var(--acier);opacity:.34}
+.i-ref{background:var(--laiton)}
+.natures{display:flex;height:5px;border-radius:2px;overflow:hidden}
+.chiffres{text-align:right;font-family:var(--mono);font-size:12.5px;
+  display:flex;flex-direction:column;gap:1px}
+.chiffres b{font-size:14px;font-weight:600}
+.chiffres span{color:var(--gris-clair);font-size:11px}
+
+/* --- cartes --- */
+.grille{display:grid;gap:1px;background:var(--trait);border:1px solid var(--trait);
+  border-radius:4px;overflow:hidden}
+.g4{grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(276px,1fr))}
+.case{background:var(--surface);padding:19px 21px;display:flex;flex-direction:column;
+  gap:5px}
+.case b.chiffre{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;
+  letter-spacing:-.025em}
+.case b.or{color:var(--laiton)}
+.case b.bleu{color:var(--acier)}
+.case>span{font-size:12.5px;color:var(--gris);line-height:1.5}
+.case em{font-style:normal;font-family:var(--mono);color:var(--encre)}
+
+/* --- escaliers --- */
+.escalier{display:flex;flex-direction:column;gap:9px}
+.marche{display:grid;grid-template-columns:112px 1fr 74px;gap:13px;align-items:center}
+.marche i.lib{font-style:normal;color:var(--gris);font-size:12.5px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jauge{height:11px;background:var(--creux);border-radius:2px;overflow:hidden}
+.jauge i{display:block;height:100%}
+.marche b{text-align:right;font-family:var(--mono);font-size:12.5px;font-weight:600}
+
+/* --- frise --- */
+.frise{display:flex;align-items:flex-end;gap:4px;height:148px;margin-top:4px}
+.colonne{flex:1;display:flex;align-items:flex-end;min-width:0}
+.colonne i{display:block;width:100%;border-radius:1px 1px 0 0;
+  background:var(--acier);opacity:.6}
+.colonne:hover i{opacity:.95}
+.axe{display:flex;gap:4px;margin-top:7px;border-top:1px solid var(--trait);
+  padding-top:6px}
+.axe span{flex:1;font-family:var(--mono);font-size:9.5px;color:var(--gris-clair);
+  text-align:center;min-width:0;overflow:hidden}
+
+/* --- tableaux --- */
+.cadre{overflow-x:auto;border:1px solid var(--trait);border-radius:4px;
+  background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--trait);
+  vertical-align:top}
+th{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--gris);font-weight:400;background:var(--surface-2)}
+th.n,td.n{text-align:right}
+td.n{font-family:var(--mono)}
+tr:last-child td{border-bottom:none}
+td.gras{font-weight:600}
+
+/* --- defauts --- */
+.defauts{display:flex;flex-direction:column;gap:1px;background:var(--trait);
+  border:1px solid var(--trait);border-radius:4px;overflow:hidden}
+.defaut{background:var(--surface);padding:22px 24px;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px 32px}
+.defaut-tete,.quoi,.reparee{grid-column:1/-1}
+.defaut-tete{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 14px}
+.defaut-tete h3{margin:0;font-size:17px;flex:1 1 320px}
+.ampleur{font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:3px;
+  background:var(--surface-2);white-space:nowrap}
+.gravite{font-family:var(--mono);font-size:10px;letter-spacing:.09em;
+  text-transform:uppercase;padding:3px 8px;border-radius:3px;
+  border:1px solid currentColor;white-space:nowrap}
+.g-majeur{color:var(--rouille)}
+.g-rendement{color:var(--laiton)}
+.g-structurel{color:var(--acier)}
+.g-mineur{color:var(--gris)}
+.defaut p{margin:0;font-size:14px;color:var(--gris)}
+.quoi{color:var(--encre);font-size:14.5px}
+.etiquette{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--gris-clair);display:block;margin-bottom:3px}
+.reparee{border-top:1px dashed var(--trait);padding-top:12px;font-size:14px;
+  color:var(--vert)}
+.source-touchee{font-family:var(--mono);font-size:11.5px;color:var(--gris-clair);
+  display:block;margin-bottom:4px}
+
+/* --- blocages --- */
+.blocs{display:flex;flex-direction:column;gap:1px;background:var(--trait);
+  border:1px solid var(--trait);border-radius:4px;overflow:hidden}
+.bloc{background:var(--surface);padding:18px 22px;display:grid;gap:5px 20px;
+  grid-template-columns:minmax(160px,210px) 1fr}
+.bloc.decision{box-shadow:inset 3px 0 0 var(--rouille)}
+.bloc h3{margin:0;font-size:15px}
+.genre{font-family:var(--mono);font-size:10px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--gris-clair);margin-top:3px}
+.bloc p{margin:0;color:var(--gris);font-size:14px}
+.suite{grid-column:2;font-family:var(--mono);font-size:12.5px;color:var(--gris-clair);
+  margin-top:3px}
+.bloc.decision .suite{color:var(--rouille)}
+
+.note{box-shadow:inset 2px 0 0 var(--acier);padding:3px 0 3px 17px;color:var(--gris);
+  font-size:14.5px;max-width:72ch;margin-top:26px}
+.note b{color:var(--encre)}
+footer{border-top:1px solid var(--trait);padding-top:20px;color:var(--gris-clair);
+  font-size:12.5px;display:flex;flex-direction:column;gap:5px}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);
+  padding:1px 5px;border-radius:3px}
+details summary{cursor:pointer;font-size:13px;color:var(--acier);
+  font-family:var(--mono)}
+@media (max-width:760px){
+  .entete-registre,.rangee{grid-template-columns:1fr;gap:8px}
+  .entete-registre span:last-child,.chiffres{text-align:left}
+  .chiffres{flex-direction:row;gap:12px;align-items:baseline}
+  .bloc{grid-template-columns:1fr}
+  .suite{grid-column:1}
+  .marche{grid-template-columns:96px 1fr 66px}
+  .piste{max-width:100% !important}
+}
+</style>
+<div class="page">
+<header>
+<div class="eyebrow">Watchpoint · état des données au 02/09/2026</div>
+<h1>Ce que 28 sources donnent réellement, une fois filtrées</h1>
+<p class="chapeau">Un prix ne vaut rien seul : il lui faut un modèle, une date et une nature. Voici combien de lignes survivent à chacune de ces exigences — et les 17 défauts qu’il a fallu corriger pour que le chiffre final veuille dire quelque chose.</p>
+<div class="ruban"><div class="ruban-barre">
+<i class="i-rejet" style="width:17.56%" title="23 570 lignes écartées par le filtre"></i>
+<i class="i-montre" style="width:16.66%" title="22 361 montres sans référence"></i>
+<i class="i-ref" style="width:65.79%" title="88 315 montres avec référence"></i>
+</div><div class="ruban-legende">
+<span><i class="pastille" style="background:var(--creux);box-shadow:inset 0 0 0 1px var(--trait)"></i>Écarté par le filtre<b>23 570</b></span>
+<span><i class="pastille" style="background:var(--acier);opacity:.34"></i>Montre, sans référence<b>22 361</b></span>
+<span><i class="pastille" style="background:var(--laiton)"></i>Montre avec référence<b>88 315</b></span>
+</div></div>
+<div class="grille g4" style="margin-top:26px">
+<div class="case"><b class="chiffre">134 246</b><span>lignes ramenées de 28 sources</span></div>
+<div class="case"><b class="chiffre bleu">110 676</b><span>sont une montre d’une marque connue — 82 %</span></div>
+<div class="case"><b class="chiffre or">88 315</b><span>portent une référence constructeur — 66 %</span></div>
+<div class="case"><b class="chiffre">48 024</b><span>sont des transactions réelles, datées et référencées</span></div>
+</div></header>
+<section>
+<h2><span class="rang">01</span>Le registre des sources</h2>
+<p class="intro">Une ligne par source. La barre est à l’échelle du volume brut — deux fois plus longue, c’est deux fois plus de lignes ramenées — et se lit de gauche à droite : ce que le filtre écarte, les montres sans référence, puis celles qui en portent une. Le filet du dessous donne la composition en natures de prix.</p>
+<div class="entete-registre"><span>Source</span><span>Écarté · montre · avec référence &nbsp;⁄&nbsp; natures de prix</span><span>Brut ⁄ socle</span></div>
+<div class="rangee">
+<div class="nom"><b>Hodinkee Shop</b><span>marchand · 2016–2024</span></div>
+<div class="piste" style="max-width:100.00%"><div class="barre"><i class="i-rejet" style="width:1.07%" title="écarté : 203"></i><i class="i-montre" style="width:5.06%" title="sans référence : 958"></i><i class="i-ref" style="width:93.87%" title="avec référence : 17 784"></i></div><div class="natures"><i style="width:99.98%;background:var(--vendu)" title="vendu : 18 739"></i><i style="width:0.02%;background:var(--demande)" title="demandé : 3"></i></div></div>
+<div class="chiffres"><b>18 945</b><span>socle 17 784</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Montredo</b><span>marchand · 2026–2026</span></div>
+<div class="piste" style="max-width:96.63%"><div class="barre"><i class="i-rejet" style="width:6.57%" title="écarté : 1 203"></i><i class="i-montre" style="width:4.07%" title="sans référence : 745"></i><i class="i-ref" style="width:89.36%" title="avec référence : 16 358"></i></div><div class="natures"><i style="width:98.55%;background:var(--demande)" title="demandé : 16 855"></i><i style="width:1.45%;background:var(--vendu)" title="vendu : 248"></i></div></div>
+<div class="chiffres"><b>18 306</b><span>socle 234</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Christie&#x27;s</b><span>maison de ventes · 2017–2026</span></div>
+<div class="piste" style="max-width:66.02%"><div class="barre"><i class="i-rejet" style="width:14.19%" title="écarté : 1 775"></i><i class="i-montre" style="width:25.07%" title="sans référence : 3 135"></i><i class="i-ref" style="width:60.74%" title="avec référence : 7 597"></i></div><div class="natures"><i style="width:92.42%;background:var(--enchere)" title="réalisé : 9 918"></i><i style="width:7.58%;background:var(--estime)" title="estimation : 814"></i></div></div>
+<div class="chiffres"><b>12 507</b><span>socle 6 959</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Artcurial</b><span>maison de ventes · 2007–2026</span></div>
+<div class="piste" style="max-width:45.56%"><div class="barre"><i class="i-rejet" style="width:35.97%" title="écarté : 3 105"></i><i class="i-montre" style="width:30.25%" title="sans référence : 2 611"></i><i class="i-ref" style="width:33.77%" title="avec référence : 2 915"></i></div><div class="natures"><i style="width:100.00%;background:var(--enchere)" title="réalisé : 5 526"></i></div></div>
+<div class="chiffres"><b>8 631</b><span>socle 2 915</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Analog:Shift</b><span>marchand · 2015–2026</span></div>
+<div class="piste" style="max-width:43.35%"><div class="barre"><i class="i-rejet" style="width:12.58%" title="écarté : 1 033"></i><i class="i-montre" style="width:37.81%" title="sans référence : 3 105"></i><i class="i-ref" style="width:49.62%" title="avec référence : 4 075"></i></div><div class="natures"><i style="width:90.53%;background:var(--vendu)" title="vendu : 6 500"></i><i style="width:9.47%;background:var(--demande)" title="demandé : 680"></i></div></div>
+<div class="chiffres"><b>8 213</b><span>socle 3 712</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Wanna Buy A Watch</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:34.00%"><div class="barre"><i class="i-rejet" style="width:9.56%" title="écarté : 616"></i><i class="i-montre" style="width:19.03%" title="sans référence : 1 226"></i><i class="i-ref" style="width:71.40%" title="avec référence : 4 599"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 5 825"></i></div></div>
+<div class="chiffres"><b>6 441</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Lyon &amp; Turnbull</b><span>maison de ventes · 2019–2026</span></div>
+<div class="piste" style="max-width:30.42%"><div class="barre"><i class="i-rejet" style="width:81.82%" title="écarté : 4 715"></i><i class="i-montre" style="width:12.08%" title="sans référence : 696"></i><i class="i-ref" style="width:6.11%" title="avec référence : 352"></i></div><div class="natures"><i style="width:92.37%;background:var(--enchere)" title="réalisé : 968"></i><i style="width:7.63%;background:var(--estime)" title="estimation : 80"></i></div></div>
+<div class="chiffres"><b>5 763</b><span>socle 301</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Berry&#x27;s Jewellers</b><span>marchand · 2014–2026</span></div>
+<div class="piste" style="max-width:29.76%"><div class="barre"><i class="i-rejet" style="width:62.01%" title="écarté : 3 496"></i><i class="i-montre" style="width:0.27%" title="sans référence : 15"></i><i class="i-ref" style="width:37.73%" title="avec référence : 2 127"></i></div><div class="natures"><i style="width:81.37%;background:var(--demande)" title="demandé : 1 743"></i><i style="width:18.63%;background:var(--vendu)" title="vendu : 399"></i></div></div>
+<div class="chiffres"><b>5 638</b><span>socle 397</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>The Keystone</b><span>marchand · 2018–2026</span></div>
+<div class="piste" style="max-width:26.50%"><div class="barre"><i class="i-rejet" style="width:1.49%" title="écarté : 75"></i><i class="i-montre" style="width:12.65%" title="sans référence : 635"></i><i class="i-ref" style="width:85.86%" title="avec référence : 4 310"></i></div><div class="natures"><i style="width:93.77%;background:var(--vendu)" title="vendu : 4 637"></i><i style="width:6.23%;background:var(--demande)" title="demandé : 308"></i></div></div>
+<div class="chiffres"><b>5 020</b><span>socle 4 081</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>WatchRecon</b><span>forums · 2026–2026</span></div>
+<div class="piste" style="max-width:26.13%"><div class="barre"><i class="i-rejet" style="width:12.08%" title="écarté : 598"></i><i class="i-montre" style="width:22.63%" title="sans référence : 1 120"></i><i class="i-ref" style="width:65.29%" title="avec référence : 3 232"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 4 352"></i></div></div>
+<div class="chiffres"><b>4 950</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Loupe This</b><span>maison de ventes · 2021–2026</span></div>
+<div class="piste" style="max-width:22.28%"><div class="barre"><i class="i-rejet" style="width:7.54%" title="écarté : 318"></i><i class="i-montre" style="width:17.37%" title="sans référence : 733"></i><i class="i-ref" style="width:75.09%" title="avec référence : 3 169"></i></div><div class="natures"><i style="width:100.00%;background:var(--enchere)" title="réalisé : 3 902"></i></div></div>
+<div class="chiffres"><b>4 220</b><span>socle 3 169</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Monaco Legend Auctions</b><span>maison de ventes · 2019–2026</span></div>
+<div class="piste" style="max-width:22.11%"><div class="barre"><i class="i-rejet" style="width:4.30%" title="écarté : 180"></i><i class="i-montre" style="width:36.20%" title="sans référence : 1 516"></i><i class="i-ref" style="width:59.50%" title="avec référence : 2 492"></i></div><div class="natures"><i style="width:89.50%;background:var(--enchere)" title="réalisé : 3 587"></i><i style="width:10.50%;background:var(--estime)" title="estimation : 421"></i></div></div>
+<div class="chiffres"><b>4 188</b><span>socle 2 229</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Watchtrader</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:21.59%"><div class="barre"><i class="i-rejet" style="width:0.49%" title="écarté : 20"></i><i class="i-montre" style="width:0.07%" title="sans référence : 3"></i><i class="i-ref" style="width:99.44%" title="avec référence : 4 067"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 4 070"></i></div></div>
+<div class="chiffres"><b>4 090</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Topper Fine Jewelers</b><span>détaillant · 2018–2026</span></div>
+<div class="piste" style="max-width:19.46%"><div class="barre"><i class="i-rejet" style="width:34.80%" title="écarté : 1 283"></i><i class="i-montre" style="width:4.50%" title="sans référence : 166"></i><i class="i-ref" style="width:60.70%" title="avec référence : 2 238"></i></div><div class="natures"><i style="width:100.00%;background:var(--neuf)" title="prix neuf : 2 404"></i></div></div>
+<div class="chiffres"><b>3 687</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Bulang and Sons</b><span>marchand · 2026–2026</span></div>
+<div class="piste" style="max-width:19.44%"><div class="barre"><i class="i-rejet" style="width:29.30%" title="écarté : 1 079"></i><i class="i-montre" style="width:6.11%" title="sans référence : 225"></i><i class="i-ref" style="width:64.59%" title="avec référence : 2 379"></i></div><div class="natures"><i style="width:67.05%;background:var(--vendu)" title="vendu : 1 746"></i><i style="width:32.95%;background:var(--demande)" title="demandé : 858"></i></div></div>
+<div class="chiffres"><b>3 683</b><span>socle 1 583</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Craft &amp; Tailored</b><span>marchand · 2016–2026</span></div>
+<div class="piste" style="max-width:19.25%"><div class="barre"><i class="i-rejet" style="width:9.65%" title="écarté : 352"></i><i class="i-montre" style="width:5.40%" title="sans référence : 197"></i><i class="i-ref" style="width:84.94%" title="avec référence : 3 097"></i></div><div class="natures"><i style="width:98.12%;background:var(--vendu)" title="vendu : 3 232"></i><i style="width:1.88%;background:var(--demande)" title="demandé : 62"></i></div></div>
+<div class="chiffres"><b>3 646</b><span>socle 3 039</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>CW Sellors</b><span>marchand · 2017–2026</span></div>
+<div class="piste" style="max-width:15.56%"><div class="barre"><i class="i-rejet" style="width:17.50%" title="écarté : 516"></i><i class="i-montre" style="width:70.45%" title="sans référence : 2 077"></i><i class="i-ref" style="width:12.04%" title="avec référence : 355"></i></div><div class="natures"><i style="width:50.66%;background:var(--demande)" title="demandé : 1 232"></i><i style="width:49.34%;background:var(--vendu)" title="vendu : 1 200"></i></div></div>
+<div class="chiffres"><b>2 948</b><span>socle 121</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Amsterdam Watch Company</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:14.18%"><div class="barre"><i class="i-rejet" style="width:21.85%" title="écarté : 587"></i><i class="i-montre" style="width:13.51%" title="sans référence : 363"></i><i class="i-ref" style="width:64.63%" title="avec référence : 1 736"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 2 099"></i></div></div>
+<div class="chiffres"><b>2 686</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Sworders</b><span>maison de ventes · sans date</span></div>
+<div class="piste" style="max-width:13.23%"><div class="barre"><i class="i-rejet" style="width:39.98%" title="écarté : 1 002"></i><i class="i-montre" style="width:50.16%" title="sans référence : 1 257"></i><i class="i-ref" style="width:9.86%" title="avec référence : 247"></i></div><div class="natures"><i style="width:100.00%;background:var(--enchere)" title="réalisé : 1 504"></i></div></div>
+<div class="chiffres"><b>2 506</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Watches of Switzerland</b><span>détaillant · sans date</span></div>
+<div class="piste" style="max-width:13.06%"><div class="barre"><i class="i-rejet" style="width:18.02%" title="écarté : 446"></i><i class="i-montre" style="width:18.99%" title="sans référence : 470"></i><i class="i-ref" style="width:62.99%" title="avec référence : 1 559"></i></div><div class="natures"><i style="width:100.00%;background:var(--neuf)" title="prix neuf : 2 029"></i></div></div>
+<div class="chiffres"><b>2 475</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Fortuna</b><span>maison de ventes · 2016–2026</span></div>
+<div class="piste" style="max-width:10.61%"><div class="barre"><i class="i-rejet" style="width:11.49%" title="écarté : 231"></i><i class="i-montre" style="width:38.41%" title="sans référence : 772"></i><i class="i-ref" style="width:50.10%" title="avec référence : 1 007"></i></div><div class="natures"><i style="width:100.00%;background:var(--enchere)" title="réalisé : 1 779"></i></div></div>
+<div class="chiffres"><b>2 010</b><span>socle 1 007</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Global Watch Shop</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:5.13%"><div class="barre"><i class="i-rejet" style="width:17.20%" title="écarté : 167"></i><i class="i-ref" style="width:82.80%" title="avec référence : 804"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 804"></i></div></div>
+<div class="chiffres"><b>971</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>A Collected Man</b><span>marchand · 2015–2026</span></div>
+<div class="piste" style="max-width:5.08%"><div class="barre"><i class="i-rejet" style="width:32.43%" title="écarté : 312"></i><i class="i-montre" style="width:24.74%" title="sans référence : 238"></i><i class="i-ref" style="width:42.83%" title="avec référence : 412"></i></div><div class="natures"><i style="width:97.85%;background:var(--vendu)" title="vendu : 636"></i><i style="width:2.15%;background:var(--demande)" title="demandé : 14"></i></div></div>
+<div class="chiffres"><b>962</b><span>socle 407</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Chronofinder</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:3.12%"><div class="barre"><i class="i-rejet" style="width:0.51%" title="écarté : 3"></i><i class="i-montre" style="width:0.68%" title="sans référence : 4"></i><i class="i-ref" style="width:98.82%" title="avec référence : 585"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 589"></i></div></div>
+<div class="chiffres"><b>592</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Watches of Distinction</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:2.68%"><div class="barre"><i class="i-rejet" style="width:2.17%" title="écarté : 11"></i><i class="i-montre" style="width:5.33%" title="sans référence : 27"></i><i class="i-ref" style="width:92.50%" title="avec référence : 469"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 496"></i></div></div>
+<div class="chiffres"><b>507</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Amsterdam Vintage Watches</b><span>marchand · sans date</span></div>
+<div class="piste" style="max-width:1.81%"><div class="barre"><i class="i-rejet" style="width:21.35%" title="écarté : 73"></i><i class="i-montre" style="width:3.51%" title="sans référence : 12"></i><i class="i-ref" style="width:75.15%" title="avec référence : 257"></i></div><div class="natures"><i style="width:100.00%;background:var(--demande)" title="demandé : 269"></i></div></div>
+<div class="chiffres"><b>342</b><span>socle 0</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>Hairspring</b><span>marchand · 2023–2026</span></div>
+<div class="piste" style="max-width:1.68%"><div class="barre"><i class="i-rejet" style="width:53.77%" title="écarté : 171"></i><i class="i-montre" style="width:16.98%" title="sans référence : 54"></i><i class="i-ref" style="width:29.25%" title="avec référence : 93"></i></div><div class="natures"><i style="width:92.52%;background:var(--vendu)" title="vendu : 136"></i><i style="width:7.48%;background:var(--demande)" title="demandé : 11"></i></div></div>
+<div class="chiffres"><b>318</b><span>socle 86</span></div>
+</div>
+<div class="rangee">
+<div class="nom"><b>EveryWatch</b><span>agrégateur · 2026–2026</span></div>
+<div class="piste" style="max-width:0.40%"><div class="barre"><i class="i-montre" style="width:100.00%" title="sans référence : 1"></i></div><div class="natures"><i style="width:100.00%;background:var(--enchere)" title="réalisé : 1"></i></div></div>
+<div class="chiffres"><b>1</b><span>socle 0</span></div>
+</div>
+<div class="note"><b>Wanna Buy A Watch · Watchtrader · Amsterdam Watch Company · Watches of Switzerland · Global Watch Shop · Chronofinder · Watches of Distinction</b> ne datent aucune de leurs lignes malgré un bon rendement en références. Une référence et un prix sans date ne se comparent à rien dans le temps : ils servent à décrire un modèle, pas à le coter.</div>
+</section>
+<section>
+<h2><span class="rang">02</span>Ce que ce socle permet</h2>
+<p class="intro">Coter un modèle demande plusieurs transactions, pas une. Un modèle, ici, c’est une marque et une référence — graphies réunies, ponctuation ignorée : <code>116.500 LN</code> et <code>116500LN</code> sont la même montre.</p>
+<div class="grille g4">
+<div class="case"><b class="chiffre">15 227</b><span>modèles distincts présents au socle</span></div>
+<div class="case"><b class="chiffre or">3 041</b><span>ont 3 transactions ou plus : un niveau, pas un point</span></div>
+<div class="case"><b class="chiffre">3 122</b><span>sont vus par 2 sources indépendantes ou plus</span></div>
+<div class="case"><b class="chiffre">2 147</b><span>ont des prix sur 3 années distinctes : une évolution</span></div>
+</div>
+<div class="grille g3" style="margin-top:28px">
+<div class="case"><h3>Combien de prix par modèle</h3>
+<div class="escalier">
+<div class="marche"><i class="lib">2 prix ou +</i><div class="jauge"><i style="width:100.0%;background:var(--laiton)"></i></div><b>5 240</b></div>
+<div class="marche"><i class="lib">3 prix ou +</i><div class="jauge"><i style="width:58.0%;background:var(--laiton)"></i></div><b>3 041</b></div>
+<div class="marche"><i class="lib">5 prix ou +</i><div class="jauge"><i style="width:30.9%;background:var(--laiton)"></i></div><b>1 621</b></div>
+<div class="marche"><i class="lib">10 prix ou +</i><div class="jauge"><i style="width:12.7%;background:var(--laiton)"></i></div><b>664</b></div>
+<div class="marche"><i class="lib">20 prix ou +</i><div class="jauge"><i style="width:5.5%;background:var(--laiton)"></i></div><b>290</b></div>
+<div class="marche"><i class="lib">50 prix ou +</i><div class="jauge"><i style="width:2.2%;background:var(--laiton)"></i></div><b>115</b></div>
+</div>
+</div><div class="case"><h3>Les natures de prix</h3>
+<div class="escalier">
+<div class="marche"><i class="lib">demandé</i><div class="jauge"><i style="width:100.0%;background:var(--demande)"></i></div><b>40 270</b></div>
+<div class="marche"><i class="lib">vendu</i><div class="jauge"><i style="width:93.1%;background:var(--vendu)"></i></div><b>37 473</b></div>
+<div class="marche"><i class="lib">réalisé</i><div class="jauge"><i style="width:67.5%;background:var(--enchere)"></i></div><b>27 185</b></div>
+<div class="marche"><i class="lib">prix neuf</i><div class="jauge"><i style="width:11.0%;background:var(--neuf)"></i></div><b>4 433</b></div>
+<div class="marche"><i class="lib">estimation</i><div class="jauge"><i style="width:3.3%;background:var(--estime)"></i></div><b>1 315</b></div>
+</div>
+</div><div class="case"><h3>D’où vient la référence</h3>
+<div class="escalier">
+<div class="marche"><i class="lib">titre, mot-clé</i><div class="jauge"><i style="width:100.0%;background:var(--laiton)"></i></div><b>29 929</b></div>
+<div class="marche"><i class="lib">titre, par la forme</i><div class="jauge"><i style="width:84.9%;background:var(--laiton)"></i></div><b>25 419</b></div>
+<div class="marche"><i class="lib">corps de l&#x27;annonce</i><div class="jauge"><i style="width:66.8%;background:var(--laiton)"></i></div><b>19 998</b></div>
+<div class="marche"><i class="lib">aucune référence</i><div class="jauge"><i style="width:49.8%;background:var(--demande)"></i></div><b>14 890</b></div>
+<div class="marche"><i class="lib">champ publié</i><div class="jauge"><i style="width:43.3%;background:var(--laiton)"></i></div><b>12 969</b></div>
+<div class="marche"><i class="lib">SKU du vendeur (écarté)</i><div class="jauge"><i style="width:25.0%;background:var(--demande)"></i></div><b>7 471</b></div>
+</div>
+</div></div>
+<h3 style="margin-top:36px">La profondeur, année par année</h3>
+<p class="intro" style="margin-bottom:6px">Le nombre de prix portant cette année-là.</p>
+<div class="frise">
+<div class="colonne"><i style="height:2.9px" title="2011 : 598 prix"></i></div>
+<div class="colonne"><i style="height:1.5px" title="2012 : 308 prix"></i></div>
+<div class="colonne"><i style="height:1.4px" title="2013 : 303 prix"></i></div>
+<div class="colonne"><i style="height:1.4px" title="2014 : 290 prix"></i></div>
+<div class="colonne"><i style="height:1.3px" title="2015 : 280 prix"></i></div>
+<div class="colonne"><i style="height:3.7px" title="2016 : 779 prix"></i></div>
+<div class="colonne"><i style="height:11.4px" title="2017 : 2 394 prix"></i></div>
+<div class="colonne"><i style="height:15.3px" title="2018 : 3 195 prix"></i></div>
+<div class="colonne"><i style="height:18.3px" title="2019 : 3 838 prix"></i></div>
+<div class="colonne"><i style="height:15.5px" title="2020 : 3 252 prix"></i></div>
+<div class="colonne"><i style="height:29.4px" title="2021 : 6 145 prix"></i></div>
+<div class="colonne"><i style="height:75.6px" title="2022 : 15 827 prix"></i></div>
+<div class="colonne"><i style="height:55.1px" title="2023 : 11 538 prix"></i></div>
+<div class="colonne"><i style="height:39.3px" title="2024 : 8 225 prix"></i></div>
+<div class="colonne"><i style="height:30.7px" title="2025 : 6 432 prix"></i></div>
+<div class="colonne"><i style="height:140.0px" title="2026 : 29 295 prix"></i></div>
+</div><div class="axe">
+<span>11</span>
+<span>12</span>
+<span>13</span>
+<span>14</span>
+<span>15</span>
+<span>16</span>
+<span>17</span>
+<span>18</span>
+<span>19</span>
+<span>20</span>
+<span>21</span>
+<span>22</span>
+<span>23</span>
+<span>24</span>
+<span>25</span>
+<span>26</span>
+</div>
+<div class="note">Le pic de <b>2026</b> n’est pas une flambée du marché. Trois sources ne datent pas leurs annonces et reçoivent la date du relevé : elles sont marquées comme telles dans la base, mais elles gonflent l’année en cours sur ce graphique.</div>
+</section>
+<section>
+<h2><span class="rang">03</span>Croiser la nature du prix et la référence</h2>
+<p class="intro">Deux exigences indépendantes : savoir <em>ce que le montant représente</em>, et savoir <em>de quelle montre il s’agit</em>. Le tableau montre où chacune se perd.</p>
+<div class="cadre"><table><thead><tr><th>Nature du prix</th><th class="n">Avec référence</th><th class="n">Sans</th><th class="n">Taux</th><th>Ce que la ligne vaut</th></tr></thead><tbody>
+<tr><td class="gras">demandé</td><td class="n">35 295</td><td class="n">4 975</td><td class="n">88 %</td><td>prix demandé : une intention de vente, pas une transaction</td></tr>
+<tr><td class="gras">vendu</td><td class="n">31 444</td><td class="n">6 029</td><td class="n">84 %</td><td>vente conclue chez un marchand ; le montant est le dernier prix affiché</td></tr>
+<tr><td class="gras">réalisé</td><td class="n">16 827</td><td class="n">10 358</td><td class="n">62 %</td><td>prix d&#x27;adjudication : la meilleure preuve de valeur</td></tr>
+<tr><td class="gras">prix neuf</td><td class="n">3 797</td><td class="n">636</td><td class="n">86 %</td><td>tarif officiel du neuf : un plafond, jamais un prix de marché</td></tr>
+<tr><td class="gras">estimation</td><td class="n">952</td><td class="n">363</td><td class="n">72 %</td><td>estimation d&#x27;avant-vente, ou lot invendu</td></tr>
+</tbody></table></div>
+<div class="grille g3" style="margin-top:26px">
+<div class="case"><h3>Les devises</h3><span><em>USD</em> 58 581 · <em>EUR</em> 31 424 · <em>GBP</em> 15 770 · <em>CHF</em> 2 515 · <em>HKD</em> 2 386<br><br>Aucune conversion n’est faite. Comparer un lot en HKD à un lot en USD demande un taux <em>daté</em>, qui n’est pas encore stocké.</span></div>
+<div class="case"><h3>Le régime de frais</h3><span><em>16 068</em> lignes frais acheteur inclus · <em>12 011</em> lignes marteau nu.<br><br>L’écart est d’environ un quart, et rien sur les pages ne le signale : le champ <code>price_includes_premium</code> porte l’information ligne par ligne.</span></div>
+<div class="case"><h3>Les marques</h3><span><em>764</em> maisons distinctes, graphies réunies.<br><br>Rolex 26 275 · Omega 10 251 · Patek Philippe 7 143 · Cartier 6 625 · Breitling 4 153 · Tudor 4 006</span></div></div>
+</section>
+<section>
+<h2><span class="rang">04</span>Les 17 défauts trouvés, et corrigés</h2>
+<p class="intro">Dont <b>6 majeurs</b> : des défauts qui faisaient dire à la base quelque chose de faux, pas seulement d’incomplet. Chacun a été trouvé en confrontant nos lignes aux pages en ligne, jamais à notre propre base, et chacun porte son ampleur mesurée. Ce sont eux qui disent où la donnée pourrait encore mentir.</p>
+<div class="defauts">
+<article class="defaut"><div class="defaut-tete">
+<h3>Un champ nommé « hammer_price » qui ne contenait pas un marteau</h3>
+<span class="ampleur">1 748 prix sur 1 779</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Fortuna</span>Les montants étaient gonflés de 25 % face à toute autre maison de ventes à marteau nu.</p>
+<p><span class="etiquette">Pourquoi</span>Le champ ne porte un marteau que sur les 31 lots où `bp_applies` vaut vrai. Sur les 1 748 autres, il inclut déjà les frais acheteur. Nous avions généralisé depuis une vérification directe menée sur ces 31 lots — c&#x27;est-à-dire sur la seule population qui se comporte autrement que les 98 % restants.</p>
+<p><span class="etiquette">Comment on l’a su</span>Les 471 montants non entiers deviennent TOUS des entiers exacts après division par 1,25 : 43,75 = 35 × 1,25. Aucun marteau ne tombe sur 43,75 $.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Le régime de frais se lit désormais lot par lot.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Cinq boutiques déclaraient tout leur catalogue « en vente »</h3>
+<span class="ampleur">11 820 fiches</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Watchtrader · Wanna Buy A Watch · AWCO · Global Watch Shop · Chronofinder</span>Ces cinq sources sortaient à 100 % d&#x27;annonces actives, sans une seule vente — alors que leurs boutiques affichaient l&#x27;inverse.</p>
+<p><span class="etiquette">Pourquoi</span>Le moteur cherchait le statut dans `class_list`, un champ que l&#x27;API Store de WooCommerce n&#x27;envoie jamais. La condition était donc toujours vraie.</p>
+<p><span class="etiquette">Comment on l’a su</span>Le brut déjà stocké portait `is_in_stock` sur 100 % des produits, et disait 20 738 fiches épuisées sur 22 943.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Lecture de `is_in_stock`, rejouée sans une requête de plus.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>3 071 « ventes » qui étaient des « nous consulter »</h3>
+<span class="ampleur">3 319 → 248 ventes réelles</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Montredo</span>Un détaillant de montres neuves apparaissait comme l&#x27;un des premiers vendeurs du dossier en volume de transactions.</p>
+<p><span class="etiquette">Pourquoi</span>La règle « indisponible donc vendue » vaut chez un marchand de pièces uniques. Chez un détaillant agréé, une fiche indisponible veut dire qu&#x27;il faut écrire au vendeur.</p>
+<p><span class="etiquette">Comment on l’a su</span>18 des 20 lignes « vendues » tirées au hasard portaient le tag `inquiry-only`, contre 0 des 10 lignes « demandé ».</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Le tag de la boutique prime sur la déduction : c&#x27;est une déclaration du vendeur, pas une inférence de notre part.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Une référence de bracelet à la place de celle de la montre</h3>
+<span class="ampleur">443 fiches</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Bulang and Sons</span>Une Rolex Datejust 1601 était enregistrée sous 6251H, une Daytona 16520 sous 78390.</p>
+<p><span class="etiquette">Pourquoi</span>L&#x27;extraction ouvrait la description avant d&#x27;avoir épuisé le titre. Or ce marchand énumère dans sa description les bracelets livrés avec la montre, références comprises.</p>
+<p><span class="etiquette">Comment on l’a su</span>443 fiches portaient une référence qui contredisait le numéro écrit dans leur propre titre.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Le titre est épuisé en entier — mot-clé puis forme du jeton — avant qu&#x27;on ouvre la description.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Neuf graphies pour la même maison</h3>
+<span class="ampleur">95 906 lignes · 109 groupes</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">toutes les sources</span>« Rolex » et « ROLEX », « Jaeger-LeCoultre » et « Jaeger Le Coultre » comptaient pour des marques différentes, donc pour des modèles différents. La cote d&#x27;une même montre se coupait en deux sans que rien ne le signale.</p>
+<p><span class="etiquette">Pourquoi</span>Chaque adaptateur recopiait fidèlement la graphie de sa source. Fidèle, mais incomparable d&#x27;une source à l&#x27;autre.</p>
+<p><span class="etiquette">Comment on l’a su</span>946 marques apparentes pour 109 groupes de doublons. Jaeger-LeCoultre en portait neuf à lui seul.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>La marque est ramenée à sa graphie canonique par le dictionnaire du filtre : 946 → 764 marques réelles.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Une source entièrement rejetée par une balise vide</h3>
+<span class="ampleur">2 506 lignes, soit 100 %</span>
+<span class="gravite g-majeur">majeur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Sworders</span>La collecte ramenait 2 506 lots, et le filtre les rejetait tous.</p>
+<p><span class="etiquette">Pourquoi</span>L&#x27;expression qui lit le titre s&#x27;arrêtait au premier `&lt;/span&gt;` — or le balisage insère juste avant une balise VIDE. Le titre sortait donc vide, donc sans marque, donc rejeté par la règle qui exige une marque connue.</p>
+<p><span class="etiquette">Comment on l’a su</span>2 506 lignes sur 2 506 en verdict `REJETER · R3`.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Lecture jusqu&#x27;à la fin du lien : 1 504 montres, 31 marques.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Un SKU pris pour un code maison alors qu&#x27;il portait la référence</h3>
+<span class="ampleur">183 → 2 127 références</span>
+<span class="gravite g-rendement">rendement</span>
+</div>
+<p class="quoi"><span class="source-touchee">Berry&#x27;s Jewellers</span>Un détaillant agréé de 2 142 montres ne rendait que 183 références exploitables — il en rend 2 127 aujourd&#x27;hui.</p>
+<p><span class="etiquette">Pourquoi</span>Le SKU est un code d&#x27;inventaire chez la plupart des marchands — « DOX-333 » chez CW Sellors, « 136 » chez Topper. Traiter la règle comme universelle coûtait onze fois le rendement de cette source.</p>
+<p><span class="etiquette">Comment on l’a su</span>Le champ contient `L38204930` chez Longines, `IW503607` chez IWC, `M2836C1A0-0103` chez Tudor — des références constructeur, précédées de « P-O » pour l&#x27;occasion.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Un réglage par source, activé seulement là où c&#x27;est vérifié.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Une source sans aucune référence, alors qu&#x27;un tiers de ses titres en portent</h3>
+<span class="ampleur">0 → 3 232 références</span>
+<span class="gravite g-rendement">rendement</span>
+</div>
+<p class="quoi"><span class="source-touchee">WatchRecon</span>La source la plus fraîche du dossier était inutilisable pour rapprocher deux annonces.</p>
+<p><span class="etiquette">Pourquoi</span>L&#x27;adaptateur ne lisait pas le titre. C&#x27;est pourtant le seul champ d&#x27;identité que cet agrégateur de forums publie.</p>
+<p><span class="etiquette">Comment on l’a su</span>1 488 titres sur 4 244 portaient un motif exploitable : `Ref. IW325502`, `126710BLRO`, `311.30.40.30.01.001`.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Extraction du titre. Au passage, 1 709 annonces étaient comptées deux fois : la date entrait dans la clé de dédoublonnage d&#x27;une source qui date en relatif.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Un marchand sans marque, faute de repli sur le titre</h3>
+<span class="ampleur">342 fiches, plus des gains ailleurs</span>
+<span class="gravite g-rendement">rendement</span>
+</div>
+<p class="quoi"><span class="source-touchee">Amsterdam Vintage Watches · Wanna Buy A Watch · AWCO</span>La source à la fiche la mieux remplie du dossier — 91 % de références publiées — sortait avec 0 % de marques, et se faisait rejeter en entier.</p>
+<p><span class="etiquette">Pourquoi</span>Le moteur WooCommerce n&#x27;avait aucun repli sur le titre, contrairement au moteur Shopify qui en a un depuis toujours. Cette boutique ne publie ni attribut ni champ natif de marque.</p>
+<p><span class="etiquette">Comment on l’a su</span>0 % de marques sur 342 fiches dont le titre commence pourtant par « Cartier Tank 17002 ».</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Repli ajouté au moteur : 97 % de marques ici, et un gain chez Wanna Buy A Watch (93 → 96 %) et AWCO (81 → 86 %).</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Une décennie enregistrée comme une année de production</h3>
+<span class="ampleur">401 lignes sur 496</span>
+<span class="gravite g-rendement">rendement</span>
+</div>
+<p class="quoi"><span class="source-touchee">Watches of Distinction</span>Une Explorer II de 2020 était datée de 2010. Dix ans d&#x27;écart sur une montre, ce n&#x27;est pas un arrondi.</p>
+<p><span class="etiquette">Pourquoi</span>Le marchand publie un attribut d&#x27;année qui est en réalité une décennie — « 2010&#x27;s » — pendant que son titre porte le millésime. Le moteur lisait l&#x27;attribut, jugé plus fiable qu&#x27;un titre.</p>
+<p><span class="etiquette">Comment on l’a su</span>401 des 496 lignes gardées divergeaient de l&#x27;année écrite entre parenthèses dans leur propre titre.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Le titre prime quand il donne un millésime ; une décennie seule ne produit plus aucune année. Zéro divergence.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Des cotes d&#x27;étanchéité rangées dans le champ référence</h3>
+<span class="ampleur">247 lignes</span>
+<span class="gravite g-mineur">mineur</span>
+</div>
+<p class="quoi"><span class="source-touchee">CW Sellors · Analog:Shift · Berry&#x27;s</span>« 300m », « 1000M » et le « 300T » des Doxa apparaissaient comme des références constructeur.</p>
+<p><span class="etiquette">Pourquoi</span>Le détecteur de référence par la forme acceptait tout jeton portant au moins deux chiffres.</p>
+<p><span class="etiquette">Comment on l’a su</span>Un tiers des références déduites du titre chez CW Sellors et Analog:Shift étaient des cotes de profondeur.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Garde-fou sur les unités, et liste explicite des cotes en T — « 242T » et « 3647T » sont, eux, de vraies références.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Des prix sentinelles de 1,00 pris pour des prix</h3>
+<span class="ampleur">332 lignes</span>
+<span class="gravite g-mineur">mineur</span>
+</div>
+<p class="quoi"><span class="source-touchee">Bulang and Sons · The Keystone</span>Une Daytona 6263 et une Rolex 5510 étaient enregistrées à 1,00 EUR.</p>
+<p><span class="etiquette">Pourquoi</span>Le zéro était traité comme un prix masqué, mais pas sa variante polie : un montant symbolique qui veut dire « nous consulter ».</p>
+<p><span class="etiquette">Comment on l’a su</span>Vérifié en direct : les sites publient bien `1.00`. Notre stockage était fidèle, la donnée sans valeur.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Plancher de prix sous lequel une ligne n&#x27;est pas un prix.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Des titres publiés avec leurs entités HTML</h3>
+<span class="ampleur">4 370 titres</span>
+<span class="gravite g-mineur">mineur</span>
+</div>
+<p class="quoi"><span class="source-touchee">dix sources</span>« Cartier Tank 17002 &amp;#8216;Jumbo&amp;#8217; » partait tel quel en base.</p>
+<p><span class="etiquette">Pourquoi</span>Le décodage existait — ajouté quand `&amp;#8217;` produisait la fausse référence « 8217 » — mais il ne servait qu&#x27;à l&#x27;extraction, jamais aux champs enregistrés.</p>
+<p><span class="etiquette">Comment on l’a su</span>4 370 titres de dix sources portaient une entité non décodée.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Décodage appliqué à tous les champs texte enregistrés.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Une source qu&#x27;on ne pouvait pas rejouer hors ligne</h3>
+<span class="ampleur">2 010 lots</span>
+<span class="gravite g-structurel">structurel</span>
+</div>
+<p class="quoi"><span class="source-touchee">Fortuna</span>Rejouer la source depuis le brut rendait 2 010 lots sans marque et sans date — donc entièrement rejetés.</p>
+<p><span class="etiquette">Pourquoi</span>La taxonomie des marques et les dates de vente venaient de deux appels annexes dont les réponses n&#x27;étaient pas conservées. Une donnée lue mais non stockée n&#x27;est pas rejouable.</p>
+<p><span class="etiquette">Comment on l’a su</span>0 % de marques au rejeu contre 92 % à la collecte.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Les 144 réponses annexes sont désormais dans le brut : la source se rejoue de bout en bout.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Nous nous annoncions comme un navigateur que nous ne sommes pas</h3>
+<span class="ampleur">1 source débloquée, 1 gelée</span>
+<span class="gravite g-structurel">structurel</span>
+</div>
+<p class="quoi"><span class="source-touchee">les 28 sources</span>Des sources paraissaient nous bloquer alors qu&#x27;elles bloquaient le faux navigateur. LiveAuctioneers rendait 962 octets de challenge depuis août ; nous l&#x27;avions classée « anti-bot Incapsula ».</p>
+<p><span class="etiquette">Pourquoi</span>L&#x27;en-tête annonçait Chrome 124 sur macOS. Cela nous rangeait sous la règle `User-agent: *` de chaque robots.txt — la plus stricte — alors que plusieurs sites ouvrent explicitement leur catalogue à ClaudeBot, DavidSW le disant en toutes lettres dans un commentaire.</p>
+<p><span class="etiquette">Comment on l’a su</span>Avec un en-tête honnête, LiveAuctioneers rend 318 Ko au lieu de 962 octets. Christie&#x27;s avait déjà montré la même chose : 0,05 s avec un UA honnête contre 20 s d&#x27;expiration en Chrome simulé.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>En-tête `ClaudeBot`, et la contrepartie assumée en entier : un module vérifie désormais ce que chaque source autorise à ClaudeBot, source par source. Watches of Distinction refuse les UA de robot par pare-feu — sa collecte est gelée, ses 496 montres restent. Un 403 est un refus, pas un obstacle.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Un contrôle de robots.txt qui prenait le silence pour un accord</h3>
+<span class="ampleur">1 source faussement ouverte</span>
+<span class="gravite g-structurel">structurel</span>
+</div>
+<p class="quoi"><span class="source-touchee">notre propre outil</span>Le module de vérification déclarait DavidSW ouverte alors qu&#x27;elle interdit `/wp-json/` à ClaudeBot en toutes lettres.</p>
+<p><span class="etiquette">Pourquoi</span>Quand la requête du robots.txt échouait — un 429 de bridage — le texte revenait vide, donc sans aucune règle, donc « autorisé ». Le défaut le plus dangereux qu&#x27;un tel outil puisse avoir.</p>
+<p><span class="etiquette">Comment on l’a su</span>Deux exécutions à quelques minutes d&#x27;intervalle rendaient des verdicts opposés sur la même source.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Fermé par défaut : un robots.txt illisible interdit, un 404 autorise. Les deux ne se confondent plus.</p>
+</article>
+<article class="defaut"><div class="defaut-tete">
+<h3>Deux copies des mêmes réglages, qui avaient divergé</h3>
+<span class="ampleur">tout le rejeu hors ligne</span>
+<span class="gravite g-structurel">structurel</span>
+</div>
+<p class="quoi"><span class="source-touchee">onze boutiques Shopify</span>Les corrections apportées aux adaptateurs ne franchissaient pas le rejeu : tags de nature et SKU-référence restaient sans effet.</p>
+<p><span class="etiquette">Pourquoi</span>Le module de rejeu tenait sa propre table de réglages, recopiée des adaptateurs. Les deux ont divergé sans que rien ne le signale.</p>
+<p><span class="etiquette">Comment on l’a su</span>Après correction des adaptateurs, le rejeu rendait toujours les anciens chiffres.</p>
+<p class="reparee"><span class="etiquette">Corrigé</span>Chaque adaptateur porte ses réglages, le rejeu les lit. Une donnée dupliquée finit toujours par se contredire.</p>
+</article>
+</div>
+<div class="note">Aucune de ces corrections n’a coûté une nouvelle collecte. Le brut de chaque source est conservé — 239 Mo compressés — et toute correction du filtre ou d’un adaptateur se rejoue sur l’historique entier sans une seule requête réseau. C’est ce qui les rend possibles après coup, et c’est la décision de conception qui a le plus rapporté.</div>
+</section>
+<section>
+<h2><span class="rang">05</span>Ce qui bloque</h2>
+<p class="intro">Trois genres, qui ne se traitent pas pareil. Une source qui refuse techniquement ne demande rien à personne. Une source qui nous exclut nommément demande un arbitrage — et rien n’en a été collecté en attendant. Une limite de coût se lève en laissant tourner plus longtemps.</p>
+<div class="blocs">
+<div class="bloc"><div><h3>EveryWatch</h3><div class="genre">technique</div></div><p>573 015 annonces, la plus grosse source du dossier. Elle repond a un appel isole mais REFUSE une collecte : 32 requetes sur 42 rejetees le 28/08. L&#x27;adaptateur est ecrit et pret ; il faudrait un rythme de l&#x27;ordre d&#x27;une requete par minute, soit plusieurs semaines.</p><div class="suite">Rien a decider — c&#x27;est une contrainte de la source.</div></div>
+<div class="bloc"><div><h3>LiveAuctioneers</h3><div class="genre">limite de la source</div></div><p>Le blocage etait le notre : en nous annoncant honnetement, la source repond 318 Ko la ou le faux UA Chrome recevait un challenge. Mais son archive ne pagine que par `/search/?`, que son robots.txt interdit. Le chemin autorise rend 13 lots prixes, sans page suivante.</p><div class="suite">Accessible, mais non collectable a l&#x27;echelle.</div></div>
+<div class="bloc"><div><h3>DavidSW</h3><div class="genre">limite de cout</div></div><p>Son robots.txt ouvre le catalogue a ClaudeBot mais ferme `/wp-json/`. Ses 18 000 fiches produit nous sont donc ouvertes une par une — et le site bride dur : 6 refus 429 sur 8 pages a 2,5 s d&#x27;intervalle.</p><div class="suite">Des jours de collecte pour 499 pieces en stock.</div></div>
+<div class="bloc"><div><h3>Watches of Distinction</h3><div class="genre">refus du serveur</div></div><p>Son robots.txt ne nous interdit rien, mais son pare-feu rend 403 a tout UA de robot depuis notre passage a ClaudeBot. Les 496 montres deja collectees restent en base avec leur brut.</p><div class="suite">Collecte gelee. Un 403 est un refus, on ne le contourne pas.</div></div>
+<div class="bloc decision"><div><h3>Watches of Knightsbridge</h3><div class="genre">decision</div></div><p>Le meilleur rapport profondeur/cout mesure : 57 requetes pour douze ans d&#x27;encheres en MARTEAU NU, invendus publies a 34 %. Mais son robots.txt porte &#x27;User-agent: ClaudeBot / Disallow: /&#x27; — une exclusion nominale.</p><div class="suite">DECISION REQUISE. Rien n&#x27;a ete collecte et rien ne le sera sans arbitrage.</div></div>
+<div class="bloc decision"><div><h3>Grailzee</h3><div class="genre">decision</div></div><p>Techniquement la meilleure source sondee : 54 603 encheres, reference normalisee a 99,86 %, invendus publies, une centaine de requetes. Mais les prix ne sont servis que par un endpoint interne a cle embarquee.</p><div class="suite">DECISION REQUISE. Rien n&#x27;a ete collecte.</div></div>
+<div class="bloc decision"><div><h3>Bezel</h3><div class="genre">decision</div></div><p>32 670 annonces. Le robots.txt autorise l&#x27;API, mais les conditions d&#x27;utilisation interdisent le scraping mot pour mot — les deux se contredisent.</p><div class="suite">DECISION REQUISE. L&#x27;adaptateur est ecrit et bride par un drapeau.</div></div>
+<div class="bloc"><div><h3>Christie&#x27;s, Artcurial, Lyon &amp; Turnbull</h3><div class="genre">limite de la source</div></div><p>Leurs API ne servent que les lots VENDUS : les invendus n&#x27;existent pas dans les donnees, alors qu&#x27;ils disent ou le marche s&#x27;arrete. Seules Lyon &amp; Turnbull et Loupe This en publient.</p><div class="suite">Biais de survie assume, et documente ligne par ligne.</div></div>
+<div class="bloc"><div><h3>Watches of Switzerland</h3><div class="genre">limite de cout</div></div><p>33 106 fiches, mais une requete par fiche : neuf heures pour le tout. La collecte est bornee a 2 500, et le journal le dit.</p><div class="suite">Levable en laissant tourner une nuit.</div></div>
+</div></section>
+<section>
+<h2><span class="rang">06</span>Les sources sondées puis écartées</h2>
+<p class="intro">18 sources ont coûté des requêtes réelles sans entrer dans la base. Le volume est ce qui serait <em>atteignable</em>, jamais ce qui a été collecté — ne montrer que les sources retenues laisserait croire qu’on a choisi sans comparer.</p>
+<div class="cadre"><table><thead><tr><th>Source</th><th>Type</th><th>Volume atteignable</th><th>Prix</th><th>Référence</th><th>Profondeur</th><th>Verdict</th><th>Pourquoi</th></tr></thead><tbody>
+<tr><td class="gras">Abell Auction</td><td>maison de ventes</td><td>~250 lots horlogers</td><td>realise, marteau nu</td><td>quasi nulle</td><td>12/2024</td><td>a creuser</td><td>Le JSON-LD laisse fuiter le prix realise malgre le &#x27;Login for Price&#x27; affiche. Mais l&#x27;archive s&#x27;arrete a la migration de fin 2024 : vingt mois, et 1,2 % de lots horlogers.</td></tr>
+<tr><td class="gras">LiveAuctioneers</td><td>agregateur</td><td>non mesurable</td><td>realise</td><td>non mesuree</td><td>—</td><td>a creuser</td><td>LE BLOCAGE ETAIT LE NOTRE. En nous annoncant honnetement ClaudeBot le 02/09/2026, la source repond 318 Ko la ou notre faux UA Chrome recevait 962 octets de challenge — l&#x27;anti-bot visait le navigateur simule. Mais l&#x27;archive reste hors d&#x27;atteinte : ?status=archive rend 13 lots prixes sur 14, sans pagination, et le seul chemin qui pagine est `/search/?`, explicitement interdit par son robots.txt. Accessible n&#x27;est pas collectable.</td></tr>
+<tr><td class="gras">New Orleans Auction</td><td>maison de ventes</td><td>~178 000 lots</td><td>realise, frais inclus (+25 %)</td><td>65 % texte libre</td><td>26/07/1992</td><td>a creuser</td><td>La plus profonde de toutes — trente-quatre ans. Resondee le 02/09/2026 : l&#x27;archive est bien la, en marque blanche d&#x27;Invaluable, et les prix REALISES sont servis dans le HTML — 16 lots prixes sur les 20 d&#x27;une page. Mais la pagination ne repond pas : ?page=2 rend toujours la page 0. Au-dela de 20 lots par catalogue il faut appeler Algolia avec la cle embarquee du site. Meme cas que Grailzee : decision requise.</td></tr>
+<tr><td class="gras">Watchfinder</td><td>marchand</td><td>~5 500 fiches</td><td>demande</td><td>URL et titre</td><td>aucune</td><td>a creuser</td><td>L&#x27;API de stock est explicitement en Disallow, donc une requete par fiche. Aucune date nulle part : c&#x27;est un instantane de stock.</td></tr>
+<tr><td class="gras">EveryWatch (fenetre)</td><td>agregateur</td><td>573 015 annonces</td><td>realise, frais inclus</td><td>63 % champ dedie</td><td>24 mois glissants</td><td>branchee, avec reserve</td><td>Resondee le 02/09/2026 : le BLOCAGE EST LEVE — 2 refus sur 42 contre 32 le 28/08. Mais la source est desormais videe : sur 50 lots servis en `auctionLotType: RESULT`, ZERO porte un prix ou une date. Une requete entiere n&#x27;a rendu qu&#x27;un seul lot exploitable, date de la veille. L&#x27;acces est ouvert, la donnee ne l&#x27;est plus.</td></tr>
+<tr><td class="gras">Bezel</td><td>marketplace</td><td>32 670 annonces</td><td>demande</td><td>champ dedie</td><td>releve</td><td>decision requise</td><td>robots.txt autorise l&#x27;API mais les CGU interdisent verbatim le scraping. Adaptateur ecrit, bride par un drapeau, en attente d&#x27;arbitrage humain.</td></tr>
+<tr><td class="gras">DavidSW</td><td>marchand</td><td>499 fiches servies par l&#x27;API</td><td>demande</td><td>~87,5 % (titre)</td><td>2022</td><td>decision requise</td><td>Resondee le 02/09/2026 : l&#x27;API WooCommerce repond et sert 499 fiches prixees, marque et modele en categories. MAIS son robots.txt porte `Disallow: /wp-json/` pour `User-agent: *`, et c&#x27;est sous cette regle que nous tombons puisque nous envoyons un UA Chrome. Verifie le 02/09/2026 apres etre passes a ClaudeBot : le groupe `claudebot` interdit LUI AUSSI `/wp-json/` — c&#x27;est la plomberie qui est fermee, pas le catalogue. Ses fiches produit nous sont ouvertes, mais elles sont 18 000 et le site bride dur : 6 refus 429 sur 8 pages a 2,5 s d&#x27;intervalle. Des jours de collecte pour un marchand de 499 pieces en stock.</td></tr>
+<tr><td class="gras">Grailzee</td><td>marketplace d&#x27;encheres</td><td>54 603 encheres</td><td>realise, marteau nu</td><td>99,86 % champ structure</td><td>19/08/2022</td><td>decision requise</td><td>Techniquement la meilleure source mesuree : reference normalisee a 99,9 %, invendus publies, ~110 requetes. Mais les prix ne sont accessibles que par un endpoint interne a cle embarquee.</td></tr>
+<tr><td class="gras">Watches of Knightsbridge</td><td>maison de ventes</td><td>~12 000 lots</td><td>realise, MARTEAU NU</td><td>31 a 40 % (titre tronque)</td><td>12/07/2014</td><td>decision requise</td><td>Le meilleur rapport profondeur/cout du dossier — 57 requetes pour douze ans en marteau nu, invendus a 34 %. Mais son robots.txt porte &#x27;User-agent: ClaudeBot / Disallow: /&#x27; : exclusion explicite.</td></tr>
+<tr><td class="gras">Certified Watch Store</td><td>marchand</td><td>1 127 montres</td><td>neuf remise</td><td>98 % (SKU prefixe)</td><td>aucune</td><td>ecartee</td><td>1 076 fiches creees le meme jour par un import d&#x27;avril 2026 : aucun signal temporel. Entree de gamme, marche secondaire absent.</td></tr>
+<tr><td class="gras">Cortrie Auktionen</td><td>maison de ventes</td><td>24 lots vedettes</td><td>realise, FRAIS INCLUS (&#x27;inkl. Aufgeld&#x27;)</td><td>~100 % (titre)</td><td>non atteignable</td><td>ecartee</td><td>Resondee le 29/08 puis le 02/09/2026, sans changement. La fiche est la plus riche qu&#x27;on ait vue — &#x27;Referenz 6241, Seriennummer 17673..., Zuschlag: 272.360,00 € inkl. Aufgeld&#x27;. Mais l&#x27;archive n&#x27;est pas ouverte : le parametre de pagination est IGNORE (les memes 24 lots vedettes reviennent identiques a start=0, 24, 48, 72 et 4800) et les ventes passees repondent 404. Seule la vente en cours est visible.</td></tr>
+<tr><td class="gras">Cottone Auctions</td><td>maison de ventes</td><td>3 323 lots</td><td>realise, frais inclus</td><td>2 %</td><td>2009</td><td>ecartee</td><td>Maison d&#x27;horloges anciennes : sur ses 3 323 lots aspires, le filtre n&#x27;en garde que 40. Regulateurs, orreries, horloges de parquet — pas le marche de la montre-bracelet.</td></tr>
+<tr><td class="gras">John Moran Auctioneers</td><td>maison de ventes</td><td>1 catalogue passe accessible</td><td>realise, frais inclus (+27 %)</td><td>non mesurable</td><td>non atteignable</td><td>ecartee</td><td>Resondee le 29/08/2026 : le site est une marque blanche d&#x27;Invaluable, avec `realizedPriceIndicator:false` et un catalogue servi par Algolia, 20 lots par page au-dela desquels il faut une cle. Sa boutique WordPress ne vend que des sacs et des livres d&#x27;art. La profondeur de 1993 n&#x27;est pas atteignable par le site lui-meme.</td></tr>
+<tr><td class="gras">Kunsthaus Lempertz</td><td>maison de ventes</td><td>271 lots horlogers</td><td>realise, frais inclus</td><td>non mesuree</td><td>2002</td><td>ecartee</td><td>86 805 URL enumerees par ses sitemaps pour 271 lots horlogers seulement, et aucun prix marteau disponible. Mauvais rapport.</td></tr>
+<tr><td class="gras">Menta Watches</td><td>marchand</td><td>2 902 fiches</td><td>demande</td><td>60 % (titre)</td><td>import 2023</td><td>ecartee</td><td>L&#x27;archive est fermee a l&#x27;API : 1 produit rendu sur 300 demandes. 8,8 % des fiches conservent un prix, et 73 % datent du meme import de lancement.</td></tr>
+<tr><td class="gras">Morphy Auctions</td><td>maison de ventes</td><td>~12 ventes horlogeres</td><td>realise, frais a taux variable</td><td>0 %</td><td>2016</td><td>ecartee</td><td>Zero reference sur 132 titres examines, et des frais acheteur variables selon le canal d&#x27;enchere : le marteau n&#x27;est pas reconstructible. La page de resultats est en Disallow.</td></tr>
+<tr><td class="gras">The Watch Club</td><td>marchand</td><td>59 montres</td><td>demande (AUD)</td><td>~0 %</td><td>aucune</td><td>ecartee</td><td>Le champ marque vaut &#x27;The Watch Club&#x27; sur toutes les fiches, et le catalogue contient plus de livres que de montres.</td></tr>
+<tr><td class="gras">Watches of Distinction (collecte gelee)</td><td>marchand</td><td>507 lignes deja collectees</td><td>demande</td><td>93 % (titre)</td><td>aucune</td><td>gelee</td><td>Collectee le 02/09/2026 sous l&#x27;ancien en-tete, quand son robots.txt l&#x27;autorisait et qu&#x27;elle repondait. Depuis notre passage a ClaudeBot elle rend 403 sur toute requete : son robots.txt ne nous interdit rien, mais son pare-feu refuse les UA de robot. Un 403 est un refus, on ne le contourne pas. Les 496 montres deja en base restent, avec leur brut ; la source ne sera plus rappelee.</td></tr>
+</tbody></table></div></section>
+<section>
+<h2><span class="rang">07</span>Ce qui a été vérifié, source par source</h2>
+<p class="intro">Un tirage aléatoire par source, plus un contrôle taillé pour elle : paramètre de pays chez les boutiques Shopify, régime de frais chez les maisons de ventes, statut de stock chez les WooCommerce. Les défauts trouvés sont donnés tels quels — une vérification qui ne trouve jamais rien ne vérifie rien.</p>
+<div class="cadre"><table><thead><tr><th>Source</th><th>Tirage</th><th>Ce qu’il a trouvé</th></tr></thead><tbody>
+<tr><td class="gras">Hodinkee Shop</td><td><code>8/8 montants · 8/8 references · 8/8 natures · 8/8 marques</code></td><td>Rien a corriger. Notre marque est meilleure que celle de la boutique : `vendor` dit « HODINKEE Shop », nous disons « Audemars Piguet ».</td></tr>
+<tr><td class="gras">Montredo</td><td><code>8/8 montants · 7/8 references · 2/8 natures · 8/8 marques</code></td><td>CORRIGE. 18 des 20 lignes « vendues » tirees au hasard portaient le tag `inquiry-only` : 3 071 fausses ventes retirees.</td></tr>
+<tr><td class="gras">Christie&#x27;s</td><td><code>7/8 montants · 8/8 references · 8/8 dates</code></td><td>Le drapeau « frais inclus » est juste : 89 a 95 % des montants se decomposent en (marteau sur echelon) x (taux publie). Reserve : pour les ventes en ligne la date est l&#x27;OUVERTURE, pas l&#x27;adjudication.</td></tr>
+<tr><td class="gras">Artcurial</td><td><code>7/7 montants · 8/8 references · 7/7 dates</code></td><td>CORRIGE sur la provenance : 495 references venaient de la description et se disaient tirees du titre. Notre montant est le marteau et ne correspond JAMAIS au « Vendu » affiche, qui est frais inclus.</td></tr>
+<tr><td class="gras">Analog:Shift</td><td><code>8/8 montants · 3/8 references · 8/8 natures · 8/8 marques</code></td><td>Le SKU maison ne sera jamais une reference : 2 946 lignes en portent un, et sont comptees a part. La reference reelle est dans le corps de l&#x27;annonce.</td></tr>
+<tr><td class="gras">Wanna Buy A Watch</td><td><code>6/6 montants · 3/6 references · 0/6 natures</code></td><td>CORRIGE par le meme defaut de stock. 1 218 lignes restent sans aucune reference.</td></tr>
+<tr><td class="gras">Lyon &amp; Turnbull</td><td><code>7/8 montants · 8/8 references · 7/7 dates</code></td><td>La plus propre du lot : marteau nu confirme par champ dedie, bareme de frais et dates de session explicites.</td></tr>
+<tr><td class="gras">Berry&#x27;s Jewellers</td><td><code>6/6 montants · 6/6 references · 6/6 natures</code></td><td>CORRIGE. Son champ SKU porte la vraie reference constructeur : la source passe de 183 a 2 125 references exploitables. Sans `country=GB` le prix perd 16,7 % de TVA.</td></tr>
+<tr><td class="gras">The Keystone</td><td><code>8/8 montants · 8/8 references · 8/8 natures · 8/8 marques</code></td><td>27 fiches a 1,00 USD, prix sentinelle reellement publie par le site — desormais ecartees par le plancher du moteur.</td></tr>
+<tr><td class="gras">WatchRecon</td><td><code>8/8 montants · 0/8 references avant correction</code></td><td>CORRIGE. Un tiers des titres portaient une reference qu&#x27;on ne lisait pas : 3 232 lignes en ont une aujourd&#x27;hui. Le dedoublonnage comptait aussi 1 709 annonces deux fois.</td></tr>
+<tr><td class="gras">Loupe This</td><td><code>8/8 montants · 8/8 references · 8/8 dates</code></td><td>Marteau nu verifie sur 4 220 lots sur 4 220. Attention au regime economique et non au drapeau : les frais n&#x27;y sont que de 10 %, contre 25 a 30 % ailleurs.</td></tr>
+<tr><td class="gras">Monaco Legend Auctions</td><td><code>structure revérifiée avant collecte</code></td><td>Le JSON-LD était passé d&#x27;un `EventSeries` nu à un `@graph` depuis la reconnaissance : le code lit les deux. Rejeu hors ligne identique à la collecte, 4 188 sur 4 188.</td></tr>
+<tr><td class="gras">Watchtrader</td><td><code>6/6 montants · 6/6 references · 0/6 natures</code></td><td>CORRIGE. 3 477 de ses 4 070 fiches ont quitte le catalogue et sortaient « en vente » : le moteur lisait un champ de stock que l&#x27;API n&#x27;envoie pas.</td></tr>
+<tr><td class="gras">Topper Fine Jewelers</td><td><code>6/6 montants · 5/6 references · 6/6 natures</code></td><td>La regle « rupture n&#x27;est pas vente » tient : 100 % en prix neuf. Une Breitling Premier publiee a 500 USD par la boutique elle-meme.</td></tr>
+<tr><td class="gras">Bulang and Sons</td><td><code>8/8 montants · 5/8 references · 8/8 natures · 8/8 marques</code></td><td>CORRIGE. 443 fiches portaient la reference du BRACELET livre avec la montre, et 305 un prix de 1 EUR. Le titre est desormais epuise avant la description.</td></tr>
+<tr><td class="gras">Craft &amp; Tailored</td><td><code>8/8 montants · 7/8 references · 8/8 natures · 6/8 marques</code></td><td>CORRIGE. `vendor` valait litteralement « Other » sur les petites maisons ; le moteur relit le titre. Son collecteur maison a ete rendu au moteur commun.</td></tr>
+<tr><td class="gras">CW Sellors</td><td><code>6/6 montants · 1/6 references · 6/6 natures</code></td><td>Son SKU est un vrai code maison (« DOX-333 ») : 12 % de references seulement, et c&#x27;est exact. Ses 1 200 « vendues » sont des prix catalogue de detaillant agree.</td></tr>
+<tr><td class="gras">Amsterdam Watch Company</td><td><code>6/6 montants · 4/6 references · 2/6 natures</code></td><td>CORRIGE par le meme defaut de stock. Le champ SKU est vide chez ce marchand : la reference vient du titre.</td></tr>
+<tr><td class="gras">Sworders</td><td><code>régime de frais vérifié arithmétiquement</code></td><td>Ses conditions disent « hammer price plus a buyer&#x27;s premium » de 27 %, mais cela dit ce qu&#x27;on paie, pas ce qu&#x27;affiche la page. Le contrôle tranche : 77 % des montants tombent sur un échelon d&#x27;enchère tels quels, 8 % après division par 1,27. C&#x27;est un marteau.</td></tr>
+<tr><td class="gras">Watches of Switzerland</td><td><code>6/6 montants · 3/6 references · 6/6 natures</code></td><td>API irreprochable. 470 lignes sans reference alors qu&#x27;elle est dans l&#x27;URL : defaut de rappel, pas de justesse.</td></tr>
+<tr><td class="gras">Fortuna</td><td><code>8/8 montants · 8/8 references · 8/8 dates</code></td><td>CORRIGE, et c&#x27;est la correction la plus lourde : `hammer_price` n&#x27;est un marteau que sur 31 lots ; sur les 1 713 autres il inclut deja 25 % de frais. Les dates et la taxonomie des marques sont desormais dans le brut : la source est rejouable de bout en bout.</td></tr>
+<tr><td class="gras">Global Watch Shop</td><td><code>6/6 montants · 6/6 references · 3/6 natures</code></td><td>CORRIGE par le meme defaut de stock. Sa fiche Breitling se contredit elle-meme entre son champ MODEL et son titre ; on recopie le champ.</td></tr>
+<tr><td class="gras">A Collected Man</td><td><code>6/6 montants · 2/6 references · 6/6 natures</code></td><td>Son SKU est un code maison honnete. La vraie reference est parfois dans l&#x27;URL et nous echappe.</td></tr>
+<tr><td class="gras">Chronofinder</td><td><code>6/6 montants · 5/6 references · 2/6 natures</code></td><td>CORRIGE par le meme defaut de stock. Une reference divergente trouvee sur un champ dedie (18238 contre 18038 en ligne).</td></tr>
+<tr><td class="gras">Watches of Distinction</td><td><code>année recoupée titre contre attribut</code></td><td>Son attribut d&#x27;année donne une DÉCENNIE — « 2010&#x27;s » — quand le titre porte le millésime : 401 lignes sur 496 divergeaient, dont une montre de 2020 datée de 2010. Le titre prime désormais, zéro divergence.</td></tr>
+<tr><td class="gras">Amsterdam Vintage Watches</td><td><code>branchée le 29/08 sur le moteur WooCommerce</code></td><td>Ni attribut ni champ natif de marque : ses 342 fiches sortaient sans marque et R3 les rejetait toutes. Le repli sur le titre a été ajouté au moteur — il fait aussi gagner des marques à Wanna Buy A Watch et AWCO.</td></tr>
+<tr><td class="gras">Hairspring</td><td><code>6/6 montants · 3/6 references · 6/6 natures</code></td><td>Sans `country=US` le prix chute de 17,8 %. Minuscule, mais la plus propre en nature : 0 sur 35 revenue en stock.</td></tr>
+<tr><td class="gras">EveryWatch</td><td><code>collecte impossible</code></td><td>32 reponses sur 42 refusees le 28/08.</td></tr>
+</tbody></table></div>
+<details style="margin-top:22px"><summary>Ce qu’il faut savoir de chaque source</summary><div class="cadre" style="margin-top:12px"><table><tbody>
+<tr><td class="gras">Hodinkee Shop</td><td>Archive figée : plus rien publié après octobre 2024. On l&#x27;aspire une fois, elle ne bougera plus — c&#x27;est un gisement, pas un flux.</td></tr>
+<tr><td class="gras">Montredo</td><td>Le tag `inquiry-only` dit « nous consulter », pas « vendue » : 3 071 fausses ventes ont été retirées le 28/08. Catalogue reconstruit chaque nuit, d&#x27;où une date de relevé et zéro profondeur.</td></tr>
+<tr><td class="gras">Christie&#x27;s</td><td>Publie ses prix FRAIS ACHETEUR INCLUS — mesuré : 39 % de montants ronds contre 97 % chez Artcurial. Sa fiche technique donne matière, mouvement, cadran et diamètre à plus de 80 %.</td></tr>
+<tr><td class="gras">Artcurial</td><td>Marteau nu, dix-neuf ans de profondeur. L&#x27;API ne sert que les lots vendus : biais de survie assumé.</td></tr>
+<tr><td class="gras">Analog:Shift</td><td>La référence vit dans le corps de l&#x27;annonce, pas dans le titre ; son SKU est un code marchand qu&#x27;il ne faut pas confondre.</td></tr>
+<tr><td class="gras">Wanna Buy A Watch</td><td>L&#x27;API conserve le dernier prix demandé de 5 985 montres que la page publique affiche pourtant en « SOLD » sans montant.</td></tr>
+<tr><td class="gras">Lyon &amp; Turnbull</td><td>La seule source qui publie ses INVENDUS. Ses ventes « horlogères » sont à 80 % de la joaillerie, d&#x27;où un taux de conservation faible mais justifié.</td></tr>
+<tr><td class="gras">Berry&#x27;s Jewellers</td><td>Détaillant AGRÉÉ : son champ SKU porte la vraie référence constructeur (L38204930, IW503607), pas un code maison. La compter comme un SKU ramenait la source à 183 références au lieu de 2 125.</td></tr>
+<tr><td class="gras">The Keystone</td><td>Le schéma le mieux structuré des marchands : un bloc « Reference / Year / Brand » dans la description, et huit ans de mise en ligne.</td></tr>
+<tr><td class="gras">WatchRecon</td><td>Agrégateur de forums, la source la plus fraîche du dossier. Un tiers de ses titres portent une référence qu&#x27;on ne lisait pas. La nature du prix y reste déclarée, jamais mesurée.</td></tr>
+<tr><td class="gras">Loupe This</td><td>La seule source qui publie À LA FOIS le marteau et le prix frais inclus. On charge le marteau ; la relation ×1,10 est vérifiée sur 243 lots sans exception.</td></tr>
+<tr><td class="gras">Monaco Legend Auctions</td><td>Sept ans d&#x27;enchères exclusivement horlogères en 20 requêtes — le meilleur rapport volume/coût du dossier. Publie ses INVENDUS (421 lots) et deux devises. Prix FRAIS ACHETEUR INCLUS, comme Christie&#x27;s : ne pas le comparer à un marteau nu.</td></tr>
+<tr><td class="gras">Watchtrader</td><td>La référence est un CHAMP DÉDIÉ rempli à 99,8 %. Mais 3 477 de ses 4 070 fiches ont quitté le catalogue : ce sont des archives, pas des offres vives, et la source ne date rien.</td></tr>
+<tr><td class="gras">Topper Fine Jewelers</td><td>Détaillant de NEUF : `available=false` y signifie rupture de stock, pas vente. Le traiter comme une vente fabriquerait de fausses transactions.</td></tr>
+<tr><td class="gras">Bulang and Sons</td><td>`available` ne dit pas la vente ici, ce sont les tags. Et sa description énumère les BRACELETS livrés : 443 fiches portaient la référence du bracelet au lieu de celle de la montre.</td></tr>
+<tr><td class="gras">Craft &amp; Tailored</td><td>97 % de son catalogue est vendu. Le plus gros piège de devise du dossier : sans `country=US`, -17,85 % sur la moitié de la base.</td></tr>
+<tr><td class="gras">CW Sellors</td><td>Mélange prix TTC et HT dans le même flux sans champ distinctif : un écart de 20 % peut n&#x27;être que de la TVA.</td></tr>
+<tr><td class="gras">Amsterdam Watch Company</td><td>Un prix NÉGATIF y marque une vente, la valeur absolue étant le dernier prix demandé. Convention unique au dossier.</td></tr>
+<tr><td class="gras">Sworders</td><td>Atteinte par sa recherche, marque par marque : son index ne publie que 57 ventes récentes et ses ventes sont à 80 % joaillières. Marteau nu vérifié. Aucune date : la source ne la publie que sur la fiche du lot, à 10 s de délai imposé par requête.</td></tr>
+<tr><td class="gras">Watches of Switzerland</td><td>Détaillant agréé : source du prix NEUF au tarif officiel. Collecte bornée à 2 500 fiches sur 33 106 — une requête par fiche, neuf heures pour le tout.</td></tr>
+<tr><td class="gras">Fortuna</td><td>Son champ `hammer_price` n&#x27;est un marteau que sur les 31 lots où les frais sont publiés ; sur les 1 713 autres il les inclut déjà. Nous avions généralisé depuis 1,7 % du corpus — la seule population qui se comporte autrement.</td></tr>
+<tr><td class="gras">Global Watch Shop</td><td>Référence en champ dédié à 100 %, mais 38 % des fiches sont à prix zéro : du prix sur demande masqué.</td></tr>
+<tr><td class="gras">A Collected Man</td><td>Horlogerie indépendante haut de gamme. Ses manquants en référence n&#x27;en sont pas : Journe et Voutilainen n&#x27;ont réellement pas de référence constructeur.</td></tr>
+<tr><td class="gras">Chronofinder</td><td>Petite mais intégralement prixée — aucune fiche en « prix sur demande », ce qui n&#x27;arrive nulle part ailleurs.</td></tr>
+<tr><td class="gras">Watches of Distinction</td><td>Fiche très structurée : marque à 100 %, référence à 93 %, année exacte à 90 %, matière du boîtier à 98 %. Mais deux tiers de son catalogue sont à prix zéro — 4 962 fiches écartées faute de montant.</td></tr>
+<tr><td class="gras">Amsterdam Vintage Watches</td><td>La fiche la mieux remplie du dossier : référence, année, matière et numéro de série en champs DÉDIÉS — 91 % de références publiées, 96 % d&#x27;années. Mais le prix est SUPPRIMÉ à la vente : seul le stock vivant a un montant.</td></tr>
+<tr><td class="gras">Hairspring</td><td>Le champ marque vaut « Hairspring » sur 100 % des fiches ; la vraie marque se retrouve dans la description, pour la moitié seulement.</td></tr>
+<tr><td class="gras">EveryWatch</td><td>573 015 annonces annoncées, ~210 000 exploitables — mais la source BLOQUE après une dizaine de requêtes : 32 réponses sur 42 refusées le 28/08. Elle tolère quelques appels, pas une collecte.</td></tr>
+</tbody></table></div></details>
+</section>
+<footer>
+<div>Généré le 02/09/2026 par <code>python moteur/page_sources.py</code> depuis le cumul. Aucun chiffre saisi à la main.</div>
+<div>Vérifications menées contre les pages en ligne, pas contre la base. Brut conservé et rejouable : 100 % des sources.</div>
+</footer>
+</div>

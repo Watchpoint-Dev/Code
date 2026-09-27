@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watchpoint"
+version = "0.1.0"
+description = "Moteur de donnees Watchpoint : collecte, normalisation, filtre, chargement Postgres, metriques."
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.2",
+    "pandas>=2.2",
+    "openpyxl>=3.1",          # le classeur des filtres et les exports Excel
+]
+
+[project.optional-dependencies]
+db = ["psycopg[binary]>=3.2"]            # etape 6 : chargement dans Postgres
+research = ["python-dotenv>=1.0"]        # research/ebay lit son .env
+dev = ["pytest>=8", "ruff>=0.6"]
+# Pour les sites rendus en JavaScript, a installer si besoin :
+#   pip install playwright && playwright install chromium
+
+[project.scripts]
+watchpoint = "watchpoint.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
