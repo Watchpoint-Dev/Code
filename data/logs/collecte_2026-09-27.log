@@ -5,3 +5,51 @@
 cumul existant : 222856 prix deja stockes
 
 --- Antiquorum (auction, prix realised)
+    8215 prix (8215 nouveaux) · 614 requetes · periode ['2020-06-28', '2025-12-12']
+      · catalogue geneva-2020-03-21: 0 lots lus en 1 page(s), 8215 records cumules
+      · controle frais: le 'Sold' du catalogue vaut 1.250 fois la colonne 1 de la price-list (n=5350, 1.218-1.312) — la colonne 1 est donc le MARTEAU, et le prix charge est hors frais
+      · 54 ventes traitees, 14 sans price-list (prix frais inclus), 8215 records
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Antiquorum          realised      8215   8215  2020-06-28 -> 2025-12-12
+------------------------------------------------------------------------------
+TOTAL                             8215   8215
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Antiquorum                100%      100%      100%      100%       63%       69%       89%       88%       82%
+
+cumul : data/price_points.jsonl — 231071 prix au total
+manifeste : data/runs/2026-09-27T08-12-50.json
+----- fin antiquorum : code 0 a 09:59:11
+
+===== 09:59:11 hodinkee =====
+cumul existant : 231071 prix deja stockes
+
+--- Hodinkee Shop (dealer, prix sold)
+      · /products.json p1: ConnectionError
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Hodinkee Shop       sold             0      0  sans date
+------------------------------------------------------------------------------
+TOTAL                                0      0
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+
+cumul : data/price_points.jsonl — 231071 prix au total
+manifeste : data/runs/2026-09-27T09-59-11.json
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ECHEC — 1 source(s) vivante(s) n'ont RIEN ramene : Hodinkee Shop
+  soit le site a change, soit l'adaptateur est casse. Ne pas se fier
+  aux chiffres de ce run tant que ce n'est pas elucide.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+----- fin hodinkee : code 1 a 10:00:46
+
+===== 10:00:46 antiquorum =====
+cumul existant : 231071 prix deja stockes
+
+--- Antiquorum (auction, prix realised)
