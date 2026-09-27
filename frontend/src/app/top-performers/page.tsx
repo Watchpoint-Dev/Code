@@ -2,18 +2,18 @@
 
 import { useMemo, useState } from "react";
 
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import { Badge } from "@/app/components/ui/badge";
-import { SolidPlaceholder } from "@/app/components/ui/SolidPlaceholder";
-import { Slider } from "@/app/components/ui/slider";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
+import { Badge } from "@/components/ui/badge";
+import { SolidPlaceholder } from "@/components/ui/SolidPlaceholder";
+import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/ui/select";
+} from "@/components/ui/select";
 import { topPerformerWatches } from "@/lib/dummy-data";
 
 interface WatchPerformance {

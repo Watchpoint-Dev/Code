@@ -1,16 +1,16 @@
-import brandsRaw from "@/data/dummy-data/marketplace/brands.json";
-import modelsRaw from "@/data/dummy-data/marketplace/models.json";
-import watchesRaw from "@/data/dummy-data/watches/watches.json";
-import marketplaceListingsRaw from "@/data/dummy-data/marketplace/listings.json";
-import segmentsRaw from "@/data/dummy-data/lookups/segments.json";
-import materialsRaw from "@/data/dummy-data/lookups/materials.json";
-import dialColorsRaw from "@/data/dummy-data/lookups/dial-colors.json";
-import movementTypesRaw from "@/data/dummy-data/lookups/movement-types.json";
-import strapTypesRaw from "@/data/dummy-data/lookups/strap-types.json";
-import conditionsRaw from "@/data/dummy-data/lookups/conditions.json";
-import availabilityStatusesRaw from "@/data/dummy-data/lookups/availability-statuses.json";
-import sellersRaw from "@/data/dummy-data/lookups/sellers.json";
-import locationsRaw from "@/data/dummy-data/lookups/locations.json";
+import brandsRaw from "@/fixtures/marketplace/brands.json";
+import modelsRaw from "@/fixtures/marketplace/models.json";
+import watchesRaw from "@/fixtures/watches/watches.json";
+import marketplaceListingsRaw from "@/fixtures/marketplace/listings.json";
+import segmentsRaw from "@/fixtures/lookups/segments.json";
+import materialsRaw from "@/fixtures/lookups/materials.json";
+import dialColorsRaw from "@/fixtures/lookups/dial-colors.json";
+import movementTypesRaw from "@/fixtures/lookups/movement-types.json";
+import strapTypesRaw from "@/fixtures/lookups/strap-types.json";
+import conditionsRaw from "@/fixtures/lookups/conditions.json";
+import availabilityStatusesRaw from "@/fixtures/lookups/availability-statuses.json";
+import sellersRaw from "@/fixtures/lookups/sellers.json";
+import locationsRaw from "@/fixtures/lookups/locations.json";
 
 interface Brand {
   id: string;

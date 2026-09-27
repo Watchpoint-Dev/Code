@@ -15,7 +15,7 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { NavLink } from "@/app/components/NavLink";
+import { NavLink } from "@/components/NavLink";
 import {
   Sidebar,
   SidebarContent,
@@ -27,7 +27,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/app/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 
 const navigationItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },

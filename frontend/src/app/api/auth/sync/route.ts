@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { auth, currentUser } from "@clerk/nextjs/server";
 
-import { upsertClerkUser } from "@/lib/clerk-neon-user";
-import { isNeonConfigured } from "@/lib/neon";
+import { upsertClerkUser } from "@/lib/db/users";
+import { isNeonConfigured } from "@/lib/db/client";
 
 export async function POST() {
   const { userId } = await auth();

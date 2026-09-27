@@ -1,6 +1,6 @@
 import "server-only";
 
-import { getNeonSql } from "@/lib/neon";
+import { getNeonSql } from "@/lib/db/client";
 
 type ClerkUserPayload = {
   clerkUserId: string;

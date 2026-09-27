@@ -1,5 +1,5 @@
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 const MyAssets = () => {
   return (

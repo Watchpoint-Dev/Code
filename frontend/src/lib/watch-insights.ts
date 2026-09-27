@@ -1,4 +1,4 @@
-import insightsRaw from "@/data/dummy-data/watch-insights/insights.json";
+import insightsRaw from "@/fixtures/watch-insights/insights.json";
 import { watches, type TopPerformerWatch } from "@/lib/dummy-data";
 
 interface WatchInsightRaw {

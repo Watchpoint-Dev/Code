@@ -3,10 +3,10 @@
 import { useMemo, useState } from "react";
 import { Plus, X } from "lucide-react";
 
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import { Button } from "@/app/components/ui/button";
-import { SolidPlaceholder } from "@/app/components/ui/SolidPlaceholder";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
+import { Button } from "@/components/ui/button";
+import { SolidPlaceholder } from "@/components/ui/SolidPlaceholder";
 import {
   Command,
   CommandEmpty,
@@ -14,14 +14,14 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/app/components/ui/command";
+} from "@/components/ui/command";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/app/components/ui/dialog";
+} from "@/components/ui/dialog";
 import { marketWatches, type HydratedMarketWatch } from "@/lib/market-data";
 
 const MAX_COMPARE = 4;

@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
-import { SidebarProvider } from "@/app/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 
 interface AppLayoutProps {

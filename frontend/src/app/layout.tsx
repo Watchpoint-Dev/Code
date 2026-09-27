@@ -2,8 +2,8 @@ import "../index.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
-import { ClerkNeonSync } from "@/app/components/auth/ClerkNeonSync";
-import { AppLayout } from "@/app/components/layout/AppLayout";
+import { ClerkNeonSync } from "@/components/auth/ClerkNeonSync";
+import { AppLayout } from "@/components/layout/AppLayout";
 import { Providers } from "./providers";
 
 export const metadata = {

@@ -1,10 +1,10 @@
-import brandsRaw from "@/data/dummy-data/marketplace/brands.json";
-import modelsRaw from "@/data/dummy-data/marketplace/models.json";
-import watchesRaw from "@/data/dummy-data/marketplace/watches.json";
-import materialsRaw from "@/data/dummy-data/lookups/materials.json";
-import dialColorsRaw from "@/data/dummy-data/lookups/dial-colors.json";
-import movementTypesRaw from "@/data/dummy-data/lookups/movement-types.json";
-import strapTypesRaw from "@/data/dummy-data/lookups/strap-types.json";
+import brandsRaw from "@/fixtures/marketplace/brands.json";
+import modelsRaw from "@/fixtures/marketplace/models.json";
+import watchesRaw from "@/fixtures/marketplace/watches.json";
+import materialsRaw from "@/fixtures/lookups/materials.json";
+import dialColorsRaw from "@/fixtures/lookups/dial-colors.json";
+import movementTypesRaw from "@/fixtures/lookups/movement-types.json";
+import strapTypesRaw from "@/fixtures/lookups/strap-types.json";
 
 export interface MarketBrand {
   id: string;

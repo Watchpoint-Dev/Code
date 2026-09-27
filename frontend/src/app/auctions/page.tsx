@@ -3,22 +3,22 @@
 import { useMemo, useState } from "react";
 import { Filter, X } from "lucide-react";
 
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import { Badge } from "@/app/components/ui/badge";
-import { Button } from "@/app/components/ui/button";
-import { Checkbox } from "@/app/components/ui/checkbox";
-import { Input } from "@/app/components/ui/input";
-import { SolidPlaceholder } from "@/app/components/ui/SolidPlaceholder";
-import { Slider } from "@/app/components/ui/slider";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { SolidPlaceholder } from "@/components/ui/SolidPlaceholder";
+import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/ui/select";
-import auctionsData from "@/data/dummy-data/auctions/auctions.json";
+} from "@/components/ui/select";
+import auctionsData from "@/fixtures/auctions/auctions.json";
 import { getFlagEmoji } from "@/lib/flags";
 
 interface AuctionItem {

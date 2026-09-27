@@ -11,11 +11,11 @@ import {
   Waves,
 } from "lucide-react";
 
-import { Badge, type BadgeProps } from "@/app/components/ui/badge";
-import { Button } from "@/app/components/ui/button";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import { TrendAreaChart } from "@/app/components/ui/TrendAreaChart";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/app/components/ui/table";
+import { Badge, type BadgeProps } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ContentCard } from "@/components/ui/ContentCard";
+import { TrendAreaChart } from "@/components/ui/TrendAreaChart";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { watchInsightById } from "@/lib/watch-insights";
 
 const formatCurrency = (value: number) =>

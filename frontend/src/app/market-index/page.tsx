@@ -1,9 +1,9 @@
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import { Badge } from "@/app/components/ui/badge";
-import { SolidPlaceholder } from "@/app/components/ui/SolidPlaceholder";
-import { TrendAreaChart } from "@/app/components/ui/TrendAreaChart";
-import brandIndices from "@/data/dummy-data/market-index/brand-indices.json";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
+import { Badge } from "@/components/ui/badge";
+import { SolidPlaceholder } from "@/components/ui/SolidPlaceholder";
+import { TrendAreaChart } from "@/components/ui/TrendAreaChart";
+import brandIndices from "@/fixtures/market-index/brand-indices.json";
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat("en-US", {

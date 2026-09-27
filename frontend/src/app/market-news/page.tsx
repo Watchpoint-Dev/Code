@@ -1,6 +1,6 @@
-import { PageHeader } from "@/app/components/ui/PageHeader";
-import { ContentCard } from "@/app/components/ui/ContentCard";
-import newsData from "@/data/dummy-data/market-news/news.json";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { ContentCard } from "@/components/ui/ContentCard";
+import newsData from "@/fixtures/market-news/news.json";
 
 const formatIndexChange = (value: number) => `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
 

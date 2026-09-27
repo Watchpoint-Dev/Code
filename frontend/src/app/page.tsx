@@ -1,4 +1,4 @@
-import { ContentCard } from "@/app/components/ui/ContentCard";
+import { ContentCard } from "@/components/ui/ContentCard";
 
 const Dashboard = () => {
   return (
