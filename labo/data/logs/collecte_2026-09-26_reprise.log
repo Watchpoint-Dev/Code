@@ -1,0 +1,534 @@
+
+===== 19:37:07 DEBUT =====
+
+===== 19:37:07 morphy =====
+cumul existant : 199181 prix deja stockes
+
+--- Morphy Auctions (auction, prix realised)
+    2476 prix (2476 nouveaux) · 63 requetes · periode ['2017-04-09', '2026-09-24']
+      ·   Wrist Watches : 64 lots realises
+      · June 6th 2015 General Antiques & Advertising [date illisible] : Wrist Watches (2)
+      ·   Wrist Watches : 2 lots realises
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Morphy Auctions     realised      2476   2476  2017-04-09 -> 2026-09-24
+------------------------------------------------------------------------------
+TOTAL                             2476   2476
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Morphy Auctions           100%      100%       87%       27%       10%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 201657 prix au total
+manifeste : data/runs/2026-09-26T19-37-08.json
+----- fin morphy : code 0 a 19:43:03
+
+===== 19:43:03 montredo =====
+cumul existant : 201657 prix deja stockes
+
+--- Montredo (dealer, prix asking)
+    18705 prix (11706 nouveaux) · 75 requetes · periode ['2026-09-26', '2026-09-26']
+      · 1 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Montredo            asking       18705  11706  2026-09-26 -> 2026-09-26
+------------------------------------------------------------------------------
+TOTAL                            18705  11706
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Montredo                  100%      100%      100%      100%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 213363 prix au total
+manifeste : data/runs/2026-09-26T19-43-04.json
+----- fin montredo : code 0 a 19:47:48
+
+===== 19:47:48 cwsellors =====
+cumul existant : 213363 prix deja stockes
+
+--- CW Sellors (dealer, prix asking)
+    1957 prix (3 nouveaux) · 13 requetes · periode ['2017-10-31', '2026-09-24']
+      · /collections/ladies-watches/products.json : 148 fiches nouvelles
+      · /collections/luxury-watches/products.json : 50 fiches nouvelles
+      · /collections/watches/products.json : 27 fiches nouvelles
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+CW Sellors          asking        1957      3  2017-10-31 -> 2026-09-24
+------------------------------------------------------------------------------
+TOTAL                             1957      3
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+CW Sellors                100%      100%      100%      100%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 213366 prix au total
+manifeste : data/runs/2026-09-26T19-47-48.json
+----- fin cwsellors : code 0 a 19:48:44
+
+===== 19:48:44 berrys =====
+cumul existant : 213366 prix deja stockes
+
+--- Berry's Jewellers (dealer, prix asking)
+    5746 prix (73 nouveaux) · 23 requetes · periode ['2014-06-12', '2026-09-26']
+      · 1 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Berry's Jewellers   asking        5746     73  2014-06-12 -> 2026-09-26
+------------------------------------------------------------------------------
+TOTAL                             5746     73
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Berry's Jewellers         100%      100%      100%      100%       99%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 213439 prix au total
+manifeste : data/runs/2026-09-26T19-48-44.json
+----- fin berrys : code 0 a 19:52:51
+
+===== 19:52:51 hairspring =====
+cumul existant : 213439 prix deja stockes
+
+--- Hairspring (dealer, prix asking)
+    335 prix (3 nouveaux) · 2 requetes · periode ['2023-02-21', '2026-09-26']
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Hairspring          asking         335      3  2023-02-21 -> 2026-09-26
+------------------------------------------------------------------------------
+TOTAL                              335      3
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Hairspring                100%      100%      100%       52%       66%        0%        1%        0%        0%
+
+cumul : data/price_points.jsonl — 213442 prix au total
+manifeste : data/runs/2026-09-26T19-52-51.json
+----- fin hairspring : code 0 a 19:53:04
+
+===== 19:53:04 hodinkee =====
+cumul existant : 213442 prix deja stockes
+
+--- Hodinkee Shop (dealer, prix sold)
+    2250 prix (0 nouveaux) · 9 requetes · periode ['2023-10-19', '2024-10-17']
+      · /products.json p10: ConnectionError
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Hodinkee Shop       sold          2250      0  2023-10-19 -> 2024-10-17
+------------------------------------------------------------------------------
+TOTAL                             2250      0
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Hodinkee Shop             100%      100%      100%       98%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 213442 prix au total
+manifeste : data/runs/2026-09-26T19-53-04.json
+----- fin hodinkee : code 0 a 19:55:47
+
+===== 19:55:47 keystone =====
+cumul existant : 213442 prix deja stockes
+
+--- The Keystone (dealer, prix asking)
+    5088 prix (11 nouveaux) · 21 requetes · periode ['2018-08-27', '2026-09-25']
+      · 60 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+The Keystone        asking        5088     11  2018-08-27 -> 2026-09-25
+------------------------------------------------------------------------------
+TOTAL                             5088     11
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+The Keystone              100%      100%      100%      100%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 213453 prix au total
+manifeste : data/runs/2026-09-26T19-55-47.json
+----- fin keystone : code 0 a 19:58:31
+
+===== 19:58:31 watchtrader =====
+cumul existant : 213453 prix deja stockes
+
+--- Watchtrader (dealer, prix asking)
+    4371 prix (75 nouveaux) · 45 requetes · periode None
+      · en vitrine : 596 fiches
+      · vendues : 3775 fiches
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Watchtrader         asking        4371     75  sans date
+------------------------------------------------------------------------------
+TOTAL                             4371     75
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Watchtrader               100%      100%        0%      100%      100%      100%       97%      100%        0%
+
+cumul : data/price_points.jsonl — 213528 prix au total
+manifeste : data/runs/2026-09-26T19-58-31.json
+----- fin watchtrader : code 0 a 20:02:50
+
+===== 20:02:50 awco =====
+cumul existant : 213528 prix deja stockes
+
+--- Amsterdam Watch Company (dealer, prix asking)
+    2692 prix (33 nouveaux) · 74 requetes · periode None
+      · parties p47: ConnectTimeout
+      · parties : 0 fiches retenues
+      · 39 fiches ecartees : prix absent, nul ou sentinelle
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Amsterdam Watch Companyasking        2692     33  sans date
+------------------------------------------------------------------------------
+TOTAL                             2692     33
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Amsterdam Watch Com       100%      100%        0%       86%       74%       52%       78%       53%        0%
+
+cumul : data/price_points.jsonl — 213561 prix au total
+manifeste : data/runs/2026-09-26T20-02-50.json
+----- fin awco : code 0 a 20:07:47
+
+===== 20:07:47 globalwatchshop =====
+cumul existant : 213561 prix deja stockes
+
+--- Global Watch Shop (dealer, prix asking)
+    972 prix (3 nouveaux) · 52 requetes · periode None
+      · parties : 2381 annonces
+      · parties : 0 fiches retenues
+      · 3443 fiches ecartees : prix absent, nul ou sentinelle
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Global Watch Shop   asking         972      3  sans date
+------------------------------------------------------------------------------
+TOTAL                              972      3
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Global Watch Shop         100%      100%        0%       97%       99%        0%        0%       97%        0%
+
+cumul : data/price_points.jsonl — 213564 prix au total
+manifeste : data/runs/2026-09-26T20-07-47.json
+----- fin globalwatchshop : code 0 a 20:11:49
+
+===== 20:11:49 chronofinder =====
+cumul existant : 213564 prix deja stockes
+
+--- Chronofinder (dealer, prix asking)
+    599 prix (36 nouveaux) · 12 requetes · periode None
+      · parties : 465 annonces
+      · parties : 0 fiches retenues
+      · 2 fiches ecartees : prix absent, nul ou sentinelle
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Chronofinder        asking         599     36  sans date
+------------------------------------------------------------------------------
+TOTAL                              599     36
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Chronofinder              100%      100%        0%       99%       99%        0%        0%       95%        0%
+
+cumul : data/price_points.jsonl — 213600 prix au total
+manifeste : data/runs/2026-09-26T20-11-49.json
+----- fin chronofinder : code 0 a 20:12:50
+
+===== 20:12:50 bulangandsons =====
+cumul existant : 213600 prix deja stockes
+
+--- Bulang and Sons (dealer, prix asking)
+    3726 prix (3726 nouveaux) · 17 requetes · periode ['2026-09-26', '2026-09-26']
+      · 486 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Bulang and Sons     asking        3726   3726  2026-09-26 -> 2026-09-26
+------------------------------------------------------------------------------
+TOTAL                             3726   3726
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Bulang and Sons           100%      100%      100%       97%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 217326 prix au total
+manifeste : data/runs/2026-09-26T20-12-50.json
+----- fin bulangandsons : code 0 a 20:14:17
+
+===== 20:14:17 acollectedman =====
+cumul existant : 217326 prix deja stockes
+
+--- A Collected Man (dealer, prix asking)
+    965 prix (4 nouveaux) · 8 requetes · periode ['2015-09-23', '2026-09-18']
+      · 839 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+A Collected Man     asking         965      4  2015-09-23 -> 2026-09-18
+------------------------------------------------------------------------------
+TOTAL                              965      4
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+A Collected Man           100%      100%      100%       85%      100%        0%        1%        0%        0%
+
+cumul : data/price_points.jsonl — 217330 prix au total
+manifeste : data/runs/2026-09-26T20-14-18.json
+----- fin acollectedman : code 0 a 20:15:07
+
+===== 20:15:07 amsterdamvintage =====
+cumul existant : 217330 prix deja stockes
+
+--- Amsterdam Vintage Watches (dealer, prix asking)
+    359 prix (16 nouveaux) · 25 requetes · periode None
+      · parties p1: HTTP 429
+      · parties : 0 fiches retenues
+      · 1941 fiches ecartees : prix absent, nul ou sentinelle
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Amsterdam Vintage Watchesasking         359     16  sans date
+------------------------------------------------------------------------------
+TOTAL                              359     16
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Amsterdam Vintage W       100%      100%        0%       98%       96%       31%       94%       86%        0%
+
+cumul : data/price_points.jsonl — 217346 prix au total
+manifeste : data/runs/2026-09-26T20-15-07.json
+----- fin amsterdamvintage : code 0 a 20:18:07
+
+===== 20:18:07 sworders =====
+cumul existant : 217346 prix deja stockes
+
+--- Sworders (auction, prix realised)
+    2933 prix (183 nouveaux) · 51 requetes · periode None
+      · accurist : 61 lots en 1 page(s)
+      · j w benson : 87 lots en 1 page(s)
+      · AUCUNE DATE : la source ne publie la date de vente que sur la fiche du lot, inatteignable a 10 s de delai par requete
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Sworders            realised      2933    183  sans date
+------------------------------------------------------------------------------
+TOTAL                             2933    183
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Sworders                  100%      100%        0%       60%       12%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 217529 prix au total
+manifeste : data/runs/2026-09-26T20-18-07.json
+----- fin sworders : code 0 a 20:29:12
+
+===== 20:29:12 topper =====
+cumul existant : 217529 prix deja stockes
+
+--- Topper Fine Jewelers (retail, prix msrp)
+    3676 prix (228 nouveaux) · 15 requetes · periode ['2018-02-19', '2026-09-25']
+      · 4 fiches ecartees : prix masque par la boutique
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Topper Fine Jewelersmsrp          3676    228  2018-02-19 -> 2026-09-25
+------------------------------------------------------------------------------
+TOTAL                             3676    228
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Topper Fine Jeweler       100%      100%      100%      100%       98%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 217757 prix au total
+manifeste : data/runs/2026-09-26T20-29-12.json
+----- fin topper : code 0 a 20:30:12
+
+===== 20:30:12 watchrecon =====
+cumul existant : 217757 prix deja stockes
+
+--- WatchRecon (community, prix asking)
+    3885 prix (3885 nouveaux) · 625 requetes · periode ['2026-09-12', '2026-09-26']
+      · tudor black bay p6: 0 annonces sur 50 blocs
+      · tudor black bay p7: 0 annonces sur 50 blocs
+      · tudor black bay p8: 0 annonces sur 50 blocs
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+WatchRecon          asking        3885   3885  2026-09-12 -> 2026-09-26
+------------------------------------------------------------------------------
+TOTAL                             3885   3885
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+WatchRecon                100%      100%      100%       99%       72%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 221642 prix au total
+manifeste : data/runs/2026-09-26T20-30-12.json
+----- fin watchrecon : code 0 a 20:54:45
+
+===== 20:54:45 knightsbridge =====
+cumul existant : 221642 prix deja stockes
+
+--- Watches of Knightsbridge (dealer, prix asking)
+    562 prix (292 nouveaux) · 13 requetes · periode ['2021-12-28', '2026-08-24']
+      · 562 fiches retenues, 562 datees (MISE EN LIGNE, pas la vente)
+      · 11 fiches ecartees : prix nul ou sentinelle (« prix sur demande »)
+      · prix DEMANDES de la branche detail (CURATED/OYSTERBAR) : l'archive d'encheres de la maison n'est pas dans WooCommerce
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Watches of Knightsbridgeasking         562    292  2021-12-28 -> 2026-08-24
+------------------------------------------------------------------------------
+TOTAL                              562    292
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Watches of Knightsb       100%      100%      100%       99%       86%       90%       56%       96%       96%
+
+cumul : data/price_points.jsonl — 221934 prix au total
+manifeste : data/runs/2026-09-26T20-54-45.json
+----- fin knightsbridge : code 0 a 20:55:21
+
+===== 20:55:21 certifiedwatchstore =====
+cumul existant : 221934 prix deja stockes
+
+--- Certified Watch Store (dealer, prix asking)
+    1501 prix (121 nouveaux) · 7 requetes · periode ['2026-04-26', '2026-09-25']
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Certified Watch Storeasking        1501    121  2026-04-26 -> 2026-09-25
+------------------------------------------------------------------------------
+TOTAL                             1501    121
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Certified Watch Sto       100%      100%      100%      100%      100%        0%        0%        0%        0%
+
+cumul : data/price_points.jsonl — 222055 prix au total
+manifeste : data/runs/2026-09-26T20-55-21.json
+----- fin certifiedwatchstore : code 0 a 20:55:50
+
+===== 20:55:50 cottone =====
+cumul existant : 222055 prix deja stockes
+
+--- Cottone Auctions (auction, prix realised)
+    174 prix (0 nouveaux) · 102 requetes · periode ['2009-09-26', '2026-05-21']
+      · profondeur datee : 2009-09-26 -> 2026-05-21 (174/174 lignes datees)
+      · PRIX FRAIS INCLUS : la fiche de lot titre 'Hammer Price w/ BP', libelle constant de 2009 a 2026. Le marteau nu n'est pas publie, et le taux de frais americain n'etant pas constant, il n'est pas reconstituable par division.
+      · categorie_source NON transmise au filtre : Cottone range ses montres-bracelets sous 'Jewelry', que R0 lit comme 'pas une montre' (mesure : 27 montres gardees sans, 0 avec sur 334 lots)
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Cottone Auctions    realised       174      0  2009-09-26 -> 2026-05-21
+------------------------------------------------------------------------------
+TOTAL                              174      0
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Cottone Auctions          100%      100%      100%      100%        6%        0%        1%        0%        0%
+
+cumul : data/price_points.jsonl — 222055 prix au total
+manifeste : data/runs/2026-09-26T20-55-50.json
+----- fin cottone : code 0 a 21:00:40
+
+===== 21:00:40 antiquorum =====
+cumul existant : 222055 prix deja stockes
+
+--- Antiquorum (auction, prix realised)
+    801 prix (801 nouveaux) · 51 requetes · periode ['2026-05-09', '2026-06-28']
+      · ventes 2020: ConnectTimeout
+      · controle frais: le 'Sold' du catalogue vaut 1.250 fois la colonne 1 de la price-list (n=801, 1.246-1.312) — la colonne 1 est donc le MARTEAU, et le prix charge est hors frais
+      · 4 ventes traitees, 1 sans price-list (prix frais inclus), 801 records
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Antiquorum          realised       801    801  2026-05-09 -> 2026-06-28
+------------------------------------------------------------------------------
+TOTAL                              801    801
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+Antiquorum                100%      100%      100%      100%       63%       76%       91%       95%       89%
+
+cumul : data/price_points.jsonl — 222856 prix au total
+manifeste : data/runs/2026-09-26T21-00-40.json
+----- fin antiquorum : code 0 a 21:25:57
+
+===== 21:25:57 antiquorum =====
+cumul existant : 222856 prix deja stockes
+
+--- Antiquorum (auction, prix realised)
+      · ventes 2001: ConnectionError
+      · ventes 2000: ConnectionError
+      · 0 ventes traitees, 0 sans price-list (prix frais inclus), 0 records
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Antiquorum          realised         0      0  sans date
+------------------------------------------------------------------------------
+TOTAL                                0      0
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+
+cumul : data/price_points.jsonl — 222856 prix au total
+manifeste : data/runs/2026-09-26T21-25-58.json
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+EFFONDREMENT — Antiquorum : 801 -> 0 prix (100 % de chute)
+  l'adaptateur rend encore quelque chose, mais bien trop peu :
+  le site a probablement change de structure. A verifier avant de se
+  fier a cette collecte.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ECHEC — 1 source(s) vivante(s) n'ont RIEN ramene : Antiquorum
+  soit le site a change, soit l'adaptateur est casse. Ne pas se fier
+  aux chiffres de ce run tant que ce n'est pas elucide.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+----- fin antiquorum : code 1 a 21:31:32
+
+===== 21:31:32 antiquorum =====
+cumul existant : 222856 prix deja stockes
+
+--- Antiquorum (auction, prix realised)
+      · ventes 1990: ConnectionError
+      · ventes 1989: ConnectionError
+      · 0 ventes traitees, 0 sans price-list (prix frais inclus), 0 records
+
+==============================================================================
+SOURCE              NATURE        PRIX   NEUF  PERIODE
+Antiquorum          realised         0      0  sans date
+------------------------------------------------------------------------------
+TOTAL                                0      0
+
+COMPLETUDE par champ (%)
+                     price_amo price_cur price_dat     brand reference     model      year case_mate  movement
+
+cumul : data/price_points.jsonl — 222856 prix au total
+manifeste : data/runs/2026-09-26T21-31-32.json
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+EFFONDREMENT — Antiquorum : 801 -> 0 prix (100 % de chute)
+  l'adaptateur rend encore quelque chose, mais bien trop peu :
+  le site a probablement change de structure. A verifier avant de se
+  fier a cette collecte.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ECHEC — 1 source(s) vivante(s) n'ont RIEN ramene : Antiquorum
+  soit le site a change, soit l'adaptateur est casse. Ne pas se fier
+  aux chiffres de ce run tant que ce n'est pas elucide.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+----- fin antiquorum : code 1 a 21:45:43
+
+===== 21:45:43 FIN DE FILE =====

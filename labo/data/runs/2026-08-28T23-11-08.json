@@ -1,0 +1,31 @@
+{
+ "run": "2026-08-28T23-11-08",
+ "collected_at": "2026-08-28T21:11:08+00:00",
+ "sources": [
+  {
+   "id": "monacolegend",
+   "name": "Monaco Legend Auctions",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "JSON-LD EventSeries + attributs data- des pages de vente",
+   "robots": "OK — /auction autorise ; /livewire interdit et non utilise",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "filtre": {
+    "GARDER": 0,
+    "REJETER": 0,
+    "QUARANTAINE": 0
+   },
+   "erreur": "TypeError: cannot unpack non-iterable re.Match object",
+   "journal": [],
+   "bloquee_connue": false,
+   "silencieuse": true,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0
+}

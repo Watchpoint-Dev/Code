@@ -1,0 +1,158 @@
+{
+ "run": "2026-08-28T15-30-40",
+ "collected_at": "2026-08-28T13:30:40+00:00",
+ "sources": [
+  {
+   "id": "hodinkee",
+   "name": "Hodinkee Shop",
+   "type": "dealer",
+   "price_nature": "sold",
+   "access": "Shopify products.json (currency=USD&country=US)",
+   "robots": "OK — products.json non interdit",
+   "records": 18945,
+   "nouveaux": 18945,
+   "requetes_http": 76,
+   "periode": [
+    "2016-03-08",
+    "2024-10-17"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 99,
+    "reference": 100,
+    "model": 0,
+    "year": 5,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 18742,
+    "REJETER": 203,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "1 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "keystone",
+   "name": "The Keystone",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (currency=USD&country=US obligatoire)",
+   "robots": "OK — products.json non interdit, aucun Crawl-delay",
+   "records": 5047,
+   "nouveaux": 5047,
+   "requetes_http": 21,
+   "periode": [
+    "2018-08-27",
+    "2026-08-27"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 4972,
+    "REJETER": 75,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "34 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "watchtrader",
+   "name": "Watchtrader",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API (/wp-json/wc/store/products)",
+   "robots": "OK — /wp-json/ n'est pas interdit, verifie le 28/08/2026",
+   "records": 4091,
+   "nouveaux": 4091,
+   "requetes_http": 42,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 100,
+    "reference": 100,
+    "model": 100,
+    "year": 97,
+    "case_material": 100,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 4071,
+    "REJETER": 11,
+    "QUARANTAINE": 9
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 601 fiches",
+    "vendues : 3490 fiches"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "topper",
+   "name": "Topper Fine Jewelers",
+   "type": "retail",
+   "price_nature": "msrp",
+   "access": "Shopify products.json (currency=USD&country=US)",
+   "robots": "OK — products.json non interdit",
+   "records": 3688,
+   "nouveaux": 3688,
+   "requetes_http": 15,
+   "periode": [
+    "2018-02-11",
+    "2026-08-28"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 98,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2404,
+    "REJETER": 1284,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "5 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 31771,
+ "total_nouveaux": 31771
+}

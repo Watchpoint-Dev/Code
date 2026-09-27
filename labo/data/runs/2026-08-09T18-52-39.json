@@ -1,0 +1,52 @@
+{
+ "run": "2026-08-09T18-52-39",
+ "collected_at": "2026-08-09T16:52:39+00:00",
+ "sources": [
+  {
+   "id": "watchrecon",
+   "name": "WatchRecon",
+   "type": "community",
+   "price_nature": "asking",
+   "access": "HTML structure (.galleryItemContainer)",
+   "robots": "OK sous conditions — 'last_days=' et 'page_size=' interdits, non utilises",
+   "records": 600,
+   "nouveaux": 590,
+   "requetes_http": 15,
+   "periode": [
+    "2026-07-26",
+    "2026-08-09"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 0,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "erreur": null,
+   "journal": [
+    "rolex p1: 49 annonces sur 50 blocs",
+    "rolex p2: 47 annonces sur 50 blocs",
+    "rolex p3: 46 annonces sur 50 blocs",
+    "omega p1: 47 annonces sur 50 blocs",
+    "omega p2: 47 annonces sur 50 blocs",
+    "omega p3: 49 annonces sur 50 blocs",
+    "patek philippe p1: 44 annonces sur 50 blocs",
+    "patek philippe p2: 15 annonces sur 19 blocs",
+    "patek philippe p3: 0 annonces sur 50 blocs",
+    "tudor p1: 43 annonces sur 50 blocs",
+    "tudor p2: 45 annonces sur 50 blocs",
+    "tudor p3: 45 annonces sur 50 blocs",
+    "cartier p1: 46 annonces sur 50 blocs",
+    "cartier p2: 42 annonces sur 50 blocs",
+    "cartier p3: 42 annonces sur 50 blocs"
+   ]
+  }
+ ],
+ "total_records": 600,
+ "total_nouveaux": 590
+}

@@ -1,0 +1,43 @@
+.venv/
+shared/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# secrets et tokens — jamais commites
+.env
+.token.json
+
+# Volumineux et regenerables : on garde sur le disque, pas dans l'historique.
+data/raw/
+preuves/
+essais/*/samples/
+
+# `data/normalized/` est entierement REGENERABLE depuis `data/raw/` par
+# `moteur/rejoue.py`, et pese 124 Mo au 21/09/2026. Rien a versionner.
+data/normalized/
+
+# Les sauvegardes datees du classeur de filtres. La trace du pourquoi vit dans
+# l'onglet JOURNAL, pas dans une copie du fichier.
+filtres/*.avant-*
+
+# data/price_points.jsonl : versionne COMPRESSE, decision du 27/09/2026.
+#
+# Ce fichier est le seul actif irremplacable du labo — un prix releve le 9 aout
+# ne se recollecte pas, la source aura change. Il pese 202 Mo au 27/09/2026 et
+# GitHub refuse tout fichier au-dela de 100 Mo. On versionne donc
+# `data/price_points.jsonl.gz` (12 Mo, gzip -9n : sans horodatage, donc
+# deterministe) et le .jsonl reste sur le disque.
+#
+#   instantane :  gzip -9n < data/price_points.jsonl > data/price_points.jsonl.gz
+#   restauration: gzip -dc data/price_points.jsonl.gz > data/price_points.jsonl
+#
+# Ecartes : Git LFS (dependance + quota) et hors-git (perd le versionnement).
+data/price_points.jsonl
+
+# Sauvegardes datees de l'actif, prises avant un re-marquage. Elles vivent sur
+# le disque, pas dans l'historique.
+data/price_points.jsonl.avant-*
+
+# Le verrou de collecte : un etat de processus, pas une donnee.
+data/.collecte-en-cours

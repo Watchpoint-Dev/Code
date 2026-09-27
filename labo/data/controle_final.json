@@ -1,0 +1,75 @@
+{
+ "date": "2026-08-11T21:24:38",
+ "controles": [
+  {
+   "source": "Artcurial",
+   "confirme": true,
+   "constat": "API JSON ouverte sans authentification, 88 ventes montres ; la plus ancienne : 2007-12-11, « 80 ans d'horlogerie Hermès »"
+  },
+  {
+   "source": "Cottone Auctions",
+   "confirme": true,
+   "constat": "HTML rendu serveur, 400 lots et 201 montants sur une page, pagination jusqu'a la page 17"
+  },
+  {
+   "source": "Lyon & Turnbull",
+   "confirme": true,
+   "constat": "__NEXT_DATA__ present, 305 ventes listees, hammer_price absent de cette page (present sur les pages de vente)"
+  },
+  {
+   "source": "Loupe This",
+   "confirme": true,
+   "constat": "API publique sans authentification, ? encheres closes ; derniere close : 2026-08-11"
+  },
+  {
+   "source": "EveryWatch",
+   "confirme": true,
+   "constat": "__NEXT_DATA__ lisible, buildId=ChkzBjmbtCpl5BDbC6IQU (change a chaque deploiement)"
+  },
+  {
+   "source": "Patek Philippe",
+   "confirme": false,
+   "constat": "90 references et 0 prix sur une seule page, mention « suggested retail prices » presente"
+  },
+  {
+   "source": "Craft & Tailored",
+   "confirme": true,
+   "constat": "250 produits sur la premiere page, devise USD ; exemple : 1960s Lemania \"RAN\" HS9 Mono-Pusher Chronogr a 8500.00"
+  },
+  {
+   "source": "Hodinkee Shop",
+   "confirme": true,
+   "constat": "250 produits sur la premiere page, devise USD ; exemple : Chronomaster Original Triple Calendar Limite a 13500.00"
+  },
+  {
+   "source": "Analog Shift",
+   "confirme": true,
+   "constat": "250 produits sur la premiere page, devise USD ; exemple : Hamilton Khaki Field 'L.L. Bean' a 900.00"
+  },
+  {
+   "source": "Montredo",
+   "confirme": true,
+   "constat": "250 produits sur la premiere page, devise EUR ; exemple : Rado Centrix Diamonds Black 38mm a 1616.96"
+  },
+  {
+   "source": "Watchtrader",
+   "confirme": true,
+   "constat": "100 produits sur la premiere page  GBP  unite mineure 0 ; exemple : Tudor Black Bay Chrono 79360N-0024 2026 a 7 950"
+  },
+  {
+   "source": "Wanna Buy A Watch",
+   "confirme": true,
+   "constat": "100 produits sur la premiere page  USD  unite mineure 2 ; exemple : Rolex 14K YG Oyster Perpetual ref 6567 c a 8 500"
+  },
+  {
+   "source": "Amsterdam Watch Company",
+   "confirme": true,
+   "constat": "100 produits sur la premiere page  EUR  unite mineure 0 ; exemple : Rolex Day-Date Dutch Day Disk Ref. 18038 a 19 900"
+  },
+  {
+   "source": "Menta Watches",
+   "confirme": true,
+   "constat": "80 produits sur la premiere page  USD  unite mineure 2 ; exemple : Patek Philippe &#8220;Unworn 5167A-012 S a 210 000"
+  }
+ ]
+}

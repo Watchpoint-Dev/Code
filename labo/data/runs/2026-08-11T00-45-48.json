@@ -1,0 +1,42 @@
+{
+ "run": "2026-08-11T00-45-48",
+ "collected_at": "2026-08-10T22:45:48+00:00",
+ "sources": [
+  {
+   "id": "christies",
+   "name": "Christie's",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON interne (discoverywebsite)",
+   "robots": "OK — les Disallow visent */search, */AjaxPages… ; 'lotsearch' n'est pas '/search'",
+   "records": 800,
+   "nouveaux": 556,
+   "requetes_http": 47,
+   "periode": [
+    "2025-04-14",
+    "2026-06-05"
+   ],
+   "completude": {
+    "price_amount": 92,
+    "price_currency": 92,
+    "price_date": 100,
+    "brand": 85,
+    "reference": 58,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "erreur": null,
+   "journal": [
+    "18 ventes montres reperees sur (2026, 2025, 2024)",
+    "TRONQUE: plafond de 800 atteint — il reste des donnees a prendre"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": true
+  }
+ ],
+ "total_records": 800,
+ "total_nouveaux": 556
+}

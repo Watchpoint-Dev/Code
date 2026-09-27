@@ -1,0 +1,76 @@
+{
+  "run_at": "2026-09-07T16:04:22.603653+00:00",
+  "marketplace": "EBAY_GB",
+  "currency": "GBP",
+  "max_page": 200,
+  "summary_fields": {
+    "itemId": 5,
+    "title": 5,
+    "leafCategoryIds": 5,
+    "categories": 5,
+    "image": 5,
+    "price": 5,
+    "itemHref": 5,
+    "seller": 5,
+    "condition": 5,
+    "conditionId": 5,
+    "thumbnailImages": 5,
+    "shippingOptions": 5,
+    "buyingOptions": 5,
+    "itemWebUrl": 5,
+    "itemLocation": 5,
+    "additionalImages": 5,
+    "adultOnly": 5,
+    "qualifiedPrograms": 3,
+    "legacyItemId": 5,
+    "availableCoupons": 5,
+    "itemOriginDate": 5,
+    "itemCreationDate": 5,
+    "topRatedBuyingExperience": 5,
+    "priorityListing": 5,
+    "listingMarketplaceId": 5,
+    "epid": 1
+  },
+  "detail_only_fields": [
+    "authenticityGuarantee",
+    "brand",
+    "categoryId",
+    "categoryIdPath",
+    "categoryPath",
+    "description",
+    "eligibleForInlineCheckout",
+    "enabledForGuestCheckout",
+    "estimatedAvailabilities",
+    "immediatePay",
+    "localizedAspects",
+    "lotSize",
+    "paymentMethods",
+    "returnTerms",
+    "shipToLocations",
+    "shortDescription"
+  ],
+  "title_parsing": {
+    "both": 26,
+    "exact": 20,
+    "partial": 0,
+    "wrong": 6,
+    "title_only": 6
+  },
+  "ratelimit_cost": {
+    "before": 4790,
+    "after": 4780,
+    "calls": 5,
+    "consumed": 10
+  },
+  "item_ids": {
+    "sampled": 100,
+    "variations": 0,
+    "multi_variation_listings": 0
+  },
+  "images_in_summary": "50/50",
+  "calls": {
+    "search": 73,
+    "getItem": 41,
+    "ratelimit": 2
+  }
+}

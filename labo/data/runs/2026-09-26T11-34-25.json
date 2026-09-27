@@ -1,0 +1,48 @@
+{
+ "run": "2026-09-26T11-34-25",
+ "collected_at": "2026-09-26T11:34:25+00:00",
+ "sources": [
+  {
+   "id": "loupethis",
+   "name": "Loupe This",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON:API publique api.loupethis.com/api/v1/auctions",
+   "robots": "OK — 'Disallow:' vide, rien n'est interdit",
+   "records": 4320,
+   "nouveaux": 19,
+   "requetes_http": 176,
+   "periode": [
+    "2021-07-08",
+    "2026-09-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 98,
+    "reference": 77,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 3997,
+    "REJETER": 323,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "4369 encheres annoncees par l'API",
+    "175 pages lues, 25 lots par page (les crochets JSON:API sont rediriges, `page[size]` est inutilisable)"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 4320,
+ "total_nouveaux": 19,
+ "complet": true
+}

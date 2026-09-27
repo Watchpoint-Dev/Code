@@ -1,0 +1,173 @@
+{
+ "run": "2026-08-25T10-55-07",
+ "collected_at": "2026-08-25T08:55:07+00:00",
+ "sources": [
+  {
+   "id": "artcurial",
+   "name": "Artcurial",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON interne /ace (Nuxt runtimeConfig)",
+   "robots": "OK — aucun Disallow sur /ace, robots.txt relu le 11/08/2026",
+   "records": 9316,
+   "nouveaux": 315,
+   "requetes_http": 90,
+   "periode": [
+    "2007-12-11",
+    "2026-07-13"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 67,
+    "reference": 85,
+    "model": 7,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 6056,
+    "REJETER": 3260,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "l'API annonce 88 ventes et en sert 87 — ecart connu, non bloquant",
+    "87 ventes montres",
+    "vente CH0038: adjudications masquees par la maison, ignoree",
+    "vente IT4446: adjudications masquees par la maison, ignoree"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  },
+  {
+   "id": "montredo",
+   "name": "Montredo",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (country=DE obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 12000,
+   "nouveaux": 12000,
+   "requetes_http": 48,
+   "periode": [
+    "2026-08-25",
+    "2026-08-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 10782,
+    "REJETER": 1027,
+    "QUARANTAINE": 191
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 250 produits",
+    "page 2: 250 produits",
+    "page 3: 250 produits",
+    "page 4: 250 produits",
+    "page 5: 250 produits",
+    "page 6: 250 produits",
+    "page 7: 250 produits",
+    "page 8: 250 produits",
+    "page 9: 250 produits",
+    "page 10: 250 produits",
+    "page 11: 250 produits",
+    "page 12: 250 produits",
+    "page 13: 250 produits",
+    "page 14: 250 produits",
+    "page 15: 250 produits",
+    "page 16: 250 produits",
+    "page 17: 250 produits",
+    "page 18: 250 produits",
+    "page 19: 250 produits",
+    "page 20: 250 produits",
+    "page 21: 250 produits",
+    "page 22: 250 produits",
+    "page 23: 250 produits",
+    "page 24: 250 produits",
+    "page 25: 250 produits",
+    "page 26: 250 produits",
+    "page 27: 250 produits",
+    "page 28: 250 produits",
+    "page 29: 250 produits",
+    "page 30: 250 produits",
+    "page 31: 250 produits",
+    "page 32: 250 produits",
+    "page 33: 250 produits",
+    "page 34: 250 produits",
+    "page 35: 250 produits",
+    "page 36: 250 produits",
+    "page 37: 250 produits",
+    "page 38: 250 produits",
+    "page 39: 250 produits",
+    "page 40: 250 produits",
+    "page 41: 250 produits",
+    "page 42: 250 produits",
+    "page 43: 250 produits",
+    "page 44: 250 produits",
+    "page 45: 250 produits",
+    "page 46: 250 produits",
+    "page 47: 250 produits",
+    "page 48: 250 produits",
+    "TRONQUE: plafond de 12000 atteint — il reste des donnees a prendre"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": true
+  },
+  {
+   "id": "cwsellors",
+   "name": "CW Sellors",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify /collections/watches/products.json (country=GB obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 192,
+   "nouveaux": 192,
+   "requetes_http": 1,
+   "periode": [
+    "2017-10-31",
+    "2026-08-20"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 167,
+    "REJETER": 25,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "page 1: 192 produits"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 21508,
+ "total_nouveaux": 12507
+}

@@ -1,0 +1,34 @@
+{
+ "run": "2026-09-26T11-11-09",
+ "collected_at": "2026-09-26T11:11:09+00:00",
+ "sources": [
+  {
+   "id": "morphy",
+   "name": "Morphy Auctions",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "catalogue SimpleAuctionSite : 1 GET pour l'arbre de categories, 1 POST LotsPerPage=ALL pour la vente entiere",
+   "robots": "lu le 21/09/2026 — morphyauctions.com : tout autorise hors /wp-admin/ et /wp-content/uploads/ (200 seulement sans l'UA ClaudeBot, defi JS sinon) ; auctions.morphyauctions.com : Crawl-delay 2, /AuctionResults.aspx et /LiveAuction2.aspx interdits — jamais demandes ; le catalogue et les fiches de lot sont autorises",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "filtre": {
+    "GARDER": 0,
+    "REJETER": 0,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "reperage des ventes: ConnectionError: HTTPSConnectionPool(host='morphyauctions.com', port=443): Max retries exceeded with url: /event-sitemap.xml (Caused by NameResolutionError(\"HTTPSConnection(host='morphyauctions.com', port=443): Failed to resolve 'morphyauctions.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": true,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0,
+ "complet": true
+}

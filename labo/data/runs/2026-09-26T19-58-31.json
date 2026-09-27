@@ -1,0 +1,45 @@
+{
+ "run": "2026-09-26T19-58-31",
+ "collected_at": "2026-09-26T19:58:31+00:00",
+ "sources": [
+  {
+   "id": "watchtrader",
+   "name": "Watchtrader",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API (/wp-json/wc/store/products)",
+   "robots": "OK — /wp-json/ n'est pas interdit, verifie le 28/08/2026",
+   "records": 4371,
+   "nouveaux": 75,
+   "requetes_http": 45,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 100,
+    "reference": 100,
+    "model": 100,
+    "year": 97,
+    "case_material": 100,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 4355,
+    "REJETER": 6,
+    "QUARANTAINE": 10
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 596 fiches",
+    "vendues : 3775 fiches"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 4371,
+ "total_nouveaux": 75,
+ "complet": true
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 740 720" preserveAspectRatio="xMidYMid meet" role="img">
+<title>Watchpoint, chaine des fichiers de filtrage</title>
+<desc>De la modification dans l'Excel jusqu'au scrapper, en passant par le script d'export et la barriere de tests.</desc>
+<style>
+text { font-family: Arial, Helvetica, sans-serif; }
+.ts { font-size: 12px; fill: #5F6368; }
+.th { font-size: 14px; font-weight: bold; fill: #1A1A1A; }
+.h1 { font-size: 17px; font-weight: bold; fill: #1B2A4A; }
+.h2 { font-size: 12px; fill: #6B6B6B; }
+.box { fill: #F4F6F9; stroke: #9AA4B2; stroke-width: 0.9; }
+.arr { stroke: #5F6368; stroke-width: 1.2; fill: none; }
+.c-gray   rect { fill: #F1F0EC; stroke: #B4B2A9; stroke-width: 0.9; }
+.c-teal   rect { fill: #E3F2EC; stroke: #0F6E56; stroke-width: 0.9; }
+.c-teal   .th  { fill: #0B4A3B; }
+.c-teal   .ts  { fill: #2C6B5C; }
+.c-purple rect { fill: #EEEDFB; stroke: #534AB7; stroke-width: 0.9; }
+.c-purple .th  { fill: #35307A; }
+.c-purple .ts  { fill: #565099; }
+.c-red    rect { fill: #FBEAEA; stroke: #B3261E; stroke-width: 0.9; }
+.c-red    .th  { fill: #7A1A15; }
+.c-red    .ts  { fill: #9B3A34; }
+.c-green  rect { fill: #E9F3EA; stroke: #2E7D32; stroke-width: 0.9; }
+.c-green  .th  { fill: #1B5E20; }
+.c-green  .ts  { fill: #3D7A42; }
+.c-amber  rect { fill: #FDF3E0; stroke: #B8860B; stroke-width: 0.9; }
+.c-amber  .th  { fill: #7A5A08; }
+.c-amber  .ts  { fill: #8C6A1E; }
+</style>
+<rect x="0" y="0" width="740" height="720" fill="#FFFFFF"/>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#5F6368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<text class="h1" x="20" y="30">Watchpoint, chaine des fichiers de filtrage</text>
+<text class="h2" x="20" y="50">L'Excel est la couche humaine. Le scrapper ne connait que le JSON.</text>
+<line x1="20" y1="62" x2="720" y2="62" stroke="#1B2A4A" stroke-width="1"/>
+
+<g transform="translate(10,64)">
+
+<g class="c-gray"><rect x="205" y="18" width="270" height="52" rx="8"/><text class="th" x="340" y="36" text-anchor="middle" dominant-baseline="central">Modification metier</text><text class="ts" x="340" y="54" text-anchor="middle" dominant-baseline="central">Nouvelle marque, nouvelle exclusion</text></g>
+<line x1="340" y1="70" x2="340" y2="94" class="arr" marker-end="url(#arrow)"/>
+
+<g class="c-teal"><rect x="170" y="96" width="340" height="56" rx="8"/><text class="th" x="340" y="115" text-anchor="middle" dominant-baseline="central">Filtres_scrapping.xlsx</text><text class="ts" x="340" y="134" text-anchor="middle" dominant-baseline="central">Source de verite, 7 onglets, couche humaine</text></g>
+<text class="ts" x="8" y="112">Leo seul y ecrit.</text>
+<text class="ts" x="8" y="128">Jamais lu a l'execution.</text>
+<line x1="340" y1="152" x2="340" y2="176" class="arr" marker-end="url(#arrow)"/>
+
+<g class="c-purple"><rect x="170" y="178" width="340" height="56" rx="8"/><text class="th" x="340" y="197" text-anchor="middle" dominant-baseline="central">export_json.py</text><text class="ts" x="340" y="216" text-anchor="middle" dominant-baseline="central">Valide le schema et trie les marques</text></g>
+<text class="ts" x="8" y="194">Le compilateur.</text>
+<text class="ts" x="8" y="210">Lance a chaque modif.</text>
+<line x1="340" y1="234" x2="340" y2="258" class="arr" marker-end="url(#arrow)"/>
+
+<polygon class="box" points="340,260 500,300 340,340 180,300"/>
+<text class="th" x="340" y="293" text-anchor="middle" dominant-baseline="central">Schema valide</text>
+<text class="ts" x="340" y="311" text-anchor="middle" dominant-baseline="central">et 44 cas de test au vert ?</text>
+<text class="ts" x="510" y="282">Non</text>
+<line x1="500" y1="300" x2="532" y2="300" class="arr" marker-end="url(#arrow)"/>
+<g class="c-red"><rect x="536" y="273" width="134" height="54" rx="8"/><text class="th" x="603" y="292" text-anchor="middle" dominant-baseline="central">Build rouge</text><text class="ts" x="603" y="310" text-anchor="middle" dominant-baseline="central">Rien ne part</text></g>
+<text class="ts" x="352" y="356">Oui</text>
+<line x1="340" y1="340" x2="340" y2="368" class="arr" marker-end="url(#arrow)"/>
+
+<g class="c-green"><rect x="170" y="370" width="340" height="56" rx="8"/><text class="th" x="340" y="389" text-anchor="middle" dominant-baseline="central">config/filters.json</text><text class="ts" x="340" y="408" text-anchor="middle" dominant-baseline="central">Genere, commite, jamais edite a la main</text></g>
+<text class="ts" x="8" y="386">Commite a cote de</text>
+<text class="ts" x="8" y="402">l'Excel, dans la meme PR.</text>
+<line x1="340" y1="426" x2="340" y2="450" class="arr" marker-end="url(#arrow)"/>
+
+<g class="c-gray"><rect x="170" y="452" width="340" height="56" rx="8"/><text class="th" x="340" y="471" text-anchor="middle" dominant-baseline="central">Scrapper</text><text class="ts" x="340" y="490" text-anchor="middle" dominant-baseline="central">Charge le JSON, compile les regex</text></g>
+<text class="ts" x="8" y="468">Ne sait pas qu'un</text>
+<text class="ts" x="8" y="484">Excel existe.</text>
+<line x1="340" y1="508" x2="340" y2="532" class="arr" marker-end="url(#arrow)"/>
+
+<g class="c-amber"><rect x="205" y="534" width="270" height="52" rx="8"/><text class="th" x="340" y="552" text-anchor="middle" dominant-baseline="central">File de quarantaine</text><text class="ts" x="340" y="570" text-anchor="middle" dominant-baseline="central">Echantillonnee, nourrit les regles</text></g>
+<path d="M475 560 L696 560 L696 124 L512 124" class="arr" marker-end="url(#arrow)" stroke-dasharray="4 4"/>
+<text class="ts" x="686" y="440" text-anchor="end">Boucle</text>
+<text class="ts" x="686" y="456" text-anchor="end">de reprise</text>
+
+</g>
+
+<line x1="20" y1="666" x2="720" y2="666" stroke="#D9D9D9" stroke-width="1"/>
+<text class="ts" x="20" y="686">Les 44 cas de test sont embarques dans filters.json. Le scrapper les consomme depuis sa propre suite de tests.</text>
+<text class="ts" x="20" y="702">Ajouter une marque : une ligne dans l'onglet BRANDS, relancer le script, commiter les deux fichiers dans la meme PR.</text>
+</svg>

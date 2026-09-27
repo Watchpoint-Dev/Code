@@ -1,0 +1,34 @@
+{
+ "run": "2026-09-26T12-26-46",
+ "collected_at": "2026-09-26T12:26:46+00:00",
+ "sources": [
+  {
+   "id": "topper",
+   "name": "Topper Fine Jewelers",
+   "type": "retail",
+   "price_nature": "msrp",
+   "access": "Shopify products.json (currency=USD&country=US)",
+   "robots": "OK — products.json non interdit",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "filtre": {
+    "GARDER": 0,
+    "REJETER": 0,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "/products.json p1: ConnectionError"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": true,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0,
+ "complet": true
+}

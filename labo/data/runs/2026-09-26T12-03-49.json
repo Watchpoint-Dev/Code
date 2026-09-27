@@ -1,0 +1,37 @@
+{
+ "run": "2026-09-26T12-03-49",
+ "collected_at": "2026-09-26T12:03:49+00:00",
+ "sources": [
+  {
+   "id": "awco",
+   "name": "Amsterdam Watch Company",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API (awco.nl)",
+   "robots": "OK — wp-json non interdit",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "filtre": {
+    "GARDER": 0,
+    "REJETER": 0,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine p1: ConnectionError",
+    "en vitrine : 0 fiches retenues",
+    "parties p1: ConnectionError",
+    "parties : 0 fiches retenues"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": true,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0,
+ "complet": true
+}

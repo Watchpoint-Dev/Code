@@ -1,0 +1,50 @@
+{
+ "run": "2026-09-26T19-47-48",
+ "collected_at": "2026-09-26T19:47:48+00:00",
+ "sources": [
+  {
+   "id": "cwsellors",
+   "name": "CW Sellors",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify /collections/watches/products.json (country=GB obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 1957,
+   "nouveaux": 3,
+   "requetes_http": 13,
+   "periode": [
+    "2017-10-31",
+    "2026-09-24"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 1704,
+    "REJETER": 253,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "/collections/mens-watches/products.json : 1732 fiches nouvelles",
+    "/collections/ladies-watches/products.json : 148 fiches nouvelles",
+    "/collections/luxury-watches/products.json : 50 fiches nouvelles",
+    "/collections/watches/products.json : 27 fiches nouvelles"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 1957,
+ "total_nouveaux": 3,
+ "complet": true
+}

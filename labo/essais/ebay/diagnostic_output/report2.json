@@ -1,0 +1,132 @@
+{
+  "run_at": "2026-09-07T15:56:57.782671+00:00",
+  "marketplace": "EBAY_GB",
+  "bulk_max": 0,
+  "brands": {
+    "Rolex": {
+      "count": 51804,
+      "purity": 100.0
+    },
+    "OMEGA": {
+      "count": 43514,
+      "purity": 100.0
+    },
+    "TAG Heuer": {
+      "count": 25203,
+      "purity": 100.0
+    },
+    "Cartier": {
+      "count": 11969,
+      "purity": 100.0
+    },
+    "Longines": {
+      "count": 18668,
+      "purity": 90.0
+    },
+    "Breitling": {
+      "count": 9652,
+      "purity": 100.0
+    },
+    "TUDOR": {
+      "count": 6598,
+      "purity": 100.0
+    },
+    "IWC": {
+      "count": 5403,
+      "purity": 100.0
+    },
+    "Panerai": {
+      "count": 3814,
+      "purity": 95.0
+    },
+    "Audemars Piguet": {
+      "count": 2893,
+      "purity": 100.0
+    },
+    "Patek Philippe": {
+      "count": 2659,
+      "purity": 100.0
+    }
+  },
+  "churn": {
+    "last 24h": 43491,
+    "last 7d": 309525,
+    "last 30d": 787334
+  },
+  "formats": {
+    "AUCTION": 58648,
+    "FIXED_PRICE": 2542936,
+    "BEST_OFFER": 1208769
+  },
+  "tiers": {
+    "budget": {
+      "n": 12,
+      "avg_fields": 28.8,
+      "critical": {
+        "Brand": 100.0,
+        "Model": 75.0,
+        "Reference Number": 83.3,
+        "Case Material": 83.3,
+        "Movement": 100.0,
+        "Case Size": 66.7,
+        "Year Manufactured": 75.0
+      },
+      "junk_flagged": 4
+    },
+    "mid": {
+      "n": 12,
+      "avg_fields": 29.1,
+      "critical": {
+        "Brand": 100.0,
+        "Model": 75.0,
+        "Reference Number": 75.0,
+        "Case Material": 100.0,
+        "Movement": 83.3,
+        "Case Size": 83.3,
+        "Year Manufactured": 58.3
+      },
+      "junk_flagged": 2
+    },
+    "luxury": {
+      "n": 12,
+      "avg_fields": 27.2,
+      "critical": {
+        "Brand": 100.0,
+        "Model": 75.0,
+        "Reference Number": 75.0,
+        "Case Material": 91.7,
+        "Movement": 91.7,
+        "Case Size": 83.3,
+        "Year Manufactured": 50.0
+      },
+      "junk_flagged": 2
+    },
+    "high-end": {
+      "n": 12,
+      "avg_fields": 15.7,
+      "critical": {
+        "Brand": 91.7,
+        "Model": 75.0,
+        "Reference Number": 50.0,
+        "Case Material": 58.3,
+        "Movement": 50.0,
+        "Case Size": 41.7,
+        "Year Manufactured": 50.0
+      },
+      "junk_flagged": 4
+    }
+  },
+  "nonstandard_aspects": {
+    "Band Material": 3,
+    "Band Color": 3,
+    "Case Color": 3,
+    "Dial Color": 2,
+    "Customized": 1,
+    "Bezel Color": 1
+  },
+  "calls": {
+    "search": 43,
+    "getItems": 6,
+    "getItem": 48
+  }
+}

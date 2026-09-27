@@ -1,0 +1,119 @@
+{
+ "run": "2026-08-09T18-47-32",
+ "collected_at": "2026-08-09T16:47:32+00:00",
+ "sources": [
+  {
+   "id": "christies",
+   "name": "Christie's",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON interne (discoverywebsite)",
+   "robots": "OK — les Disallow visent */search, */AjaxPages… ; 'lotsearch' n'est pas '/search'",
+   "records": 800,
+   "nouveaux": 800,
+   "requetes_http": 24,
+   "periode": [
+    "2024-05-30",
+    "2026-06-05"
+   ],
+   "completude": {
+    "price_amount": 96,
+    "price_currency": 96,
+    "price_date": 100,
+    "brand": 84,
+    "reference": 64,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "erreur": null,
+   "journal": [
+    "8 ventes montres reperees sur (2026, 2025, 2024)"
+   ]
+  },
+  {
+   "id": "liveauctioneers",
+   "name": "LiveAuctioneers",
+   "type": "aggregator",
+   "price_nature": "realised",
+   "access": "window.__data (price guide)",
+   "robots": "OK — robots interdit 'pagenum=', on utilise 'page=' ; /price-guide/ non liste",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 1,
+   "periode": null,
+   "completude": {},
+   "erreur": null,
+   "journal": [
+    "page 1: window.__data introuvable"
+   ]
+  },
+  {
+   "id": "bezel",
+   "name": "Bezel",
+   "type": "marketplace",
+   "price_nature": "asking",
+   "access": "__NEXT_DATA__ pageProps.listings",
+   "robots": "OK — seul '?searchQuery=' est interdit, on passe par le sitemap",
+   "records": 89,
+   "nouveaux": 89,
+   "requetes_http": 42,
+   "periode": [
+    "2022-05-24",
+    "2026-07-22"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 100,
+    "year": 0,
+    "case_material": 100,
+    "movement": 100
+   },
+   "erreur": null,
+   "journal": [
+    "40 pages modele a visiter",
+    "89 annonces extraites"
+   ]
+  },
+  {
+   "id": "watchrecon",
+   "name": "WatchRecon",
+   "type": "community",
+   "price_nature": "asking",
+   "access": "HTML (motif titre + prix)",
+   "robots": "OK sous conditions — 'last_days=' et 'page_size=' interdits, non utilises",
+   "records": 18,
+   "nouveaux": 18,
+   "requetes_http": 7,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 33,
+    "reference": 0,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "erreur": null,
+   "journal": [
+    "rolex p1: 18 annonces",
+    "rolex p2: 0 annonces",
+    "omega p1: 0 annonces",
+    "patek philippe p1: 0 annonces",
+    "tudor p1: 0 annonces",
+    "cartier p1: 0 annonces",
+    "audemars piguet p1: 0 annonces"
+   ]
+  }
+ ],
+ "total_records": 907,
+ "total_nouveaux": 907
+}

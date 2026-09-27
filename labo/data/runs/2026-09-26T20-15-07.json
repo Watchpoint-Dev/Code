@@ -1,0 +1,49 @@
+{
+ "run": "2026-09-26T20-15-07",
+ "collected_at": "2026-09-26T20:15:07+00:00",
+ "sources": [
+  {
+   "id": "amsterdamvintage",
+   "name": "Amsterdam Vintage Watches",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — /wp-json/ autorise",
+   "records": 359,
+   "nouveaux": 16,
+   "requetes_http": 25,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 98,
+    "reference": 96,
+    "model": 31,
+    "year": 94,
+    "case_material": 86,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 355,
+    "REJETER": 1,
+    "QUARANTAINE": 3
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 2511 annonces",
+    "en vitrine p24: HTTP 429",
+    "en vitrine : 359 fiches retenues",
+    "parties p1: HTTP 429",
+    "parties : 0 fiches retenues",
+    "1941 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 359,
+ "total_nouveaux": 16,
+ "complet": true
+}
