@@ -32,3 +32,10 @@ jobs:
         env:
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: pk_test_placeholder
           CLERK_SECRET_KEY: sk_test_placeholder
+
+      # Signale les failles critiques sans bloquer la CI : une faille publiee
+      # dans une dependance transitive ne doit pas empecher de livrer un correctif,
+      # mais elle ne doit pas passer inapercue non plus.
+      - name: Audit des dependances
+        run: npm audit --audit-level=high
+        continue-on-error: true

@@ -30,3 +30,11 @@ dist-ssr
 .vscode
 # TypeScript build cache
 *.tsbuildinfo
+
+# Variables d'environnement : tout sauf l'exemple.
+# `.env.local` seul ne suffisait pas — un `.env` ou `.env.production`
+# cree un jour serait parti sur GitHub avec les cles Clerk et Neon.
+.env
+.env.*
+!.env.example
+next-env.d.ts
