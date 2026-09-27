@@ -1,0 +1,47 @@
+{
+ "run": "2026-09-26T20-29-12",
+ "collected_at": "2026-09-26T20:29:12+00:00",
+ "sources": [
+  {
+   "id": "topper",
+   "name": "Topper Fine Jewelers",
+   "type": "retail",
+   "price_nature": "msrp",
+   "access": "Shopify products.json (currency=USD&country=US)",
+   "robots": "OK — products.json non interdit",
+   "records": 3676,
+   "nouveaux": 228,
+   "requetes_http": 15,
+   "periode": [
+    "2018-02-19",
+    "2026-09-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 98,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 2379,
+    "REJETER": 1297,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "4 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 3676,
+ "total_nouveaux": 228,
+ "complet": true
+}

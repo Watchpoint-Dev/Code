@@ -1,0 +1,53 @@
+{
+ "run": "2026-09-26T20-55-50",
+ "collected_at": "2026-09-26T20:55:50+00:00",
+ "sources": [
+  {
+   "id": "cottone",
+   "name": "Cottone Auctions",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "pages /prices-realized/category/<slug>, 50 lots par page ; la date de vente est servie par le serveur dans un commentaire HTML",
+   "robots": "OK — 'User-agent: * / Disallow:' lu le 21/09/2026 : aucune restriction, aucun Crawl-delay",
+   "records": 174,
+   "nouveaux": 0,
+   "requetes_http": 102,
+   "periode": [
+    "2009-09-26",
+    "2026-05-21"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 6,
+    "model": 0,
+    "year": 1,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 50,
+    "REJETER": 124,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "Pocket Watches : 128 lots lus en 3/3 page(s), 25 montres gardees",
+    "Jewelry : 1584 lots lus en 32/32 page(s), 124 montres gardees",
+    "Clocks & Timepieces : 3323 lots lus en 67/67 page(s), 25 montres gardees",
+    "9 lots sans prix adjuge (fourchette d'estimation ou 'No Estimate') — ecartes, ils ne disent aucune transaction",
+    "profondeur datee : 2009-09-26 -> 2026-05-21 (174/174 lignes datees)",
+    "PRIX FRAIS INCLUS : la fiche de lot titre 'Hammer Price w/ BP', libelle constant de 2009 a 2026. Le marteau nu n'est pas publie, et le taux de frais americain n'etant pas constant, il n'est pas reconstituable par division.",
+    "categorie_source NON transmise au filtre : Cottone range ses montres-bracelets sous 'Jewelry', que R0 lit comme 'pas une montre' (mesure : 27 montres gardees sans, 0 avec sur 334 lots)"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 174,
+ "total_nouveaux": 0,
+ "complet": true
+}

@@ -1,0 +1,45 @@
+{
+ "run": "2026-09-26T19-52-51",
+ "collected_at": "2026-09-26T19:52:51+00:00",
+ "sources": [
+  {
+   "id": "hairspring",
+   "name": "Hairspring",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (country=US obligatoire)",
+   "robots": "OK — verifie le 11/08/2026",
+   "records": 335,
+   "nouveaux": 3,
+   "requetes_http": 2,
+   "periode": [
+    "2023-02-21",
+    "2026-09-26"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 52,
+    "reference": 66,
+    "model": 0,
+    "year": 1,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 160,
+    "REJETER": 160,
+    "QUARANTAINE": 15
+   },
+   "erreur": null,
+   "journal": [],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 335,
+ "total_nouveaux": 3,
+ "complet": true
+}

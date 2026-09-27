@@ -1,0 +1,67 @@
+{
+ "run": "2026-09-26T11-25-52",
+ "collected_at": "2026-09-26T11:25:52+00:00",
+ "sources": [
+  {
+   "id": "monacolegend",
+   "name": "Monaco Legend Auctions",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "JSON-LD EventSeries + attributs data- des pages de vente",
+   "robots": "OK — /auction autorise ; /livewire interdit et non utilise",
+   "records": 4188,
+   "nouveaux": 0,
+   "requetes_http": 20,
+   "periode": [
+    "2019-07-17",
+    "2026-07-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 61,
+    "model": 0,
+    "year": 97,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 4013,
+    "REJETER": 175,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "19 ventes passees listees par le JSON-LD",
+    "2026-07-25 The Goldberger Omega Time-Only Col : 48 lots (EUR)",
+    "2026-06-04 Exclusive Timepieces : 166 lots (CHF)",
+    "2026-04-25 Exclusive Timepieces : 286 lots (EUR)",
+    "2025-10-18 Exclusive Timepieces : 269 lots (EUR)",
+    "2025-06-05 Exclusive Timepieces : 165 lots (CHF)",
+    "2025-04-26 Exclusive Timepieces : 242 lots (EUR)",
+    "2024-10-19 Exclusive Timepieces : 294 lots (EUR)",
+    "2024-07-08 The July Online Sale! : 120 lots (EUR)",
+    "2024-04-20 Exclusive Timepieces : 276 lots (EUR)",
+    "2023-10-21 Exclusive Timepieces : 278 lots (EUR)",
+    "2023-04-22 Exclusive Timepieces : 259 lots (EUR)",
+    "2022-10-22 Exclusive Timepieces : 269 lots (EUR)",
+    "2022-04-23 Exclusive Timepieces : 273 lots (EUR)",
+    "2021-10-17 Exclusive Timepieces : 189 lots (EUR)",
+    "2021-10-16 88 Cartier : 86 lots (EUR)",
+    "2021-04-17 Exclusive Timepieces : 264 lots (EUR)",
+    "2020-10-31 Exclusive Timepieces : 264 lots (EUR)",
+    "2019-12-07 Exclusive Timepieces : 198 lots (EUR)",
+    "2019-07-17 Exclusive Timepieces & Jewels : 242 lots (EUR)",
+    "450 lots INVENDUS conserves en nature 'estimate' — seules trois sources du dossier les publient"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 4188,
+ "total_nouveaux": 0,
+ "complet": true
+}

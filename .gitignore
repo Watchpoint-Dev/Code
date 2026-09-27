@@ -21,25 +21,18 @@ data/normalized/
 # l'onglet JOURNAL, pas dans une copie du fichier.
 filtres/*.avant-*
 
-# data/price_points.jsonl : DECISION EN ATTENTE, et elle est urgente.
+# data/price_points.jsonl : versionne COMPRESSE, decision du 27/09/2026.
 #
 # Ce fichier est le seul actif irremplacable du labo — un prix releve le 9 aout
-# ne se recollecte pas, la source aura change. Il etait versionne quand il
-# pesait 1,7 Mo (mesure inscrite ici le 11/08/2026).
+# ne se recollecte pas, la source aura change. Il pese 202 Mo au 27/09/2026 et
+# GitHub refuse tout fichier au-dela de 100 Mo. On versionne donc
+# `data/price_points.jsonl.gz` (12 Mo, gzip -9n : sans horodatage, donc
+# deterministe) et le .jsonl reste sur le disque.
 #
-# Il pese 121 Mo au 21/09/2026, et GitHub REFUSE tout fichier au-dela de 100 Mo.
-# Il n'est donc plus poussable en l'etat, et le commentaire qui precedait
-# affirmait le contraire depuis six semaines.
+#   instantane :  gzip -9n < data/price_points.jsonl > data/price_points.jsonl.gz
+#   restauration: gzip -dc data/price_points.jsonl.gz > data/price_points.jsonl
 #
-# Trois voies, mesurees :
-#   - compresse, il tombe a 7,5 Mo (6 % de l'original) : versionnable tel quel,
-#     au prix d'un historique opaque au diff. C'est la recommandation.
-#   - Git LFS : garde le diff, ajoute une dependance et un quota.
-#   - hors de git, avec une sauvegarde ailleurs : perd le versionnement de
-#     l'actif, ce qui est precisement ce qu'on voulait eviter.
-#
-# En attendant l'arbitrage, le fichier reste SUIVI mais n'entre pas dans les
-# commits : le depot doit rester poussable.
+# Ecartes : Git LFS (dependance + quota) et hors-git (perd le versionnement).
 data/price_points.jsonl
 
 # Sauvegardes datees de l'actif, prises avant un re-marquage. Elles vivent sur

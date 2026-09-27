@@ -1,0 +1,48 @@
+{
+ "run": "2026-09-26T20-07-47",
+ "collected_at": "2026-09-26T20:07:47+00:00",
+ "sources": [
+  {
+   "id": "globalwatchshop",
+   "name": "Global Watch Shop",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "WooCommerce Store API",
+   "robots": "OK — seul ?rest_route= est bloque, /wp-json/ ne l'est pas",
+   "records": 972,
+   "nouveaux": 3,
+   "requetes_http": 52,
+   "periode": null,
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 0,
+    "brand": 97,
+    "reference": 99,
+    "model": 0,
+    "year": 0,
+    "case_material": 97,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 851,
+    "REJETER": 38,
+    "QUARANTAINE": 83
+   },
+   "erreur": null,
+   "journal": [
+    "en vitrine : 2761 annonces",
+    "en vitrine : 972 fiches retenues",
+    "parties : 2381 annonces",
+    "parties : 0 fiches retenues",
+    "3443 fiches ecartees : prix absent, nul ou sentinelle"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 972,
+ "total_nouveaux": 3,
+ "complet": true
+}

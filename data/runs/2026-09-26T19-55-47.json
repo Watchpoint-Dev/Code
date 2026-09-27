@@ -1,0 +1,47 @@
+{
+ "run": "2026-09-26T19-55-47",
+ "collected_at": "2026-09-26T19:55:47+00:00",
+ "sources": [
+  {
+   "id": "keystone",
+   "name": "The Keystone",
+   "type": "dealer",
+   "price_nature": "asking",
+   "access": "Shopify products.json (currency=USD&country=US obligatoire)",
+   "robots": "OK — products.json non interdit, aucun Crawl-delay",
+   "records": 5088,
+   "nouveaux": 11,
+   "requetes_http": 21,
+   "periode": [
+    "2018-08-27",
+    "2026-09-25"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 100,
+    "model": 0,
+    "year": 0,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 5015,
+    "REJETER": 73,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "60 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 5088,
+ "total_nouveaux": 11,
+ "complet": true
+}

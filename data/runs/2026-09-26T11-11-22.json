@@ -1,0 +1,50 @@
+{
+ "run": "2026-09-26T11-11-22",
+ "collected_at": "2026-09-26T11:11:22+00:00",
+ "sources": [
+  {
+   "id": "artcurial",
+   "name": "Artcurial",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "API JSON interne /ace (Nuxt runtimeConfig)",
+   "robots": "OK — aucun Disallow sur /ace, robots.txt relu le 11/08/2026",
+   "records": 8625,
+   "nouveaux": 0,
+   "requetes_http": 90,
+   "periode": [
+    "2007-12-11",
+    "2026-07-28"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 67,
+    "reference": 39,
+    "model": 8,
+    "year": 74,
+    "case_material": 82,
+    "movement": 54
+   },
+   "filtre": {
+    "GARDER": 5546,
+    "REJETER": 3079,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "l'API annonce 88 ventes et en sert 87 — ecart connu, non bloquant",
+    "87 ventes montres",
+    "vente CH0038: adjudications masquees par la maison, ignoree",
+    "vente IT4446: adjudications masquees par la maison, ignoree"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 8625,
+ "total_nouveaux": 0,
+ "complet": true
+}
