@@ -1,0 +1,46 @@
+[
+  {
+    "id": "mat-carbon",
+    "label": "Carbon"
+  },
+  {
+    "id": "mat-ceramic",
+    "label": "Ceramic"
+  },
+  {
+    "id": "mat-oystersteel",
+    "label": "Oystersteel"
+  },
+  {
+    "id": "mat-pink-gold",
+    "label": "Pink gold"
+  },
+  {
+    "id": "mat-platinum",
+    "label": "Platinum"
+  },
+  {
+    "id": "mat-rose-gold",
+    "label": "Rose gold"
+  },
+  {
+    "id": "mat-stainless-steel",
+    "label": "Stainless steel"
+  },
+  {
+    "id": "mat-titanium",
+    "label": "Titanium"
+  },
+  {
+    "id": "mat-two-tone",
+    "label": "Two-tone"
+  },
+  {
+    "id": "mat-white-gold",
+    "label": "White gold"
+  },
+  {
+    "id": "mat-yellow-gold",
+    "label": "Yellow gold"
+  }
+]

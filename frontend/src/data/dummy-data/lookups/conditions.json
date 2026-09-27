@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cond-excellent",
+    "label": "Excellent"
+  },
+  {
+    "id": "cond-new",
+    "label": "New"
+  },
+  {
+    "id": "cond-unworn",
+    "label": "Unworn"
+  },
+  {
+    "id": "cond-very-good",
+    "label": "Very Good"
+  }
+]

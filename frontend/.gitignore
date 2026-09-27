@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# clerk configuration (can include secrets)
+/.clerk/
+.next
+.env.local
+.vscode
+# TypeScript build cache
+*.tsbuildinfo
+
+# Variables d'environnement : tout sauf l'exemple.
+# `.env.local` seul ne suffisait pas — un `.env` ou `.env.production`
+# cree un jour serait parti sur GitHub avec les cles Clerk et Neon.
+.env
+.env.*
+!.env.example
+next-env.d.ts

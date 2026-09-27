@@ -1,0 +1,182 @@
+[
+  {
+    "id": "br-a-lange-sohne",
+    "name": "A. Lange & Sohne",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-audemars-piguet",
+    "name": "Audemars Piguet",
+    "country": "Switzerland",
+    "foundedYear": 1875
+  },
+  {
+    "id": "br-blancpain",
+    "name": "Blancpain",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-breguet",
+    "name": "Breguet",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-breitling",
+    "name": "Breitling",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-cartier",
+    "name": "Cartier",
+    "country": "France",
+    "foundedYear": 1847
+  },
+  {
+    "id": "br-chopard",
+    "name": "Chopard",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-f-p-journe",
+    "name": "F.P. Journe",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-girard-perregaux",
+    "name": "Girard-Perregaux",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-glashutte-original",
+    "name": "Glashutte Original",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-grand-seiko",
+    "name": "Grand Seiko",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-h-moser-cie",
+    "name": "H. Moser & Cie.",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-hublot",
+    "name": "Hublot",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-iwc",
+    "name": "IWC",
+    "country": "Switzerland",
+    "foundedYear": 1868
+  },
+  {
+    "id": "br-jaeger-lecoultre",
+    "name": "Jaeger-LeCoultre",
+    "country": "Switzerland",
+    "foundedYear": 1833
+  },
+  {
+    "id": "br-nomos",
+    "name": "Nomos",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-omega",
+    "name": "Omega",
+    "country": "Switzerland",
+    "foundedYear": 1848
+  },
+  {
+    "id": "br-oris",
+    "name": "Oris",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-panerai",
+    "name": "Panerai",
+    "country": "Italy",
+    "foundedYear": 1860
+  },
+  {
+    "id": "br-parmigiani-fleurier",
+    "name": "Parmigiani Fleurier",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-patek-philippe",
+    "name": "Patek Philippe",
+    "country": "Switzerland",
+    "foundedYear": 1839
+  },
+  {
+    "id": "br-piaget",
+    "name": "Piaget",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-richard-mille",
+    "name": "Richard Mille",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-rolex",
+    "name": "Rolex",
+    "country": "Switzerland",
+    "foundedYear": 1905
+  },
+  {
+    "id": "br-seiko",
+    "name": "Seiko",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-tag-heuer",
+    "name": "TAG Heuer",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-tudor",
+    "name": "Tudor",
+    "country": "Switzerland",
+    "foundedYear": 1926
+  },
+  {
+    "id": "br-ulysse-nardin",
+    "name": "Ulysse Nardin",
+    "country": "Unknown",
+    "foundedYear": null
+  },
+  {
+    "id": "br-vacheron-constantin",
+    "name": "Vacheron Constantin",
+    "country": "Switzerland",
+    "foundedYear": 1755
+  },
+  {
+    "id": "br-zenith",
+    "name": "Zenith",
+    "country": "Unknown",
+    "foundedYear": null
+  }
+]

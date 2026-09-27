@@ -1,0 +1,572 @@
+[
+  {
+    "id": "idx-rolex",
+    "brand": "Rolex",
+    "category": "Brand Index",
+    "indexValue": 186.4,
+    "change": 3.2,
+    "changePct": 1.75,
+    "period": "30D",
+    "sparkline": [
+      168,
+      171,
+      169,
+      174,
+      178,
+      176,
+      180,
+      183,
+      181,
+      185,
+      184,
+      186
+    ],
+    "watches": [
+      {
+        "id": "idx-rolex-01",
+        "model": "Submariner Date",
+        "reference": "126610LN",
+        "year": 2024,
+        "price": 14950
+      },
+      {
+        "id": "idx-rolex-02",
+        "model": "Daytona",
+        "reference": "126500LN",
+        "year": 2024,
+        "price": 34500
+      },
+      {
+        "id": "idx-rolex-03",
+        "model": "GMT-Master II",
+        "reference": "126710BLRO",
+        "year": 2022,
+        "price": 20500
+      },
+      {
+        "id": "idx-rolex-04",
+        "model": "Datejust 41",
+        "reference": "126334",
+        "year": 2023,
+        "price": 11800
+      },
+      {
+        "id": "idx-rolex-05",
+        "model": "Explorer",
+        "reference": "124270",
+        "year": 2022,
+        "price": 8450
+      },
+      {
+        "id": "idx-rolex-06",
+        "model": "Sea-Dweller",
+        "reference": "126600",
+        "year": 2021,
+        "price": 13900
+      },
+      {
+        "id": "idx-rolex-07",
+        "model": "Sky-Dweller",
+        "reference": "326934",
+        "year": 2020,
+        "price": 19900
+      },
+      {
+        "id": "idx-rolex-08",
+        "model": "Yacht-Master 40",
+        "reference": "126622",
+        "year": 2021,
+        "price": 14300
+      },
+      {
+        "id": "idx-rolex-09",
+        "model": "Air-King",
+        "reference": "126900",
+        "year": 2023,
+        "price": 8100
+      },
+      {
+        "id": "idx-rolex-10",
+        "model": "Oyster Perpetual 36",
+        "reference": "126000",
+        "year": 2022,
+        "price": 6950
+      }
+    ]
+  },
+  {
+    "id": "idx-patek",
+    "brand": "Patek Philippe",
+    "category": "Brand Index",
+    "indexValue": 214.9,
+    "change": -2.1,
+    "changePct": -0.97,
+    "period": "30D",
+    "sparkline": [
+      222,
+      220,
+      219,
+      217,
+      216,
+      214,
+      215,
+      213,
+      214,
+      212,
+      213,
+      215
+    ],
+    "watches": [
+      {
+        "id": "idx-patek-01",
+        "model": "Nautilus",
+        "reference": "5711/1A",
+        "year": 2019,
+        "price": 125000
+      },
+      {
+        "id": "idx-patek-02",
+        "model": "Aquanaut",
+        "reference": "5167A-001",
+        "year": 2021,
+        "price": 72000
+      },
+      {
+        "id": "idx-patek-03",
+        "model": "Calatrava",
+        "reference": "6119R",
+        "year": 2022,
+        "price": 31500
+      },
+      {
+        "id": "idx-patek-04",
+        "model": "Complications",
+        "reference": "5396G",
+        "year": 2020,
+        "price": 52500
+      },
+      {
+        "id": "idx-patek-05",
+        "model": "Annual Calendar",
+        "reference": "5146J",
+        "year": 2018,
+        "price": 38500
+      },
+      {
+        "id": "idx-patek-06",
+        "model": "Gondolo",
+        "reference": "5200G",
+        "year": 2021,
+        "price": 42000
+      },
+      {
+        "id": "idx-patek-07",
+        "model": "Twenty~4",
+        "reference": "7300/1200A",
+        "year": 2022,
+        "price": 23800
+      },
+      {
+        "id": "idx-patek-08",
+        "model": "World Time",
+        "reference": "5230G",
+        "year": 2019,
+        "price": 48500
+      },
+      {
+        "id": "idx-patek-09",
+        "model": "Golden Ellipse",
+        "reference": "5738R",
+        "year": 2020,
+        "price": 29800
+      },
+      {
+        "id": "idx-patek-10",
+        "model": "Travel Time",
+        "reference": "5524R",
+        "year": 2021,
+        "price": 45500
+      }
+    ]
+  },
+  {
+    "id": "idx-ap",
+    "brand": "Audemars Piguet",
+    "category": "Brand Index",
+    "indexValue": 173.6,
+    "change": 4.8,
+    "changePct": 2.84,
+    "period": "30D",
+    "sparkline": [
+      158,
+      160,
+      162,
+      161,
+      165,
+      167,
+      170,
+      168,
+      171,
+      172,
+      174,
+      173
+    ],
+    "watches": [
+      {
+        "id": "idx-ap-01",
+        "model": "Royal Oak",
+        "reference": "15510ST",
+        "year": 2024,
+        "price": 58900
+      },
+      {
+        "id": "idx-ap-02",
+        "model": "Royal Oak Offshore",
+        "reference": "26420SO",
+        "year": 2022,
+        "price": 48500
+      },
+      {
+        "id": "idx-ap-03",
+        "model": "Royal Oak Chronograph",
+        "reference": "26240ST",
+        "year": 2023,
+        "price": 69900
+      },
+      {
+        "id": "idx-ap-04",
+        "model": "Code 11.59",
+        "reference": "15210BC",
+        "year": 2021,
+        "price": 34900
+      },
+      {
+        "id": "idx-ap-05",
+        "model": "Royal Oak 34",
+        "reference": "77350ST",
+        "year": 2022,
+        "price": 29500
+      },
+      {
+        "id": "idx-ap-06",
+        "model": "Royal Oak 37",
+        "reference": "15450ST",
+        "year": 2020,
+        "price": 37900
+      },
+      {
+        "id": "idx-ap-07",
+        "model": "Royal Oak Perpetual",
+        "reference": "26574ST",
+        "year": 2019,
+        "price": 125000
+      },
+      {
+        "id": "idx-ap-08",
+        "model": "Royal Oak Concept",
+        "reference": "26265FO",
+        "year": 2021,
+        "price": 158000
+      },
+      {
+        "id": "idx-ap-09",
+        "model": "Royal Oak Flying Tourbillon",
+        "reference": "26730ST",
+        "year": 2020,
+        "price": 215000
+      },
+      {
+        "id": "idx-ap-10",
+        "model": "Royal Oak Offshore Diver",
+        "reference": "15720ST",
+        "year": 2022,
+        "price": 36500
+      }
+    ]
+  },
+  {
+    "id": "idx-omega",
+    "brand": "Omega",
+    "category": "Brand Index",
+    "indexValue": 112.8,
+    "change": 1.4,
+    "changePct": 1.26,
+    "period": "30D",
+    "sparkline": [
+      106,
+      107,
+      108,
+      109,
+      108,
+      110,
+      111,
+      110,
+      112,
+      113,
+      112,
+      113
+    ],
+    "watches": [
+      {
+        "id": "idx-omega-01",
+        "model": "Speedmaster Professional",
+        "reference": "310.30.42.50.01.001",
+        "year": 2024,
+        "price": 7200
+      },
+      {
+        "id": "idx-omega-02",
+        "model": "Seamaster Diver 300M",
+        "reference": "210.30.42.20.01.001",
+        "year": 2021,
+        "price": 5400
+      },
+      {
+        "id": "idx-omega-03",
+        "model": "Seamaster 300",
+        "reference": "234.30.41.21.01.001",
+        "year": 2023,
+        "price": 6700
+      },
+      {
+        "id": "idx-omega-04",
+        "model": "Speedmaster '57",
+        "reference": "332.10.41.51.01.001",
+        "year": 2022,
+        "price": 8600
+      },
+      {
+        "id": "idx-omega-05",
+        "model": "Aqua Terra",
+        "reference": "220.10.41.21.03.001",
+        "year": 2021,
+        "price": 5900
+      },
+      {
+        "id": "idx-omega-06",
+        "model": "Constellation",
+        "reference": "131.10.39.20.02.001",
+        "year": 2020,
+        "price": 6500
+      },
+      {
+        "id": "idx-omega-07",
+        "model": "Seamaster Planet Ocean",
+        "reference": "215.30.44.21.01.001",
+        "year": 2022,
+        "price": 7100
+      },
+      {
+        "id": "idx-omega-08",
+        "model": "De Ville Trésor",
+        "reference": "435.13.40.21.02.001",
+        "year": 2021,
+        "price": 5800
+      },
+      {
+        "id": "idx-omega-09",
+        "model": "Speedmaster Racing",
+        "reference": "329.30.44.51.01.001",
+        "year": 2020,
+        "price": 7200
+      },
+      {
+        "id": "idx-omega-10",
+        "model": "Railmaster",
+        "reference": "220.10.40.20.01.001",
+        "year": 2019,
+        "price": 5200
+      }
+    ]
+  },
+  {
+    "id": "idx-cartier",
+    "brand": "Cartier",
+    "category": "Brand Index",
+    "indexValue": 134.1,
+    "change": 2.7,
+    "changePct": 2.06,
+    "period": "30D",
+    "sparkline": [
+      122,
+      124,
+      123,
+      126,
+      129,
+      128,
+      131,
+      133,
+      132,
+      134,
+      135,
+      134
+    ],
+    "watches": [
+      {
+        "id": "idx-cartier-01",
+        "model": "Santos de Cartier",
+        "reference": "WSSA0030",
+        "year": 2023,
+        "price": 7900
+      },
+      {
+        "id": "idx-cartier-02",
+        "model": "Tank Louis Cartier",
+        "reference": "WGTA0011",
+        "year": 2020,
+        "price": 12500
+      },
+      {
+        "id": "idx-cartier-03",
+        "model": "Tank Must",
+        "reference": "WSTA0041",
+        "year": 2022,
+        "price": 3150
+      },
+      {
+        "id": "idx-cartier-04",
+        "model": "Ballon Bleu",
+        "reference": "WSBB0044",
+        "year": 2021,
+        "price": 6550
+      },
+      {
+        "id": "idx-cartier-05",
+        "model": "Panthère",
+        "reference": "WSPN0019",
+        "year": 2020,
+        "price": 5400
+      },
+      {
+        "id": "idx-cartier-06",
+        "model": "Drive de Cartier",
+        "reference": "WSNM0006",
+        "year": 2019,
+        "price": 5200
+      },
+      {
+        "id": "idx-cartier-07",
+        "model": "Santos-Dumont",
+        "reference": "WSSA0022",
+        "year": 2022,
+        "price": 4900
+      },
+      {
+        "id": "idx-cartier-08",
+        "model": "Clé de Cartier",
+        "reference": "W2CL0002",
+        "year": 2018,
+        "price": 6100
+      },
+      {
+        "id": "idx-cartier-09",
+        "model": "Ronde Must",
+        "reference": "WSRN0032",
+        "year": 2021,
+        "price": 3050
+      },
+      {
+        "id": "idx-cartier-10",
+        "model": "Tank Américaine",
+        "reference": "WSTA0016",
+        "year": 2019,
+        "price": 7200
+      }
+    ]
+  },
+  {
+    "id": "idx-vacheron",
+    "brand": "Vacheron Constantin",
+    "category": "Brand Index",
+    "indexValue": 158.9,
+    "change": -1.6,
+    "changePct": -1,
+    "period": "30D",
+    "sparkline": [
+      166,
+      165,
+      164,
+      163,
+      162,
+      161,
+      160,
+      159,
+      160,
+      158,
+      159,
+      159
+    ],
+    "watches": [
+      {
+        "id": "idx-vacheron-01",
+        "model": "Overseas",
+        "reference": "4500V/110A-B128",
+        "year": 2023,
+        "price": 24900
+      },
+      {
+        "id": "idx-vacheron-02",
+        "model": "Overseas Chronograph",
+        "reference": "5500V/110A-B148",
+        "year": 2022,
+        "price": 32900
+      },
+      {
+        "id": "idx-vacheron-03",
+        "model": "Patrimony",
+        "reference": "81180/000J-9118",
+        "year": 2020,
+        "price": 21500
+      },
+      {
+        "id": "idx-vacheron-04",
+        "model": "Fiftysix",
+        "reference": "4600E/000A-B442",
+        "year": 2021,
+        "price": 13500
+      },
+      {
+        "id": "idx-vacheron-05",
+        "model": "Traditionnelle",
+        "reference": "82172/000G-9383",
+        "year": 2019,
+        "price": 22600
+      },
+      {
+        "id": "idx-vacheron-06",
+        "model": "Historiques 1921",
+        "reference": "82035/000R-9359",
+        "year": 2018,
+        "price": 28500
+      },
+      {
+        "id": "idx-vacheron-07",
+        "model": "Overseas Dual Time",
+        "reference": "7900V/110A-B334",
+        "year": 2021,
+        "price": 26800
+      },
+      {
+        "id": "idx-vacheron-08",
+        "model": "Overseas Quartz",
+        "reference": "4605V/200A-B971",
+        "year": 2020,
+        "price": 18000
+      },
+      {
+        "id": "idx-vacheron-09",
+        "model": "Patrimony Moon Phase",
+        "reference": "7000U/000G-B112",
+        "year": 2019,
+        "price": 25800
+      },
+      {
+        "id": "idx-vacheron-10",
+        "model": "Traditionnelle World Time",
+        "reference": "86060/000R-9640",
+        "year": 2018,
+        "price": 38900
+      }
+    ]
+  }
+]

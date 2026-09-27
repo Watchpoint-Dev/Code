@@ -1,0 +1,3002 @@
+[
+  {
+    "watchId": "aw-001",
+    "retailPriceUsd": 15425,
+    "performanceIndex": 7.22,
+    "activeListings": 6,
+    "waterResistanceM": 300,
+    "caliber": "R3200",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-002",
+    "retailPriceUsd": 10064,
+    "performanceIndex": 13.4,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "R3207",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-003",
+    "retailPriceUsd": 10479,
+    "performanceIndex": 5.42,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "R3214",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-004",
+    "retailPriceUsd": 20370,
+    "performanceIndex": 16.04,
+    "activeListings": 11,
+    "waterResistanceM": 100,
+    "caliber": "R3221",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-005",
+    "retailPriceUsd": 9953,
+    "performanceIndex": 13.27,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "R3228",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-006",
+    "retailPriceUsd": 8362,
+    "performanceIndex": 13.25,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "R3235",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-007",
+    "retailPriceUsd": 11681,
+    "performanceIndex": 8.95,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "R3242",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-008",
+    "retailPriceUsd": 21637,
+    "performanceIndex": 13.59,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "R3249",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-009",
+    "retailPriceUsd": 60532,
+    "performanceIndex": 14.44,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PP3256",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-010",
+    "retailPriceUsd": 107931,
+    "performanceIndex": 13.94,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "PP3263",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-011",
+    "retailPriceUsd": 101382,
+    "performanceIndex": 18.55,
+    "activeListings": 8,
+    "waterResistanceM": 120,
+    "caliber": "PP3270",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-012",
+    "retailPriceUsd": 66202,
+    "performanceIndex": 9.22,
+    "activeListings": 9,
+    "waterResistanceM": 50,
+    "caliber": "PP3277",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-013",
+    "retailPriceUsd": 66055,
+    "performanceIndex": 7.54,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "PP3284",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-014",
+    "retailPriceUsd": 29010,
+    "performanceIndex": 9.25,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PP3291",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-015",
+    "retailPriceUsd": 67344,
+    "performanceIndex": 4.18,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "PP3298",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-016",
+    "retailPriceUsd": 44527,
+    "performanceIndex": 7.98,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "AP3305",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-017",
+    "retailPriceUsd": 33804,
+    "performanceIndex": 4.7,
+    "activeListings": 2,
+    "waterResistanceM": 50,
+    "caliber": "AP3312",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-018",
+    "retailPriceUsd": 24536,
+    "performanceIndex": 13.78,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "AP3319",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-019",
+    "retailPriceUsd": 53962,
+    "performanceIndex": 5.78,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "AP3326",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-020",
+    "retailPriceUsd": 23302,
+    "performanceIndex": 5.35,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "AP3333",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-021",
+    "retailPriceUsd": 7598,
+    "performanceIndex": 1.13,
+    "activeListings": 2,
+    "waterResistanceM": 300,
+    "caliber": "O3340",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-022",
+    "retailPriceUsd": 3084,
+    "performanceIndex": 3.31,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "O3347",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-023",
+    "retailPriceUsd": 8555,
+    "performanceIndex": 3.98,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "O3354",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-024",
+    "retailPriceUsd": 7376,
+    "performanceIndex": 9.51,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "O3361",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-025",
+    "retailPriceUsd": 6610,
+    "performanceIndex": 9.87,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "O3368",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-026",
+    "retailPriceUsd": 9625,
+    "performanceIndex": 4.16,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "C3375",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-027",
+    "retailPriceUsd": 7509,
+    "performanceIndex": 2.63,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "C3382",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-028",
+    "retailPriceUsd": 6417,
+    "performanceIndex": 6.73,
+    "activeListings": 9,
+    "waterResistanceM": 120,
+    "caliber": "C3389",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-029",
+    "retailPriceUsd": 4029,
+    "performanceIndex": 8.31,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "C3396",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-030",
+    "retailPriceUsd": 9348,
+    "performanceIndex": 4.08,
+    "activeListings": 5,
+    "waterResistanceM": 50,
+    "caliber": "C3403",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-031",
+    "retailPriceUsd": 5976,
+    "performanceIndex": 5.33,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "C3410",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-032",
+    "retailPriceUsd": 71484,
+    "performanceIndex": 1.83,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "VC3417",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-033",
+    "retailPriceUsd": 39356,
+    "performanceIndex": 8.01,
+    "activeListings": 3,
+    "waterResistanceM": 30,
+    "caliber": "VC3424",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-034",
+    "retailPriceUsd": 32495,
+    "performanceIndex": 10.44,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "VC3431",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-035",
+    "retailPriceUsd": 78756,
+    "performanceIndex": 4.62,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "VC3438",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-036",
+    "retailPriceUsd": 6875,
+    "performanceIndex": -0.24,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "I3445",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-037",
+    "retailPriceUsd": 6723,
+    "performanceIndex": 3.24,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "I3452",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-038",
+    "retailPriceUsd": 9326,
+    "performanceIndex": 9.53,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "I3459",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-039",
+    "retailPriceUsd": 7040,
+    "performanceIndex": 9.94,
+    "activeListings": 8,
+    "waterResistanceM": 300,
+    "caliber": "I3466",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-040",
+    "retailPriceUsd": 4242,
+    "performanceIndex": 2.39,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "B3473",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-041",
+    "retailPriceUsd": 7920,
+    "performanceIndex": 11.87,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "B3480",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-042",
+    "retailPriceUsd": 9515,
+    "performanceIndex": 8.47,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "B3487",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-043",
+    "retailPriceUsd": 8806,
+    "performanceIndex": 8.52,
+    "activeListings": 8,
+    "waterResistanceM": 300,
+    "caliber": "B3494",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-044",
+    "retailPriceUsd": 4798,
+    "performanceIndex": 4.84,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "J3501",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-045",
+    "retailPriceUsd": 10082,
+    "performanceIndex": 3.64,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "J3508",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-046",
+    "retailPriceUsd": 7993,
+    "performanceIndex": 10.33,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "J3515",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-047",
+    "retailPriceUsd": 9906,
+    "performanceIndex": 6.43,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "J3522",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-048",
+    "retailPriceUsd": 6180,
+    "performanceIndex": 1.39,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "P3529",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-049",
+    "retailPriceUsd": 5075,
+    "performanceIndex": 8.3,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "P3536",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-050",
+    "retailPriceUsd": 7383,
+    "performanceIndex": 5.2,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "P3543",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-051",
+    "retailPriceUsd": 6780,
+    "performanceIndex": 5.07,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "P3550",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-052",
+    "retailPriceUsd": 2589,
+    "performanceIndex": 3.88,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "TH3557",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-053",
+    "retailPriceUsd": 2420,
+    "performanceIndex": 6.56,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "TH3564",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-054",
+    "retailPriceUsd": 2453,
+    "performanceIndex": 3.41,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "TH3571",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-055",
+    "retailPriceUsd": 3222,
+    "performanceIndex": 3.22,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "TH3578",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-056",
+    "retailPriceUsd": 16020,
+    "performanceIndex": 4.41,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "H3585",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-057",
+    "retailPriceUsd": 22116,
+    "performanceIndex": 0.28,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "H3592",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-058",
+    "retailPriceUsd": 21961,
+    "performanceIndex": 9.31,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "H3599",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-059",
+    "retailPriceUsd": 8668,
+    "performanceIndex": 3.38,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "Z3606",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-060",
+    "retailPriceUsd": 7873,
+    "performanceIndex": 4.96,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "Z3613",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-061",
+    "retailPriceUsd": 5368,
+    "performanceIndex": 6.22,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "Z3620",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-062",
+    "retailPriceUsd": 5454,
+    "performanceIndex": 2.71,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "Z3627",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-063",
+    "retailPriceUsd": 1445,
+    "performanceIndex": 4.74,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "S3634",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-064",
+    "retailPriceUsd": 2360,
+    "performanceIndex": 5.37,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "S3641",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-065",
+    "retailPriceUsd": 2622,
+    "performanceIndex": 9.7,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "S3648",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-066",
+    "retailPriceUsd": 1761,
+    "performanceIndex": 6.96,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "S3655",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-067",
+    "retailPriceUsd": 1696,
+    "performanceIndex": 8.04,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "S3662",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-068",
+    "retailPriceUsd": 7643,
+    "performanceIndex": 6.09,
+    "activeListings": 10,
+    "waterResistanceM": 30,
+    "caliber": "GS3669",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-069",
+    "retailPriceUsd": 3285,
+    "performanceIndex": 2.46,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "GS3676",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-070",
+    "retailPriceUsd": 4002,
+    "performanceIndex": 0.45,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "GS3683",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-071",
+    "retailPriceUsd": 5212,
+    "performanceIndex": 7.35,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "GS3690",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-072",
+    "retailPriceUsd": 2408,
+    "performanceIndex": 8.54,
+    "activeListings": 9,
+    "waterResistanceM": 50,
+    "caliber": "T3697",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-073",
+    "retailPriceUsd": 2181,
+    "performanceIndex": 5.62,
+    "activeListings": 4,
+    "waterResistanceM": 30,
+    "caliber": "T3704",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-074",
+    "retailPriceUsd": 3676,
+    "performanceIndex": 0.64,
+    "activeListings": 4,
+    "waterResistanceM": 50,
+    "caliber": "T3711",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-075",
+    "retailPriceUsd": 4393,
+    "performanceIndex": 10.64,
+    "activeListings": 10,
+    "waterResistanceM": 50,
+    "caliber": "T3718",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-076",
+    "retailPriceUsd": 3205,
+    "performanceIndex": 4.62,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "T3725",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-077",
+    "retailPriceUsd": 3099,
+    "performanceIndex": 1.5,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "O3732",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-078",
+    "retailPriceUsd": 3501,
+    "performanceIndex": 1.53,
+    "activeListings": 4,
+    "waterResistanceM": 50,
+    "caliber": "O3739",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-079",
+    "retailPriceUsd": 1683,
+    "performanceIndex": 7.94,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "O3746",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-080",
+    "retailPriceUsd": 1434,
+    "performanceIndex": 3.21,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "O3753",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-081",
+    "retailPriceUsd": 15140,
+    "performanceIndex": 8.88,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "B3760",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-082",
+    "retailPriceUsd": 25233,
+    "performanceIndex": -2.73,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "B3767",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-083",
+    "retailPriceUsd": 52839,
+    "performanceIndex": 7.36,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "B3774",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-084",
+    "retailPriceUsd": 68180,
+    "performanceIndex": 2.68,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "B3781",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-085",
+    "retailPriceUsd": 12824,
+    "performanceIndex": 6.16,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "B3788",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-086",
+    "retailPriceUsd": 17143,
+    "performanceIndex": 5.8,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "B3795",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-087",
+    "retailPriceUsd": 17468,
+    "performanceIndex": 5.18,
+    "activeListings": 4,
+    "waterResistanceM": 300,
+    "caliber": "B3802",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-088",
+    "retailPriceUsd": 15378,
+    "performanceIndex": 11.49,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "C3809",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-089",
+    "retailPriceUsd": 8423,
+    "performanceIndex": 3.47,
+    "activeListings": 4,
+    "waterResistanceM": 120,
+    "caliber": "C3816",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-090",
+    "retailPriceUsd": 9796,
+    "performanceIndex": 4.47,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "C3823",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-091",
+    "retailPriceUsd": 9795,
+    "performanceIndex": 4.97,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "C3830",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-092",
+    "retailPriceUsd": 9786,
+    "performanceIndex": 5.06,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "G3837",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-093",
+    "retailPriceUsd": 10114,
+    "performanceIndex": 3.18,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "G3844",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-094",
+    "retailPriceUsd": 8268,
+    "performanceIndex": 6.68,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "G3851",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-095",
+    "retailPriceUsd": 17542,
+    "performanceIndex": 3.74,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PF3858",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-096",
+    "retailPriceUsd": 13480,
+    "performanceIndex": 5.71,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "PF3865",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-097",
+    "retailPriceUsd": 11606,
+    "performanceIndex": 10.34,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "PF3872",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-098",
+    "retailPriceUsd": 8436,
+    "performanceIndex": 10.31,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "P3879",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-099",
+    "retailPriceUsd": 13987,
+    "performanceIndex": 5.61,
+    "activeListings": 8,
+    "waterResistanceM": 300,
+    "caliber": "P3886",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-100",
+    "retailPriceUsd": 22029,
+    "performanceIndex": 7.85,
+    "activeListings": 9,
+    "waterResistanceM": 30,
+    "caliber": "P3893",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-101",
+    "retailPriceUsd": 250709,
+    "performanceIndex": 11.24,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "RM3900",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-102",
+    "retailPriceUsd": 256038,
+    "performanceIndex": 10.7,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "RM3907",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-103",
+    "retailPriceUsd": 150214,
+    "performanceIndex": 14.1,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "RM3914",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-104",
+    "retailPriceUsd": 106669,
+    "performanceIndex": 13.95,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "RM3921",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-105",
+    "retailPriceUsd": 9356,
+    "performanceIndex": 6.91,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "UN3928",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-106",
+    "retailPriceUsd": 13680,
+    "performanceIndex": 4.15,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "UN3935",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-107",
+    "retailPriceUsd": 16872,
+    "performanceIndex": 9.81,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "UN3942",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-108",
+    "retailPriceUsd": 14100,
+    "performanceIndex": 7.59,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "UN3949",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-109",
+    "retailPriceUsd": 56548,
+    "performanceIndex": 1.57,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "AL3956",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-110",
+    "retailPriceUsd": 45068,
+    "performanceIndex": -0.74,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "AL3963",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-111",
+    "retailPriceUsd": 68611,
+    "performanceIndex": 10.69,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "AL3970",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-112",
+    "retailPriceUsd": 36659,
+    "performanceIndex": 5.45,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "AL3977",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-113",
+    "retailPriceUsd": 71020,
+    "performanceIndex": 5.68,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "FJ3984",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-114",
+    "retailPriceUsd": 99273,
+    "performanceIndex": 15.01,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "FJ3991",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-115",
+    "retailPriceUsd": 60463,
+    "performanceIndex": 15.73,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "FJ3998",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-116",
+    "retailPriceUsd": 49542,
+    "performanceIndex": 12.08,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "FJ4005",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-117",
+    "retailPriceUsd": 7049,
+    "performanceIndex": 9.13,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "GO4012",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-118",
+    "retailPriceUsd": 7871,
+    "performanceIndex": 1.94,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "GO4019",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-119",
+    "retailPriceUsd": 8465,
+    "performanceIndex": 7.3,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "GO4026",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-120",
+    "retailPriceUsd": 12080,
+    "performanceIndex": 3.29,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "GO4033",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-121",
+    "retailPriceUsd": 26404,
+    "performanceIndex": 0,
+    "activeListings": 2,
+    "waterResistanceM": 50,
+    "caliber": "HM4040",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-122",
+    "retailPriceUsd": 21223,
+    "performanceIndex": 3.78,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "HM4047",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-123",
+    "retailPriceUsd": 30094,
+    "performanceIndex": 2.04,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "HM4054",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-124",
+    "retailPriceUsd": 52846,
+    "performanceIndex": 3.67,
+    "activeListings": 9,
+    "waterResistanceM": 30,
+    "caliber": "HM4061",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-125",
+    "retailPriceUsd": 3074,
+    "performanceIndex": 4.51,
+    "activeListings": 2,
+    "waterResistanceM": 100,
+    "caliber": "N4068",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-126",
+    "retailPriceUsd": 2118,
+    "performanceIndex": 8.83,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "N4075",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-127",
+    "retailPriceUsd": 1200,
+    "performanceIndex": 7.05,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "N4082",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-128",
+    "retailPriceUsd": 1200,
+    "performanceIndex": 6.46,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "N4089",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-129",
+    "retailPriceUsd": 19171,
+    "performanceIndex": 4.01,
+    "activeListings": 4,
+    "waterResistanceM": 30,
+    "caliber": "R4096",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-130",
+    "retailPriceUsd": 7628,
+    "performanceIndex": 6.33,
+    "activeListings": 4,
+    "waterResistanceM": 120,
+    "caliber": "R4103",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-131",
+    "retailPriceUsd": 8703,
+    "performanceIndex": 1.49,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "R4110",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-132",
+    "retailPriceUsd": 10251,
+    "performanceIndex": 11.47,
+    "activeListings": 11,
+    "waterResistanceM": 100,
+    "caliber": "R4117",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-133",
+    "retailPriceUsd": 14231,
+    "performanceIndex": 9.75,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "R4124",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-134",
+    "retailPriceUsd": 14773,
+    "performanceIndex": 10.48,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "R4131",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-135",
+    "retailPriceUsd": 19580,
+    "performanceIndex": 11.1,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "R4138",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-136",
+    "retailPriceUsd": 22555,
+    "performanceIndex": 11,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "R4145",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-137",
+    "retailPriceUsd": 53631,
+    "performanceIndex": 14.86,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PP4152",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-138",
+    "retailPriceUsd": 43925,
+    "performanceIndex": 12.36,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "PP4159",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-139",
+    "retailPriceUsd": 70361,
+    "performanceIndex": 14.92,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "PP4166",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-140",
+    "retailPriceUsd": 46016,
+    "performanceIndex": 12.1,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "PP4173",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-141",
+    "retailPriceUsd": 41652,
+    "performanceIndex": 13.43,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "PP4180",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-142",
+    "retailPriceUsd": 54699,
+    "performanceIndex": 9.36,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PP4187",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-143",
+    "retailPriceUsd": 51025,
+    "performanceIndex": 10.21,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "PP4194",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-144",
+    "retailPriceUsd": 76614,
+    "performanceIndex": 9.78,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "AP4201",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-145",
+    "retailPriceUsd": 64527,
+    "performanceIndex": 11.89,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "AP4208",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-146",
+    "retailPriceUsd": 72170,
+    "performanceIndex": 13.98,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "AP4215",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-147",
+    "retailPriceUsd": 33607,
+    "performanceIndex": 14.2,
+    "activeListings": 9,
+    "waterResistanceM": 120,
+    "caliber": "AP4222",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-148",
+    "retailPriceUsd": 39307,
+    "performanceIndex": 10.28,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "AP4229",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-149",
+    "retailPriceUsd": 6351,
+    "performanceIndex": 3.49,
+    "activeListings": 3,
+    "waterResistanceM": 30,
+    "caliber": "O4236",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-150",
+    "retailPriceUsd": 4498,
+    "performanceIndex": 12.23,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "O4243",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-151",
+    "retailPriceUsd": 4771,
+    "performanceIndex": 4.95,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "O4250",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-152",
+    "retailPriceUsd": 3057,
+    "performanceIndex": 1.33,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "O4257",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-153",
+    "retailPriceUsd": 6192,
+    "performanceIndex": -0.83,
+    "activeListings": 3,
+    "waterResistanceM": 120,
+    "caliber": "O4264",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-154",
+    "retailPriceUsd": 3450,
+    "performanceIndex": 9.01,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "C4271",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-155",
+    "retailPriceUsd": 12962,
+    "performanceIndex": 6.96,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "C4278",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-156",
+    "retailPriceUsd": 10602,
+    "performanceIndex": 5.09,
+    "activeListings": 8,
+    "waterResistanceM": 120,
+    "caliber": "C4285",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-157",
+    "retailPriceUsd": 3137,
+    "performanceIndex": 9.36,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "C4292",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-158",
+    "retailPriceUsd": 7008,
+    "performanceIndex": 3.19,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "C4299",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-159",
+    "retailPriceUsd": 5422,
+    "performanceIndex": 4.32,
+    "activeListings": 7,
+    "waterResistanceM": 50,
+    "caliber": "C4306",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-160",
+    "retailPriceUsd": 43407,
+    "performanceIndex": 1.95,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "VC4313",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-161",
+    "retailPriceUsd": 54715,
+    "performanceIndex": 0.66,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "VC4320",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-162",
+    "retailPriceUsd": 63404,
+    "performanceIndex": 3.41,
+    "activeListings": 3,
+    "waterResistanceM": 30,
+    "caliber": "VC4327",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-163",
+    "retailPriceUsd": 67444,
+    "performanceIndex": 0.26,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "VC4334",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-164",
+    "retailPriceUsd": 7690,
+    "performanceIndex": 4.16,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "I4341",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-165",
+    "retailPriceUsd": 8415,
+    "performanceIndex": 5.18,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "I4348",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-166",
+    "retailPriceUsd": 11200,
+    "performanceIndex": 4.25,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "I4355",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-167",
+    "retailPriceUsd": 8776,
+    "performanceIndex": 5.99,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "I4362",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-168",
+    "retailPriceUsd": 4120,
+    "performanceIndex": -0.87,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "B4369",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-169",
+    "retailPriceUsd": 6141,
+    "performanceIndex": 3.76,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "B4376",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-170",
+    "retailPriceUsd": 6544,
+    "performanceIndex": 6.45,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "B4383",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-171",
+    "retailPriceUsd": 5849,
+    "performanceIndex": 1.35,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "B4390",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-172",
+    "retailPriceUsd": 16256,
+    "performanceIndex": 8.91,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "J4397",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-173",
+    "retailPriceUsd": 12999,
+    "performanceIndex": 3.83,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "J4404",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-174",
+    "retailPriceUsd": 16559,
+    "performanceIndex": 6.64,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "J4411",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-175",
+    "retailPriceUsd": 6914,
+    "performanceIndex": 11.78,
+    "activeListings": 9,
+    "waterResistanceM": 30,
+    "caliber": "J4418",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-176",
+    "retailPriceUsd": 4127,
+    "performanceIndex": 4.74,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "P4425",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-177",
+    "retailPriceUsd": 4660,
+    "performanceIndex": 2.31,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "P4432",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-178",
+    "retailPriceUsd": 6372,
+    "performanceIndex": 6.98,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "P4439",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-179",
+    "retailPriceUsd": 7359,
+    "performanceIndex": 1.33,
+    "activeListings": 5,
+    "waterResistanceM": 50,
+    "caliber": "P4446",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-180",
+    "retailPriceUsd": 1984,
+    "performanceIndex": 6.53,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "TH4453",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-181",
+    "retailPriceUsd": 2207,
+    "performanceIndex": 4.14,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "TH4460",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-182",
+    "retailPriceUsd": 2009,
+    "performanceIndex": 7.25,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "TH4467",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-183",
+    "retailPriceUsd": 3792,
+    "performanceIndex": 8.49,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "TH4474",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-184",
+    "retailPriceUsd": 20691,
+    "performanceIndex": 5.26,
+    "activeListings": 8,
+    "waterResistanceM": 300,
+    "caliber": "H4481",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-185",
+    "retailPriceUsd": 14942,
+    "performanceIndex": 1.51,
+    "activeListings": 2,
+    "waterResistanceM": 100,
+    "caliber": "H4488",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-186",
+    "retailPriceUsd": 21022,
+    "performanceIndex": 0.92,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "H4495",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-187",
+    "retailPriceUsd": 4560,
+    "performanceIndex": 6.28,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "Z4502",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-188",
+    "retailPriceUsd": 4637,
+    "performanceIndex": 5.38,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "Z4509",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-189",
+    "retailPriceUsd": 8340,
+    "performanceIndex": 4.48,
+    "activeListings": 6,
+    "waterResistanceM": 300,
+    "caliber": "Z4516",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-190",
+    "retailPriceUsd": 5442,
+    "performanceIndex": 5.46,
+    "activeListings": 5,
+    "waterResistanceM": 50,
+    "caliber": "Z4523",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-191",
+    "retailPriceUsd": 1200,
+    "performanceIndex": 9.14,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "S4530",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-192",
+    "retailPriceUsd": 1532,
+    "performanceIndex": 4.38,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "S4537",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-193",
+    "retailPriceUsd": 1999,
+    "performanceIndex": 5,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "S4544",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-194",
+    "retailPriceUsd": 1273,
+    "performanceIndex": -1.43,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "S4551",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-195",
+    "retailPriceUsd": 1200,
+    "performanceIndex": 9.77,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "S4558",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-196",
+    "retailPriceUsd": 5224,
+    "performanceIndex": 11.73,
+    "activeListings": 9,
+    "waterResistanceM": 50,
+    "caliber": "GS4565",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-197",
+    "retailPriceUsd": 4632,
+    "performanceIndex": 1.13,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "GS4572",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-198",
+    "retailPriceUsd": 8719,
+    "performanceIndex": 7.39,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "GS4579",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-199",
+    "retailPriceUsd": 5728,
+    "performanceIndex": 6.69,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "GS4586",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-200",
+    "retailPriceUsd": 1866,
+    "performanceIndex": 8.07,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "T4593",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-201",
+    "retailPriceUsd": 2539,
+    "performanceIndex": 3.31,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "T4600",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-202",
+    "retailPriceUsd": 4443,
+    "performanceIndex": -0.3,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "T4607",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-203",
+    "retailPriceUsd": 3287,
+    "performanceIndex": -0.71,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "T4614",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-204",
+    "retailPriceUsd": 2754,
+    "performanceIndex": 2.5,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "T4621",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-205",
+    "retailPriceUsd": 2188,
+    "performanceIndex": 0.99,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "O4628",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-206",
+    "retailPriceUsd": 1391,
+    "performanceIndex": 8.06,
+    "activeListings": 4,
+    "waterResistanceM": 30,
+    "caliber": "O4635",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-207",
+    "retailPriceUsd": 2489,
+    "performanceIndex": 3.42,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "O4642",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-208",
+    "retailPriceUsd": 2407,
+    "performanceIndex": 5.38,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "O4649",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-209",
+    "retailPriceUsd": 17104,
+    "performanceIndex": 6.49,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "B4656",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-210",
+    "retailPriceUsd": 47026,
+    "performanceIndex": 6.27,
+    "activeListings": 3,
+    "waterResistanceM": 300,
+    "caliber": "B4663",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-211",
+    "retailPriceUsd": 32847,
+    "performanceIndex": 5.5,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "B4670",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-212",
+    "retailPriceUsd": 43745,
+    "performanceIndex": 5.9,
+    "activeListings": 8,
+    "waterResistanceM": 120,
+    "caliber": "B4677",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-213",
+    "retailPriceUsd": 15663,
+    "performanceIndex": 4.68,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "B4684",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-214",
+    "retailPriceUsd": 12611,
+    "performanceIndex": 8.26,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "B4691",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-215",
+    "retailPriceUsd": 18678,
+    "performanceIndex": 8.59,
+    "activeListings": 9,
+    "waterResistanceM": 50,
+    "caliber": "B4698",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-216",
+    "retailPriceUsd": 22111,
+    "performanceIndex": 11.49,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "C4705",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-217",
+    "retailPriceUsd": 5142,
+    "performanceIndex": 5.64,
+    "activeListings": 4,
+    "waterResistanceM": 50,
+    "caliber": "C4712",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-218",
+    "retailPriceUsd": 10516,
+    "performanceIndex": 7.06,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "C4719",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-219",
+    "retailPriceUsd": 18729,
+    "performanceIndex": 3.37,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "C4726",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-220",
+    "retailPriceUsd": 11002,
+    "performanceIndex": 5.93,
+    "activeListings": 11,
+    "waterResistanceM": 100,
+    "caliber": "G4733",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-221",
+    "retailPriceUsd": 13536,
+    "performanceIndex": 5.53,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "G4740",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-222",
+    "retailPriceUsd": 16197,
+    "performanceIndex": -0.04,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "G4747",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-223",
+    "retailPriceUsd": 15429,
+    "performanceIndex": 2.99,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "PF4754",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-224",
+    "retailPriceUsd": 10433,
+    "performanceIndex": 4.56,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "PF4761",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-225",
+    "retailPriceUsd": 11325,
+    "performanceIndex": 7.86,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "PF4768",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-226",
+    "retailPriceUsd": 24448,
+    "performanceIndex": 1.15,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "P4775",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-227",
+    "retailPriceUsd": 22469,
+    "performanceIndex": 2.8,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "P4782",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-228",
+    "retailPriceUsd": 19532,
+    "performanceIndex": 7.81,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "P4789",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-229",
+    "retailPriceUsd": 132860,
+    "performanceIndex": 8,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "RM4796",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-230",
+    "retailPriceUsd": 150806,
+    "performanceIndex": 9.95,
+    "activeListings": 3,
+    "waterResistanceM": 50,
+    "caliber": "RM4803",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-231",
+    "retailPriceUsd": 198868,
+    "performanceIndex": 12.48,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "RM4810",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-232",
+    "retailPriceUsd": 126054,
+    "performanceIndex": 10.43,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "RM4817",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-233",
+    "retailPriceUsd": 8795,
+    "performanceIndex": 4,
+    "activeListings": 4,
+    "waterResistanceM": 300,
+    "caliber": "UN4824",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-234",
+    "retailPriceUsd": 17003,
+    "performanceIndex": 1.52,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "UN4831",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-235",
+    "retailPriceUsd": 12980,
+    "performanceIndex": 3.39,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "UN4838",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-236",
+    "retailPriceUsd": 13897,
+    "performanceIndex": 3.06,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "UN4845",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-237",
+    "retailPriceUsd": 37264,
+    "performanceIndex": 2.13,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "AL4852",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-238",
+    "retailPriceUsd": 40807,
+    "performanceIndex": 5.29,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "AL4859",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-239",
+    "retailPriceUsd": 52208,
+    "performanceIndex": 6.49,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "AL4866",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-240",
+    "retailPriceUsd": 32105,
+    "performanceIndex": 7.3,
+    "activeListings": 8,
+    "waterResistanceM": 50,
+    "caliber": "AL4873",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-241",
+    "retailPriceUsd": 42046,
+    "performanceIndex": 7.94,
+    "activeListings": 2,
+    "waterResistanceM": 120,
+    "caliber": "FJ4880",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-242",
+    "retailPriceUsd": 89937,
+    "performanceIndex": 9.37,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "FJ4887",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-243",
+    "retailPriceUsd": 63404,
+    "performanceIndex": 9.07,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "FJ4894",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-244",
+    "retailPriceUsd": 54356,
+    "performanceIndex": 8.44,
+    "activeListings": 5,
+    "waterResistanceM": 50,
+    "caliber": "FJ4901",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-245",
+    "retailPriceUsd": 11402,
+    "performanceIndex": 10.57,
+    "activeListings": 6,
+    "waterResistanceM": 300,
+    "caliber": "GO4908",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-246",
+    "retailPriceUsd": 12484,
+    "performanceIndex": 5.41,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "GO4915",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-247",
+    "retailPriceUsd": 9792,
+    "performanceIndex": 7.64,
+    "activeListings": 8,
+    "waterResistanceM": 300,
+    "caliber": "GO4922",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-248",
+    "retailPriceUsd": 7181,
+    "performanceIndex": 8.89,
+    "activeListings": 10,
+    "waterResistanceM": 100,
+    "caliber": "GO4929",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-249",
+    "retailPriceUsd": 33798,
+    "performanceIndex": 3.43,
+    "activeListings": 4,
+    "waterResistanceM": 100,
+    "caliber": "HM4936",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-250",
+    "retailPriceUsd": 51208,
+    "performanceIndex": 7.9,
+    "activeListings": 4,
+    "waterResistanceM": 120,
+    "caliber": "HM4943",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-251",
+    "retailPriceUsd": 17826,
+    "performanceIndex": 9.69,
+    "activeListings": 7,
+    "waterResistanceM": 30,
+    "caliber": "HM4950",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-252",
+    "retailPriceUsd": 33731,
+    "performanceIndex": 1.44,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "HM4957",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-253",
+    "retailPriceUsd": 2241,
+    "performanceIndex": -0.48,
+    "activeListings": 2,
+    "waterResistanceM": 100,
+    "caliber": "N4964",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-254",
+    "retailPriceUsd": 1335,
+    "performanceIndex": 5.65,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "N4971",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-255",
+    "retailPriceUsd": 2512,
+    "performanceIndex": 4.05,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "N4978",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-256",
+    "retailPriceUsd": 1200,
+    "performanceIndex": 7.08,
+    "activeListings": 6,
+    "waterResistanceM": 100,
+    "caliber": "N4985",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-257",
+    "retailPriceUsd": 19689,
+    "performanceIndex": 13.8,
+    "activeListings": 5,
+    "waterResistanceM": 50,
+    "caliber": "R4992",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-258",
+    "retailPriceUsd": 13840,
+    "performanceIndex": 11.61,
+    "activeListings": 4,
+    "waterResistanceM": 300,
+    "caliber": "R4999",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-259",
+    "retailPriceUsd": 15486,
+    "performanceIndex": 11.9,
+    "activeListings": 9,
+    "waterResistanceM": 50,
+    "caliber": "R5006",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-260",
+    "retailPriceUsd": 15870,
+    "performanceIndex": 10.17,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "R5013",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-261",
+    "retailPriceUsd": 18384,
+    "performanceIndex": 16.53,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "R5020",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-262",
+    "retailPriceUsd": 11652,
+    "performanceIndex": 16.8,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "R5027",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-263",
+    "retailPriceUsd": 23415,
+    "performanceIndex": 15.84,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "R5034",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-264",
+    "retailPriceUsd": 13376,
+    "performanceIndex": 8.46,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "R5041",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-265",
+    "retailPriceUsd": 48090,
+    "performanceIndex": 1.8,
+    "activeListings": 3,
+    "waterResistanceM": 120,
+    "caliber": "PP5048",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-266",
+    "retailPriceUsd": 29660,
+    "performanceIndex": 10.83,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "PP5055",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-267",
+    "retailPriceUsd": 52738,
+    "performanceIndex": 8.76,
+    "activeListings": 7,
+    "waterResistanceM": 120,
+    "caliber": "PP5062",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-268",
+    "retailPriceUsd": 81422,
+    "performanceIndex": 6.32,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "PP5069",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-269",
+    "retailPriceUsd": 37333,
+    "performanceIndex": 7.23,
+    "activeListings": 3,
+    "waterResistanceM": 120,
+    "caliber": "PP5076",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-270",
+    "retailPriceUsd": 97380,
+    "performanceIndex": 1.74,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "PP5083",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-271",
+    "retailPriceUsd": 56286,
+    "performanceIndex": 10.38,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "PP5090",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-272",
+    "retailPriceUsd": 21466,
+    "performanceIndex": 5.89,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "AP5097",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-273",
+    "retailPriceUsd": 23767,
+    "performanceIndex": 15.62,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "AP5104",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-274",
+    "retailPriceUsd": 44152,
+    "performanceIndex": 16.43,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "AP5111",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-275",
+    "retailPriceUsd": 52432,
+    "performanceIndex": 12.73,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "AP5118",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-276",
+    "retailPriceUsd": 38886,
+    "performanceIndex": 12.13,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "AP5125",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-277",
+    "retailPriceUsd": 5400,
+    "performanceIndex": 10.5,
+    "activeListings": 4,
+    "waterResistanceM": 50,
+    "caliber": "O5132",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-278",
+    "retailPriceUsd": 6207,
+    "performanceIndex": 2.98,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "O5139",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-279",
+    "retailPriceUsd": 3105,
+    "performanceIndex": 8.92,
+    "activeListings": 6,
+    "waterResistanceM": 120,
+    "caliber": "O5146",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-280",
+    "retailPriceUsd": 6184,
+    "performanceIndex": 4.14,
+    "activeListings": 8,
+    "waterResistanceM": 100,
+    "caliber": "O5153",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-281",
+    "retailPriceUsd": 6629,
+    "performanceIndex": 3.13,
+    "activeListings": 5,
+    "waterResistanceM": 100,
+    "caliber": "O5160",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-282",
+    "retailPriceUsd": 3992,
+    "performanceIndex": 5.02,
+    "activeListings": 4,
+    "waterResistanceM": 300,
+    "caliber": "C5167",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-283",
+    "retailPriceUsd": 8729,
+    "performanceIndex": 9.7,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "C5174",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-284",
+    "retailPriceUsd": 7229,
+    "performanceIndex": 2.87,
+    "activeListings": 7,
+    "waterResistanceM": 300,
+    "caliber": "C5181",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-285",
+    "retailPriceUsd": 8321,
+    "performanceIndex": 11.29,
+    "activeListings": 6,
+    "waterResistanceM": 30,
+    "caliber": "C5188",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-286",
+    "retailPriceUsd": 7050,
+    "performanceIndex": 7.49,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "C5195",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-287",
+    "retailPriceUsd": 12533,
+    "performanceIndex": 1.9,
+    "activeListings": 6,
+    "waterResistanceM": 50,
+    "caliber": "C5202",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-288",
+    "retailPriceUsd": 89218,
+    "performanceIndex": 8.75,
+    "activeListings": 9,
+    "waterResistanceM": 100,
+    "caliber": "VC5209",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-289",
+    "retailPriceUsd": 15776,
+    "performanceIndex": 6.31,
+    "activeListings": 2,
+    "waterResistanceM": 100,
+    "caliber": "VC5216",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-290",
+    "retailPriceUsd": 41140,
+    "performanceIndex": 4.45,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "VC5223",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-291",
+    "retailPriceUsd": 76399,
+    "performanceIndex": 5.78,
+    "activeListings": 8,
+    "waterResistanceM": 120,
+    "caliber": "VC5230",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-292",
+    "retailPriceUsd": 6671,
+    "performanceIndex": -0.92,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "I5237",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-293",
+    "retailPriceUsd": 9626,
+    "performanceIndex": 1.66,
+    "activeListings": 3,
+    "waterResistanceM": 100,
+    "caliber": "I5244",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-294",
+    "retailPriceUsd": 11304,
+    "performanceIndex": 7.59,
+    "activeListings": 7,
+    "waterResistanceM": 100,
+    "caliber": "I5251",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-295",
+    "retailPriceUsd": 5790,
+    "performanceIndex": 5.36,
+    "activeListings": 5,
+    "waterResistanceM": 30,
+    "caliber": "I5258",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-296",
+    "retailPriceUsd": 9105,
+    "performanceIndex": 1.01,
+    "activeListings": 8,
+    "waterResistanceM": 30,
+    "caliber": "B5265",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-297",
+    "retailPriceUsd": 5220,
+    "performanceIndex": 1.9,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "B5272",
+    "crystal": "Sapphire",
+    "powerReserveHours": 48
+  },
+  {
+    "watchId": "aw-298",
+    "retailPriceUsd": 9877,
+    "performanceIndex": 6.14,
+    "activeListings": 5,
+    "waterResistanceM": 120,
+    "caliber": "B5279",
+    "crystal": "Sapphire",
+    "powerReserveHours": 40
+  },
+  {
+    "watchId": "aw-299",
+    "retailPriceUsd": 3953,
+    "performanceIndex": 3.26,
+    "activeListings": 5,
+    "waterResistanceM": 300,
+    "caliber": "B5286",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  },
+  {
+    "watchId": "aw-300",
+    "retailPriceUsd": 14913,
+    "performanceIndex": 7.84,
+    "activeListings": 8,
+    "waterResistanceM": 120,
+    "caliber": "J5293",
+    "crystal": "Sapphire",
+    "powerReserveHours": 70
+  }
+]
