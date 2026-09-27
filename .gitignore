@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# Watchpoint — monorepo. Ce qui n'entre JAMAIS dans git.
+# ---------------------------------------------------------------------------
+
+# --- Secrets : un .env ne se commite pas, seul .env.example est suivi
+.env
+.env.*
+!.env.example
+.token.json
+*.pem
+*.key
+
+# --- Outils locaux et etat de session (propres a une machine)
+.DS_Store
+.claude/
+.remember/
+.vscode/
+.idea/
+
+# --- Archive personnelle : reste sur le disque, hors historique
+_archive/
+
+# --- Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# --- Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+.clerk/
+
+# --- Donnees : volumineuses ou regenerables. Voir docs/ARCHITECTURE.md §6.
+# Le brut ne se recollecte pas a l'identique : il vit sur le disque, sauvegarde
+# a part. `normalized/` se regenere par le rejeu.
+data/raw/
+data/normalized/
+data/cache/
+data/logs/*.log
+# L'actif (202 Mo au 27/09/2026) depasse la limite GitHub de 100 Mo : il est
+# versionne COMPRESSE (data/price_points.jsonl.gz, gzip -9n, deterministe).
+#   instantane  : scripts/sauvegarde.sh
+#   restauration: scripts/restaure.sh
+data/price_points.jsonl
+data/price_points.jsonl.tmp
+data/price_points.jsonl.avant-*
+# Le verrou de collecte : un etat de processus, pas une donnee.
+data/.collecte-en-cours
+
+# --- Research : les echantillons recuperes restent locaux, on garde les scripts
+research/preuves/
+research/**/samples/
+
+# --- Sauvegardes datees du classeur de filtres (la trace vit dans l'onglet JOURNAL)
+backend/config/filtres/*.avant-*
