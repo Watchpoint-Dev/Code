@@ -1,14 +1,42 @@
-# Progress Log
+# Avancement
 
-What actually moved forward, dated. Newest at top.
-This is the "what I got done" view — thoughts, blockers, next steps allowed.
+Ce qui a réellement avancé, daté, le plus récent en haut. Plus libre que le
+CHANGELOG : les blocages, les doutes et les prochaines étapes y ont leur place.
 
-<!-- Format:
-## YYYY-MM-DD
-- Done:
-- Blocked / open:
-- Next:
+<!-- Format :
+## AAAA-MM-JJ — titre
+- Fait :
+- Bloqué / ouvert :
+- Ensuite :
 -->
+
+## 2026-09-22 → 2026-09-29 — Monorepo, documentation, collecte Antiquorum
+- Fait :
+  - **Restructuration en monorepo `Watchpoint-Dev/Code`.** `labo` et `wp-3-main`
+    réunis, historiques conservés. Le moteur devient le package
+    `backend/src/watchpoint` ; tous les chemins passent par `config.py`.
+    Vérification : rejeu complet du brut avec l'ancien puis le nouveau code,
+    empreinte identique sur les 35 sources rejouables. Voir `docs/ARCHITECTURE.md`.
+  - **Décisions tranchées** (`docs/decisions/`) : Python pour le moteur, la base
+    Postgres comme contrat backend/frontend, journal d'observations, pas d'ORM,
+    branche Neon pour le dev, base versionnée compressée.
+  - **Documentation** : guides d'installation, de collecte, d'ajout de source, du
+    filtre et de déploiement ; dictionnaire des données ; glossaire ; CONTRIBUTING.
+  - **Collecte** : Phillips 16 347 lots (22/09) ; Antiquorum 2010-2012 (+4 852),
+    2020-2025 (+8 215), 2026 (+801), 2004-2009 (+9 907), 1993 (+83) ; Morphy
+    2 476 ; nouveau relevé des 27 sources existantes (Montredo +11 706 par
+    ré-observation). Base : 187 096 → 241 061 prix.
+- Bloqué / ouvert :
+  - **Les coupures réseau coûtent cher.** Une source n'est écrite qu'une fois
+    terminée : une tranche Antiquorum de dix ans (plus d'une heure) interrompue
+    à la fin est entièrement perdue. C'est arrivé trois fois. Parade : des
+    tranches de deux ou trois ans. Correctif de fond à envisager : écrire une
+    source vente par vente.
+  - Grailzee n'a jamais pu finir (194 lots sur ~20 000 attendus), toujours
+    interrompue par le réseau.
+  - Le push GitHub et la bascule Vercel vers le nouveau dépôt restent à faire.
+- Ensuite : finir Antiquorum 1989-2003 et Grailzee, puis l'étape 3 du plan :
+  la migration `0002` (le journal d'observations).
 
 ## 2026-09-21 — Sonde réparée, vague 1 de collecte : 8 adaptateurs, potentiel ×2 sur la base
 - Done:

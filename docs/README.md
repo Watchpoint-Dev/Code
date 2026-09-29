@@ -7,6 +7,7 @@
 | [ARCHITECTURE.md](ARCHITECTURE.md) | le système entier : les couches, comment backend et frontend communiquent, le schéma de base cible, et les raisons de chaque choix |
 | [donnees.md](donnees.md) | le modèle de données : chaque champ d'un point de prix, les natures, les provenances, les pièges connus |
 | [decisions/](decisions/README.md) | les décisions tranchées, datées, avec leur raison |
+| [glossaire.md](glossaire.md) | les termes du projet : socle, marteau, nature, provenance, tranche… |
 
 ## Pour faire
 

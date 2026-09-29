@@ -100,6 +100,7 @@ On travaille sur `dev` (ou une branche courte), on fusionne dans `main` quand la
 | [Le filtre](docs/guides/filtre.md) | l'arbre R0 à R8 et la boucle de modification |
 | [Déployer](docs/guides/deploiement.md) | Vercel, Neon, CI |
 | [Contribuer](CONTRIBUTING.md) | branches, commits, revue |
+| [Glossaire](docs/glossaire.md) | les termes du projet |
 | [Journal des versions](CHANGELOG.md) | ce qui a changé, daté |
 
 ## Où en est le projet
