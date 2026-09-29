@@ -121,3 +121,8 @@ On travaille sur `dev` (ou une branche courte), on fusionne dans `main` quand la
 - User-Agent honnête, robots.txt lu, aucun contournement d'anti-bot.
 - La production n'importe jamais depuis `research/` (un test le vérifie).
 - `docs/rapports/` est généré : on ne l'édite pas à la main.
+
+## Licence
+
+Logiciel propriétaire. Copyright (c) 2026 Watchpoint, tous droits réservés.
+Conçu et développé par VP. Voir [LICENSE](LICENSE).

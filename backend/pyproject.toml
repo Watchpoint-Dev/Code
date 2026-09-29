@@ -7,6 +7,8 @@ name = "watchpoint"
 version = "0.1.0"
 description = "Moteur de donnees Watchpoint : collecte, normalisation, filtre, chargement Postgres, metriques."
 requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "VP" }]
 dependencies = [
     "requests>=2.32",
     "beautifulsoup4>=4.12",
