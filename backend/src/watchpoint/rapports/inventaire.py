@@ -23,7 +23,6 @@ import collections
 import datetime as dt
 import json
 import pathlib
-import sys
 
 ICI = pathlib.Path(__file__).resolve().parent
 

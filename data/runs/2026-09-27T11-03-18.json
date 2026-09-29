@@ -1,0 +1,47 @@
+{
+ "run": "2026-09-27T11-03-18",
+ "collected_at": "2026-09-27T11:03:18+00:00",
+ "sources": [
+  {
+   "id": "hodinkee",
+   "name": "Hodinkee Shop",
+   "type": "dealer",
+   "price_nature": "sold",
+   "access": "Shopify products.json (currency=USD&country=US)",
+   "robots": "OK — products.json non interdit",
+   "records": 18945,
+   "nouveaux": 0,
+   "requetes_http": 76,
+   "periode": [
+    "2016-03-08",
+    "2024-10-17"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 99,
+    "reference": 100,
+    "model": 0,
+    "year": 5,
+    "case_material": 0,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 18745,
+    "REJETER": 200,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "1 fiches ecartees : prix masque par la boutique"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 18945,
+ "total_nouveaux": 0,
+ "complet": true
+}

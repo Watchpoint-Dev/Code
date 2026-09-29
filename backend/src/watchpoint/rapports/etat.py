@@ -17,7 +17,6 @@ from watchpoint import config
 import collections
 import datetime as dt
 import json
-import pathlib
 import sys
 
 RACINE = config.RACINE

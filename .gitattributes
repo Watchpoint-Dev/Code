@@ -1,0 +1,17 @@
+# Fins de ligne normalisees en LF dans le depot.
+* text=auto eol=lf
+
+# Binaires : jamais de diff texte ni de conversion de fin de ligne.
+*.gz    binary
+*.xlsx  binary
+*.png   binary
+*.ico   binary
+*.pdf   binary
+
+# Exports CSV : laisses tels qu'ecrits (certains sont en CRLF), sans conversion.
+*.csv   -text
+
+# Fichiers generes : replies par defaut dans les diffs GitHub.
+frontend/package-lock.json   linguist-generated=true
+docs/rapports/**             linguist-generated=true
+data/runs/**                 linguist-generated=true

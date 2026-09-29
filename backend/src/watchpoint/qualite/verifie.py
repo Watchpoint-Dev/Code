@@ -20,7 +20,6 @@ from watchpoint import config
 import collections
 import datetime as dt
 import json
-import pathlib
 import sys
 
 from watchpoint.schema import FIELDS, NATURES, parse_date, parse_money, price_point  # noqa: E402

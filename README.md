@@ -1,7 +1,7 @@
 # Watchpoint
 
 Plateforme de prix de montres. Pour une montre donnée (marque + référence) :
-l'historique de ses prix **réels**, leur nature, leur source — et à terme des
+l'historique de ses prix réels, leur nature, leur source — et à terme des
 indices de marché et un indice de sentiment.
 
 > Un prix n'a de sens qu'avec sa nature, sa date, sa devise et sa source.
@@ -28,11 +28,12 @@ base, et son schéma est leur contrat.** Le détail, les choix et leurs raisons 
 | `data/` | les données locales. Dans git : seulement `price_points.jsonl.gz` et les manifestes `runs/` |
 | [`research/`](research/) | l'exploration : une source étudiée par dossier, jamais importée par la production |
 | `scripts/` | l'exploitation : file de collecte, sauvegarde, restauration |
-| `docs/` | `ARCHITECTURE.md`, `notes/` (écrit à la main), `rapports/` (**générés**), `livrables/` |
+| [`docs/`](docs/README.md) | architecture, modèle de données, guides, décisions, rapports générés, livrables |
 
 ## Installer
 
-Prérequis : Python ≥ 3.12, Node 20, npm.
+Prérequis : Python ≥ 3.12, Node 20, npm. Le pas-à-pas complet, avec les
+problèmes fréquents : [`docs/guides/installation.md`](docs/guides/installation.md).
 
 ```bash
 git clone git@github.com:Watchpoint-Dev/Code.git watchpoint && cd watchpoint
@@ -45,6 +46,8 @@ scripts/restaure.sh                       # reconstruit data/price_points.jsonl 
 # frontend
 cd frontend && npm ci && cd ..
 ```
+
+Ou simplement `make install`. `make` sans argument liste toutes les commandes.
 
 ## Configurer
 
@@ -72,8 +75,9 @@ cd frontend && npm run dev                                  # http://localhost:3
 ## Tester
 
 ```bash
-backend/.venv/bin/pytest backend                  # filtre (76 cas), schéma, règles d'architecture
-cd frontend && npm run check                      # typecheck + lint + build
+make test        # backend : filtre (76 cas), schéma, règles d'architecture
+make lint        # backend : ruff
+make check       # frontend : typecheck + lint + build
 ```
 
 La CI (`.github/workflows/`) lance l'un ou l'autre selon les fichiers modifiés.
@@ -85,20 +89,34 @@ La CI (`.github/workflows/`) lance l'un ou l'autre selon les fichiers modifiés.
 
 On travaille sur `dev` (ou une branche courte), on fusionne dans `main` quand la CI est verte.
 
+## Documentation
+
+| | |
+|---|---|
+| [Architecture](docs/ARCHITECTURE.md) | les couches, le contrat par la base, le schéma cible, les raisons |
+| [Modèle de données](docs/donnees.md) | les 30 champs d'un point de prix, les natures, les pièges |
+| [Faire tourner une collecte](docs/guides/collecte.md) | lancer, suivre, interrompre, relire |
+| [Ajouter une source](docs/guides/ajouter-une-source.md) | de l'exploration à l'adaptateur |
+| [Le filtre](docs/guides/filtre.md) | l'arbre R0 à R8 et la boucle de modification |
+| [Déployer](docs/guides/deploiement.md) | Vercel, Neon, CI |
+| [Contribuer](CONTRIBUTING.md) | branches, commits, revue |
+| [Journal des versions](CHANGELOG.md) | ce qui a changé, daté |
+
 ## Où en est le projet
 
 - État chiffré de la base : [`docs/rapports/ETAT_DATA.md`](docs/rapports/ETAT_DATA.md) (généré).
 - Avancement, décisions, blocages : [`docs/notes/PROGRESS.md`](docs/notes/PROGRESS.md).
 - Le site affiche encore des **données fictives** (`frontend/src/fixtures/`) :
   le schéma complet, le chargeur et les métriques sont les prochaines étapes
-  (`docs/ARCHITECTURE.md` §9).
+  ([`docs/ARCHITECTURE.md` §10](docs/ARCHITECTURE.md#10-la-suite)).
 
 ## Règles
 
-- **Le brut n'est jamais jeté.** Le filtre marque, il ne supprime pas ; toute
+- Le brut n'est jamais jeté. Le filtre marque, il ne supprime pas ; toute
   modification du filtre se rejoue sur le brut et se mesure.
-- **Ne jamais annoncer un volume qu'on n'a pas mesuré.**
-- **Ne jamais reconstituer un marteau par division, ne jamais comparer deux devises.**
-- **User-Agent honnête, robots.txt lu, aucun contournement d'anti-bot.**
-- **La production n'importe jamais depuis `research/`** (vérifié par un test).
-- **`docs/rapports/` est généré** : on ne l'édite pas à la main.
+- On n'annonce pas un volume qu'on n'a pas mesuré.
+- On ne reconstitue jamais un prix marteau par division, et on ne compare
+  jamais deux montants de devises différentes.
+- User-Agent honnête, robots.txt lu, aucun contournement d'anti-bot.
+- La production n'importe jamais depuis `research/` (un test le vérifie).
+- `docs/rapports/` est généré : on ne l'édite pas à la main.

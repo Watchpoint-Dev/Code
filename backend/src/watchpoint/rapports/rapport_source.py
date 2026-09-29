@@ -26,8 +26,6 @@ from watchpoint import config
 import collections
 import datetime as dt
 import json
-import pathlib
-import sys
 
 
 from watchpoint import sources  # noqa: E402
@@ -154,7 +152,7 @@ def main() -> None:
 
         # l'entonnoir
         L += ["**Ce qu'elle donne**", "",
-              f"| Étape | Lignes | Part du brut |", "|---|---|---|",
+              "| Étape | Lignes | Part du brut |", "|---|---|---|",
               f"| Brut collecté | {mille(d['brut'])} | 100 % |",
               f"| Filtre 0 — c'est une montre | {mille(d['garde'])} | "
               f"{round(100 * d['garde'] / d['brut'])} % |",

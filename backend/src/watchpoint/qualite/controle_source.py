@@ -28,7 +28,6 @@ from watchpoint import config
 
 import collections
 import json
-import pathlib
 import random
 import re
 import sys

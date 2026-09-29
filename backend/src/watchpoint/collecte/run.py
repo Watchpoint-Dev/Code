@@ -21,12 +21,11 @@ import datetime as dt
 import gzip
 import json
 import os
-import pathlib
 import sys
 
 from watchpoint import sources
 from watchpoint.filtrage.filtre import filtre
-from watchpoint.schema import FIELDS, completeness
+from watchpoint.schema import completeness
 
 # data/ vit a la racine de l'etabli, a cote du moteur : consultable a la main
 DATA = config.DATA
@@ -325,7 +324,7 @@ def main() -> None:
     print("-" * 78)
     print(f"{'TOTAL':<20}{'':<11}{manifeste['total_records']:>7}{nouveaux_total:>7}")
 
-    print(f"\nCOMPLETUDE par champ (%)")
+    print("\nCOMPLETUDE par champ (%)")
     entete = f"{'':<20}" + "".join(f"{c[:9]:>10}" for c in CLES_COMPLETUDE)
     print(entete)
     for s in manifeste["sources"]:

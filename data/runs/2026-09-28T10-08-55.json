@@ -1,0 +1,37 @@
+{
+ "run": "2026-09-28T10-08-55",
+ "collected_at": "2026-09-28T10:08:55+00:00",
+ "sources": [
+  {
+   "id": "antiquorum",
+   "name": "Antiquorum",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "HTML serveur sur catalog.antiquorum.swiss — jointure price-list (marteau) x catalogue /lots (identite, devise)",
+   "robots": "OK — section ClaudeBot dediee, Crawl-delay: 5, Allow /en/lots/ ; Disallow /en/users/ et les URL a lot_id=/from_btn=/fbclid= (jamais appelees). robots.txt relu le 21/09/2026",
+   "records": 0,
+   "nouveaux": 0,
+   "requetes_http": 0,
+   "periode": null,
+   "completude": {},
+   "filtre": {
+    "GARDER": 0,
+    "REJETER": 0,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "TRANCHE demandee : 2002 -> 2003 (2 annees)",
+    "ventes 2003: ConnectionError",
+    "ventes 2002: ConnectionError",
+    "0 ventes traitees, 0 sans price-list (prix frais inclus), 0 records"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": true,
+   "tronque": false
+  }
+ ],
+ "total_records": 0,
+ "total_nouveaux": 0,
+ "complet": true
+}

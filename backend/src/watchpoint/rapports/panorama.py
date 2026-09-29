@@ -24,8 +24,6 @@ from watchpoint import config
 import collections
 import datetime as dt
 import json
-import pathlib
-import sys
 
 
 from watchpoint import sources  # noqa: E402

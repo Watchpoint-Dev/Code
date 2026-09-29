@@ -1,71 +1,91 @@
-# Watchpoint
+# frontend — le site Watchpoint
 
-Watch data platform — Next.js (App Router) + TypeScript, Clerk auth, Neon (Postgres).
+Next.js 16 (App Router) et TypeScript, Tailwind et shadcn/ui, authentification
+Clerk, base Postgres chez Neon. Déployé par Vercel.
 
-## Getting started (local development)
+## Démarrer
 
-Requirements: **Node.js 20+** and **npm** (this project standardizes on npm — do
-not use bun/pnpm).
-
-```bash
-npm install            # install dependencies
-cp .env.example .env.local   # then fill in the values (see below)
-npm run dev            # start the dev server on http://localhost:3000
-```
-
-Useful scripts:
+Prérequis : Node.js 20 et npm. Le lockfile est celui de npm ; ne pas utiliser
+pnpm ni bun.
 
 ```bash
-npm run build       # production build
-npm run typecheck   # TypeScript check
-npm run lint        # ESLint
+npm ci
+cp .env.example .env.local     # puis remplir les valeurs
+npm run dev                    # http://localhost:3000
 ```
 
-### Environment variables
+| Script | Rôle |
+|---|---|
+| `npm run dev` | serveur de développement |
+| `npm run build` | build de production |
+| `npm run typecheck` | vérification TypeScript |
+| `npm run lint` | ESLint |
+| `npm run check` | les trois à la suite : ce que lance la CI |
 
-Copy `.env.example` to `.env.local` and fill in your own values (never commit
-`.env.local` — it is git-ignored):
+## Variables d'environnement
 
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` — from the Clerk dashboard (API Keys)
-- `CLERK_SECRET_KEY` — from the Clerk dashboard (API Keys)
-- `NEXT_PUBLIC_CLERK_SIGN_IN_URL` = `/sign-in`
-- `NEXT_PUBLIC_CLERK_SIGN_UP_URL` = `/sign-up`
-- `DATABASE_URL` — Neon connection string (pooled)
+Dans `.env.local` (ignoré par git) en local, dans Vercel en production.
 
-### Branches & deployment
+| Variable | Valeur |
+|---|---|
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Clerk, *API Keys* |
+| `CLERK_SECRET_KEY` | Clerk, *API Keys* |
+| `NEXT_PUBLIC_CLERK_SIGN_IN_URL` | `/sign-in` |
+| `NEXT_PUBLIC_CLERK_SIGN_UP_URL` | `/sign-up` |
+| `DATABASE_URL` | Neon, chaîne *pooled*. En local : la branche `dev`, jamais la production |
 
-- `main` → production (auto-deploys to Vercel).
-- `dev` → shared testing branch (Vercel preview). Work on a feature branch, open
-  a pull request into `dev`/`main`, get it reviewed, then merge.
+## Organisation
 
-> Note: watch/price data shown in the UI is still **dummy JSON** (`src/fixtures/`). Data access to Postgres goes through `src/lib/db/` (server-only). See `../docs/ARCHITECTURE.md`.
-> Only auth + user records are real (in Neon). Real data pipeline comes later.
+```
+src/
+├── app/                 les routes, et rien d'autre (convention Next.js)
+│   ├── api/auth/sync/   POST : copie l'utilisateur Clerk dans app_users
+│   ├── marketplace/ auctions/ top-performers/ compare/ market-index/ market-news/
+│   ├── watch/[watchid]/ la fiche d'une montre
+│   ├── my-assets/ investment/ community/   pages encore vides
+│   └── sign-in/ sign-up/
+├── components/
+│   ├── layout/          AppLayout, AppSidebar
+│   ├── auth/            AuthShell, synchronisation Clerk → Neon, apparence Clerk
+│   └── ui/              composants shadcn, ContentCard, PageHeader, TrendAreaChart
+├── lib/
+│   ├── db/              LA seule porte vers la base, server-only
+│   │   ├── client.ts    connexion Neon (lazy, lit DATABASE_URL)
+│   │   └── users.ts     upsert des comptes dans app_users
+│   ├── dummy-data.ts, market-data.ts, watch-insights.ts   assemblage des fixtures
+│   └── utils.ts, flags.ts
+├── fixtures/            données fictives, en attendant la vraie base
+├── hooks/
+└── proxy.ts             protection des routes par Clerk (le middleware de Next 16)
+```
 
-## Clerk + Neon Authentication
+## L'authentification
 
-The app now includes a complete Clerk authentication flow with Neon user sync.
+Toutes les routes sont protégées par `proxy.ts`, sauf `/sign-in` et `/sign-up`.
+À la première page vue après connexion, `ClerkNeonSync` appelle une fois par
+session `POST /api/auth/sync`, qui crée ou met à jour la ligne de l'utilisateur
+dans `public.app_users`. Sans `DATABASE_URL`, cette route répond 503 et le reste
+du site fonctionne.
 
-### What is implemented
+La table est décrite dans `database/migrations/0001_app_users.sql`. Pour
+l'instant, `users.ts` la crée encore lui-même si elle n'existe pas ; cet appel
+disparaîtra quand les migrations seront appliquées par le runner.
 
-- Route protection with `proxy.ts` (all app routes protected by default)
-- Public auth pages:
-  - `/sign-in`
-  - `/sign-up`
-- Sidebar session UI:
-  - signed-in state with Clerk `UserButton`
-  - signed-out state with `Sign in` action
-- Automatic user sync to Neon on login via `POST /api/auth/sync`
-- Upserted user records in `public.app_users`
+## Les données
 
-### Required environment variables
+Toutes les montres, prix, enchères et indices affichés viennent de
+`src/fixtures/`, des données fictives. Ils seront remplacés page par page par
+des requêtes dans `src/lib/db/queries/`, qui liront les tables remplies par le
+backend. Le site ne calcule aucune métrique : il affiche ce que le backend a
+calculé. Voir [`docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md) §5.
 
-Copy `.env.example` to `.env.local` and fill in your values:
+Attention : les trois jeux de fixtures ne se correspondent pas entre eux
+(`marketPrice`, `marketValueUsd` et `price` désignent la même chose selon le
+fichier). Ne pas s'en servir comme modèle pour le schéma réel.
 
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-- `CLERK_SECRET_KEY`
-- `DATABASE_URL`
+## Chantiers connus
 
-### Notes
-
-- The sync endpoint creates `public.app_users` if it does not exist yet.
-- `getFlagEmoji` in `src/lib/flags.ts` converts a location string (for example, `New York, USA` or `Paris, FR`) into a flag emoji by mapping the country code in the last comma-separated segment to its regional indicator symbol. It returns a white flag for unknown or unsupported codes.
+- Environ 25 dépendances ne sont plus utilisées (`lovable-tagger`, `recharts`,
+  `react-hook-form`, une vingtaine de `@radix-ui/*`…).
+- Deux systèmes de toast coexistent (radix et sonner).
+- `QueryClientProvider` est monté mais aucune requête ne l'utilise.

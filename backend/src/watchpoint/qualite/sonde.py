@@ -386,7 +386,6 @@ def cibles_historique() -> list[tuple[str, str]]:
 
 def cibles_connues() -> list[tuple[str, str]]:
     """Les sites qu'on connait, tires du code et du catalogue."""
-    from watchpoint.registre import catalogue
     from watchpoint import sources as paquet
 
     vus, liste = set(), []

@@ -34,3 +34,12 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 src = ["src"]
+
+[tool.ruff.lint]
+# Le jeu par defaut de ruff : erreurs reelles, imports et variables inutilises.
+# Explicite pour ne pas dependre d'une configuration globale de poste.
+select = ["E4", "E7", "E9", "F"]
+# E741 (variables nommees l, O, I) : choix de style assume dans les boucles courtes.
+# F841 (variable assignee jamais lue) : 9 cas herites dans rapports/ et sources/,
+# a nettoyer un par un en verifiant qu'aucun appel utile ne disparait.
+ignore = ["E741", "F841"]

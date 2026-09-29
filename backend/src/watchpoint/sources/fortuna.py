@@ -158,7 +158,7 @@ def fiche(lot: dict, date_vente=None) -> dict | None:
     # C'est exactement l'erreur qu'on avait faite ici : la verification directe
     # ne portait que sur les 34 lots ou elle etait possible, c'est-a-dire la
     # seule population qui se comporte autrement que les 98,3 % restants.
-    frais_inclus = not (str(acf.get("bp_applies")).lower() in ("1", "true", "yes"))
+    frais_inclus = str(acf.get("bp_applies")).lower() not in ("1", "true", "yes")
 
     bas, _ = parse_money(acf.get("auction_estimate_low"))
     haut, _ = parse_money(acf.get("auction_estimate_high"))

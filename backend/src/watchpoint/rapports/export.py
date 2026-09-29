@@ -16,7 +16,6 @@ from watchpoint import config
 
 import datetime as dt
 import json
-import pathlib
 import sys
 
 import pandas as pd

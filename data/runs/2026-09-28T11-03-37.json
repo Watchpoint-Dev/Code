@@ -1,0 +1,68 @@
+{
+ "run": "2026-09-28T11-03-37",
+ "collected_at": "2026-09-28T11:03:37+00:00",
+ "sources": [
+  {
+   "id": "antiquorum",
+   "name": "Antiquorum",
+   "type": "auction",
+   "price_nature": "realised",
+   "access": "HTML serveur sur catalog.antiquorum.swiss — jointure price-list (marteau) x catalogue /lots (identite, devise)",
+   "robots": "OK — section ClaudeBot dediee, Crawl-delay: 5, Allow /en/lots/ ; Disallow /en/users/ et les URL a lot_id=/from_btn=/fbclid= (jamais appelees). robots.txt relu le 21/09/2026",
+   "records": 83,
+   "nouveaux": 83,
+   "requetes_http": 7,
+   "periode": [
+    "1993-11-14",
+    "1993-11-14"
+   ],
+   "completude": {
+    "price_amount": 100,
+    "price_currency": 100,
+    "price_date": 100,
+    "brand": 100,
+    "reference": 0,
+    "model": 0,
+    "year": 96,
+    "case_material": 69,
+    "movement": 0
+   },
+   "filtre": {
+    "GARDER": 7,
+    "REJETER": 76,
+    "QUARANTAINE": 0
+   },
+   "erreur": null,
+   "journal": [
+    "TRANCHE demandee : 1993 -> 1996 (4 annees)",
+    "ventes 1996: ConnectionError",
+    "ventes 1995: ConnectTimeout",
+    "ventes 1994: ConnectionError",
+    "1993: 5 ventes annoncees, 5 avec price-list",
+    "price-list 135 (Geneva, Hotel Des Bergues, L\\'ART DE L\\'HORLOGERIE EN FRANCE DE XVI): 220 lots vendus",
+    "catalogue geneva-hotel-des-bergues-1993-11-14 p6: ConnectionError",
+    "catalogue geneva-hotel-des-bergues-1993-11-14: 100 lots lus en 6 page(s), 83 records cumules",
+    "price-list 138: ReadTimeout",
+    "catalogue geneva-hotel-des-bergues-1993-10-17 p1: ConnectTimeout",
+    "catalogue geneva-hotel-des-bergues-1993-10-17: 0 lots lus en 1 page(s), 83 records cumules",
+    "price-list 136: ReadTimeout",
+    "catalogue hong-kong-hotel-victoria-hong-kong-1993-06-10 p1: SSLError",
+    "catalogue hong-kong-hotel-victoria-hong-kong-1993-06-10: 0 lots lus en 1 page(s), 83 records cumules",
+    "price-list 133: ConnectionError",
+    "catalogue geneva-hotel-des-bergues-1993-04-25 p1: ConnectionError",
+    "catalogue geneva-hotel-des-bergues-1993-04-25: 0 lots lus en 1 page(s), 83 records cumules",
+    "price-list 132: ConnectionError",
+    "catalogue milan-palazzo-dei-giureconsulti-1993-03-29 p1: ConnectionError",
+    "catalogue milan-palazzo-dei-giureconsulti-1993-03-29: 0 lots lus en 1 page(s), 83 records cumules",
+    "controle frais: le 'Sold' du catalogue vaut 1.150 fois la colonne 1 de la price-list (n=83, 1.111-1.151) — la colonne 1 est donc le MARTEAU, et le prix charge est hors frais",
+    "5 ventes traitees, 0 sans price-list (prix frais inclus), 83 records"
+   ],
+   "bloquee_connue": false,
+   "silencieuse": false,
+   "tronque": false
+  }
+ ],
+ "total_records": 83,
+ "total_nouveaux": 83,
+ "complet": true
+}

@@ -24,6 +24,9 @@ jobs:
       - name: Install
         run: pip install -e "backend[dev]"
 
+      - name: Lint
+        run: ruff check backend/src backend/tests
+
       # Le banc du filtre (76 cas), le parsing, les regles d'architecture.
       # Aucune requete reseau, aucune donnee necessaire : filters.json est versionne.
       - name: Tests

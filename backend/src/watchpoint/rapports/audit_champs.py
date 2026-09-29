@@ -513,7 +513,7 @@ def synthese(audit: dict) -> list[list]:
 def redige(audit: dict) -> str:
     import datetime as dt
 
-    L = [f"# Où vivent la référence et la nature du prix",
+    L = ["# Où vivent la référence et la nature du prix",
          "",
          f"**Généré le {dt.date.today().isoformat()}** par `python -m watchpoint rapport audit_champs` — "
          "ne pas éditer à la main, ce fichier est écrasé à chaque exécution.",

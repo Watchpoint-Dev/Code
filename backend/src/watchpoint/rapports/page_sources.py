@@ -23,9 +23,7 @@ import collections
 import datetime as dt
 import html
 import json
-import pathlib
 import re
-import sys
 
 
 from watchpoint import sources  # noqa: E402
