@@ -357,11 +357,14 @@ Aucun secret n'a été trouvé dans le code ni dans l'historique des trois dép�
 
 Dans l'ordre, chaque étape débloquant la suivante :
 
-1. **Schéma v1** : `database/migrations/0002_…sql` avec sources, marques,
-   modèles, annonces, observations (le journal) et runs, tel que décrit au §4.
+1. **Fait le 01/10/2026 — Schéma v1** : `database/migrations/0002_price_observation.sql`.
+   Le schéma retenu est plus simple que celui du §4 : une table plate
+   `price_observation` (une ligne par point de prix et par jour de relevé, les mêmes
+   colonnes pour toutes les sources), plus `source` et `reference` (fiche consolidée).
    Appliqué sur la branche Neon `dev`.
-2. **Chargeur** : `backend/src/watchpoint/db/`, qui lit `data/price_points.jsonl`
-   et remplit les tables, de façon idempotente. Commande `python -m watchpoint db charge`.
+2. **Fait le 01/10/2026 — Normalisation et chargeur** : `normalisation.py` (référence,
+   état, sens de la date) et `db/charge.py`, idempotent. 261 192 prix chargés sur `dev`,
+   comptes identiques au journal sur les 51 couples (source, nature).
 3. **Métriques** : `backend/src/watchpoint/metriques/`, à partir des calculs déjà
    écrits dans `rapports/vues.py` et `rapports/page_sources.py` : médiane et
    dispersion par référence et par mois, écart neuf/occasion, puis indices par marque.

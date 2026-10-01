@@ -18,13 +18,13 @@ elle est deja dans une table remplie par `backend/src/watchpoint/metriques/`.
 applique** : on corrige par une nouvelle migration. Pas d'ORM : le backend ecrit
 en SQL, le frontend lit en SQL, un ORM d'un cote ne servirait pas l'autre.
 
-Application : `python -m watchpoint db migrate` (a faire, etape 6 du plan) —
-une table `schema_migrations` retient ce qui est passe.
+Application : `python -m watchpoint db migrate`. Une table `schema_migrations`
+retient ce qui est passe.
 
 | Migration | Contenu | Etat |
 |---|---|---|
 | `0001_app_users.sql` | comptes du site | existe deja en prod (cree au runtime par le front) |
-| `0002_…` | sources, marques, modeles, annonces, **observations (le journal)**, runs | a faire, etape 3 — schema propose dans `docs/ARCHITECTURE.md` §4 |
+| `0002_price_observation.sql` | `source`, `price_observation` (une ligne par point de prix et par jour de releve), `reference` (fiche consolidee) | appliquee sur la branche `dev` le 01/10/2026 |
 
 ## Environnements
 

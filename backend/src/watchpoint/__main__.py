@@ -8,6 +8,8 @@
     python -m watchpoint sonde [--historique]              accessibilite des sources
     python -m watchpoint controle                          reverifie un echantillon sur les sites
     python -m watchpoint robots                            lecture des robots.txt
+    python -m watchpoint db [migrate | etat]               applique les migrations / ce que contient la base
+    python -m watchpoint charge                            normalise le journal et le charge dans Postgres
     python -m watchpoint rapports                          regenere tous les etats de docs/rapports/
     python -m watchpoint rapport <nom>                     un seul generateur (etat, entonnoir, vues…)
 
@@ -30,6 +32,8 @@ COMMANDES = {
     "sonde": "watchpoint.qualite.sonde",
     "controle": "watchpoint.qualite.controle_source",
     "robots": "watchpoint.qualite.robots",
+    "db": "watchpoint.db.migrations",
+    "charge": "watchpoint.db.charge",
 }
 
 # Les generateurs qui ecrivent un etat markdown ou html. L'ordre compte peu :

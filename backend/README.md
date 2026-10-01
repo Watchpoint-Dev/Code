@@ -1,16 +1,16 @@
 # backend — le moteur de données
 
 Tout ce qui touche aux **données de prix** : les collecter sur ~38 sources, les
-ramener à un format unique, décider ce qui est une montre, et (à venir) les
-charger dans Postgres et en calculer les métriques que le site affiche.
+ramener à un format unique, décider ce qui est une montre, les normaliser et
+les charger dans Postgres, puis (à venir) en calculer les métriques que le site affiche.
 
 ## Le flux
 
 ```
-http/commun ─► sources/ ─► schema ─► filtrage/ ─► collecte/ ─► data/ ─► db/ ─► metriques/
- poli, retry   1 adaptateur  30 champs   montre ?    verrou,      brut +    Postgres  cotes,
-               par source    validés     oui/non     dédoublon,   journal   (à faire) indices
-                                                     manifeste                        (à faire)
+http/commun ─► sources/ ─► schema ─► filtrage/ ─► collecte/ ─► data/ ─► normalisation ─► db/ ─► metriques/
+ poli, retry   1 adaptateur  30 champs   montre ?    verrou,      brut +    référence,       Postgres  cotes,
+               par source    validés     oui/non     dédoublon,   journal   état, date                indices
+                                                     manifeste                                         (à faire)
                          qualite/ et rapports/ : lisent, ne modifient rien
 ```
 
@@ -29,7 +29,8 @@ backend/
 │   ├── qualite/             verifie, controle_source, sonde, robots
 │   ├── rapports/            les générateurs d'états → docs/rapports/ et docs/livrables/
 │   ├── registre/            données statiques : sources prouvées, à négocier, écartées, bloquées
-│   ├── db/                  (à faire, étape 6) migrations + chargement jsonl → Postgres
+│   ├── normalisation.py     référence normalisée, état sur 5 niveaux, sens de la date
+│   ├── db/                  connexion, migrations, chargement jsonl → Postgres
 │   └── metriques/           (à faire) socle, courbes par référence, indices
 └── tests/                   pytest
 ```
@@ -53,6 +54,8 @@ Toutes passent par `python -m watchpoint` (liste complète : `python -m watchpoi
 | `compile-filtre` | Excel → `config/filtres/filters.json` |
 | `verifie` | invariants de la base ; sort en erreur si quelque chose ne va pas |
 | `sonde [--historique]` | accessibilité des sources |
+| `db migrate` / `db etat` | applique les migrations de `database/migrations/` / ce que contient la base |
+| `charge` | normalise le journal et le charge dans Postgres (`price_observation`), sans doublon |
 | `rapports` | régénère tous les états de `docs/rapports/` |
 | `rapport export [source]` | CSV + Excel dans `docs/livrables/donnees/` |
 
@@ -67,6 +70,21 @@ scripts/collecte.sh antiquorum:2010-2019 phillips
 seconde. Trois collectes simultanées ont épuisé la mémoire le 21/09/2026.
 
 Relancer n'écrit jamais deux fois le même prix : la collecte est **idempotente**.
+
+## La base Postgres
+
+`DATABASE_URL` dans `backend/.env` (ignoré par git) : en développement, la branche
+Neon `dev`. Le pipeline quotidien enchaîne :
+
+```bash
+python -m watchpoint collecte        # le brut et le journal
+python -m watchpoint charge          # normalisé, dans price_observation
+```
+
+`charge` relit tout le journal : une ligne est identifiée par (source, annonce, jour
+du relevé), donc rien n'est jamais dupliqué, et une règle de normalisation
+modifiée (`normalisation.VERSION`) réécrit les lignes concernées au chargement suivant.
+La table `reference` (une fiche par marque et référence) est recalculée à chaque fois.
 
 ## Les données
 

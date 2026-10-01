@@ -4,6 +4,20 @@ Les changements notables, du plus récent au plus ancien. Le détail au jour le
 jour, avec les mesures et les blocages, est dans
 [`docs/notes/PROGRESS.md`](docs/notes/PROGRESS.md).
 
+## 2026-10-01 — La base de prix dans Postgres
+
+- Migration `0002` : table `price_observation`, une ligne par point de prix et par
+  jour de relevé, les mêmes colonnes pour toutes les sources ; tables `source` et
+  `reference` (une fiche consolidée par marque et référence).
+- `normalisation.py` : référence normalisée (suffixes de variante Rolex, Patek,
+  Audemars Piguet ; notes de catalogue ; SKU de repli écartés), état sur cinq
+  niveaux, sens de la date de chaque source. Les références à au moins 20 prix
+  passent de 658 à 739.
+- `python -m watchpoint db migrate` et `python -m watchpoint charge` : 261 192 prix
+  chargés sur la branche Neon `dev` en moins d'une minute, sans doublon au
+  rechargement, comptes identiques au journal.
+- Antiquorum collecté en entier, de 1989 à 2026. Grailzee collecté par tranches de pages.
+
 ## 2026-09-27 à 29 — Monorepo
 
 - Les dépôts `labo` (moteur de données) et `WPV3` (site) sont réunis dans

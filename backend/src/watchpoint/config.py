@@ -29,3 +29,25 @@ LIVRABLES = RACINE / "docs" / "livrables"   # ce qui part chez quelqu'un
 REFERENTIELS = LIVRABLES / "referentiels"   # classeurs de sources (lus ET ecrits)
 
 RESEARCH = RACINE / "research"              # l'exploration : jamais importee par la production
+
+MIGRATIONS = RACINE / "database" / "migrations"
+FICHIER_ENV = RACINE / "backend" / ".env"   # local, ignoré par git : les secrets du backend
+
+
+def database_url() -> str:
+    """L'adresse de la base Postgres : la variable d'environnement, sinon backend/.env.
+
+    Pas de dépendance pour lire un .env : une ligne `CLE=valeur` suffit. La
+    variable d'environnement l'emporte, ce qui permet de viser une autre base
+    le temps d'une commande (DATABASE_URL=... python -m watchpoint charge).
+    """
+    url = os.environ.get("DATABASE_URL")
+    if not url and FICHIER_ENV.exists():
+        for ligne in FICHIER_ENV.read_text(encoding="utf-8").splitlines():
+            cle, _, valeur = ligne.partition("=")
+            if cle.strip() == "DATABASE_URL":
+                url = valeur.strip().strip("'\"")
+    if not url:
+        raise SystemExit("DATABASE_URL absente : la définir, ou la mettre dans backend/.env "
+                         "(voir docs/guides/installation.md)")
+    return url
