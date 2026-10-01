@@ -53,6 +53,7 @@ Reconnaissance du 21/09/2026 — essais/grailzee/notes.md
 from __future__ import annotations
 
 import json
+import os
 import re
 
 from watchpoint.schema import price_point, reference_dans, reference_libre
@@ -168,6 +169,25 @@ def lots_du_brut(entrees: list) -> list:
     return trouves
 
 
+def _pages_demandees() -> tuple[int, int] | None:
+    """La tranche de pages a parcourir, pour collecter le catalogue par morceaux.
+
+        WP_GRAILZEE_PAGES=31-36 python -m watchpoint collecte grailzee
+
+    Meme motif que WP_ANTIQUORUM_ANNEES, et pour la meme raison mesuree : une
+    source n'est ecrite qu'une fois terminee. Le catalogue complet coute une
+    requete par lot conclu, soit environ 230 par page profonde et une dizaine
+    d'heures en tout ; d'un seul bloc, une coupure reseau a la neuvieme heure
+    perdrait tout. Une tranche de quelques pages (moins d'une heure) borne la
+    perte. Le 01/10/2026, le plafond de 1 200 lots a ete atteint en page 31.
+    """
+    brut = os.environ.get("WP_GRAILZEE_PAGES", "").strip()
+    debut, _, fin = brut.partition("-")
+    if debut.strip().isdigit() and fin.strip().isdigit():
+        return int(debut), int(fin)
+    return None
+
+
 def collect(cap: int = 1200, depart: int = 1, pause: float = 2.0):
     """Les lots CONCLUS, page par page, avec un appel d'API par lot.
 
@@ -179,9 +199,17 @@ def collect(cap: int = 1200, depart: int = 1, pause: float = 2.0):
     records: list[dict] = []
     journal: list[str] = []
     en_cours = invendus = pages = 0
+    tranche = _pages_demandees()
+    fin = None
+    if tranche:
+        depart, fin = tranche
+        cap = 10 ** 9      # une tranche est bornee par ses pages, pas par un plafond de lots
+        journal.append(f"TRANCHE demandee : pages {depart} -> {fin}")
     page = depart
 
     while len(records) < cap:
+        if fin is not None and page > fin:
+            break
         if page * PAR_PAGE > PLAFOND_SHOPIFY:
             journal.append(
                 f"PLAFOND SHOPIFY: page*limit > {PLAFOND_SHOPIFY} — la plateforme "

@@ -4,6 +4,7 @@
 #   scripts/collecte.sh                          toutes les sources (hors gelees)
 #   scripts/collecte.sh morphy grailzee          celles-ci, l'une apres l'autre
 #   scripts/collecte.sh antiquorum:2000-2009     une tranche d'annees (Antiquorum, Christie's)
+#   scripts/collecte.sh grailzee:31-36           une tranche de pages du catalogue (Grailzee)
 #
 # Pourquoi une source par processus : trois collectes en parallele ont epuise la
 # memoire le 21/09/2026. Pourquoi caffeinate : le 26/09, le Mac s'est mis en
@@ -30,6 +31,7 @@ lance() {  # lance <source>[:<annees>]
   case "$source" in
     antiquorum) WP_ANTIQUORUM_ANNEES="$annees" "$PY" -m watchpoint collecte "$source" >> "$LOG" 2>&1 ;;
     christies)  WP_CHRISTIES_ANNEES="$annees"  "$PY" -m watchpoint collecte "$source" >> "$LOG" 2>&1 ;;
+    grailzee)   WP_GRAILZEE_PAGES="$annees"    "$PY" -m watchpoint collecte "$source" >> "$LOG" 2>&1 ;;
     "")                                        "$PY" -m watchpoint collecte >> "$LOG" 2>&1 ;;
     *)                                         "$PY" -m watchpoint collecte "$source" >> "$LOG" 2>&1 ;;
   esac
