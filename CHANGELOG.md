@@ -11,8 +11,8 @@ jour, avec les mesures et les blocages, est dans
   `reference` (une fiche consolidée par marque et référence).
 - `normalisation.py` : référence normalisée (suffixes de variante Rolex, Patek,
   Audemars Piguet ; notes de catalogue ; SKU de repli écartés), état sur cinq
-  niveaux, sens de la date de chaque source. Les références à au moins 20 prix
-  passent de 658 à 739.
+  niveaux, sens de la date de chaque source. En base : 744 références portent au
+  moins 20 prix, 4 946 au moins 5 (contre 658 et 4 812 sans normalisation).
 - `python -m watchpoint db migrate` et `python -m watchpoint charge` : 261 192 prix
   chargés sur la branche Neon `dev` en moins d'une minute, sans doublon au
   rechargement, comptes identiques au journal.
